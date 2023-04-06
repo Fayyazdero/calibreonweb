@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Layout from "@/components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Homepage from "./home";
+import SubHeading from "@/components/SubHeading";
 
 export default function Home() {
   return (
@@ -19,7 +21,10 @@ export default function Home() {
         </Head>
       </Head>
       <main className={styles.main}>
-        <Layout />
+        <Layout>
+          <Homepage />
+          <SubHeading secHeadingText={"About Us"} />
+        </Layout>
       </main>
     </>
   );

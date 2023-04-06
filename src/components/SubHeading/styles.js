@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionHeadingWrapper = styled.div`
+export const SubHeadingWrapper = styled.div`
   border-bottom: 3px solid #f05b25;
   width: 250px;
 `;

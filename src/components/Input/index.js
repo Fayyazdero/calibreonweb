@@ -4,8 +4,8 @@ import { InputWrapper, StyledInput } from "./styles";
 
 const Input = ({ type, placeholder, formBtnText, variant, className }) => {
   return (
-    <Form>
-      <InputWrapper className={className}>
+    <Form className={className}>
+      <InputWrapper>
         <StyledInput controlId="formBasicEmail">
           <Form.Control type={type} placeholder={placeholder} />
         </StyledInput>

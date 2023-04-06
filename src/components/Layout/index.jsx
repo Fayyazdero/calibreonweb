@@ -1,10 +1,6 @@
 import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
-import Input from "../Input";
-import { Heading } from "../Heading";
-import Home from "@/pages/home";
-import SectionHeading from "../SectionHeading";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -17,9 +13,8 @@ const Layout = ({ children }) => (
     </Head>
 
     <Header />
-    <Home />
-    <SectionHeading secHeadingText={"About Us"} />
-    {children + " Body"}
+
+    {children}
     <Footer />
   </div>
 );
