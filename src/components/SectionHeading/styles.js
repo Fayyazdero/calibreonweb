@@ -1,0 +1,16 @@
+import styled from "styled-components";
+
+export const SectionHeadingWrapper = styled.div`
+  border-bottom: 3px solid #f05b25;
+  width: 250px;
+`;
+
+export const SecHeading = styled.h2`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 39px;
+  line-height: 48px;
+  color: #f05b25;
+  margin: 0;
+`;

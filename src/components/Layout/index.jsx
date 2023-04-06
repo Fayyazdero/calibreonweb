@@ -2,6 +2,9 @@ import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
 import Input from "../Input";
+import { Heading } from "../Heading";
+import Home from "@/pages/home";
+import SectionHeading from "../SectionHeading";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -14,11 +17,8 @@ const Layout = ({ children }) => (
     </Head>
 
     <Header />
-    <Input
-      placeholder="Search for Services"
-      formBtnText="submit"
-      variant="contained"
-    />
+    <Home />
+    <SectionHeading secHeadingText={"About Us"} />
     {children + " Body"}
     <Footer />
   </div>

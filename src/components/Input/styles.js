@@ -13,5 +13,10 @@ export const StyledInput = styled(FormGroup)`
     border-bottom: 2px solid #f05b25;
     border-radius: 0;
     margin: 0 8px;
+
+    &:focus {
+      border-bottom: 2px solid #f05b25;
+      box-shadow: none;
+    }
   }
 `;
