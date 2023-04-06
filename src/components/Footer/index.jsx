@@ -36,7 +36,9 @@ const Footer = () => {
               return (
                 <>
                   <NavLinks>
-                    <Link href={item.link}>{item.title}</Link>
+                    <Link key={id} href={item.link}>
+                      {item.title}
+                    </Link>
                   </NavLinks>
                 </>
               );
