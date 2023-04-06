@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";
-import Insta from "./Insta";
-
 function Header() {
   let navLinks = [
     {
@@ -63,7 +61,6 @@ function Header() {
                 >
                   {item.title}
                 </StyledLink>
-                <Insta />
               </LinksWrapper>
             ))}
           </Nav>
