@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";
-import Insta from "./Insta";
 
 function Header() {
   let navLinks = [
@@ -58,19 +57,20 @@ function Header() {
                   onClick={() => {
                     handleClick(event, key);
                   }}
-                  className="mx-3 text-decoration-none"
+                  className={`mx-3 text-decoration-none text-dark styled-link ${
+                    active === key ? "active" : ""
+                  }`}
                   href="/"
                 >
                   {item.title}
                 </StyledLink>
-                <Insta />
               </LinksWrapper>
             ))}
           </Nav>
         </Navbar.Collapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" text="Login" />
-          <Button text="SignUp" />
+          <Button className="mx-2" text="Login" variant="contained" />
+          <Button className="mx-2" text="Sign Up" variant="outlined" />
         </NavButtonsWrapper>
       </Container>
     </Navbar>

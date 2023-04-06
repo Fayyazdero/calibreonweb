@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
+import Input from "../Input";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -13,6 +14,7 @@ const Layout = ({ children }) => (
     </Head>
 
     <Header />
+    <Input placeholder="Search for Services" formBtnText="submit" />
     {children + " Body"}
     <Footer />
   </div>
