@@ -14,6 +14,7 @@ export const StyledLink = styled(Link)`
   &.active {
     font-weight: 600;
     border-bottom: 4px solid #f05b25;
+    transition: 0.1s ease;
   }
 
   &:hover {

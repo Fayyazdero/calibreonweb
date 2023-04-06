@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assests/logo.svg";
-import Link from "next/link";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";

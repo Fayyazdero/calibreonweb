@@ -15,6 +15,13 @@ export const StyledButton = styled(Button)`
     background: #ffffff;
     border: 1px solid #F05B25;
       color: #F05B25;
+
+    &:hover {
+      background: #F05B25;
+
+      border: 1px solid #F05B25;
+        color: #ffffff;
+    }
   `}
 
   ${(props) =>
@@ -24,5 +31,11 @@ export const StyledButton = styled(Button)`
 
     border: 1px solid #F05B25;
       color: #ffffff;
+
+      &:hover {
+        background: #ffffff;
+    border: 1px solid #F05B25;
+      color: #F05B25;
+      }
   `}
 `;

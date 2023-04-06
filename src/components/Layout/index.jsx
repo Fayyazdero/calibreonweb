@@ -14,7 +14,11 @@ const Layout = ({ children }) => (
     </Head>
 
     <Header />
-    <Input placeholder="Search for Services" formBtnText="submit" />
+    <Input
+      placeholder="Search for Services"
+      formBtnText="submit"
+      variant="contained"
+    />
     {children + " Body"}
     <Footer />
   </div>
