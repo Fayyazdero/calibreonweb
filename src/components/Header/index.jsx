@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assests/logo.svg";
-import Link from "next/link";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";
+
 function Header() {
   let navLinks = [
     {
@@ -56,7 +56,9 @@ function Header() {
                   onClick={() => {
                     handleClick(event, key);
                   }}
-                  className="mx-3 text-decoration-none"
+                  className={`mx-3 text-decoration-none text-dark styled-link ${
+                    active === key ? "active" : ""
+                  }`}
                   href="/"
                 >
                   {item.title}
@@ -66,8 +68,8 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" text="Login" />
-          <Button text="SignUp" />
+          <Button className="mx-2" text="Login" variant="contained" />
+          <Button className="mx-2" text="Sign Up" variant="outlined" />
         </NavButtonsWrapper>
       </Container>
     </Navbar>

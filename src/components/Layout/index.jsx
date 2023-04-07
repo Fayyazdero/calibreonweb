@@ -16,6 +16,7 @@ const Layout = ({ children }) => (
     </Head>
 
     <Header />
+
     {children}
     <Accounting />
     <ProfileCard />

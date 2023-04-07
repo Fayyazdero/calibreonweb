@@ -1,18 +1,18 @@
 export const menuData = [
-  { title: "Home", link: "/home", id: 1 },
-  { title: "Blogs", link: "/blogs", id: 2 },
-  { title: "Services", link: "/services", id: 3 },
-  { title: "About Us", link: "/about-us", id: 4 },
-  { title: "Certification", link: "/certification", id: 5 },
+  { title: "Home", link: "/home" },
+  { title: "Blogs", link: "/blogs" },
+  { title: "Services", link: "/services" },
+  { title: "About Us", link: "/about-us" },
+  { title: "Certification", link: "/certification" },
 ];
 export const linksData = [
-  { title: "Term Of Service", link: "/", id: 1 },
-  { title: "Privacy Policy", link: "/", id: 2 },
-  { title: "FAQ", link: "/", id: 3 },
+  { title: "Term Of Service", link: "/" },
+  { title: "Privacy Policy", link: "/" },
+  { title: "FAQ", link: "/" },
 ];
 export const contact = [
-  { title: "calibreoninternational@gmail.com", link: "/", id: 1 },
-  { title: "Xyz,Block / Street", link: "/", id: 2 },
-  { title: "Area Xyz", link: "/", id: 3 },
-  { title: "City Xyz", link: "/about-us", id: 4 },
+  { title: "calibreoninternational@gmail.com", link: "/" },
+  { title: "Xyz,Block / Street", link: "/" },
+  { title: "Area Xyz", link: "/" },
+  { title: "City Xyz", link: "/about-us" },
 ];
