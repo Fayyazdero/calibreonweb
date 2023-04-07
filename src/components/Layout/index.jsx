@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import Accounting from "../Accounting";
 import ProfileCard from "../ProfileCard";
 import TestimonialCard from "../TestimonialCard";
+import BlogCard from "../BlogCard";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -14,13 +15,10 @@ const Layout = ({ children }) => (
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       />
     </Head>
-
     <Header />
+    <BlogCard />
 
     {children}
-    <Accounting />
-    <ProfileCard />
-    <TestimonialCard />
     <Footer />
   </div>
 );

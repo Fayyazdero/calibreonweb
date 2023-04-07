@@ -15,7 +15,7 @@ function Header() {
     },
     {
       title: "About",
-      link: "/about-us",
+      link: "/about",
     },
     {
       title: "Services",
@@ -35,6 +35,7 @@ function Header() {
 
   const handleClick = (index) => {
     setActive(index);
+    console.log(index, "kjsadkljalsj");
   };
   return (
     <Navbar bg="white" expand="lg">
@@ -49,12 +50,9 @@ function Header() {
         >
           <Nav>
             {navLinks.map((item, key) => (
-              <LinksWrapper className={`${active === key ? "active" : ""}`}>
+              <LinksWrapper key={key}>
                 <StyledLink
-                  key={key}
-                  onClick={() => {
-                    handleClick(key);
-                  }}
+                  onClick={() => handleClick(key)}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === key ? "active" : ""
                   }`}
