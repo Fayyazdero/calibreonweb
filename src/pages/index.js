@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "./home";
 import SubHeading from "@/components/SubHeading";
+import About from "./about-us";
 
 export default function Home() {
   return (

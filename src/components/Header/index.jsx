@@ -15,7 +15,7 @@ function Header() {
     },
     {
       title: "About",
-      link: "/about",
+      link: "/about-us",
     },
     {
       title: "Services",
@@ -33,8 +33,7 @@ function Header() {
 
   const [active, setActive] = useState(0);
 
-  const handleClick = (event, index) => {
-    event.preventDefault();
+  const handleClick = (index) => {
     setActive(index);
   };
   return (
@@ -54,12 +53,12 @@ function Header() {
                 <StyledLink
                   key={key}
                   onClick={() => {
-                    handleClick(event, key);
+                    handleClick(key);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === key ? "active" : ""
                   }`}
-                  href="/"
+                  href={item.link}
                 >
                   {item.title}
                 </StyledLink>
