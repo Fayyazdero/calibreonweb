@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 export const InputWrapper = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const StyledInput = styled(FormGroup)`
   border: none;
-
+  width: 100%;
   & input {
     border: none;
     border-bottom: 2px solid #f05b25;

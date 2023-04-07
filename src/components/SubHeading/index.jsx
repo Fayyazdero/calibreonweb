@@ -1,9 +1,9 @@
 import React from "react";
 import { SecHeading, SubHeadingWrapper } from "./styles";
 
-const SubHeading = ({ className, secHeadingText }) => {
+const SubHeading = ({ className, secHeadingText, color }) => {
   return (
-    <SubHeadingWrapper className={className}>
+    <SubHeadingWrapper className={className} color={color}>
       <SecHeading>{secHeadingText}</SecHeading>
     </SubHeadingWrapper>
   );
