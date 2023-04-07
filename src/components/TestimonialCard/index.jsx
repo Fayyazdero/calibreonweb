@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assests/testimonial-logo-a.png";
 import Image from "next/image";
-import Wrapper, { Content, LogoWrapper } from "./styles";
+import Wrapper, { Content, LogoImage, LogoWrapper } from "./styles";
 
 const TestimonialCard = () => {
   return (
@@ -15,7 +15,9 @@ const TestimonialCard = () => {
         forward to having her for a long term
       </Content>
       <LogoWrapper>
-        <Image src={logo} alt="Logo" />
+        <LogoImage>
+          <Image src={logo} alt="Logo" />
+        </LogoImage>
       </LogoWrapper>
     </Wrapper>
   );

@@ -8,14 +8,18 @@ const Wrapper = styled("div")({
   padding: "28px",
   color: "#FFFF",
 });
-export const Content = styled("p")({});
+export const Content = styled("p")({
+  fontFamily: "Hind Madurai",
+  fontWeight: "700",
+  fontSize: "19px",
+});
 export const LogoWrapper = styled("div")({
+  display: "flex",
+  justifyContent: "end",
+});
+export const LogoImage = styled("div")({
   width: "109px",
   height: "26px",
-  display: "flex",
-  maxHeight: "100%",
-  justifyContent: "start",
-  alignItems: "center",
   "& img": {
     width: "100%",
     height: "100%",
