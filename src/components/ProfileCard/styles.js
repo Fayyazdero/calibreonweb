@@ -1,7 +1,6 @@
 const { default: styled } = require("styled-components");
 
 const Wrapper = styled("div")({
-  margin: "20px 20px",
   width: "409px",
   height: "496px",
   background: "#4D4D4D",

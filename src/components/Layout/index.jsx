@@ -3,6 +3,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Accounting from "../Accounting";
 import ProfileCard from "../ProfileCard";
+import TestimonialCard from "../TestimonialCard";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -18,6 +19,7 @@ const Layout = ({ children }) => (
     {children}
     <Accounting />
     <ProfileCard />
+    <TestimonialCard />
     <Footer />
   </div>
 );
