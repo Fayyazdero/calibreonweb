@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
 import Accounting from "../Accounting";
+import ProfileCard from "../ProfileCard";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -16,6 +17,7 @@ const Layout = ({ children }) => (
     <Header />
     {children}
     <Accounting />
+    <ProfileCard />
     <Footer />
   </div>
 );
