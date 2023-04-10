@@ -2,9 +2,9 @@ import { Form } from "react-bootstrap";
 import Button from "../Button";
 import { InputWrapper, StyledInput } from "./styles";
 
-const Input = ({ type, placeholder, formBtnText, variant }) => {
+const Input = ({ type, placeholder, formBtnText, variant, className }) => {
   return (
-    <Form>
+    <Form className={className}>
       <InputWrapper>
         <StyledInput controlId="formBasicEmail">
           <Form.Control type={type} placeholder={placeholder} />

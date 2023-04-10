@@ -33,9 +33,9 @@ function Header() {
 
   const [active, setActive] = useState(0);
 
-  const handleClick = (event, index) => {
-    event.preventDefault();
+  const handleClick = (index) => {
     setActive(index);
+    console.log(index, "kjsadkljalsj");
   };
   return (
     <Navbar bg="white" expand="lg">
@@ -50,16 +50,13 @@ function Header() {
         >
           <Nav>
             {navLinks.map((item, key) => (
-              <LinksWrapper className={`${active === key ? "active" : ""}`}>
+              <LinksWrapper key={key}>
                 <StyledLink
-                  key={key}
-                  onClick={() => {
-                    handleClick(event, key);
-                  }}
+                  onClick={() => handleClick(key)}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === key ? "active" : ""
                   }`}
-                  href="/"
+                  href={item.link}
                 >
                   {item.title}
                 </StyledLink>

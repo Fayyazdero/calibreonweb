@@ -32,24 +32,22 @@ const Footer = () => {
           </Col>
           <Col md={2}>
             <Title>Menu</Title>
-            {menuData.map((item, id) => {
+            {menuData.map((item, key) => {
               return (
-                <>
+                <div key={key}>
                   <NavLinks>
-                    <Link key={id} href={item.link}>
-                      {item.title}
-                    </Link>
+                    <Link href={item.link}>{item.title}</Link>
                   </NavLinks>
-                </>
+                </div>
               );
             })}
           </Col>
           <Col md={2}>
             <NavLinks>
               <Title>Useful Links</Title>
-              {linksData.map((item, id) => {
+              {linksData.map((item, key) => {
                 return (
-                  <Link key={id} href={item.title}>
+                  <Link key={key} href={item.link}>
                     {item.title}
                   </Link>
                 );
@@ -59,9 +57,9 @@ const Footer = () => {
           <Col md={3}>
             <NavLinks>
               <Title>Contact</Title>
-              {contact.map((item, id) => {
+              {contact.map((item, key) => {
                 return (
-                  <Link key={id} href={item.title}>
+                  <Link key={key} href={item.link}>
                     {item.title}
                   </Link>
                 );
@@ -79,7 +77,7 @@ const Footer = () => {
         <Row>
           <Col md={12}>
             <CopyRightContent>
-              © 2023 CALIBREON INTERNATIONAL PVT.LTD.ALL RESERVED.
+              © 2023 CALIBREON INTERNATIONAL PVT. LTD. ALL RIGHTS RESERVED.
             </CopyRightContent>
           </Col>
         </Row>

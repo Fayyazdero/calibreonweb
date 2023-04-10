@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-export const MainWrapper = styled("div")({
-  border: "1px solid black",
-  height: "60vh",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  background: "#4D4D4D",
-});
 const Wrapper = styled("div")({
   background: "#6622CC",
   display: "flex",
