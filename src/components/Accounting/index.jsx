@@ -9,29 +9,19 @@ import Banner from "../../assests/Accounting-banner.png";
 import Image from "next/image";
 import ArrowRight from "../Svgs/ArrowRight";
 
-const Accounting = () => {
+const Accounting = ({ imgSrc, imgAlt, department, services, children }) => {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src={Banner} alt="banner" />
+        <Image src={imgSrc} alt={imgAlt} />
       </ImageWrapper>
       <ContentWrapper>
-        <Title>Accounting</Title>
+        <Title>{department}</Title>
         <CategoryTitle>
           <ArrowRight height={12} color={"#FFFF"} />
-          <h4>Book-keeping</h4>
-        </CategoryTitle>
-        <CategoryTitle>
-          <ArrowRight height={12} color={"#FFFF"} />
-          <h4>Accounting</h4>
-        </CategoryTitle>
-        <CategoryTitle>
-          <ArrowRight height={12} color={"#FFFF"} />
-          <h4>UI/UX Designer</h4>
-        </CategoryTitle>
-        <CategoryTitle>
-          <ArrowRight height={12} color={"#FFFF"} />
-          <h4>Frontend</h4>
+          <ul>
+            <li>{services}</li>
+          </ul>
         </CategoryTitle>
       </ContentWrapper>
     </Wrapper>

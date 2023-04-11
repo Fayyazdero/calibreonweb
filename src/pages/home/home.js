@@ -6,8 +6,21 @@ import { Col, Container, Row } from "react-bootstrap";
 import home from "../../assests/home.png";
 import newsletter from "../../assests/newsletter.png";
 import Typo from "@/components/Typo";
-import { HomeHeadingWrapper, NewsLetterWrapper } from "@/styles/Home.module";
+import {
+  HomeHeadingWrapper,
+  NewsLetterWrapper,
+  ServicesWrapper,
+  ServicesHeadingWrapper,
+  ViewAll,
+} from "@/styles/Home.module";
 import Layout from "@/components/Layout";
+import Carousel from "@/components/Slider";
+import { servicesCardData } from "./homeData";
+import Accounting from "@/components/Accounting";
+import SubHeading from "@/components/SubHeading";
+import ArrowRight from "@/components/Svgs/ArrowRight";
+// import Banner from "../../assests/Accounting-banner.png";
+// import ArrowRight from "../Svgs/ArrowRight";
 
 const Homepage = () => {
   return (
@@ -62,9 +75,31 @@ const Homepage = () => {
               <Col md={6}>
                 <Image src={newsletter} alt="newsletter" />
               </Col>
+              ``
             </Row>
           </NewsLetterWrapper>
         </Container>
+        <ServicesWrapper>
+          <Container>
+            <ServicesHeadingWrapper>
+              <SubHeading secHeadingText={"Services"} color="#ffffff" />
+              <ViewAll>
+                View All Services <ArrowRight height="14px" color="#F05B25" />
+              </ViewAll>
+            </ServicesHeadingWrapper>
+            <Carousel>
+              {servicesCardData.map((item, index) => (
+                <div key={index}>
+                  <Accounting
+                    imgSrc={item.imgSrc}
+                    department={item.title}
+                    services="ddd"
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </Container>
+        </ServicesWrapper>
       </div>
     </Layout>
   );

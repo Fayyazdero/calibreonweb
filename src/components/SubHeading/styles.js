@@ -11,6 +11,6 @@ export const SecHeading = styled.h2`
   font-weight: 900;
   font-size: 39px;
   line-height: 48px;
-  color: ${(props) => props.color || "#f05b25"};
+  color: ${(props) => (props.color ? props.color : "#f05b25")};
   margin: 0;
 `;
