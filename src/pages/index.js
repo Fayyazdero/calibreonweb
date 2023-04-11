@@ -20,7 +20,6 @@ export default function Home() {
           />
         </Head>
       </Head>
-      {/* <SubHeading secHeadingText={"About Us"} /> */}
       <Homepage />
     </>
   );
