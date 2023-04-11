@@ -48,6 +48,8 @@ const Homepage = () => {
                   placeholder="Search for Services"
                   formBtnText="submit"
                   variant="contained"
+                  showBtn
+                  color={"black"}
                 />
               </HomeHeadingWrapper>
             </Col>

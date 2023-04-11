@@ -1,15 +1,36 @@
-import { Form } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import Button from "../Button";
 import { InputWrapper, StyledInput } from "./styles";
 
-const Input = ({ type, placeholder, formBtnText, variant, className }) => {
+const Input = ({
+  type,
+  placeholder,
+  formBtnText,
+  variant,
+  showBtn,
+  className,
+  borderBottom,
+  width,
+  textColor,
+  placeholderTextColor,
+  mLeft,
+}) => {
+  if (type === "checkbox") return <InputGroup.Checkbox />;
   return (
     <Form className={className}>
-      <InputWrapper>
-        <StyledInput controlId="formBasicEmail">
+      <InputWrapper mLeft={mLeft}>
+        <StyledInput
+          controlId="formBasicEmail"
+          borderBottom={borderBottom}
+          width={width}
+          placeholderTextColor={placeholderTextColor}
+          textColor={textColor}
+        >
           <Form.Control type={type} placeholder={placeholder} />
         </StyledInput>
-        <Button className="mx-4" text={formBtnText} variant={variant} />
+        {showBtn ? (
+          <Button className="mx-4" text={formBtnText} variant={variant} />
+        ) : null}
       </InputWrapper>
     </Form>
   );
