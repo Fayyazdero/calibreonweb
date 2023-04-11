@@ -5,6 +5,8 @@ import Accounting from "../Accounting";
 import ProfileCard from "../ProfileCard";
 import TestimonialCard from "../TestimonialCard";
 import BlogCard from "../BlogCard";
+import InformationCard from "../InformationCard";
+import ContactForm from "../ContactForm";
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -16,8 +18,6 @@ const Layout = ({ children }) => (
       />
     </Head>
     <Header />
-    <BlogCard />
-
     {children}
     <Footer />
   </div>
