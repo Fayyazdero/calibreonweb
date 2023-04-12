@@ -1,12 +1,7 @@
 import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
-import Accounting from "../Accounting";
-import ProfileCard from "../ProfileCard";
-import TestimonialCard from "../TestimonialCard";
-import BlogCard from "../BlogCard";
-import InformationCard from "../InformationCard";
-import ContactForm from "../ContactForm";
+
 const Layout = ({ children }) => (
   <div>
     <Head>

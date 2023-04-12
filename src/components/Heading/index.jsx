@@ -8,6 +8,7 @@ export const Heading = ({
   fontSize,
   lineHeight,
   column,
+  ...rest
 }) => {
   return (
     <>
@@ -16,6 +17,7 @@ export const Heading = ({
         fontSize={fontSize}
         lineHeight={lineHeight}
         column={column}
+        {...rest}
       >
         {heading}
         <ColouredHeading>{styledHeading}</ColouredHeading>

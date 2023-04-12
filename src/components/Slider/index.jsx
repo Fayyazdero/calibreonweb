@@ -2,14 +2,23 @@ import Head from "next/head";
 import React, { Children } from "react";
 import Slider from "react-slick";
 
-const Carousel = ({ children }) => {
+const Carousel = ({
+  slidesToShow = 1,
+  rows = 1,
+  centerMode = false,
+  children,
+}) => {
   var settings = {
     infinite: true,
     speed: 600,
-    slidesToShow: 1,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     arrows: true,
+    rows: rows,
+    centerMode: centerMode,
+    centerPadding: "110px",
   };
+  console.log(settings, "settings");
   return (
     <>
       <Head>

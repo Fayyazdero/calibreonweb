@@ -11,7 +11,7 @@ function Header() {
   let navLinks = [
     {
       title: "Home",
-      link: "/home",
+      link: "/",
     },
     {
       title: "About",
@@ -65,8 +65,12 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" text="Login" variant="contained" />
-          <Button className="mx-2" text="Sign Up" variant="outlined" />
+          <Button className="mx-2" variant="contained">
+            Login
+          </Button>
+          <Button className="mx-2" variant="outlined">
+            Sign UP
+          </Button>
         </NavButtonsWrapper>
       </Container>
     </Navbar>

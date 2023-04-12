@@ -1,4 +1,4 @@
-import Accounting from "@/components/Accounting";
+import Accounting from "@/components/ServiceCard";
 import Layout from "@/components/Layout";
 import React from "react";
 

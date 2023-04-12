@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SubHeadingWrapper = styled.div`
   border-bottom: 3px solid #f05b25;
   width: 250px;
+  height: fit-content;
 `;
 
 export const SecHeading = styled.h2`

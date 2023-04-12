@@ -1,10 +1,10 @@
 import React from "react";
 import { Text } from "./styles";
 
-const Typo = ({ className, typoText, width }) => {
+const Typo = ({ className, children, width, ...rest }) => {
   return (
-    <Text className={className} width={width}>
-      {typoText}
+    <Text className={className} width={width} {...rest}>
+      {children}
     </Text>
   );
 };

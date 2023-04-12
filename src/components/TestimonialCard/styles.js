@@ -1,10 +1,8 @@
 const { default: styled } = require("styled-components");
 
-const Wrapper = styled("div")({
+const TestimonialWrapper = styled("div")({
   background: "#F05B25",
   borderRadius: "19px",
-  width: "734px",
-  height: "280px",
   padding: "28px",
   color: "#FFFF",
 });
@@ -26,4 +24,4 @@ export const LogoImage = styled("div")({
   },
 });
 
-export default Wrapper;
+export default TestimonialWrapper;

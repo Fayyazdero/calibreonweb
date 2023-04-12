@@ -1,7 +1,6 @@
 const { default: styled } = require("styled-components");
 
 const Wrapper = styled("div")((props) => ({
-  width: "409px",
   background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
   color: "#FFFFFF",
   borderRadius: "19px",

@@ -5,13 +5,12 @@ import Wrapper, {
   ImageWrapper,
   Title,
 } from "./styles";
-import Banner from "../../assests/Accounting-banner.png";
 import Image from "next/image";
 import ArrowRight from "../Svgs/ArrowRight";
 
-const Accounting = ({ imgSrc, imgAlt, department, services, children }) => {
+const ServiceCard = ({ imgSrc, imgAlt, department, children, ...rest }) => {
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <ImageWrapper>
         <Image src={imgSrc} alt={imgAlt} />
       </ImageWrapper>
@@ -19,13 +18,11 @@ const Accounting = ({ imgSrc, imgAlt, department, services, children }) => {
         <Title>{department}</Title>
         <CategoryTitle>
           <ArrowRight height={12} color={"#FFFF"} />
-          <ul>
-            <li>{services}</li>
-          </ul>
+          {children}
         </CategoryTitle>
       </ContentWrapper>
     </Wrapper>
   );
 };
 
-export default Accounting;
+export default ServiceCard;
