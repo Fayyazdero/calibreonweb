@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const HomeHeadingWrapper = styled.div`
@@ -8,8 +9,7 @@ export const HomeHeadingWrapper = styled.div`
 `;
 
 export const TestimonialWrapper = styled.div`
-  margin: 100px 0;
-
+  padding: 116px 0;
   & .slick-next {
     background: red !important;
   }
@@ -17,8 +17,29 @@ export const TestimonialWrapper = styled.div`
     display: none !important;
   }
 `;
-export const NewsLetterWrapper = styled.div``;
+export const NewsLetterWrapper = styled.div`
+  padding: 130px 0;
+`;
 export const StyledContainer = styled.div``;
+export const ContentWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+export const StyledImage = styled(Image)`
+  width: 100%;
+`;
+export const TestimonialLogosWrapper = styled.div`
+  background: #4d4d4d;
+  padding: 140px 100px;
+`;
+export const TestimonialLogos = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 export const ServicesHeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;

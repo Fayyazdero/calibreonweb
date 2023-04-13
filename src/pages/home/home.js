@@ -15,13 +15,21 @@ import {
   ViewAll,
   TestimonialWrapper,
   StyledContainer,
+  TestimonialLogosWrapper,
+  TestimonialLogos,
+  StyledImage,
+  ContentWrapper,
 } from "./styles";
 import Layout from "@/components/Layout";
 import Carousel from "@/components/Slider";
-import { servicesCardData, testimonialsData } from "./homeData";
+import {
+  servicesCardData,
+  testimonialsData,
+  testimonialsLogos,
+} from "./homeData";
 import Accounting from "@/components/ServiceCard";
 import SubHeading from "@/components/SubHeading";
-import ArrowRight from "@/components/Svgs/ArrowRight";
+import { ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 
 const Homepage = () => {
@@ -40,13 +48,13 @@ const Homepage = () => {
                   styledHeading=" Calibreon International"
                   fontSize="80"
                 />
-                <Typo
-                  width={450}
-                  className="my-3"
-                  typoText="That thrives in the today’s digital landscape by elevating your business to new heights. So, Choose Calibreon International for premium back office support."
-                />
+                <Typo className="my-3">
+                  That thrives in the today’s digital landscape by elevating
+                  your business to new heights. So, Choose Calibreon
+                  International for premium back office support.
+                </Typo>
                 <Input
-                  className="mt-5"
+                  className="my-5"
                   placeholder="Search for Services"
                   formBtnText="submit"
                   variant="contained"
@@ -61,9 +69,8 @@ const Homepage = () => {
           <Container>
             <ServicesHeadingWrapper>
               <SubHeading secHeadingText={"Services"} color="#ffffff" />
-              <ViewAll>
-                View All Services <ArrowRight height="14px" color="#F05B25" />
-              </ViewAll>
+              <ViewAll>View All Services</ViewAll>
+              <ArrowRight height="14px" color="#F05B25" />
             </ServicesHeadingWrapper>
           </Container>
           <StyledContainer>
@@ -111,26 +118,38 @@ const Homepage = () => {
             </Row>
           </Container>
         </TestimonialWrapper>
+        <TestimonialLogosWrapper>
+          <Row>
+            {testimonialsLogos.map((item, index) => (
+              <Col md={4}>
+                <TestimonialLogos>
+                  <StyledImage src={item.src} alt={item.alt} />
+                </TestimonialLogos>
+              </Col>
+            ))}
+          </Row>
+        </TestimonialLogosWrapper>
         <Container>
-          <NewsLetterWrapper className="my-5">
+          <NewsLetterWrapper>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <Heading
-                  styledHeading=" Join US"
-                  heading="News Letter"
-                  fontSize="64"
-                />
-                <Typo
-                  width={450}
-                  className="my-3"
-                  typoText="Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque aliquam eget. Purus id faucibus mollis viverra viverra odio tempus tempor ut. Amet lectus in bibendum sed."
-                />
-                <Input
-                  className="mt-5"
-                  placeholder="Email Address"
-                  formBtnText="Subscribe"
-                  variant="contained"
-                />
+                <ContentWrapper>
+                  <Heading
+                    styledHeading=" Join US"
+                    heading="News Letter"
+                    fontSize="64"
+                  />
+                  <Typo className="my-3">
+                    Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
+                    aliquam eget. Purus id faucibus mollis viverra viverra odio
+                    tempus tempor ut. Amet lectus in bibendum sed.
+                  </Typo>
+                  <Input
+                    placeholder="Email Address"
+                    formBtnText="Subscribe"
+                    variant="contained"
+                  />
+                </ContentWrapper>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 <Image src={newsletter} alt="newsletter" />

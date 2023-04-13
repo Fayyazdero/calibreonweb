@@ -6,7 +6,7 @@ import Wrapper, {
   Title,
 } from "./styles";
 import Image from "next/image";
-import ArrowRight from "../Svgs/ArrowRight";
+import { ArrowRight } from "../Svgs";
 
 const ServiceCard = ({ imgSrc, imgAlt, department, children, ...rest }) => {
   return (

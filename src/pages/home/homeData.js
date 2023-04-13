@@ -1,5 +1,7 @@
+import insight from "../../assests/insight.png";
 import Banner from "../../assests/Accounting-banner.png";
 import rebornLogo from "../../assests/testimoniallogo.png";
+import benitago from "../../assests/benitago.png";
 export const servicesCardData = [
   {
     id: 1,
@@ -80,5 +82,21 @@ export const testimonialsData = [
     review:
       "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term",
     logo: rebornLogo,
+  },
+];
+
+export const testimonialsLogos = [
+  {
+    src: rebornLogo,
+    alt: "reborn",
+  },
+
+  {
+    src: insight,
+    alt: "insight",
+  },
+  {
+    src: benitago,
+    alt: benitago,
   },
 ];

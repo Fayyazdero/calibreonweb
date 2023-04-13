@@ -1,9 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Facebook from "../Svgs/Facebook";
-import Twitter from "../Svgs/Twitter";
-import Instagram from "../Svgs/Instagram";
-import LinkedIn from "../Svgs/LinkedIn";
+import { Facebook, Twitter, Instagram, LinkedIn } from "../Svgs";
+
 import StyledSection, {
   CopyRightContent,
   LogoWrapper,
