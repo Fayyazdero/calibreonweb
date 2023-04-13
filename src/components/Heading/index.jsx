@@ -1,27 +1,12 @@
 import React from "react";
 import { ColouredHeading, StyledHeading } from "./style";
 
-export const Heading = ({
-  className,
-  heading,
-  styledHeading,
-  fontSize,
-  lineHeight,
-  column,
-  ...rest
-}) => {
+export const Heading = ({ title, variant, children, ...rest }) => {
+  console.log(variant, "variant");
   return (
-    <>
-      <StyledHeading
-        className={className}
-        fontSize={fontSize}
-        lineHeight={lineHeight}
-        column={column}
-        {...rest}
-      >
-        {heading}
-        <ColouredHeading>{styledHeading}</ColouredHeading>
-      </StyledHeading>
-    </>
+    <StyledHeading variant={variant} {...rest}>
+      {children}
+      <ColouredHeading>{title}</ColouredHeading>
+    </StyledHeading>
   );
 };

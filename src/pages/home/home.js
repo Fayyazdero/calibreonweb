@@ -28,9 +28,9 @@ import {
   testimonialsLogos,
 } from "./homeData";
 import Accounting from "@/components/ServiceCard";
-import SubHeading from "@/components/SubHeading";
 import { ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
+import Search from "@/components/Search";
 
 const Homepage = () => {
   return (
@@ -44,21 +44,21 @@ const Homepage = () => {
             <Col md={6}>
               <HomeHeadingWrapper>
                 <Heading
-                  heading="Grow with"
-                  styledHeading=" Calibreon International"
-                  fontSize="80"
-                />
+                  title=" Calibreon International"
+                  variant={"mainHeading"}
+                >
+                  Grow with
+                </Heading>
                 <Typo className="my-3">
                   That thrives in the today’s digital landscape by elevating
                   your business to new heights. So, Choose Calibreon
                   International for premium back office support.
                 </Typo>
-                <Input
+                <Search
                   className="my-5"
                   placeholder="Search for Services"
-                  formBtnText="submit"
+                  btnText="submit"
                   variant="contained"
-                  showBtn
                   color={"black"}
                 />
               </HomeHeadingWrapper>
@@ -68,7 +68,6 @@ const Homepage = () => {
         <ServicesWrapper>
           <Container>
             <ServicesHeadingWrapper>
-              <SubHeading secHeadingText={"Services"} color="#ffffff" />
               <ViewAll>View All Services</ViewAll>
               <ArrowRight height="14px" color="#F05B25" />
             </ServicesHeadingWrapper>

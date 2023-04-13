@@ -1,6 +1,5 @@
 import { Heading } from "@/components/Heading";
 import Layout from "@/components/Layout";
-import SubHeading from "@/components/SubHeading";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
@@ -36,13 +35,9 @@ const About = () => {
           <HeroSection>
             <Row>
               <Col md={7}>
-                <SubHeading secHeadingText="About Us" />
-                <Heading
-                  heading="Our Mission is "
-                  fontSize="80"
-                  styledHeading="Clear"
-                  className="mt-41"
-                />
+                <Heading title="Clear" variant="mainHeading">
+                  Our Mission is
+                </Heading>
                 <Content>
                   At CaliberOn, we're passionate about helping our clients
                   succeed. That's why we prioritize client satisfaction and

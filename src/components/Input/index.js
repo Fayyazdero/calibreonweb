@@ -1,25 +1,7 @@
-import { Form } from "react-bootstrap";
-import Button from "../Button";
-import { InputWrapper, StyledInput } from "./styles";
+import { StyledInput } from "./styles";
 
-const Input = ({
-  type,
-  placeholder,
-  formBtnText,
-  variant,
-  className,
-  ...rest
-}) => {
-  return (
-    <Form className={className} {...rest}>
-      <InputWrapper>
-        <StyledInput controlId="formBasicEmail">
-          <Form.Control type={type} placeholder={placeholder} />
-        </StyledInput>
-        <Button className="mx-4" children={formBtnText} variant={variant} />
-      </InputWrapper>
-    </Form>
-  );
+const Input = ({ type, placeholder, className, ...rest }) => {
+  return <StyledInput placeholder={placeholder} type={type} {...rest} />;
 };
 
 export default Input;

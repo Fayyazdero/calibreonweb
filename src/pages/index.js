@@ -1,8 +1,5 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.js";
-import Layout from "@/components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SubHeading from "@/components/SubHeading";
 import Homepage from "./home/home";
 
 export default function Home() {
