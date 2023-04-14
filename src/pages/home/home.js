@@ -37,7 +37,7 @@ const Homepage = () => {
     <Layout>
       <div>
         <Container>
-          <Row className="my-5">
+          <Row>
             <Col md={6}>
               <Image src={home} alt="home" />
             </Col>
@@ -86,7 +86,7 @@ const Homepage = () => {
         </ServicesWrapper>
         <TestimonialWrapper>
           <Container>
-            <Heading title={"Testimonial:"} variant="subHeading" />
+            <Heading title={"Testimonial:"} variant="sectionHeading" />
             <Typo variant="mainTypo">
               Find out why we're the top choice - read what our customers have
               to say! Our testimonials reflect the high level of customer

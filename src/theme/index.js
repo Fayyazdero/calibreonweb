@@ -62,7 +62,7 @@ export const getTheme = (value) => {
 
     heading: {
       mainHeading: {
-        fontSize: theme.fontSizes.xl,
+        fontSize: theme.fontSizes.title,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
@@ -75,9 +75,9 @@ export const getTheme = (value) => {
         borderBottom: theme.colors.primary,
       },
       sectionHeading: {
-        fontSize: theme.fontSizes.lg,
-        color: theme.colors.black,
-        fontWeight: theme.fontWeights.semi_bold,
+        fontSize: theme.fontSizes.heading,
+        color: theme.colors.primary,
+        fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
       },
     },
