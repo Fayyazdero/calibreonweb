@@ -5,7 +5,5 @@ import React from "react";
 const Index = () => {
   return <Blog/>
 };
-Index.getLayout = (page) => <Layout>
-  {page}
-</Layout>
+Index.layout = true
 export default Index;

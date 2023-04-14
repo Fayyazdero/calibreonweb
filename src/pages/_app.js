@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { getTheme, theme } from "@/theme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
@@ -10,13 +11,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page)
+  const layout = Component.layout
 
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={getTheme(theme)}>
-        {getLayout(<Component {...pageProps} />)}
+        {
+          layout ? <Layout>
+            <Component {...pageProps} />
+            </Layout>: 
+            <Component {...pageProps} />
+        }
       </ThemeProvider>
     </>
   );
