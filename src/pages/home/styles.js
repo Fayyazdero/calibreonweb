@@ -6,6 +6,7 @@ export const HomeHeadingWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 46px;
 `;
 
 export const TestimonialWrapper = styled.div`

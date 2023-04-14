@@ -46,7 +46,7 @@ const Homepage = () => {
                 <Heading title="Calibreon International" variant="mainHeading">
                   Grow with{" "}
                 </Heading>
-                <Typo className="my-3">
+                <Typo variant="mainTypo">
                   That thrives in the today’s digital landscape by elevating
                   your business to new heights. So, Choose Calibreon
                   International for premium back office support.
@@ -65,6 +65,7 @@ const Homepage = () => {
         <ServicesWrapper>
           <Container>
             <ServicesHeadingWrapper>
+              <Heading variant="subHeading">Our Services</Heading>
               <ViewAll>View All Services</ViewAll>
               <ArrowRight height="14px" color="#F05B25" />
             </ServicesHeadingWrapper>
@@ -86,7 +87,7 @@ const Homepage = () => {
         <TestimonialWrapper>
           <Container>
             <Heading title={"Testimonial:"} variant="subHeading" />
-            <Typo width={50}>
+            <Typo variant="mainTypo">
               Find out why we're the top choice - read what our customers have
               to say! Our testimonials reflect the high level of customer
               satisfaction we strive for, and we're confident that you'll see
@@ -133,7 +134,7 @@ const Homepage = () => {
                   <Heading title=" Join US" variant="mainHeading">
                     News Letter
                   </Heading>
-                  <Typo className="my-3">
+                  <Typo variant="mainTypo">
                     Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
                     aliquam eget. Purus id faucibus mollis viverra viverra odio
                     tempus tempor ut. Amet lectus in bibendum sed.

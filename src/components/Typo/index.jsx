@@ -1,9 +1,9 @@
 import React from "react";
 import { Text } from "./styles";
 
-const Typo = ({ className, children, width, ...rest }) => {
+const Typo = ({ variant, children, ...rest }) => {
   return (
-    <Text className={className} width={width} {...rest}>
+    <Text variant={variant} {...rest}>
       {children}
     </Text>
   );

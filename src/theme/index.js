@@ -9,8 +9,9 @@ export const theme = {
   fontSizes: {
     title: "5rem" /* 80px */,
     heading: "4rem" /* 64px */,
-    "2xl": "5rem" /* 22px */,
-    xl: "5rem" /* 20px */,
+    "4xl": "2.43rem" /* 39px */,
+    "2xl": "1.37rem" /* 22px */,
+    xl: "1.25" /* 20px */,
     lg: "1.125rem" /* 18px */,
     md: "1rem" /* 16px */,
     sm: ".875rem" /* 14px */,
@@ -21,7 +22,13 @@ export const theme = {
     black: 900,
     bold: 700,
     semi_bold: 600,
-    normal: 400,
+    normal: 500,
+  },
+
+  lineHeights: {
+    title: "83px",
+    subTitle: "48px",
+    secTitle: "78px",
   },
 };
 export const getTheme = (value) => {
@@ -56,18 +63,36 @@ export const getTheme = (value) => {
     heading: {
       mainHeading: {
         fontSize: theme.fontSizes.xl,
-        color: theme.colors.black,
+        color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.title,
       },
       subHeading: {
-        fontSize: theme.fontSizes.sm,
-        color: theme.colors.black,
+        fontSize: theme.fontSizes["4xl"],
+        color: theme.colors.white,
         fontWeight: theme.fontWeights.semi_bold,
+        lineHeight: theme.lineHeights.subTitle,
+        borderBottom: theme.colors.primary,
       },
       sectionHeading: {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.black,
         fontWeight: theme.fontWeights.semi_bold,
+        lineHeight: theme.lineHeights.secTitle,
+      },
+    },
+
+    typo: {
+      mainTypo: {
+        fontSize: theme.fontSizes.md,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.normal,
+      },
+
+      subTypo: {
+        fontSize: theme.fontSizes["2xl"],
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bold,
       },
     },
   };
