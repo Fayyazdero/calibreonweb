@@ -1,4 +1,4 @@
-import profileImage from "../../assests/profile-1.png";
+import profileImage from "/public/images/profile-1.png";
 export const founderData = [
   {
     profile: profileImage,

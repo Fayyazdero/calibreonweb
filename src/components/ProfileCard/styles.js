@@ -13,8 +13,7 @@ export const ProfileHeader = styled("div")({
 export const ProfileTitle = styled("div")({
   display: "flex",
   flexDirection: "column",
-  marginTop: "33px",
-  marginBottom: "21px",
+  margin: "33px 0 21px 0",
 });
 export const ProfileImage = styled("div")({
   width: "161px",

@@ -10,7 +10,7 @@ import {
   MissionImage,
   ProfileWrapper,
 } from "./styles";
-import MissionBanner from "../../assests/our-mission-banner.png";
+import MissionBanner from "/public/images/our-mission-banner.png";
 import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import { founderData } from "./data";

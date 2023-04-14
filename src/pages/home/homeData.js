@@ -1,7 +1,8 @@
-import insight from "../../assests/insight.png";
-import Banner from "../../assests/Accounting-banner.png";
-import rebornLogo from "../../assests/testimoniallogo.png";
-import benitago from "../../assests/benitago.png";
+import insight from "/public/images/insight.png";
+import Banner from "/public/images/Accounting-banner.png";
+import rebornLogo from "/public/images/testimoniallogo.png";
+import benitago from "/public/images/benitago.png";
+
 export const servicesCardData = [
   {
     id: 1,

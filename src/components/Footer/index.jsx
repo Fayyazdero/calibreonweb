@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Facebook, Twitter, Instagram, LinkedIn } from "../Svgs";
-
 import StyledSection, {
   CopyRightContent,
   LogoWrapper,
@@ -10,7 +9,7 @@ import StyledSection, {
   Title,
 } from "./styles";
 import Link from "next/link";
-import Logo from "../../../src/assests/logo light.png";
+import Logo from "/public/images/light-logo.png";
 import Image from "next/image";
 import { contact, linksData, menuData } from "./footerData";
 

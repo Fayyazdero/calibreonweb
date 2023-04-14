@@ -3,9 +3,9 @@ import { Heading } from "@/components/Heading";
 import Input from "@/components/Input";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
-import home from "../../assests/home.png";
-import newsletter from "../../assests/newsletter.png";
-import testimonialImge from "../../assests/testimonialImge.png";
+import home from "/public/images/home.png";
+import newsletter from "/public/images/newsletter.png";
+import testimonialImge from "/public/images/testimonialImge.png";
 import Typo from "@/components/Typo";
 import {
   HomeHeadingWrapper,

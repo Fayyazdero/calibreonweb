@@ -10,7 +10,7 @@ import Wrapper, {
   VerifiedLogo,
   Certification,
 } from "./styles";
-import verifiedIcon from "../../assests/verified-icon.png";
+import verifiedIcon from "/public/images/verified-icon.png";
 
 const ProfileCard = ({
   profile,
