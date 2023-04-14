@@ -1,12 +1,10 @@
 const { default: styled } = require("styled-components");
 
-const Wrapper = styled("div")({
-  width: "558.25px",
-  height: "496px",
-  borderRadius: "19px",
-  marginLeft: "2rem",
-  color: "#4D4D4D",
-});
+const Wrapper = styled("div")(({theme: {colors}})=>({
+  width: "100%",
+  height: "auto",
+  color: colors.grey,
+}));
 export const BlogeHeader = styled("div")({
   display: "flex",
 });
@@ -15,6 +13,7 @@ export const BlogTitle = styled("div")({
   marginLeft: "19px",
 });
 export const LogoWrapper = styled("div")({
+  position: 'relative',
   width: "161px",
   height: "161px",
   paddingTop: "16px",

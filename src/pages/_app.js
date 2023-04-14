@@ -10,11 +10,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={getTheme(theme)}>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>
     </>
   );
