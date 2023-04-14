@@ -29,6 +29,7 @@ export const theme = {
     title: "83px",
     subTitle: "48px",
     secTitle: "78px",
+    faqTitle: "27px"
   },
 };
 export const getTheme = (value) => {
@@ -69,7 +70,7 @@ export const getTheme = (value) => {
       },
       subHeading: {
         fontSize: theme.fontSizes["4xl"],
-        color: theme.colors.white,
+        color: theme.colors.primary,
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.subTitle,
         borderBottom: theme.colors.primary,
@@ -80,11 +81,17 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.secTitle,
       },
+      faqHeading: {
+        fontSize: theme.fontSizes["2xl"],
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.faqTilte,
+      },
     },
 
     typo: {
       mainTypo: {
-        fontSize: theme.fontSizes.md,
+        fontSize: theme.fontSizes.lg,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
       },

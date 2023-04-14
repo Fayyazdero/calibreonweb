@@ -8,7 +8,7 @@ export const menuData = [
 export const linksData = [
   { title: "Term Of Service", link: "/" },
   { title: "Privacy Policy", link: "/" },
-  { title: "FAQ", link: "/" },
+  { title: "FAQ", link: "/faq" },
 ];
 export const contact = [
   { title: "calibreoninternational@gmail.com", link: "/" },
