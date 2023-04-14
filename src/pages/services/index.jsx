@@ -1,13 +1,10 @@
-import Accounting from "@/components/ServiceCard";
-import Layout from "@/components/Layout";
+import Services from "@/containers/Services";
 import React from "react";
 
-const Services = () => {
+const Index = () => {
   return (
-    <Layout>
-      <Accounting />
-    </Layout>
+      <Services />
   );
 };
-
-export default Services;
+Index.layout = true
+export default Index;

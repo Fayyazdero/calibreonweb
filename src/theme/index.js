@@ -4,6 +4,7 @@ export const theme = {
     white: "#ffffff",
     black: "#000000",
     grey: "#4d4d4d",
+    cyan: '#17BEBB'
   },
 
   fontSizes: {

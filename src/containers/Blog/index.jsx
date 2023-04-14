@@ -1,9 +1,11 @@
 import BlogCard from "@/components/BlogCard"
 
-export const Blog = () => {
+const Blog = () => {
     return <div  >
         <BlogCard/>
         <BlogCard/>
         <BlogCard/>
     </div>
 }
+
+export default Blog
