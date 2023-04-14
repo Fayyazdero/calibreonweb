@@ -1,5 +1,4 @@
 import React from "react";
-import { Heading } from "@/components/Heading";
 import Input from "@/components/Input";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
@@ -31,6 +30,7 @@ import Accounting from "@/components/ServiceCard";
 import { ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 import Search from "@/components/Search";
+import { Heading } from "@/components/Heading";
 
 const Homepage = () => {
   return (
@@ -43,11 +43,8 @@ const Homepage = () => {
             </Col>
             <Col md={6}>
               <HomeHeadingWrapper>
-                <Heading
-                  title=" Calibreon International"
-                  variant={"mainHeading"}
-                >
-                  Grow with
+                <Heading title="Calibreon International" variant="mainHeading">
+                  Grow with{" "}
                 </Heading>
                 <Typo className="my-3">
                   That thrives in the today’s digital landscape by elevating
@@ -88,7 +85,7 @@ const Homepage = () => {
         </ServicesWrapper>
         <TestimonialWrapper>
           <Container>
-            <Heading styledHeading={"Testimonial:"} fontSize={64} />
+            <Heading title={"Testimonial:"} variant="subHeading" />
             <Typo width={50}>
               Find out why we're the top choice - read what our customers have
               to say! Our testimonials reflect the high level of customer
@@ -133,11 +130,9 @@ const Homepage = () => {
             <Row>
               <Col xs={12} sm={12} md={6}>
                 <ContentWrapper>
-                  <Heading
-                    styledHeading=" Join US"
-                    heading="News Letter"
-                    fontSize="64"
-                  />
+                  <Heading title=" Join US" variant="mainHeading">
+                    News Letter
+                  </Heading>
                   <Typo className="my-3">
                     Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
                     aliquam eget. Purus id faucibus mollis viverra viverra odio

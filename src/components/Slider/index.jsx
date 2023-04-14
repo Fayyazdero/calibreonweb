@@ -18,7 +18,6 @@ const Carousel = ({
     centerMode: centerMode,
     centerPadding: "110px",
   };
-  console.log(settings, "settings");
   return (
     <>
       <Head>

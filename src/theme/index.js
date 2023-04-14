@@ -7,11 +7,21 @@ export const theme = {
   },
 
   fontSizes: {
-    xl: "5rem" /* 80px */,
-    lg: "4rem" /* 64px */,
-    md: "2.87rem" /* 46px */,
-    sm: "2.43rem" /* 39px */,
-    btn: "0.95rem" /* 15px */,
+    title: "5rem" /* 80px */,
+    heading: "4rem" /* 64px */,
+    "2xl": "5rem" /* 22px */,
+    xl: "5rem" /* 20px */,
+    lg: "1.125rem" /* 18px */,
+    md: "1rem" /* 16px */,
+    sm: ".875rem" /* 14px */,
+    xs: "0.95rem" /* 15px */,
+  },
+
+  fontWeights: {
+    black: 900,
+    bold: 700,
+    semi_bold: 600,
+    normal: 400,
   },
 };
 export const getTheme = (value) => {
@@ -47,14 +57,17 @@ export const getTheme = (value) => {
       mainHeading: {
         fontSize: theme.fontSizes.xl,
         color: theme.colors.black,
+        fontWeight: theme.fontWeights.bold,
       },
       subHeading: {
         fontSize: theme.fontSizes.sm,
         color: theme.colors.black,
+        fontWeight: theme.fontWeights.semi_bold,
       },
       sectionHeading: {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.black,
+        fontWeight: theme.fontWeights.semi_bold,
       },
     },
   };
