@@ -1,6 +1,6 @@
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Homepage from "./home/home";
+import Homepage from "@/containers/Home";
 
 export default function Home() {
   return (

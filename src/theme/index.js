@@ -10,8 +10,9 @@ export const theme = {
     title: "5rem" /* 80px */,
     heading: "4rem" /* 64px */,
     "4xl": "2.43rem" /* 39px */,
+    "3xl": "1.18rem" /* 29px *
     "2xl": "1.37rem" /* 22px */,
-    xl: "1.25" /* 20px */,
+    xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
     md: "1rem" /* 16px */,
     sm: ".875rem" /* 14px */,
@@ -27,8 +28,9 @@ export const theme = {
 
   lineHeights: {
     title: "83px",
-    subTitle: "48px",
     secTitle: "78px",
+    quotes: "29px",
+    subTitle: "48px",
   },
 };
 export const getTheme = (value) => {
@@ -72,13 +74,18 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.subTitle,
-        borderBottom: theme.colors.primary,
       },
       sectionHeading: {
         fontSize: theme.fontSizes.heading,
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
+      },
+      quotes: {
+        fontSize: theme.fontSizes["3xl"],
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.black,
+        lineHeight: theme.lineHeights.quotes,
       },
     },
 

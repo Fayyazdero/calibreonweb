@@ -60,25 +60,12 @@ export const ServicesWrapper = styled.div`
   background: #4d4d4d;
 
   & button {
-    display: flex !important;
-
     &:before {
-      background: red;
     }
   }
   & .slick-next {
-    height: 100%;
-    align-items: flex-end;
   }
 
   & .slick-prev {
-    width: 100%;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100%;
-
-    &:before {
-      background: red;
-    }
   }
 `;

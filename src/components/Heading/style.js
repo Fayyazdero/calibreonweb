@@ -8,11 +8,13 @@ export const StyledHeading = styled.h2(({ variant, theme: { heading } }) => ({
   fontStyle: "normal",
   lineHeight: `${heading[variant].lineHeight}`,
   borderBottom: `3px solid ${heading[variant].borderBottom}`,
+  textAlign: `${variant === "quotes" && "center"}`,
 }));
 
-// export const StyledHeading = styled.h2`
-//   ${({ theme, variant }) => console.log(theme, variant, "vr")}
-// `;
 export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
   color: `${colors.primary}`,
 }));
+
+export const SubHeadingWrapper = styled.div`
+  border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary}} 
+`;

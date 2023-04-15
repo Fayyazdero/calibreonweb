@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { Children } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 const Carousel = ({
