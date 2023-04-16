@@ -7,7 +7,6 @@ export const StyledHeading = styled.h2(({ variant, theme: { heading } }) => ({
   fontFamily: "Montserrat",
   fontStyle: "normal",
   lineHeight: `${heading[variant].lineHeight}`,
-  borderBottom: `3px solid ${heading[variant].borderBottom}`,
   textAlign: `${variant === "quotes" && "center"}`,
 }));
 

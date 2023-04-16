@@ -29,7 +29,7 @@ const About = () => {
     setColumn3(column3Data);
   }, []);
   return (
-    <div>
+    <>
       <Container>
         <HeroSection>
           <Row>
@@ -124,7 +124,7 @@ const About = () => {
           </ProfileWrapper>
         </Container>
       </FounderSection>
-    </div>
+    </>
   );
 };
 

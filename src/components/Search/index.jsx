@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchWrapper } from "./styles";
+import { SearchButton, SearchWrapper } from "./styles";
 import Input from "../Input";
 import Button from "../Button";
 
@@ -26,7 +26,7 @@ const Search = ({
         value={_search}
         onChange={handleChange}
       />
-      <Button variant={variant}>{btnText}</Button>
+      <SearchButton variant={variant}>{btnText}</SearchButton>
     </SearchWrapper>
   );
 };

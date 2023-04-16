@@ -1,6 +1,9 @@
 import Layout from "@/components/Layout";
 import { getTheme, theme } from "@/theme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,18 +14,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
-  const layout = Component.layout
+  const layout = Component.layout;
 
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={getTheme(theme)}>
-        {
-          layout ? <Layout>
+        {layout ? (
+          <Layout>
             <Component {...pageProps} />
-            </Layout>: 
-            <Component {...pageProps} />
-        }
+          </Layout>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </ThemeProvider>
     </>
   );

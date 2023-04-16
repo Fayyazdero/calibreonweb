@@ -21,7 +21,10 @@ export const TestimonialWrapper = styled.div`
 export const NewsLetterWrapper = styled.div`
   padding: 130px 0;
 `;
-export const StyledContainer = styled.div``;
+export const StyledContainer = styled.div`
+  width: 85%;
+  margin: auto;
+`;
 export const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
@@ -30,6 +33,13 @@ export const ContentWrapper = styled.div`
 `;
 export const StyledImage = styled(Image)`
   width: 100%;
+`;
+export const ImageWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 export const TestimonialLogosWrapper = styled.div`
   background: #4d4d4d;
@@ -44,7 +54,7 @@ export const TestimonialLogos = styled.div`
 export const ServicesHeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 56px 0;
+  padding-bottom: 48px;
 `;
 export const ViewAll = styled.p`
   display: flex;
@@ -54,18 +64,37 @@ export const ViewAll = styled.p`
   font-size: 20px;
   line-height: 28px;
   color: #ffffff;
+
+  & svg {
+    padding-left: 20px;
+    margin-top: 6px;
+  }
 `;
 export const ServicesWrapper = styled.div`
-  // padding: 20px 0 20px 0;
-  background: #4d4d4d;
-
-  & button {
-    &:before {
-    }
-  }
-  & .slick-next {
-  }
-
-  & .slick-prev {
-  }
+  background: ${({ theme: { colors } }) => colors.grey};
+  padding-top: 56px;
+  padding-bottom: 36px;
 `;
+export const Banner = styled.div`
+  padding-bottom: 110px;
+`;
+export const ArrowsBg = styled.div`
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 50px;
+  background: ${({ theme: { colors } }) => colors.primary};
+  margin-left: 15px;
+  cursor: pointer;
+`;
+export const Arrows = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const SliderArrow = styled("div")(({ theme: { colors } }) => ({
+  display: "flex",
+  background: `${colors.primary}`,
+}));

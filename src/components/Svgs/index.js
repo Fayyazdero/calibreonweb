@@ -38,29 +38,41 @@ export const Instagram = ({ height, color }) => {
   );
 };
 
-export const ArrowRight = ({ color, height }) => {
+export const ArrowRight = ({ height, ...rest }) => {
   return (
-    <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        shapeRendering="geometricPrecision"
-        textRendering="geometricPrecision"
-        imageRendering="optimizeQuality"
-        fillRule="evenodd"
-        clipRule="evenodd"
-        viewBox="0 0 312 511.42"
-        fill={color}
-        height={height}
-      >
-        <path
-          fillRule="nonzero"
-          d="M35.54 0 312 252.82 29.84 511.42 0 478.8l246.54-225.94L5.7 32.62z"
-        />
-      </svg>
-    </div>
+    <svg
+      {...rest}
+      width="14"
+      height={height}
+      viewBox="0 0 14 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.7821 13.0607C13.3679 12.4749 13.3679 11.5251 12.7821 10.9393L3.23615 1.3934C2.65036 0.807611 1.70061 0.807611 1.11483 1.3934C0.52904 1.97919 0.52904 2.92893 1.11483 3.51472L9.60011 12L1.11483 20.4853C0.52904 21.0711 0.52904 22.0208 1.11483 22.6066C1.70061 23.1924 2.65036 23.1924 3.23615 22.6066L12.7821 13.0607ZM11 13.5H11.7214V10.5H11V13.5Z"
+        fill="white"
+      />
+    </svg>
   );
 };
 
+export const ArrowLeft = ({ height, ...rest }) => {
+  return (
+    <svg
+      {...rest}
+      width="14"
+      height={height}
+      viewBox="0 0 14 23"
+      fill="#ffffff"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.939339 12.5892C0.353553 12.0034 0.353553 11.0537 0.939339 10.4679L10.4853 0.921963C11.0711 0.336176 12.0208 0.336176 12.6066 0.921963C13.1924 1.50775 13.1924 2.4575 12.6066 3.04328L4.12132 11.5286L12.6066 20.0138C13.1924 20.5996 13.1924 21.5494 12.6066 22.1352C12.0208 22.721 11.0711 22.721 10.4853 22.1352L0.939339 12.5892ZM2.72143 13.0286H2L2 10.0286H2.72143L2.72143 13.0286Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
 export const LinkedIn = ({ height, color }) => {
   return (
     <div>
