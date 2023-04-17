@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")({
-  background: "green",
+const Wrapper = styled("div")(({ theme }) => ({
+  background: theme.colors.blue,
   display: "flex",
   flexDirection: "column",
   borderRadius: "20px",
   boxSizing: "border-box",
   height: "100%",
-});
+}));
 
 export const ImageWrapper = styled("div")({
   alignItems: "center",
@@ -26,7 +26,7 @@ export const CategoryTitle = styled("div")({
   display: "flex",
   "& svg": {
     marginRight: "9px",
-    marginLeft: "17px",
+    marginLeft: "26px",
   },
 });
 

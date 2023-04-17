@@ -4,13 +4,17 @@ export const theme = {
     white: "#ffffff",
     black: "#000000",
     grey: "#4d4d4d",
+    deepPurple: "#6622CC",
+    cyan: "#17BEBB",
+    yellow: "#FBBC05",
+    blue: "#0A66C2",
+    maroon: "#7D1128",
   },
 
   fontSizes: {
     title: "5rem" /* 80px */,
     serviceTitle: "4.25rem", //68px
     heading: "4rem" /* 64px */,
-    pageHeading: "2.4375rem ", //39px
     "4xl": "2.43rem" /* 39px */,
     "3xl": "1.18rem" /* 29px *
     "2xl": "1.37rem" /* 22px */,
@@ -35,9 +39,6 @@ export const theme = {
     secTitle: "78px",
     quotes: "29px",
     subTitle: "48px",
-  },
-  border: {
-    borderBottom: "3px solid #F05B25",
   },
 };
 export const getTheme = (value) => {
@@ -76,17 +77,10 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
       },
-      pageHeading: {
-        fontSize: theme.fontSizes.pageHeading,
-        color: theme.colors.white,
-        fontWeight: theme.fontWeights.black,
-        lineHeight: theme.lineHeights.subTitle,
-        borderBottom: theme.border.borderBottom,
-      },
       subHeading: {
         fontSize: theme.fontSizes["4xl"],
         color: theme.colors.white,
-        fontWeight: theme.fontWeights.semi_bold,
+        fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
       },
       sectionHeading: {

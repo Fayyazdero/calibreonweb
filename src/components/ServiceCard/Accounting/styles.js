@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")({
-  background: "#6622CC",
+const Wrapper = styled("div")(({ theme }) => ({
+  background: theme.colors.deepPurple,
   display: "flex",
   height: "304px",
   borderRadius: "20px",
   alignItems: "center",
-  marginBottom: "3rem",
-  marginTop: "210px",
-});
+}));
 
 export const ImageWrapper = styled("div")({
   width: "526px",
@@ -28,6 +26,7 @@ export const CategoryTitle = styled("div")({
   alignItems: "center",
   "& svg": {
     marginRight: "9px",
+    marginLeft: "26px",
   },
 });
 

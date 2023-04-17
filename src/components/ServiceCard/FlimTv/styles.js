@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")({
-  background: "#6622CC",
+const Wrapper = styled("div")(({ theme }) => ({
+  background: theme.colors.grey,
   display: "flex",
   height: "304px",
   borderRadius: "20px",
@@ -9,7 +9,7 @@ const Wrapper = styled("div")({
   marginTop: "4rem",
   justifyContent: "space-between",
   alignItems: "center",
-});
+}));
 
 export const ImageWrapper = styled("div")({
   width: "526px",

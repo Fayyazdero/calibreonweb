@@ -52,11 +52,10 @@ const Homepage = () => {
                   International for premium back office support.
                 </Typo>
                 <Search
-                  className="my-5"
                   placeholder="Search for Services"
                   btnText="submit"
                   variant="contained"
-                  color={"black"}
+                  btnPadding="8px 64px"
                 />
               </HomeHeadingWrapper>
             </Col>
