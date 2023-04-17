@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import blogA from "../../assests/blog-1.png";
 import Wrapper, {
   Content,
   LogoWrapper,
@@ -10,14 +9,14 @@ import Wrapper, {
   BlogeHeader,
   ViewAll,
 } from "./styles";
-import ArrowRight from "../Svgs/ArrowRight";
+import { ArrowRight } from "../Svgs";
 
-const BlogCard = () => {
+const BlogCard = ({}) => {
   return (
     <Wrapper>
       <BlogeHeader>
         <LogoWrapper>
-          <Image src={blogA} alt="profile-A"></Image>
+          <Image src="/images/blog-1.png" alt="profile-A" fill ></Image>
         </LogoWrapper>
         <BlogTitle>
           <Title>Wordpress</Title>

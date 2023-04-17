@@ -1,8 +1,7 @@
+import Home from "@/containers/Home";
 import Head from "next/head";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Homepage from "./home/home";
 
-export default function Home() {
+const Index = () => {
   return (
     <>
       <Head>
@@ -17,7 +16,9 @@ export default function Home() {
           />
         </Head>
       </Head>
-      <Homepage />
+      <Home />
     </>
   );
-}
+};
+Index.layout = true;
+export default Index;

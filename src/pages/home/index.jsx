@@ -1,8 +1,8 @@
-import About from "@/containers/About";
+import Homepage from "@/containers/Home";
 import React from "react";
 
 const Index = () => {
-  return <About />;
+  return <Homepage />;
 };
 
 Index.layout = true;
