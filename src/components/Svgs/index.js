@@ -38,7 +38,7 @@ export const Instagram = ({ height, color }) => {
   );
 };
 
-export const ArrowRight = ({ height, ...rest }) => {
+export const ArrowRight = ({ height, color, ...rest }) => {
   return (
     <svg
       {...rest}
@@ -50,7 +50,7 @@ export const ArrowRight = ({ height, ...rest }) => {
     >
       <path
         d="M12.7821 13.0607C13.3679 12.4749 13.3679 11.5251 12.7821 10.9393L3.23615 1.3934C2.65036 0.807611 1.70061 0.807611 1.11483 1.3934C0.52904 1.97919 0.52904 2.92893 1.11483 3.51472L9.60011 12L1.11483 20.4853C0.52904 21.0711 0.52904 22.0208 1.11483 22.6066C1.70061 23.1924 2.65036 23.1924 3.23615 22.6066L12.7821 13.0607ZM11 13.5H11.7214V10.5H11V13.5Z"
-        fill="white"
+        fill={color}
       />
     </svg>
   );

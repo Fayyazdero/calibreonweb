@@ -1,11 +1,11 @@
 const { default: styled } = require("styled-components");
 
-const TestimonialWrapper = styled("div")({
-  background: "#F05B25",
+const TestimonialWrapper = styled("div")(({ theme: { colors } }) => ({
+  background: `${colors.primary}`,
   borderRadius: "19px",
   padding: "28px",
-  color: "#FFFF",
-});
+  color: `${colors.white}`,
+}));
 export const Content = styled("p")({
   fontFamily: "Hind Madurai",
   fontWeight: "700",

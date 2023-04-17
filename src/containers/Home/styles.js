@@ -11,8 +11,9 @@ export const HomeHeadingWrapper = styled.div`
 
 export const TestimonialWrapper = styled.div`
   padding: 116px 0;
-  & .slick-next {
-    background: red !important;
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
   }
   & .slick-prev {
     display: none !important;
@@ -20,6 +21,9 @@ export const TestimonialWrapper = styled.div`
 `;
 export const NewsLetterWrapper = styled.div`
   padding: 130px 0;
+  @media (max-width: 768px) {
+    padding: 42px 0;
+  }
 `;
 export const StyledContainer = styled.div`
   width: 85%;
@@ -32,6 +36,7 @@ export const ContentWrapper = styled.div`
   justify-content: center;
 `;
 export const StyledImage = styled(Image)`
+  position: unset !important;
   width: 100%;
 `;
 export const ImageWrapper = styled.div`
@@ -65,8 +70,12 @@ export const ViewAll = styled.p`
   line-height: 28px;
   color: #ffffff;
 
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
   & svg {
-    padding-left: 20px;
+    margin-left: 20px;
     margin-top: 6px;
   }
 `;
