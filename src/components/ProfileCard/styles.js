@@ -5,6 +5,9 @@ const Wrapper = styled("div")((props) => ({
   color: "#FFFFFF",
   borderRadius: "19px",
   paddingBottom: "28px",
+  width: "409px",
+  height: "496px",
+  marginBottom: "28px"
 }));
 export const ProfileHeader = styled("div")({
   display: "flex",

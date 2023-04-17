@@ -12,7 +12,7 @@ export const SubHeadingWrapper = styled.div`
   padding: 20px 0 10px 0;
   @media (max-width: 768px) {
     width: 192px;
-    padding: 10px 0 0 0;
+    padding: 10px 0 30px 0;
     text-align: center;
     margin: auto;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.md};

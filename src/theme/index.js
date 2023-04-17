@@ -4,14 +4,16 @@ export const theme = {
     white: "#ffffff",
     black: "#000000",
     grey: "#4d4d4d",
+    blue: "#0A66C2"
   },
 
   fontSizes: {
     title: "5rem" /* 80px */,
     heading: "4rem" /* 64px */,
+    userTitle: "2.87rem" /* 46px */,
     "5xl": "2.43rem" /* 39px */,
-    "4xl": "2.06rem" /* 33px */,
-    "3xl": "1.18rem" /* 29px *
+    "4xl": "1.96rem" /* 31px */,
+    "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
@@ -25,6 +27,7 @@ export const theme = {
     bold: 700,
     semi_bold: 600,
     normal: 500,
+    small: 400
   },
 
   lineHeights: {
@@ -33,10 +36,9 @@ export const theme = {
     faqTitle: "27px",
     quotes: "29px",
     subTitle: "48px",
-    "1xl": "20px",
-    "2xl": "24px",
-    "5xl": "40px",
-    base: "33px",
+    desc: "22px",
+    userTitle: "150%",
+    mainDesc: "43px"
   },
 };
 export const getTheme = (value) => {
@@ -80,9 +82,9 @@ export const getTheme = (value) => {
         },
       },
       subHeading: {
-        fontSize: theme.fontSizes["4xl"],
+        fontSize: theme.fontSizes["5xl"],
         color: theme.colors.primary,
-        fontWeight: theme.fontWeights.semi_bold,
+        fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
         "768px": {
           fontSize: theme.fontSizes.xl,
@@ -115,6 +117,12 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights.base,
         },
       },
+      userHeading: {
+        fontSize: theme.fontSizes.userTitle,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.userTitle,
+      }
     },
 
     typo: {
@@ -128,6 +136,24 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+      },
+      descTypo: {
+        fontSize: theme.fontSizes.md,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.normal,
+        lineHeight: theme.lineHeights.desc,
+      },
+      userDesc: {
+        fontSize: theme.fontSizes.xs,
+        color: theme.colors.blue,
+        fontWeight: theme.fontWeights.small,
+        lineHeight: theme.lineHeights.desc,
+      },
+      mainDesc: {
+        fontSize: theme.fontSizes["4xl"],
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.semi_bold,
+        lineHeight: theme.lineHeights.desc,
       },
     },
   };
