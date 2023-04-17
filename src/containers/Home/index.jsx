@@ -47,6 +47,7 @@ const Home = () => {
   };
 
   const onLeftClick = () => {
+    console.log({ ref }, "hello, clicked");
     if (ref && ref.current) {
       ref.current.slickPrev();
     }
@@ -57,10 +58,10 @@ const Home = () => {
       <Container>
         <Banner>
           <Row>
-            <Col md={6}>
-              <Image src={home} alt="home" />
+            <Col sm={12} md={6}>
+              <StyledImage src={home} alt="home" />
             </Col>
-            <Col md={6}>
+            <Col sm={12} md={6}>
               <HomeHeadingWrapper>
                 <Heading title="Calibreon International" variant="mainHeading">
                   Grow with{" "}
@@ -85,13 +86,18 @@ const Home = () => {
           <ServicesHeadingWrapper>
             <Heading variant="subHeading">Our Services</Heading>
             <ViewAll>
-              View All Services <ArrowRight height="16px" color="#F05B25" />
+              View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
           </ServicesHeadingWrapper>
         </StyledContainer>
         <Slider
           ref={ref}
-          {...{ arrows: false, centerMode: true, centerPadding: "110px" }}
+          {...{
+            arrows: false,
+            centerMode: true,
+            centerPadding: "110px",
+            slidesToShow: 1,
+          }}
         >
           {servicesCardData.map((item, index) => (
             <div key={item.id}>
@@ -109,7 +115,7 @@ const Home = () => {
               <ArrowLeft height="20px" onClick={onLeftClick} />
             </ArrowsBg>
             <ArrowsBg>
-              <ArrowRight height={"20px"} onClick={onClick} />
+              <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
             </ArrowsBg>
           </Arrows>
         </Container>
@@ -178,7 +184,12 @@ const Home = () => {
               </ContentWrapper>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              <Image src={newsletter} alt="newsletter" />
+              <StyledImage
+                src={newsletter}
+                alt="newsletter"
+                layout="fill"
+                objectFit="contain"
+              />
             </Col>
           </Row>
         </NewsLetterWrapper>
