@@ -26,7 +26,7 @@ import {
   testimonialsData,
   testimonialsLogos,
 } from "./homeData";
-import Accounting from "@/components/ServiceCard";
+import Accounting from "@/components/ServiceCard/Accounting";
 import { ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 import Search from "@/components/Search";

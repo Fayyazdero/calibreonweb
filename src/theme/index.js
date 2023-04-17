@@ -8,7 +8,9 @@ export const theme = {
 
   fontSizes: {
     title: "5rem" /* 80px */,
+    serviceTitle: "4.25rem", //68px
     heading: "4rem" /* 64px */,
+    pageHeading: "2.4375rem ", //39px
     "4xl": "2.43rem" /* 39px */,
     "3xl": "1.18rem" /* 29px *
     "2xl": "1.37rem" /* 22px */,
@@ -21,9 +23,11 @@ export const theme = {
 
   fontWeights: {
     black: 900,
+    bolder: 800,
     bold: 700,
     semi_bold: 600,
     normal: 500,
+    light: 300,
   },
 
   lineHeights: {
@@ -31,6 +35,9 @@ export const theme = {
     secTitle: "78px",
     quotes: "29px",
     subTitle: "48px",
+  },
+  border: {
+    borderBottom: "3px solid #F05B25",
   },
 };
 export const getTheme = (value) => {
@@ -69,6 +76,13 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
       },
+      pageHeading: {
+        fontSize: theme.fontSizes.pageHeading,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.black,
+        lineHeight: theme.lineHeights.subTitle,
+        borderBottom: theme.border.borderBottom,
+      },
       subHeading: {
         fontSize: theme.fontSizes["4xl"],
         color: theme.colors.white,
@@ -80,6 +94,12 @@ export const getTheme = (value) => {
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
+      },
+      serviceTitle: {
+        fontSize: theme.fontSizes.serviceTitle,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bolder,
+        lineHeight: theme.lineHeights.title,
       },
       quotes: {
         fontSize: theme.fontSizes["3xl"],
@@ -100,6 +120,11 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+      },
+      seviceTypo: {
+        fontSize: theme.fontSizes.xl,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.light,
       },
     },
   };

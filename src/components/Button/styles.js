@@ -7,6 +7,7 @@ export const StyledButton = styled(Button)(
     color: `${button[variant].color}`,
     border: `1px solid ${button[variant].border}`,
     background: `${button[variant].background}`,
+    // padding: `${button[variant].search} 8px 52px`,
 
     ":hover": {
       background: `${button[variant].hover.background}`,

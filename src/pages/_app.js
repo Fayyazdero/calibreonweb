@@ -11,18 +11,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
-  const layout = Component.layout
+  const layout = Component.layout;
 
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={getTheme(theme)}>
-        {
-          layout ? <Layout>
+        {layout ? (
+          <Layout>
             <Component {...pageProps} />
-            </Layout>: 
-            <Component {...pageProps} />
-        }
+          </Layout>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </ThemeProvider>
     </>
   );
