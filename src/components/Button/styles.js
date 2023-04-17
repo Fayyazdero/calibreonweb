@@ -7,7 +7,7 @@ export const StyledButton = styled(Button)(
     color: `${button[variant].color}`,
     border: `1px solid ${button[variant].border}`,
     background: `${button[variant].background}`,
-    padding: `${padding}`,
+    padding: padding,
 
     "&:focus": {
       boxShadow: "inherit",

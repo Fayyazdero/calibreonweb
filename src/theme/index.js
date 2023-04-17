@@ -1,4 +1,14 @@
 export const theme = {
+  container: {
+    width: 1280,
+  },
+  breakPoints: {
+    xs: 768,
+    sm: 992,
+    md: 1024,
+    lg: 1360,
+    xl: 1920,
+  },
   colors: {
     primary: "#F05B25",
     white: "#ffffff",
@@ -13,10 +23,11 @@ export const theme = {
 
   fontSizes: {
     title: "5rem" /* 80px */,
-    serviceTitle: "4.25rem", //68px
+    serviceTitle: "4.25rem" /* 68px */,
     heading: "4rem" /* 64px */,
-    "4xl": "2.43rem" /* 39px */,
-    "3xl": "1.18rem" /* 29px *
+    "5xl": "2.43rem" /* 39px */,
+    "4xl": "2.06rem" /* 33px */,
+    "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
@@ -39,6 +50,10 @@ export const theme = {
     secTitle: "78px",
     quotes: "29px",
     subTitle: "48px",
+    "1xl": "20px",
+    "2xl": "24px",
+    "5xl": "40px",
+    base: "33px",
   },
 };
 export const getTheme = (value) => {
@@ -76,30 +91,50 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
       },
       subHeading: {
-        fontSize: theme.fontSizes["4xl"],
+        fontSize: theme.fontSizes["5xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
+        xs: {
+          fontSize: theme.fontSizes.xl,
+          lineHeight: theme.lineHeights["2xl"],
+        },
       },
       sectionHeading: {
         fontSize: theme.fontSizes.heading,
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights["5xl"],
+        },
       },
       serviceTitle: {
         fontSize: theme.fontSizes.serviceTitle,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.title,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights["3xl"],
+        },
       },
       quotes: {
         fontSize: theme.fontSizes["3xl"],
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.quotes,
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
       },
     },
 
