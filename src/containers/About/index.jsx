@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Heading } from "@/components/Heading";
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  Content,
   ContentWrapper,
   FounderSection,
   HeroSection,

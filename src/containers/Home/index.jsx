@@ -30,7 +30,7 @@ import {
   testimonialsLogos,
 } from "./homeData";
 import Accounting from "@/components/ServiceCard";
-import { ArrowLeft, ArrowRight } from "@/components/Svgs";
+import { ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 import Search from "@/components/Search";
 import { Heading } from "@/components/Heading";
@@ -75,6 +75,7 @@ const Home = () => {
                   placeholder="Search for Services"
                   btnText="submit"
                   variant="contained"
+                  color={"black"}
                 />
               </HomeHeadingWrapper>
             </Col>

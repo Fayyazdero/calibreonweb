@@ -20,5 +20,6 @@ export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
 }));
 
 export const SubHeadingWrapper = styled.div`
-  border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary}} 
+  width: max-content;
+  border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary};
 `;

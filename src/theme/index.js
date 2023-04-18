@@ -4,10 +4,16 @@ export const theme = {
     white: "#ffffff",
     black: "#000000",
     grey: "#4d4d4d",
+    deepPurple: "#6622CC",
+    cyan: "#17BEBB",
+    yellow: "#FBBC05",
+    blue: "#0A66C2",
+    maroon: "#7D1128",
   },
 
   fontSizes: {
     title: "5rem" /* 80px */,
+    serviceTitle: "4.25rem", //68px
     heading: "4rem" /* 64px */,
     "5xl": "2.43rem" /* 39px */,
     "4xl": "2.06rem" /* 33px */,
@@ -22,9 +28,11 @@ export const theme = {
 
   fontWeights: {
     black: 900,
+    bolder: 800,
     bold: 700,
     semi_bold: 600,
     normal: 500,
+    light: 300,
   },
 
   lineHeights: {
@@ -81,7 +89,7 @@ export const getTheme = (value) => {
       subHeading: {
         fontSize: theme.fontSizes["5xl"],
         color: theme.colors.white,
-        fontWeight: theme.fontWeights.semi_bold,
+        fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
         "768px": {
           fontSize: theme.fontSizes.xl,
@@ -97,6 +105,12 @@ export const getTheme = (value) => {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights["5xl"],
         },
+      },
+      serviceTitle: {
+        fontSize: theme.fontSizes.serviceTitle,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bolder,
+        lineHeight: theme.lineHeights.title,
       },
       quotes: {
         fontSize: theme.fontSizes["3xl"],
@@ -121,6 +135,11 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+      },
+      seviceTypo: {
+        fontSize: theme.fontSizes.xl,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.light,
       },
     },
   };
