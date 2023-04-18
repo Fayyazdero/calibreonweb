@@ -13,11 +13,11 @@ export const theme = {
 
   fontSizes: {
     title: "5rem" /* 80px */,
-    serviceTitle: "4.25rem", //68px
+    cardTitle: "4.25rem" /* 68 */,
     heading: "4rem" /* 64px */,
     "5xl": "2.43rem" /* 39px */,
     "4xl": "2.06rem" /* 33px */,
-    "3xl": "1.18rem" /* 29px *
+    "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
@@ -107,10 +107,14 @@ export const getTheme = (value) => {
         },
       },
       serviceTitle: {
-        fontSize: theme.fontSizes.serviceTitle,
+        fontSize: theme.fontSizes.cardTitle,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.title,
+        "768px": {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
       },
       quotes: {
         fontSize: theme.fontSizes["3xl"],
@@ -118,7 +122,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.quotes,
         "768px": {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes["2xl"],
           lineHeight: theme.lineHeights.base,
         },
       },

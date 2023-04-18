@@ -47,7 +47,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 export const TestimonialLogosWrapper = styled.div`
-  background: #4d4d4d;
+  background: ${({ theme: { colors } }) => colors.grey};
   padding: 140px 100px;
 `;
 export const TestimonialLogos = styled.div`
@@ -65,10 +65,11 @@ export const ViewAll = styled.p`
   display: flex;
   font-family: "Hind Madurai";
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  color: #ffffff;
+  font-weight: ${({ theme: { fontWeights } }) => fontWeights.semi_bold};
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
+  line-height: ${({ theme: { lineHeights } }) => lineHeights.quotes};
+  color: ${({ theme: { colors } }) => colors.white};
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     display: none;

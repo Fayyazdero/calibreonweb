@@ -6,6 +6,10 @@ const Wrapper = styled("div")(({ theme }) => ({
   height: "304px",
   borderRadius: "20px",
   alignItems: "center",
+
+  "@media screen and (max-width: 768px)": {
+    flexDirection: "column",
+  },
 }));
 
 export const ImageWrapper = styled("div")({
@@ -14,6 +18,13 @@ export const ImageWrapper = styled("div")({
   position: "relative",
   left: "41px",
   bottom: "26.7%",
+
+  "@media screen and (max-width: 768px)": {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    left: "0",
+  },
 });
 export const ContentWrapper = styled("div")({
   display: "flex",

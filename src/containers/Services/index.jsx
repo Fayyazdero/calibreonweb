@@ -41,7 +41,10 @@ export const Services = () => {
         </Col>
       </StyledRow>
       <AccountingWrapper>
-        <Accounting title="Accounting" src="/images/accounting-banner.png" />
+        <Accounting
+          cardTitle="Accounting"
+          src="/images/accounting-banner.png"
+        />
       </AccountingWrapper>
       <AnimationWrapper>
         <Row>

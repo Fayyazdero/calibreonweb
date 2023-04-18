@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import Input from "@/components/Input";
 import Image from "next/image";
+import Router, { useRouter } from "next/router";
 import { Col, Container, Row } from "react-bootstrap";
 import home from "/public/images/home.png";
 import newsletter from "/public/images/newsletter.png";
@@ -29,15 +29,16 @@ import {
   testimonialsData,
   testimonialsLogos,
 } from "./homeData";
-import Accounting from "@/components/ServiceCard";
-import { ArrowRight } from "@/components/Svgs";
+import { ArrowLeft, ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 import Search from "@/components/Search";
 import { Heading } from "@/components/Heading";
 import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
+import Accounting from "@/components/ServiceCard/Accounting";
 
 const Home = () => {
+  const router = useRouter();
   const ref = useRef(null);
   const onClick = () => {
     console.log({ ref }, "red");
@@ -83,30 +84,26 @@ const Home = () => {
         </Banner>
       </Container>
       <ServicesWrapper>
-        <StyledContainer>
+        <Container>
           <ServicesHeadingWrapper>
             <Heading variant="subHeading">Our Services</Heading>
-            <ViewAll>
+            <ViewAll onClick={() => router.push("/services/bookkeeping")}>
               View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
           </ServicesHeadingWrapper>
-        </StyledContainer>
+        </Container>
         <Slider
           ref={ref}
           {...{
             arrows: false,
-            centerMode: true,
-            centerPadding: "110px",
+            // centerMode: true,
+            // centerPadding: "110px",
             slidesToShow: 1,
           }}
         >
           {servicesCardData.map((item, index) => (
             <div key={item.id}>
-              <Accounting
-                imgSrc={item.imgSrc}
-                department={item.title}
-                services="ddd"
-              />
+              <Accounting src={item.imgSrc} cardTitle={item.title} />
             </div>
           ))}
         </Slider>

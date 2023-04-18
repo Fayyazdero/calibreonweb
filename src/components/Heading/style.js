@@ -9,6 +9,9 @@ export const StyledHeading = styled.h2(({ variant, theme: { heading } }) => ({
   lineHeight: `${heading[variant].lineHeight}`,
   textAlign: `${variant === "quotes" && "center"}`,
 
+  "&.center-text": {
+    textAlign: "center",
+  },
   "@media screen and (max-width: 768px)": {
     fontSize: `${heading[variant]["768px"].fontSize}`,
     lineHeight: `${heading[variant]["768px"].lineHeight}`,

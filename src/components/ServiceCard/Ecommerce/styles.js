@@ -15,6 +15,13 @@ export const ImageWrapper = styled("div")({
   marginRight: "52px",
   transform: "translateY(-28%)",
   minHeight: "500px",
+
+  "@media screen and (max-width: 768px)": {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    left: "0",
+  },
 });
 export const ContentWrapper = styled("div")({
   display: "flex",

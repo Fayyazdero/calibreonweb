@@ -6,8 +6,10 @@ import logo from "/public/logo.svg";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";
+import { useRouter } from "next/router";
 
 function Header() {
+  const router = useRouter();
   let navLinks = [
     {
       title: "Home",
@@ -31,11 +33,11 @@ function Header() {
     },
   ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState("/");
 
-  const handleClick = (index) => {
-    setActive(index);
-    console.log(index, "kjsadkljalsj");
+  const handleClick = (e) => {
+    setActive(e);
+    console.log(e, active, "kjsadkljalsj");
   };
   return (
     <Navbar bg="white" expand="lg">
@@ -52,9 +54,9 @@ function Header() {
             {navLinks.map((item, key) => (
               <LinksWrapper key={key}>
                 <StyledLink
-                  onClick={() => handleClick(key)}
+                  onClick={() => handleClick(item.link)}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
-                    active === key ? "active" : ""
+                    active === item.link ? "active" : ""
                   }`}
                   href={item.link}
                 >

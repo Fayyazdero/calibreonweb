@@ -1,6 +1,5 @@
 import { Col } from "react-bootstrap";
-
-const { default: styled } = require("styled-components");
+import styled from "styled-components";
 
 export const HeroSection = styled(Col)({
   marginTop: "90px",
@@ -19,11 +18,19 @@ export const MissionImage = styled("div")({
     height: "100%",
   },
 });
-export const ContentWrapper = styled("div")({
+export const StyledContainer = styled("div")({
   display: "flex",
   alignItems: "center",
   marginTop: "125px",
   padding: "0 10px",
+  width: "55%",
+  marginLeft: "auto",
+  marginRight: "auto",
+
+  " @media screen and (max-width: 768px)": {
+    width: "100%",
+    margin: "148px 0",
+  },
 });
 export const FounderSection = styled("div")({
   margin: "120px 0",

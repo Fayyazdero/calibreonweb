@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")(({ theme }) => ({
-  background: theme.colors.blue,
+const Wrapper = styled("div")(({ theme: { colors } }) => ({
+  background: colors.blue,
   display: "flex",
   flexDirection: "column",
   borderRadius: "20px",
@@ -15,6 +15,13 @@ export const ImageWrapper = styled("div")({
   marginRight: "52px",
   transform: "translateY(-32%)",
   minHeight: "498px",
+
+  "@media screen and (max-width: 768px)": {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    left: "0",
+  },
 });
 export const ContentWrapper = styled("div")({
   display: "flex",
