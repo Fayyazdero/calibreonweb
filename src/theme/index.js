@@ -55,7 +55,7 @@ export const theme = {
     subTitle: "48px",
     desc: "22px",
     userTitle: "150%",
-    mainDesc: "43px"
+    mainDesc: "43px",
   },
 };
 export const getTheme = (value) => {
@@ -123,7 +123,11 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.faqTilte,
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
         },
+      },
       serviceTitle: {
         fontSize: theme.fontSizes.serviceTitle,
         color: theme.colors.white,
@@ -149,7 +153,11 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
-      }
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
+      },
     },
 
     typo: {
