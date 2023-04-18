@@ -1,7 +1,12 @@
 import React from "react";
 import { ColouredHeading, StyledHeading, SubHeadingWrapper } from "./style";
 
-export const Heading = ({ title, variant, children, ...rest }) => {
+export const Heading = ({
+  title,
+  variant = "subHeading",
+  children,
+  ...rest
+}) => {
   if (variant === "subHeading") {
     return (
       <SubHeadingWrapper>

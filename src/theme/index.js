@@ -1,4 +1,14 @@
 export const theme = {
+  container: {
+    width: 1280,
+  },
+  breakPoints: {
+    xs: 768,
+    sm: 992,
+    md: 1024,
+    lg: 1360,
+    xl: 1920,
+  },
   colors: {
     primary: "#F05B25",
     white: "#ffffff",
@@ -13,7 +23,7 @@ export const theme = {
 
   fontSizes: {
     title: "5rem" /* 80px */,
-    cardTitle: "4.25rem" /* 68 */,
+    serviceTitle: "4.25rem" /* 68px */,
     heading: "4rem" /* 64px */,
     "5xl": "2.43rem" /* 39px */,
     "4xl": "2.06rem" /* 33px */,
@@ -81,7 +91,7 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
@@ -91,7 +101,7 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes.xl,
           lineHeight: theme.lineHeights["2xl"],
         },
@@ -101,19 +111,19 @@ export const getTheme = (value) => {
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights["5xl"],
         },
       },
       serviceTitle: {
-        fontSize: theme.fontSizes.cardTitle,
+        fontSize: theme.fontSizes.serviceTitle,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.title,
-        "768px": {
-          fontSize: theme.fontSizes["4xl"],
-          lineHeight: theme.lineHeights.base,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights["3xl"],
         },
       },
       quotes: {
@@ -121,8 +131,8 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.quotes,
-        "768px": {
-          fontSize: theme.fontSizes["2xl"],
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
