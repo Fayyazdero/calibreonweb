@@ -10,6 +10,7 @@ const Search = ({
   onSubmit,
   onChange,
   search = "",
+  btnPadding = "10px 20px",
 }) => {
   const [_search, setSearch] = useState(search);
   const handleChange = (e) => {
@@ -26,7 +27,9 @@ const Search = ({
         value={_search}
         onChange={handleChange}
       />
-      <SearchButton variant={variant}>{btnText}</SearchButton>
+      <SearchButton variant={variant} padding={btnPadding}>
+        {btnText}
+      </SearchButton>
     </SearchWrapper>
   );
 };

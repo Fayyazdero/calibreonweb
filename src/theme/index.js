@@ -1,18 +1,33 @@
 export const theme = {
+  container: {
+    width: 1280,
+  },
+  breakPoints: {
+    xs: 768,
+    sm: 992,
+    md: 1024,
+    lg: 1360,
+    xl: 1920,
+  },
   colors: {
     primary: "#F05B25",
     white: "#ffffff",
     black: "#000000",
     grey: "#4d4d4d",
-    blue: "#0A66C2"
+    deepPurple: "#6622CC",
+    cyan: "#17BEBB",
+    yellow: "#FBBC05",
+    blue: "#0A66C2",
+    maroon: "#7D1128",
   },
 
   fontSizes: {
     title: "5rem" /* 80px */,
+    serviceTitle: "4.25rem" /* 68px */,
     heading: "4rem" /* 64px */,
     userTitle: "2.87rem" /* 46px */,
     "5xl": "2.43rem" /* 39px */,
-    "4xl": "1.96rem" /* 31px */,
+    "4xl": "2.06rem" /* 33px */,
     "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
@@ -24,10 +39,12 @@ export const theme = {
 
   fontWeights: {
     black: 900,
+    bolder: 800,
     bold: 700,
     semi_bold: 600,
     normal: 500,
-    small: 400
+    small: 400,
+    light: 300,
   },
 
   lineHeights: {
@@ -76,7 +93,7 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
@@ -86,7 +103,7 @@ export const getTheme = (value) => {
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes.xl,
           lineHeight: theme.lineHeights["2xl"],
         },
@@ -96,7 +113,7 @@ export const getTheme = (value) => {
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights["5xl"],
         },
@@ -107,12 +124,22 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.faqTilte,
         },
+      serviceTitle: {
+        fontSize: theme.fontSizes.serviceTitle,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bolder,
+        lineHeight: theme.lineHeights.title,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights["3xl"],
+        },
+      },
       quotes: {
         fontSize: theme.fontSizes["3xl"],
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.quotes,
-        "768px": {
+        xs: {
           fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
@@ -154,6 +181,11 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.desc,
+      },
+      seviceTypo: {
+        fontSize: theme.fontSizes.xl,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.light,
       },
     },
   };

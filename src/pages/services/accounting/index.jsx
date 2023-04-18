@@ -1,8 +1,9 @@
-import { Blog } from "@/containers/Blog";
+import Bookeeping from "@/containers/Services/Accounting";
 import React from "react";
 
 const Index = () => {
-  return <Blog />;
+  return <Accounting />;
 };
+
 Index.layout = true;
 export default Index;

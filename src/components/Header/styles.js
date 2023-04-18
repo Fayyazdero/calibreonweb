@@ -4,19 +4,19 @@ import Link from "next/link";
 export const StyledLink = styled(Link)`
   font-family: "Hind Madurai";
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  color: #4d4d4d;
+  font-weight: ${({ theme: { fontWeights } }) => fontWeights.normal};
+  font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
+  line-height: ${({ theme: { lineHeights } }) => lineHeights.quotes};
+  color: ${({ theme: { colors } }) => colors.grey};
   padding-bottom: 10px;
   &.active {
-    font-weight: 600;
+    font-weight: ${({ theme: { fontWeights } }) => fontWeights.semi_bold};
     border-bottom: 4px solid #f05b25;
     transition: 0.1s ease;
   }
-
+  
   &:hover {
-    color: #4d4d4d;
+    color: ${({ theme: { colors } }) => colors.grey};
   }
 }`;
 

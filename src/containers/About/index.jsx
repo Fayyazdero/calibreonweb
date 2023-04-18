@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Heading } from "@/components/Heading";
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  Content,
-  ContentWrapper,
   FounderSection,
   HeroSection,
   MissionImage,
   ProfileWrapper,
+  StyledContainer,
 } from "./styles";
 import MissionBanner from "/public/images/our-mission-banner.png";
 import Image from "next/image";
@@ -34,7 +33,11 @@ const About = () => {
         <HeroSection>
           <Row>
             <Col md={7}>
-              <Heading title="Clear" variant="mainHeading">
+              <Heading
+                className="center-text"
+                title="Clear"
+                variant="mainHeading"
+              >
                 Our Mission is{" "}
               </Heading>
               <Typo variant="mainTypo">
@@ -56,18 +59,22 @@ const About = () => {
       <Container>
         <Row>
           <Col md={12}>
-            <ContentWrapper>
+            <StyledContainer>
               <Heading variant="quotes" title="and exceed your expectations.”">
                 “Our end-to-end freelancing services are designed to help you
                 achieve your goals{" "}
               </Heading>
-            </ContentWrapper>
+            </StyledContainer>
           </Col>
         </Row>
       </Container>
       <FounderSection>
         <Container>
-          <Heading variant="mainHeading" title="Co-Founders">
+          <Heading
+            variant="mainHeading"
+            className="center-text"
+            title="Co-Founders"
+          >
             Meet Our{" "}
           </Heading>
           <ProfileWrapper>
