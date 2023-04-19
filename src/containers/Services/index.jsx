@@ -3,11 +3,6 @@ import Animation from "@/components/ServiceCard/Animation";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  FirstWrapper,
-  ThirdWrapper,
-  SecondWrapper,
-  FourthWrapper,
-  FifthWrapper,
   StyledRow,
   FlimTvWrapper,
   WebDevWrapper,

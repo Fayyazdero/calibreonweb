@@ -41,14 +41,12 @@ const Home = () => {
   const router = useRouter();
   const ref = useRef(null);
   const onClick = () => {
-    console.log({ ref }, "red");
     if (ref && ref.current) {
       ref.current.slickNext();
     }
   };
 
   const onLeftClick = () => {
-    console.log({ ref }, "hello, clicked");
     if (ref && ref.current) {
       ref.current.slickPrev();
     }
@@ -77,6 +75,7 @@ const Home = () => {
                   btnText="submit"
                   variant="contained"
                   color={"black"}
+                  btnPadding="8px 64px"
                 />
               </HomeHeadingWrapper>
             </Col>
@@ -103,7 +102,7 @@ const Home = () => {
         >
           {servicesCardData.map((item, index) => (
             <div key={item.id}>
-              <Accounting src={item.imgSrc} cardTitle={item.title} />
+              <Accounting src={item.imgSrc} title={item.title} alt="ddd" />
             </div>
           ))}
         </Slider>
