@@ -104,8 +104,8 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
         xs: {
-          fontSize: theme.fontSizes.xl,
-          lineHeight: theme.lineHeights["2xl"],
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.subTitle,
         },
       },
       sectionHeading: {
@@ -114,7 +114,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights["5xl"],
         },
       },
@@ -124,7 +124,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.faqTilte,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -134,7 +134,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.title,
         xs: {
-          fontSize: theme.fontSizes["2xl"],
+          fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights["3xl"],
         },
       },
@@ -144,7 +144,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.quotes,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -154,7 +154,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes.userTitle,
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -165,35 +165,109 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
 
       subTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
       descTypo: {
         fontSize: theme.fontSizes.md,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
         lineHeight: theme.lineHeights.desc,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
       userDesc: {
         fontSize: theme.fontSizes.xs,
         color: theme.colors.blue,
         fontWeight: theme.fontWeights.small,
         lineHeight: theme.lineHeights.desc,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
       mainDesc: {
         fontSize: theme.fontSizes["4xl"],
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.desc,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
       seviceTypo: {
         fontSize: theme.fontSizes.xl,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.light,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      headingTypo: {
+        fontSize: theme.fontSizes.xl,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.semi_bold,
+        lineHeight: theme.lineHeights.faqTitle,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      subHeadingTypo: {
+        fontSize: theme.fontSizes["4xl"],
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.normal,
+        lineHeight: theme.lineHeights.mainDesc,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      highlightedTypo: {
+        fontSize: theme.fontSizes["4xl"],
+        color: theme.colors.primary,
+        fontWeight: theme.fontWeights.normal,
+        lineHeight: theme.lineHeights.mainDesc,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      mainDescHighlightedTypo: {
+        fontSize: theme.fontSizes.userTitle,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.userTitle,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      subDescHighlightedTypo: {
+        fontSize: theme.fontSizes.xl,
+        fontWeight: theme.fontWeights.semi_bold,
+        color: theme.colors.white,
+        lineHeight: theme.lineHeights.quotes,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
       },
     },
   };

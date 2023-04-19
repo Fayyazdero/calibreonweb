@@ -9,7 +9,8 @@ import { Data } from "./data";
 import plusIcon from "../../../public/images/plus.png";
 import minimized from "../../../public/images/minimized.png";
 import Image from "next/image";
-import { FaqWrapper, Wrapper, SubHeadingWrapper } from "./styles";
+import { FaqWrapper, Wrapper } from "./styles";
+
 
 const Faq = () => {
   const [data, setData] = useState(Data);
@@ -21,9 +22,7 @@ const Faq = () => {
   return (
     <Layout>
       <Container>
-        <SubHeadingWrapper>
           <Heading variant="subHeading">FAQs</Heading>
-        </SubHeadingWrapper>
         {data?.map((item) => {
             const { id, faq, desc } = item;
           return (

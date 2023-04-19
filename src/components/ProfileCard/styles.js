@@ -1,14 +1,24 @@
 const { default: styled } = require("styled-components");
 
-const Wrapper = styled("div")((props) => ({
-  background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
-  color: "#FFFFFF",
-  borderRadius: "19px",
-  paddingBottom: "28px",
-  width: "409px",
-  height: "496px",
-  marginBottom: "28px"
-}));
+export const Wrapper = styled.div((props) => {
+  return {
+    background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
+    color: "#FFFFFF",
+    borderRadius: "19px",
+    paddingBottom: "28px",
+    width: "409px",
+    marginBottom: "28px",
+
+    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+      background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
+      color: "#FFFFFF",
+      borderRadius: "19px",
+      paddingBottom: "28px",
+      marginBottom: "28px",
+      width: "100%",
+    },
+  };
+});
 export const ProfileHeader = styled("div")({
   display: "flex",
   justifyContent: "space-around",
@@ -18,14 +28,23 @@ export const ProfileTitle = styled("div")({
   flexDirection: "column",
   margin: "33px 0 21px 0",
 });
-export const ProfileImage = styled("div")({
-  width: "161px",
-  height: "161px",
-  paddingTop: "21px",
-  "& img": {
-    width: "100%",
-    height: "100%",
-  },
+
+export const ProfileImage = styled.div((props) => {
+  return {
+    paddingTop: "21px",
+    "& img": {
+      width: "161px",
+      height: "161px",
+    },
+
+    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+      paddingTop: "21px",
+      "& img": {
+        width: "140px",
+        height: "140px",
+      },
+    },
+  };
 });
 export const Title = styled("h2")({
   fontFamily: "Montserrat",
@@ -59,10 +78,20 @@ export const VerifiedLogo = styled("div")({
   width: "18px",
   marginLeft: "10px",
 });
-export const Content = styled("div")({
-  paddingTop: "21px",
-  paddingLeft: "26px",
-  paddingRight: "26px",
+
+export const Content = styled.div((props) => {
+  return {
+    paddingTop: "21px",
+    paddingLeft: "26px",
+    paddingRight: "26px",
+    textAlign: "justify",
+    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+      paddingTop: "21px",
+      paddingLeft: "26px",
+      paddingRight: "26px",
+      textAlign: "justify"
+    },
+  };
 });
 
 export default Wrapper;
