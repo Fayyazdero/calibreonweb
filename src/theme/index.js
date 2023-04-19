@@ -42,6 +42,7 @@ export const theme = {
     bold: 700,
     semi_bold: 600,
     normal: 500,
+    regular: 400,
     light: 300,
   },
 
@@ -50,6 +51,7 @@ export const theme = {
     secTitle: "78px",
     quotes: "29px",
     subTitle: "48px",
+    tabTypo: "26px",
     "1xl": "20px",
     "2xl": "24px",
     "5xl": "40px",
@@ -143,17 +145,45 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.md,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
       },
-
       subTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
       },
       seviceTypo: {
         fontSize: theme.fontSizes.xl,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.light,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      tabTypo: {
+        fontSize: theme.fontSizes["2xl"],
+        color: theme.colors.grey,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      privacyTypo: {
+        fontSize: theme.fontSizes.lg,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.regular,
+        xs: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.regular,
+        },
       },
     },
   };

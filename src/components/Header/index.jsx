@@ -35,7 +35,6 @@ function Header() {
 
   const handleClick = (index) => {
     setActive(index);
-    console.log(index, "kjsadkljalsj");
   };
   return (
     <Navbar bg="white" expand="lg">

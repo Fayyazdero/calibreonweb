@@ -39,14 +39,12 @@ import Accounting from "@/components/ServiceCard/Accounting";
 const Home = () => {
   const ref = useRef(null);
   const onClick = () => {
-    console.log({ ref }, "red");
     if (ref && ref.current) {
       ref.current.slickNext();
     }
   };
 
   const onLeftClick = () => {
-    console.log({ ref }, "hello, clicked");
     if (ref && ref.current) {
       ref.current.slickPrev();
     }
