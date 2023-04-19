@@ -1,52 +1,53 @@
 const { default: styled } = require("styled-components");
 import { Form } from "react-bootstrap";
 
-const Wrapper = styled("div")({
-  width: " 502px",
+const Wrapper = styled("div")(({ theme: { colors } }) => ({
   borderRadius: "14px",
-  background: "#F05B25",
-  fontFamily: "Hind Madurai",
-  color: "#FFFFFF",
+  background: colors?.primary,
   paddingBottom: "29px",
-});
-export const Title = styled("h2")({
-  fontSize: "25px",
-  fontWeight: "700",
-  fontFamily: "Hind Madurai",
+  width: "100%",
+  boxSizing: "border-box",
+}));
+export const HeadingWrapper = styled("div")({
   paddingLeft: "37px",
   paddingTop: "39px",
 });
-export const InputName = styled("div")({
+export const NameInputs = styled("div")({
   display: "flex",
   marginRight: "53px",
   boxSizing: "border box",
   marginLeft: "50px",
   marginTop: "60px",
-});
-
-export const StyledTextArea = styled(Form.Control)({
-  background: "transparent",
-  outline: "none",
-  border: "2px solid  #FFFFFF",
-  color: "#FFFFFF",
-  borderRadius: "8px",
-  width: "398.53px",
-  height: "174.53px !important",
-  resize: "none ",
-  marginTop: "43px",
-  marginLeft: "50px",
-  padding: "15px 8px",
-  "&::placeholder ": {
-    color: "#FFFFFF",
-    fontWeight: "400",
-    fontSize: "17px",
+  "& input:last-child": {
+    marginLeft: "29px",
   },
 });
+
+export const ContactInputs = styled("div")({
+  marginLeft: "50px",
+  marginRight: "53px",
+});
+export const StyledTextArea = styled(Form.Control)(({ theme: { colors } }) => ({
+  background: "transparent",
+  outline: "none",
+  border: `2px solid  ${colors?.white}`,
+  color: colors?.white,
+  borderRadius: "8px",
+  width: "100%",
+  height: "174.53px !important",
+  resize: "vertical",
+  marginTop: "43px",
+  padding: "15px 8px",
+  "&::placeholder ": {
+    color: colors?.white,
+  },
+}));
 export const WrapperPolicy = styled("div")({
   display: "flex",
   marginLeft: "56px",
   textAlign: "center",
   marginTop: "24px",
+  alignItems: "center",
   "& input[type=checkbox]": {
     backgroundColor: "transparent",
     width: "18.37px",
@@ -56,6 +57,8 @@ export const WrapperPolicy = styled("div")({
     cursor: "pointer",
     borderRadius: "2.83px",
     marginTop: "0",
+    display: "flex",
+    alignItems: "center",
     "&:hover": {
       outline: "none",
     },
@@ -69,16 +72,17 @@ export const WrapperPolicy = styled("div")({
     border: "none",
     padding: "0",
     marginTop: "0",
+    display: "none",
   },
 });
-export const Content = styled("p")({
+export const Content = styled("p")(({ theme: { colors } }) => ({
   display: "flex",
   alignItems: "center",
   fontSize: "16px",
   margin: "0",
   fontWeight: "400",
   marginLeft: "9px",
-  marginTop: "4px",
+  color: colors?.white,
 
   "& a": {
     color: "#0A66C2",
@@ -86,7 +90,7 @@ export const Content = styled("p")({
     marginLeft: "4px",
     textDecoration: "none",
   },
-});
+}));
 export const SubmitWrapper = styled("div")({
   marginTop: "49px",
   marginRight: "39px",
@@ -94,6 +98,16 @@ export const SubmitWrapper = styled("div")({
   justifyContent: "end",
   "& button": {
     padding: "7px 59px",
+    "&:hover": {
+      border: "1px solid #FFFFFF",
+    },
+    "&:active": {
+      border: "1px solid #FFFFFF !important",
+      color: " #FFFFFF !important",
+    },
+  },
+  "& .submit-button": {
+    fontWeight: "600",
   },
 });
 export default Wrapper;

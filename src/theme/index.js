@@ -20,11 +20,12 @@ export const theme = {
     blue: "#0A66C2",
     maroon: "#7D1128",
   },
-
   fontSizes: {
     title: "5rem" /* 80px */,
     serviceTitle: "4.25rem" /* 68px */,
     heading: "4rem" /* 64px */,
+    contactTitle: "3.58rem" /* 57.28px */,
+    formTitle: "1.5625rem" /* 25px */,
     "5xl": "2.43rem" /* 39px */,
     "4xl": "2.06rem" /* 33px */,
     "3xl": "1.18rem" /* 29px */,
@@ -35,7 +36,6 @@ export const theme = {
     sm: ".875rem" /* 14px */,
     xs: "0.95rem" /* 15px */,
   },
-
   fontWeights: {
     black: 900,
     bolder: 800,
@@ -45,7 +45,6 @@ export const theme = {
     regular: 400,
     light: 300,
   },
-
   lineHeights: {
     title: "83px",
     secTitle: "78px",
@@ -58,6 +57,7 @@ export const theme = {
     base: "33px",
   },
 };
+
 export const getTheme = (value) => {
   const theme = { ...value };
   const variants = {
@@ -70,7 +70,7 @@ export const getTheme = (value) => {
         hover: {
           background: theme.colors.primary,
           color: theme.colors.white,
-          border: theme.colors.primary,
+          border: theme.colors.white,
         },
       },
 
@@ -98,6 +98,7 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights.base,
         },
       },
+
       subHeading: {
         fontSize: theme.fontSizes["5xl"],
         color: theme.colors.white,
@@ -128,6 +129,27 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights["3xl"],
         },
       },
+      contactTitle: {
+        fontSize: theme.fontSizes.contactTitle,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.subTitle,
+        color: theme.colors.grey,
+        xs: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.subTitle,
+        },
+      },
+      formTitle: {
+        fontSize: theme.fontSizes.formTitle,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.subTitle,
+        color: theme.colors.white,
+        md: {
+          fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.subTitle,
+        },
+      },
+
       quotes: {
         fontSize: theme.fontSizes["3xl"],
         color: theme.colors.grey,
