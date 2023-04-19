@@ -27,8 +27,9 @@ export const theme = {
     userTitle: "2.87rem" /* 46px */,
     contactTitle: "3.58rem" /* 57.28px */,
     formTitle: "1.5625rem" /* 25px */,
-    "5xl": "2.43rem" /* 39px */,
-    "4xl": "2.06rem" /* 33px */,
+    "6xl": "2.43rem" /* 39px */,
+    "5xl": "2.06rem" /* 33px */,
+    "4xl": "2rem" /* 32px */,
     "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
@@ -99,13 +100,13 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.title,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes["5xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
 
       subHeading: {
-        fontSize: theme.fontSizes["5xl"],
+        fontSize: theme.fontSizes["6xl"],
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.subTitle,
@@ -121,7 +122,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.secTitle,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights["5xl"],
+          lineHeight: theme.lineHeights["6xl"],
         },
       },
       faqHeading: {
@@ -150,7 +151,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.subTitle,
         color: theme.colors.grey,
         xs: {
-          fontSize: theme.fontSizes["4xl"],
+          fontSize: theme.fontSizes["5xl"],
           lineHeight: theme.lineHeights.subTitle,
         },
       },
