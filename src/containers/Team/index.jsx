@@ -33,7 +33,8 @@ import {
   SpacerContainer,
   TeamUserListWrapper,
   TopHeadingWrapper,
-  StyledProgressBar
+  StyledProgressBar,
+  TeamDetailsHeadingWrapper
 } from "./styles";
 import profileimg from "../../../public/images/profile-1.png";
 import ProgressBar from "react-bootstrap/ProgressBar";
@@ -52,7 +53,9 @@ const Team = () => {
   return (
     <>
       <Container>
+        <ServicesHeadingWrapper>
           <Heading variant="subHeading">Our Team</Heading>
+        </ServicesHeadingWrapper>
         <TopHeadingWrapper>
           <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
           <Typo variant="headingTypo">
@@ -75,7 +78,9 @@ const Team = () => {
           })}
         </ProfileCardWrapper>
         <TeamDetailsWrapper>
+          <TeamDetailsHeadingWrapper>
             <Heading variant="subHeading">Team</Heading>
+          </TeamDetailsHeadingWrapper>
           <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>

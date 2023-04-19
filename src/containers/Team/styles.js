@@ -29,6 +29,21 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     alignItems: "center",
     [`@media screen and (max-width: ${xs}px)`]: {
       paddingTop: "46px",
+      paddingBottom: "24px",
+    },
+  };
+});
+export const TeamDetailsHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingBottom: "9px",
+    paddingTop: "30px",
+    alignItems: "center",
+    [`@media screen and (max-width: ${xs}px)`]: {
+      paddingTop: "46px",
     },
   };
 });

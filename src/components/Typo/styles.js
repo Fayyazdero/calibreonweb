@@ -11,7 +11,7 @@ export const Text = styled.p(({ variant, theme: { typo, breakPoints } }) => {
     [`@media screen and (max-width: ${xs}px)`]: {
       fontSize,
       textAlign: "center",
-      marginBottom: "20px"
+      marginBottom: "10px"
     }
   };
 });

@@ -42,7 +42,6 @@ export const SubHeadingWrapper = styled.div(
         display: "flex",
         justifyContent: "center",
         marginBottom: "9px",
-        paddingTop: "46px",
         borderBottom: `1.25px solid ${colors.primary}`,
       },
     };
