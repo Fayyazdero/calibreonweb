@@ -219,7 +219,7 @@ export const getTheme = (value) => {
       userDesc: {
         fontSize: theme.fontSizes.xs,
         color: theme.colors.blue,
-        fontWeight: theme.fontWeights.small,
+        fontWeight: theme.fontWeights.regular,
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
