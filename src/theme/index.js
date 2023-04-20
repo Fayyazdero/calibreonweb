@@ -313,6 +313,34 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights.regular,
         },
       },
+      subDesTypo: {
+        fontSize: theme.fontSizes["2xl"],
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.bold,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      accountingTypo: {
+        fontSize: theme.fontSizes["2xl"],
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bold,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      subAccountingTypo: {
+        fontSize: theme.fontSizes.lg,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.normal,
+        lineHeight: theme.lineHeights["1xl"],
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      }
     },
   };
   return {

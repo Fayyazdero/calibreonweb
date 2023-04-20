@@ -1,4 +1,4 @@
-import Bookeeping from "@/containers/Services/Accounting";
+import Accounting from "@/containers/Services/Accounting";
 import React from "react";
 
 const Index = () => {
