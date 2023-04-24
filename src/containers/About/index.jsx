@@ -34,6 +34,11 @@ const About = () => {
           <Row>
             <Col md={7}>
               <Heading
+                className="responsive-heading"
+                variant="subHeading"
+                title={"About Us"}
+              ></Heading>
+              <Heading
                 className="center-text"
                 title="Clear"
                 variant="mainHeading"
@@ -72,10 +77,10 @@ const About = () => {
         <Container>
           <Heading
             variant="mainHeading"
-            className="center-text"
+            className="text-center"
             title="Co-Founders"
           >
-            Meet Our{" "}
+            Meet Our <br />
           </Heading>
           <ProfileWrapper>
             <Row>
