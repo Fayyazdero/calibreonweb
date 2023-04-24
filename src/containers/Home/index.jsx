@@ -47,10 +47,18 @@ const Home = () => {
     }
   };
 
+  const next = useRef(null);
   const onLeftClick = () => {
-    console.log({ ref }, "hello, clicked");
-    if (ref && ref.current) {
-      ref.current.slickPrev();
+    if (next && next.current) {
+      alert("df");
+      next.current.slickPrev();
+    }
+  };
+
+  const onRightClick = () => {
+    if (next && next.current) {
+      alert("df");
+      next.current.slickNext();
     }
   };
 
@@ -93,12 +101,13 @@ const Home = () => {
           </ServicesHeadingWrapper>
         </Container>
         <Slider
-          ref={ref}
+          ref={next}
           {...{
             arrows: false,
-            // centerMode: true,
-            // centerPadding: "110px",
+            centerMode: true,
+            centerPadding: "200px",
             slidesToShow: 1,
+            infinite: false,
           }}
         >
           {servicesCardData.map((item, index) => (
@@ -113,7 +122,11 @@ const Home = () => {
               <ArrowLeft height="20px" onClick={onLeftClick} />
             </ArrowsBg>
             <ArrowsBg>
-              <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
+              <ArrowRight
+                height={"20px"}
+                color={"#ffffff"}
+                onClick={onRightClick}
+              />
             </ArrowsBg>
           </Arrows>
         </Container>
