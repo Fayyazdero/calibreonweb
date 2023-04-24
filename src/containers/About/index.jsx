@@ -36,8 +36,8 @@ const About = () => {
               <Heading
                 className="responsive-heading"
                 variant="subHeading"
-                title={"About Us"}
-              ></Heading>
+                title="About Us"
+              />
               <Heading
                 className="center-text"
                 title="Clear"
@@ -45,7 +45,7 @@ const About = () => {
               >
                 Our Mission is{" "}
               </Heading>
-              <Typo variant="mainTypo">
+              <Typo variant="mainTypo" className="about-text">
                 At CaliberOn, we're passionate about helping our clients
                 succeed. That's why we prioritize client satisfaction and
                 deliver exceptional work every time with our team of
@@ -57,6 +57,13 @@ const About = () => {
               <MissionImage>
                 <Image src={MissionBanner} alt="Our Mission" />
               </MissionImage>
+              <Typo variant="mainTypo" className="responsive-about-text">
+                At CaliberOn, we're passionate about helping our clients
+                succeed. That's why we prioritize client satisfaction and
+                deliver exceptional work every time with our team of
+                professionals having access to a wide range of services, from
+                design and development to marketing and branding.
+              </Typo>
             </Col>
           </Row>
         </HeroSection>

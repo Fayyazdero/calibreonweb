@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
     const fontSize = heading[variant]["xs"]
       ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
@@ -19,9 +19,10 @@ export const StyledHeading = styled.h2(
       lineHeight: `${heading[variant].lineHeight}`,
       textAlign: `${variant === "quotes" && "center"}`,
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         fontSize,
         lineHeight,
+        textAlign: `${variant === "mainHeading" && "center"}`,
       },
     };
   }
@@ -32,6 +33,9 @@ export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
 }));
 
 export const SubHeadingWrapper = styled.div`
+  margin: auto;
   width: max-content;
+  margin-bottom: 10px;
+  font-weight: 900;
   border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary};
 `;

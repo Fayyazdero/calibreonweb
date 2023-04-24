@@ -16,7 +16,7 @@ export const ImageWrapper = styled("div")({
   transform: "translateY(-32%)",
   minHeight: "498px",
 
-  "@media screen and (max-width: 768px)": {
+  "@media screen and (max-width: 992px)": {
     width: "100%",
     height: "100%",
     position: "relative",
