@@ -103,6 +103,11 @@ export const Arrows = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+export const ServiceCard = styled.div`
+  &>div {
+    width: 80%;
+  }
+`;
 
 export const SliderArrow = styled("div")(({ theme: { colors } }) => ({
   display: "flex",

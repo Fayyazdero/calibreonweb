@@ -23,6 +23,7 @@ import {
   Banner,
   Arrows,
   ArrowsBg,
+  ServiceCard,
 } from "./styles";
 import {
   servicesCardData,
@@ -41,7 +42,6 @@ const Home = () => {
   const router = useRouter();
   const ref = useRef(null);
   const onClick = () => {
-    console.log({ ref }, "red");
     if (ref && ref.current) {
       ref.current.slickNext();
     }
@@ -50,14 +50,12 @@ const Home = () => {
   const next = useRef(null);
   const onLeftClick = () => {
     if (next && next.current) {
-      alert("df");
       next.current.slickPrev();
     }
   };
 
   const onRightClick = () => {
     if (next && next.current) {
-      alert("df");
       next.current.slickNext();
     }
   };
@@ -102,18 +100,23 @@ const Home = () => {
         </Container>
         <Slider
           ref={next}
-          {...{
-            arrows: false,
-            centerMode: true,
-            centerPadding: "200px",
-            slidesToShow: 1,
-            infinite: false,
-          }}
+          arrows= {false}
+          centerMode= {true}
+          centerPadding= "180px"
+          slidesToShow= {1}
+          infinite= {false}
+          responsive={[{
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          }]}
         >
           {servicesCardData.map((item, index) => (
-            <div key={item.id}>
+            <ServiceCard key={item.id}>
               <Accounting src={item.imgSrc} cardTitle={item.title} />
-            </div>
+            </ServiceCard>
           ))}
         </Slider>
         <Container>

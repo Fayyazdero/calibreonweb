@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SearchButton, SearchWrapper } from "./styles";
 import Input from "../Input";
-import Button from "../Button";
 
 const Search = ({
   variant,
@@ -10,7 +9,7 @@ const Search = ({
   onSubmit,
   onChange,
   search = "",
-  btnPadding = "10px 20px",
+  btnPadding,
 }) => {
   const [_search, setSearch] = useState(search);
   const handleChange = (e) => {
