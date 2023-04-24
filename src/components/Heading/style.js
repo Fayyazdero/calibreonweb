@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
     const xs = breakPoints.xs;
-    const fontSize = heading[variant][xs]
-      ? heading[variant][xs].fontSize
+    const fontSize = heading[variant]["xs"]
+      ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
-    const lineHeight = heading[variant][xs]
-      ? heading[variant][xs].fontSize
+    const lineHeight = heading[variant]["xs"]
+      ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
+
     return {
       fontSize: `${heading[variant].fontSize}`,
       color: `${heading[variant].color}`,

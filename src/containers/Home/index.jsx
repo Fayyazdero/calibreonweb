@@ -50,14 +50,12 @@ const Home = () => {
   const next = useRef(null);
   const onLeftClick = () => {
     if (next && next.current) {
-      alert("df");
       next.current.slickPrev();
     }
   };
 
   const onRightClick = () => {
     if (next && next.current) {
-      alert("df");
       next.current.slickNext();
     }
   };
@@ -95,7 +93,7 @@ const Home = () => {
         <Container>
           <ServicesHeadingWrapper>
             <Heading variant="subHeading">Our Services</Heading>
-            <ViewAll onClick={() => router.push("/services/bookkeeping")}>
+            <ViewAll onClick={() => router.push("/services")}>
               View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
           </ServicesHeadingWrapper>
