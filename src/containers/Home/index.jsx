@@ -25,7 +25,6 @@ import {
   HomeImageWrapper,
   StyledRow,
   NextArrow,
-  CardWrapper,
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -92,7 +91,7 @@ const Home = () => {
       <ServicesWrapper>
         <Container>
           <ServicesHeadingWrapper>
-            <Heading variant="subHeading">Our Services</Heading>
+            <Heading variant="subHeading" title={"Our Services"} />
             <ViewAll onClick={() => router.push("/services")}>
               View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
@@ -100,27 +99,24 @@ const Home = () => {
         </Container>
         <Slider
           ref={next}
-          {...{
-            arrows: false,
-            centerMode: true,
-            centerPadding: "200px",
-            slidesToShow: 1,
-            infinite: false,
-            responsive: [
-              {
-                breakpoint: 992,
-                settings: {
-                  slidesToShow: 2,
-                  centerMode: false,
-                },
+          arrows={false}
+          centerMode={true}
+          centerPadding="180px"
+          slidesToShow={1}
+          infinite={false}
+          responsive={[
+            {
+              breakpoint: 992,
+              settings: {
+                centerMode: false,
+                slidesToShow: 2,
+                slidesToScroll: 1,
               },
-            ],
-          }}
+            },
+          ]}
         >
           {servicesCardData.map((item, index) => (
-            <div key={item.id}>
-              <Accounting src={item.imgSrc} cardTitle={item.title} />
-            </div>
+            <Accounting src={item.imgSrc} cardTitle={item.title} />
           ))}
         </Slider>
         <Container>
@@ -234,12 +230,7 @@ const Home = () => {
               </ContentWrapper>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              <StyledImage
-                src={newsletter}
-                alt="newsletter"
-                layout="fill"
-                objectFit="contain"
-              />
+              <StyledImage src={newsletter} alt="newsletter" />
             </Col>
           </Row>
         </NewsLetterWrapper>

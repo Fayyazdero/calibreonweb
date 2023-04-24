@@ -32,10 +32,22 @@ export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
   color: colors.primary,
 }));
 
-export const SubHeadingWrapper = styled.div`
-  margin: auto;
-  width: max-content;
-  margin-bottom: 10px;
-  font-weight: 900;
-  border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary};
-`;
+export const SubHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, colors } }) => {
+    const sm = breakPoints.sm;
+
+    return {
+      width: "max-content",
+      borderBottom: `3px solid ${colors.primary}`,
+      [`@media screen and (max-width: ${sm}px)`]: {
+        width: "87px",
+        textAlign: "center",
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "9px",
+        borderBottom: `1.25px solid ${colors.primary}`,
+      },
+    };
+  }
+);

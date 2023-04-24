@@ -75,10 +75,8 @@ export const ContentWrapper = styled.div`
   justify-content: center;
 `;
 export const StyledImage = styled(Image)`
-  max-width: 100%;
-  color: transparent;
-  height: 70px;
-  width: auto;
+  position: unset !important;
+  width: 100%;
 `;
 export const HomeImageWrapper = styled.div`
   z-index: 0;
