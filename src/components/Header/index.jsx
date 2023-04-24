@@ -2,18 +2,18 @@ import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../../assests/logo.svg";
-import Link from "next/link";
+import logo from "/public/logo.svg";
 import { useState } from "react";
 import { LinksWrapper, NavButtonsWrapper, StyledLink } from "./styles";
 import Button from "../Button";
-import Insta from "./Insta";
+import { useRouter } from "next/router";
 
 function Header() {
+  const router = useRouter();
   let navLinks = [
     {
       title: "Home",
-      link: "/home",
+      link: "/",
     },
     {
       title: "About",
@@ -33,11 +33,11 @@ function Header() {
     },
   ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState("/");
 
-  const handleClick = (event, index) => {
-    event.preventDefault();
-    setActive(index);
+  const handleClick = (e) => {
+    setActive(e);
+    console.log(e, active, "kjsadkljalsj");
   };
   return (
     <Navbar bg="white" expand="lg">
@@ -52,25 +52,27 @@ function Header() {
         >
           <Nav>
             {navLinks.map((item, key) => (
-              <LinksWrapper className={`${active === key ? "active" : ""}`}>
+              <LinksWrapper key={key}>
                 <StyledLink
-                  key={key}
-                  onClick={() => {
-                    handleClick(event, key);
-                  }}
-                  className="mx-3 text-decoration-none"
-                  href="/"
+                  onClick={() => handleClick(item.link)}
+                  className={`mx-3 text-decoration-none text-dark styled-link ${
+                    active === item.link ? "active" : ""
+                  }`}
+                  href={item.link}
                 >
                   {item.title}
                 </StyledLink>
-                <Insta />
               </LinksWrapper>
             ))}
           </Nav>
         </Navbar.Collapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" text="Login" />
-          <Button text="SignUp" />
+          <Button className="mx-2" variant="contained">
+            Login
+          </Button>
+          <Button className="mx-2" variant="outlined">
+            Sign UP
+          </Button>
         </NavButtonsWrapper>
       </Container>
     </Navbar>
