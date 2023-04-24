@@ -11,7 +11,7 @@ import Wrapper, {
 } from "./styles";
 import { ArrowRight } from "../Svgs";
 
-const BlogCard = ({}) => {
+const BlogCard = ({description}) => {
   return (
     <Wrapper>
       <BlogeHeader>
@@ -25,13 +25,13 @@ const BlogCard = ({}) => {
       </BlogeHeader>
       <Content>
         <p>
-          It appears that the purpose of this component is to wrap several other
+         {description || `It appears that the purpose of this component is to wrap several other
           components related to a section title or heading, including an image,
           a main title, and a subtitle. The name "TitleWrapper" accurately
           describes the role of this component as a container or wrapper for
           these other components. Overall, the name you have chosen is
           descriptive and accurately conveys the purpose of the component, which
-          is important for making your code more readable and maintainable.
+          is important for making your code more readable and maintainable.`}
         </p>
       </Content>
       <ViewAll>
