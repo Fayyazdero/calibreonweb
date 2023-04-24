@@ -30,7 +30,22 @@ export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
   color: colors.primary,
 }));
 
-export const SubHeadingWrapper = styled.div`
-  width: max-content;
-  border-bottom: 3px solid ${({ theme: { colors } }) => colors.primary};
-`;
+export const SubHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, colors } }) => {
+    const xs = breakPoints.xs;
+
+    return {
+      width: "max-content",
+      borderBottom: `3px solid ${colors.primary}`,
+      [`@media screen and (max-width: ${xs}px)`]: {
+        width: "87px",
+        textAlign: "center",
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "9px",
+        borderBottom: `1.25px solid ${colors.primary}`,
+      },
+    };
+  }
+);

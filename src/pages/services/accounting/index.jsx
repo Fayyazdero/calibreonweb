@@ -4,7 +4,7 @@ import Bookeeping from "@/containers/Services/Accounting";
 import React from "react";
 
 const Index = () => {
-  return <LeftTabsExample />;
+  return <Accounting />;
 };
 
 Index.layout = true;

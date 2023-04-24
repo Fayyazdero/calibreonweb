@@ -83,6 +83,7 @@ const Home = () => {
                   btnText="submit"
                   variant="contained"
                   color={"black"}
+                  btnPadding="8px 64px"
                 />
               </HomeHeadingWrapper>
             </Col>
