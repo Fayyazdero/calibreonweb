@@ -35,8 +35,8 @@ export const theme = {
     xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
     md: "1rem" /* 16px */,
-    sm: ".875rem" /* 14px */,
     xs: "0.95rem" /* 15px */,
+    sm: ".875rem" /* 14px */,
   },
   fontWeights: {
     black: 900,
@@ -61,6 +61,7 @@ export const theme = {
     "2xl": "24px",
     "5xl": "40px",
     base: "33px",
+    xm: "18px",
   },
 };
 
@@ -128,7 +129,7 @@ export const getTheme = (value) => {
       faqHeading: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.grey,
-        fontWeight: theme.fontWeights.bold,
+        fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.faqTilte,
         xs: {
           fontSize: theme.fontSizes.md,
@@ -211,6 +212,16 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.md,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
+        lineHeight: theme.lineHeights.desc,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      newDescTypo: {
+        fontSize: theme.fontSizes.md,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.regular,
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
@@ -322,10 +333,20 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights.base,
         },
       },
-      accountingTypo: {
-        fontSize: theme.fontSizes["2xl"],
-        color: theme.colors.white,
+      newSubDesTypo: {
+        fontSize: theme.fontSizes.md,
+        color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      accountingTypo: {
+        fontSize: theme.fontSizes["3xl"],
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bolder,
+        lineHeight: theme.lineHeights.xm,
         xs: {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
@@ -334,8 +355,18 @@ export const getTheme = (value) => {
       subAccountingTypo: {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.white,
-        fontWeight: theme.fontWeights.normal,
-        lineHeight: theme.lineHeights["1xl"],
+        fontWeight: theme.fontWeights.regular,
+        lineHeight: theme.lineHeights["2xl"],
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
+      newSubAccountingTypo: {
+        fontSize: theme.fontSizes.lg,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,

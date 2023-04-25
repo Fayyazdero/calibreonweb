@@ -130,7 +130,9 @@ export const TeamProgressContainer = styled.div(
 
     return {
       width: "50%",
-
+      "& h2": {
+        marginBottom: "21px"
+      },
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
         marginBottom: "40px",
@@ -157,11 +159,18 @@ export const ContainerOuter = styled.div(({ theme: { breakPoints } }) => {
 });
 export const LineContainer = styled.div`
   margin-right: 40px;
-  padding-bottom: 20px;
 `;
-export const TimeLineContainer = styled.div`
-  width: 100%;
-`;
+
+export const TimeLineContainer = styled.div(() => {
+
+  return {
+    width: "100%",
+    "& p": {
+      marginBottom: "0"
+    },
+
+  };
+});
 export const LineWrapper = styled.div`
   border: 2px solid #f05b25;
 `;
@@ -171,7 +180,7 @@ export const VerticalLine = styled.div(({ theme: { breakPoints } }) => {
 
   return {
     borderLeft: "6px solid #f05b25",
-    height: "120px",
+    height: "115px",
     width: "6px",
     marginLeft: "7px",
 
@@ -195,9 +204,12 @@ export const ProgressWrapper = styled.div(
     const xs = breakPoints.xs;
 
     return {
-      padding: "0 50px 15px 0",
+      padding: "0 50px 10px 0",
       "& .progress": {
         backgroundColor: colors.grey,
+      },
+      "& p": {
+        marginBottom: "8px"
       },
 
       [`@media screen and (max-width: ${xs}px)`]: {
@@ -219,6 +231,9 @@ export const TeamTimelineContainer = styled.div(
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
+      "& h2": {
+        marginBottom: "36px"
+      },
 
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
@@ -244,7 +259,7 @@ export const TeamUserListWrapper = styled.div`
 //   };
 // });
 export const SpacerContainer = styled.div`
-  height: 24px;
+  height: 37px;
 `;
 
 export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
