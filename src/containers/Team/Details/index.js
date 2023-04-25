@@ -48,7 +48,7 @@ const Details = () => {
           <TeamDetailsHeadingWrapper>
             <Heading variant="subHeading" title={"Team"}></Heading>
           </TeamDetailsHeadingWrapper>
-          <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
+          <Typo className="newTypo" variant="mainDesc">Book Keeping & Accounts</Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>
               <Image src={profileimg} alt="profile-A"></Image>

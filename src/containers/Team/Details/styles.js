@@ -23,8 +23,7 @@ export const TeamDetailsHeadingWrapper = styled.div(
     return {
       display: "flex",
       justifyContent: "space-between",
-      paddingBottom: "9px",
-      paddingTop: "30px",
+      paddingBottom: "39px",
       alignItems: "center",
       [`@media screen and (max-width: ${xs}px)`]: {
         paddingTop: "46px",
@@ -33,7 +32,16 @@ export const TeamDetailsHeadingWrapper = styled.div(
   }
 );
 
-export const TeamDetailsWrapper = styled.div``;
+export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    "& .newTypo": {
+      marginBottom: "29px"
+    }
+  };
+});
+
 export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
 
@@ -230,6 +238,7 @@ export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
 
   return {
     display: "flex",
+    marginBottom: "22px",
 
     [`@media screen and (max-width: ${xs}px)`]: {
       display: "none",
@@ -260,7 +269,7 @@ export const Certification = styled.div(({ theme: { breakPoints } }) => {
     width: "267px",
     display: "flex",
     alignItems: "center",
-    marginBottom: "20px",
+    marginBottom: "25px",
     "& img": {
       objectFit: "cover",
       width: "100%",
