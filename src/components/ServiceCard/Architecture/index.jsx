@@ -5,9 +5,16 @@ import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
 
-const Architecture = ({ src, alt, title, children, ...rest }) => {
+const Architecture = ({
+  src,
+  alt,
+  variant = "primary",
+  title,
+  children,
+  ...rest
+}) => {
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
         <Image src={src} alt={alt} fill />
       </ImageWrapper>

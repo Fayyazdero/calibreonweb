@@ -3,9 +3,16 @@ import Image from "next/image";
 import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
-const Animation = ({ src, alt, title, children, ...rest }) => {
+const Animation = ({
+  src,
+  alt,
+  variant = "primary",
+  title,
+  children,
+  ...rest
+}) => {
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
         <Image src={src} alt={alt} layout="fill" />
       </ImageWrapper>

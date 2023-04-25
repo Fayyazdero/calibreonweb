@@ -6,7 +6,7 @@ export const theme = {
     xs: 768,
     sm: 992,
     md: 1024,
-    lg: 1360,
+    lg: 1199,
     xl: 1920,
   },
   colors: {
@@ -124,7 +124,7 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.title,
-        xs: {
+        lg: {
           fontSize: theme.fontSizes["2xl"],
           lineHeight: theme.lineHeights["3xl"],
         },
@@ -167,8 +167,8 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.md,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -176,8 +176,8 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -185,16 +185,16 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.xl,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.light,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
       tabTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.grey,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -202,9 +202,9 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.regular,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
-          lineHeight: theme.lineHeights.regular,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
         },
       },
     },
