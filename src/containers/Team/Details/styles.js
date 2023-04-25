@@ -92,9 +92,15 @@ export const TeamDetailsInfoWrapper = styled.div(
     };
   }
 );
-export const TeamDetailsDescWrapper = styled.div`
-  text-align: justify;
-`;
+
+export const TeamDetailsDescWrapper = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    textAlign: "justify",
+
+  };
+});
 
 export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;

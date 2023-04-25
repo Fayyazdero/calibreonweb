@@ -48,6 +48,7 @@ const Team = () => {
                 title={data.title}
                 subTitle={data.subTitle}
                 description={data.description}
+                verifiedLogo={true}
               />
             </Col>
           );

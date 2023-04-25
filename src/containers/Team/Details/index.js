@@ -162,6 +162,7 @@ const Details = () => {
                     title={data.title}
                     subTitle={data.subTitle}
                     description={data.description}
+                    verifiedLogo={verifiedLogo}
                   />
                 </Col>
               );

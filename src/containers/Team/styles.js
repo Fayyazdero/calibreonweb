@@ -23,8 +23,8 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "30px",
-    paddingTop: "30px",
+    paddingBottom: "39px",
+    paddingTop: "39px",
     alignItems: "center",
     "& p:nth-child(2)": {
       cursor: "pointer",
