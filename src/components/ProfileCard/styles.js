@@ -28,6 +28,9 @@ export const ProfileTitle = styled("div")({
   display: "flex",
   flexDirection: "column",
   margin: "33px 0 21px 0",
+  "& h2": {
+    lineBreak: "anywhere"
+  }
 });
 
 export const ProfileImage = styled.div((props) => {

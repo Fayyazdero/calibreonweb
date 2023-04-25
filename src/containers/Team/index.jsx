@@ -2,7 +2,6 @@ import ProfileCard from "@/components/ProfileCard";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  ProfileCardWrapper,
   ServicesHeadingWrapper,
   TopHeadingWrapper,
 } from "./styles";
@@ -37,7 +36,6 @@ const Team = () => {
           View All <ArrowRight className="mx-2" height="22px" color="#F05B25" />
         </Typo>
       </TopHeadingWrapper>
-      {/* <ProfileCardWrapper onClick={() => router.push("/team/details")}> */}
       <Row>
         {teamData?.slice(0, 3)?.map((data) => {
           return (
@@ -55,8 +53,6 @@ const Team = () => {
           );
         })}
       </Row>
-
-      {/* </ProfileCardWrapper> */}
     </Container>
   );
 };

@@ -187,6 +187,16 @@ export const getTheme = (value) => {
           lineHeight: theme.lineHeights.base,
         },
       },
+      newUserHeading: {
+        fontSize: theme.fontSizes.userTitle,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.userTitle,
+        xs: {
+          fontSize: theme.fontSizes.userTitle,
+          lineHeight: theme.lineHeights.base,
+        },
+      },
     },
 
     typo: {

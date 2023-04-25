@@ -1,8 +1,7 @@
 import ProfileCard from "@/components/ProfileCard";
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import {
-  ProfileCardWrapper,
   TeamDetailsWrapper,
   TeamDetailsContainer,
   TeamDetailsInfoWrapper,
@@ -39,17 +38,15 @@ import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
 import { teamData } from "../../Team/teamData";
 import Typo from "@/components/Typo";
-import { useRouter } from "next/router";
 
 const Details = () => {
   const [verifiedLogo, setVerifiedLogo] = useState(true);
-  const router = useRouter();
   return (
     <>
       <Container>
         <TeamDetailsWrapper>
           <TeamDetailsHeadingWrapper>
-            <Heading variant="subHeading">Team</Heading>
+            <Heading variant="subHeading" title={"Team"}></Heading>
           </TeamDetailsHeadingWrapper>
           <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
           <TeamDetailsContainer>
@@ -58,7 +55,7 @@ const Details = () => {
             </TeamDetailsImageWrapper>
             <TeamDetailsInfoWrapper>
               <ProfileTitle>
-                <Heading variant="userHeading">mandy</Heading>
+                <Heading variant="newUserHeading">mandy</Heading>
                 <Certification>
                   <SubTitle fontSize={20}>Quickbook Certified</SubTitle>
                   {verifiedLogo == true && (
@@ -71,8 +68,7 @@ const Details = () => {
                   <Image
                     className="mx-3"
                     src={upwork_logo_icon}
-                    alt="Upwork logo"
-                  ></Image>
+                    alt="Upwork logo"></Image>
                   <Typo variant="userDesc" color="#0A66C2">
                     Faheem S. - Accountant Bookkeeper Credit Controller -
                     Receivables/Payable Manager - Upwork Freelancer from Gilgit,
@@ -100,7 +96,7 @@ const Details = () => {
           </TeamDetailsContainer>
           <TeamTimelineWrapper>
             <TeamProgressContainer>
-              <Heading variant="userHeading">Skills</Heading>
+              <Heading variant="newUserHeading">Skills</Heading>
               <ProgressWrapper>
                 <Typo variant="subHeadingTypo">Book Keeping</Typo>
                 <StyledProgressBar
@@ -119,7 +115,7 @@ const Details = () => {
               </ProgressWrapper>
             </TeamProgressContainer>
             <TeamTimelineContainer>
-              <Heading variant="userHeading">Experience</Heading>
+              <Heading variant="newUserHeading">Experience</Heading>
               <ContainerOuter>
                 <LineContainer>
                   <DotContainer></DotContainer>
@@ -155,20 +151,22 @@ const Details = () => {
               <ArrowRight className="mx-2" height="22px" color="white" />
             </Typo>
           </TopHeadingWrapper>
-          <ProfileCardWrapper>
+          <Row>
             {teamData?.slice(0, 3)?.map((data) => {
               return (
-                <ProfileCard
-                  key={data.id}
-                  fontSize={15}
-                  profile={data?.profile}
-                  title={data.title}
-                  subTitle={data.subTitle}
-                  description={data.description}
-                />
+                <Col md={4}>
+                  <ProfileCard
+                    key={data.id}
+                    fontSize={15}
+                    profile={data?.profile}
+                    title={data.title}
+                    subTitle={data.subTitle}
+                    description={data.description}
+                  />
+                </Col>
               );
             })}
-          </ProfileCardWrapper>
+          </Row>
         </Container>
       </TeamUserListWrapper>
     </>
