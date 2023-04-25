@@ -20,11 +20,11 @@ import {
   NewTeamDetailsDescWrapper,
   VideoTestimonialWrapper,
   InnerInfoWrapper,
-  SpacerInfoWrapper
+  SpacerInfoWrapper,
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import upwork_logo_icon from "../../../../public/images/upwork_logo_icon.png";
 import linkedInLogo from "../../../../public/images/linkedinLogo.png";
 import profileimg from "../../../../public/images/xact-accounting.png";
@@ -40,7 +40,7 @@ const Accounting = () => {
     <>
       <Container>
         <ServicesHeadingWrapper>
-          <Heading variant="subHeading">Accounting</Heading>
+          <Heading variant="subHeading" title={"Accounting"}></Heading>
         </ServicesHeadingWrapper>
         <TeamDetailsInfoWrapper>
           <TeamDetailsImageWrapper>
@@ -181,20 +181,22 @@ const Accounting = () => {
             <ArrowRight className="mx-2" height="22px" color="#F05B25" />
           </Typo>
         </TopHeadingWrapper>
-        <ProfileCardWrapper>
+        <Row>
           {teamData?.slice(0, 3)?.map((data) => {
             return (
-              <ProfileCard
-                key={data.id}
-                fontSize={15}
-                profile={data?.profile}
-                title={data.title}
-                subTitle={data.subTitle}
-                description={data.description}
-              />
+              <Col md={4}>
+                <ProfileCard
+                  key={data.id}
+                  fontSize={15}
+                  profile={data?.profile}
+                  title={data.title}
+                  subTitle={data.subTitle}
+                  description={data.description}
+                />
+              </Col>
             );
           })}
-        </ProfileCardWrapper>
+        </Row>
       </Container>
     </>
   );

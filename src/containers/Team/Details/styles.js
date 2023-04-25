@@ -128,6 +128,10 @@ export const TeamProgressContainer = styled.div(
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
         marginBottom: "40px",
+        "& h2": {
+          marginBottom: "21px",
+          textAlign: "center"
+        },
       },
     };
   }
@@ -227,6 +231,10 @@ export const TeamTimelineContainer = styled.div(
 
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
+        "& h2": {
+          marginBottom: "36px",
+          textAlign: "center"
+        },
       },
     };
   }
