@@ -8,7 +8,7 @@ const Wrapper = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "space-between",
 
-  "@media screen and (max-width: 768px)": {
+  "@media screen and (max-width: 992px)": {
     flexDirection: "column",
   },
 }));
@@ -19,7 +19,7 @@ export const ImageWrapper = styled("div")({
   position: "relative",
   bottom: "19%",
 
-  "@media screen and (max-width: 768px)": {
+  "@media screen and (max-width: 992px)": {
     width: "100%",
     height: "100%",
     position: "relative",

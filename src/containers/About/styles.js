@@ -1,9 +1,38 @@
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 
-export const HeroSection = styled(Col)({
-  marginTop: "90px",
-});
+// export const HeroSection = styled(Col)({
+//   marginTop: "90px",
+
+//   .responsive-heading
+//   " @media screen and (max-width: 992px)": {
+//     width: "100%",
+//     margin: "148px 0",
+//   },
+
+// });
+
+export const HeroSection = styled(Col)`
+  margin-top: "90px";
+
+  & .responsive-heading {
+    @media (min-width: 992px) {
+      display: none !important;
+    }
+  }
+  & .about-text {
+    @media (max-width: 992px) {
+      display: none !important;
+    }
+  }
+  & .responsive-about-text {
+    text-align: center;
+    @media (min-width: 992px) {
+      display: none !important;
+    }
+  }
+`;
+
 export const Content = styled("p")({
   fontWeight: "500",
   fontSize: "16px",
@@ -27,7 +56,7 @@ export const StyledContainer = styled("div")({
   marginLeft: "auto",
   marginRight: "auto",
 
-  " @media screen and (max-width: 768px)": {
+  " @media screen and (max-width: 992px)": {
     width: "100%",
     margin: "148px 0",
   },

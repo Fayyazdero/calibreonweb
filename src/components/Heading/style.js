@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
-    const xs = breakPoints.xs;
-    const fontSize = heading[variant].xs.fontSize;
-    const lineHeight = heading[variant][xs]
-      ? heading[variant][xs].fontSize
+    const sm = breakPoints.sm;
+    const fontSize = heading[variant]["xs"]
+      ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
+    const lineHeight = heading[variant]["xs"]
+      ? heading[variant]["xs"].fontSize
+      : heading[variant].fontSize;
+
     return {
       fontSize: `${heading[variant].fontSize}`,
       color: `${heading[variant].color}`,
@@ -16,9 +19,10 @@ export const StyledHeading = styled.h2(
       lineHeight: `${heading[variant].lineHeight}`,
       textAlign: `${variant === "quotes" && "center"}`,
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         fontSize,
         lineHeight,
+        textAlign: `${variant === "mainHeading" && "center"}`,
       },
     };
   }
@@ -30,12 +34,12 @@ export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
 
 export const SubHeadingWrapper = styled.div(
   ({ theme: { breakPoints, colors } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       width: "max-content",
       borderBottom: `3px solid ${colors.primary}`,
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         width: "87px",
         textAlign: "center",
         margin: "auto",

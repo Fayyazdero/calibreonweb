@@ -98,7 +98,7 @@ export const getTheme = (value) => {
       mainHeading: {
         fontSize: theme.fontSizes.title,
         color: theme.colors.grey,
-        fontWeight: theme.fontWeights.bold,
+        fontWeight: theme.fontWeights.black,
         lineHeight: theme.lineHeights.title,
         xs: {
           fontSize: theme.fontSizes["5xl"],

@@ -7,22 +7,31 @@ const Wrapper = styled("div")(({theme: {colors}})=>({
 }));
 export const BlogeHeader = styled("div")({
   display: "flex",
+  alignItems: "center",
+  marginBottom: "18px",
+  '@media(max-width: 992px)': {
+    marginBottom: "8px",
+  }
 });
 export const BlogTitle = styled("div")({
-  marginTop: "33px",
   marginLeft: "19px",
+  width: "100%",
+  '@media(max-width: 992px)': {
+    marginLeft: "16px",
+  }
 });
 export const LogoWrapper = styled("div")({
   position: 'relative',
   width: "161px",
   height: "161px",
-  paddingTop: "16px",
-  paddingLeft: "21px",
-  marginBottom: "18px",
-  "& img": {
-    width: "100%",
-    height: "100%",
-  },
+  minWidth: "161px",
+  minHeight: "161px",
+  '@media(max-width: 992px)': {
+    width: "110px",
+    height: "110px",
+    minWidth: "110px",
+    minHeight: "110px", 
+  }
 });
 export const Title = styled("h2")({
   fontFamily: "Montserrat",
@@ -31,9 +40,17 @@ export const Title = styled("h2")({
   letterSpacing: "-2.3%",
   margin: "0",
   borderBottom: "4px solid #4D4D4D",
-  width: "304px",
+  width: "auto",
+  display: "inline-block",
+  minWidth: "70%",
+  '@media(max-width: 992px)': {
+    fontSize: "32px",
+    width: "100%",
+    minWidth: "100%", 
+  }
 });
 export const SubTitle = styled("h4")({
+  fontSize: "32px",
   fontFamily: "Inter",
   fontStyle: "oblique",
   fontWeight: "500",
@@ -45,18 +62,19 @@ export const SubTitle = styled("h4")({
 });
 
 export const Content = styled("div")({
-  paddingLeft: "26px",
-  paddingRight: "26px",
+  paddingLeft: "12px",
+  paddingRight: "12px",
   fontFamily: "Hind Madurai",
   fontWeight: "500",
   fontSize: "15px",
+  transition: '0.3s all ease',
 });
 export const ViewAll = styled("div")({
   display: "flex",
   justifyContent: "end",
   alignItems: "center",
   padding: "0 21px",
-  marginTop: "38px",
+  marginTop: "24px",
   "& h4": {
     margin: "0",
     fontWeight: "600",
@@ -68,6 +86,9 @@ export const ViewAll = styled("div")({
     marginLeft: "24px",
     marginBottom: "4px",
   },
+  '@media(max-width: 992px)': {
+    marginTop: "28px",
+  }
 });
 
 export default Wrapper;
