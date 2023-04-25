@@ -34,10 +34,9 @@ import {
   TeamUserListWrapper,
   TopHeadingWrapper,
   StyledProgressBar,
-  TeamDetailsHeadingWrapper
+  TeamDetailsHeadingWrapper,
 } from "./styles";
 import profileimg from "../../../public/images/profile-1.png";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import verifiedIcon from "../../../public/images/verified-icon.png";
 import upwork_logo_icon from "../../../public/images/upwork_logo_icon.png";
 import Image from "next/image";
@@ -84,10 +83,7 @@ const Team = () => {
           <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>
-              <Image
-                src={profileimg}
-                alt="profile-A"
-                ></Image>
+              <Image src={profileimg} alt="profile-A"></Image>
             </TeamDetailsImageWrapper>
             <TeamDetailsInfoWrapper>
               <ProfileTitle>
@@ -104,7 +100,8 @@ const Team = () => {
                   <Image
                     className="mx-3"
                     src={upwork_logo_icon}
-                    alt="Upwork logo"></Image>
+                    alt="Upwork logo"
+                  ></Image>
                   <Typo variant="userDesc" color="#0A66C2">
                     Faheem S. - Accountant Bookkeeper Credit Controller -
                     Receivables/Payable Manager - Upwork Freelancer from Gilgit,
@@ -135,7 +132,11 @@ const Team = () => {
               <Heading variant="userHeading">Skills</Heading>
               <ProgressWrapper>
                 <Typo variant="subHeadingTypo">Book Keeping</Typo>
-                <StyledProgressBar variant="danger" now={60} className="progress-value" />
+                <StyledProgressBar
+                  variant="danger"
+                  now={60}
+                  className="progress-value"
+                />
               </ProgressWrapper>
               <ProgressWrapper>
                 <Typo variant="subHeadingTypo">QuickBooks</Typo>
@@ -175,7 +176,9 @@ const Team = () => {
       <TeamUserListWrapper>
         <Container>
           <TopHeadingWrapper>
-            <Typo variant="mainDescHighlightedTypo">Book Keeping & Accounts</Typo>
+            <Typo variant="mainDescHighlightedTypo">
+              Book Keeping & Accounts
+            </Typo>
             <Typo variant="subDescHighlightedTypo">
               View All{" "}
               <ArrowRight className="mx-2" height="22px" color="white" />

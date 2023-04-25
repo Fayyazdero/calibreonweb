@@ -78,6 +78,10 @@ export const NewsLetterWrapper = styled.div`
       padding: 1px 24px;
     }
   }
+  & h2 {
+    @media (max-width: 992px) {
+      text-align: center;
+    }
 `;
 export const StyledContainer = styled.div`
   width: 85%;
