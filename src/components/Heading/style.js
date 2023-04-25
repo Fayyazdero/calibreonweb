@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
     const sm = breakPoints.sm;
+    const md = breakPoints.md;
     const fontSize = heading[variant]["xs"]
       ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
@@ -22,21 +23,23 @@ export const StyledHeading = styled.h2(
       [`@media screen and (max-width: ${sm}px)`]: {
         fontSize,
         lineHeight,
-        textAlign: `${variant === "mainHeading" && "center"}`,
       },
     };
   }
 );
 
-export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
-  color: colors.primary,
+export const ColouredHeading = styled.span(({ color, theme: { colors } }) => ({
+  color: `${color ? color : colors.primary}`,
 }));
 
 export const SubHeadingWrapper = styled.div(
-  ({ theme: { breakPoints, colors } }) => {
+  ({ variant, theme: { breakPoints, colors, heading } }) => {
     const sm = breakPoints.sm;
 
     return {
+      fontSize: `${heading[variant].fontSize}`,
+      fontWeight: `${heading[variant].fontWeight}`,
+      lineHeight: `${heading[variant].lineHeight}`,
       width: "max-content",
       borderBottom: `3px solid ${colors.primary}`,
       [`@media screen and (max-width: ${sm}px)`]: {

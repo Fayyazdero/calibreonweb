@@ -121,7 +121,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
         xs: {
-          fontSize: theme.fontSizes.md,
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights["6xl"],
         },
       },
@@ -340,7 +340,7 @@ export const getTheme = (value) => {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
         },
-      }
+      },
     },
   };
   return {

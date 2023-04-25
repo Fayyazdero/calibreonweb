@@ -6,7 +6,7 @@ export const Wrapper = styled.div((props) => {
     color: "#FFFFFF",
     borderRadius: "19px",
     paddingBottom: "28px",
-    width: "409px",
+    width: "auto",
     marginBottom: "28px",
 
     [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
@@ -89,7 +89,7 @@ export const Content = styled.div((props) => {
       paddingTop: "21px",
       paddingLeft: "26px",
       paddingRight: "26px",
-      textAlign: "justify"
+      textAlign: "justify",
     },
   };
 });

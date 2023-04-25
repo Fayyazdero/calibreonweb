@@ -25,6 +25,10 @@ import {
   HomeImageWrapper,
   StyledRow,
   NextArrow,
+  TestimonialCol,
+  Logos,
+  ServiceCard,
+  ImageCol,
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -69,7 +73,11 @@ const Home = () => {
             </Col>
             <Col sm={12} md={6}>
               <HomeHeadingWrapper>
-                <Heading title="Calibreon International" variant="mainHeading">
+                <Heading
+                  className="main-heading"
+                  title="Calibreon International"
+                  variant="mainHeading"
+                >
                   Grow with{" "}
                 </Heading>
                 <Typo variant="mainTypo" className="main-typo my-4">
@@ -91,7 +99,11 @@ const Home = () => {
       <ServicesWrapper>
         <Container>
           <ServicesHeadingWrapper>
-            <Heading variant="subHeading" title={"Our Services"} />
+            <Heading
+              color="#ffffff"
+              variant="subHeading"
+              title={"Our Services"}
+            />
             <ViewAll onClick={() => router.push("/services")}>
               View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
@@ -116,7 +128,9 @@ const Home = () => {
           ]}
         >
           {servicesCardData.map((item, index) => (
-            <Accounting src={item.imgSrc} cardTitle={item.title} />
+            <ServiceCard>
+              <Accounting src={item.imgSrc} cardTitle={item.title} />
+            </ServiceCard>
           ))}
         </Slider>
         <Container>
@@ -143,13 +157,13 @@ const Home = () => {
           />
           <Typo variant="mainTypo" className="testinomial-text">
             Find out why we're the top choice - read what our customers have to
-            say! Our testimonials reflect the high level of customer <br />
+            say! Our testimonials reflect the high level of customer
             satisfaction we strive for, and we're confident that you'll see why
             our clients keep coming back for more
           </Typo>
         </Container>
         <StyledRow>
-          <Col md={6}>
+          <TestimonialCol md={6}>
             <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
               <TestimonialCard
                 className="my-3"
@@ -190,24 +204,22 @@ const Home = () => {
             <NextArrow>
               <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
             </NextArrow>
-          </Col>
-          <Col md={6}>
+          </TestimonialCol>
+          <ImageCol md={6}>
             <ImageWrapper>
               <Image src={testimonialImge} alt="image" />
             </ImageWrapper>
-          </Col>
+          </ImageCol>
         </StyledRow>
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
-        <Row>
+        <Logos>
           {testimonialsLogos.map((item, index) => (
-            <Col md={4}>
-              <TestimonialLogos>
-                <StyledImage src={item.src} alt={item.alt} />
-              </TestimonialLogos>
-            </Col>
+            <TestimonialLogos>
+              <StyledImage className="logos" src={item.src} alt={item.alt} />
+            </TestimonialLogos>
           ))}
-        </Row>
+        </Logos>
       </TestimonialLogosWrapper>
       <Container>
         <NewsLetterWrapper>
