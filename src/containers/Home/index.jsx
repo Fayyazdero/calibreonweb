@@ -129,7 +129,7 @@ const Home = () => {
         >
           {servicesCardData.map((item, index) => (
             <ServiceCard>
-              <Accounting src={item.imgSrc} cardTitle={item.title} />
+              <Accounting src={item.imgSrc} title={item.title} />
             </ServiceCard>
           ))}
         </Slider>

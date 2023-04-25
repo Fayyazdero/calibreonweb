@@ -5,9 +5,16 @@ import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
 
-const FlimTv = ({ src, alt, title, children, ...rest }) => {
+const FlimTv = ({
+  src,
+  alt,
+  variant = "primary",
+  title,
+  children,
+  ...rest
+}) => {
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
         <Image src={src} alt={alt} fill />
       </ImageWrapper>

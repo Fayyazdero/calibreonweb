@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Text = styled.p(({ variant, theme: { typo, breakPoints } }) => {
-  const xs = breakPoints.xs;
-  const fontSize = typo[variant].xs.fontSize;
-
+  const lg = breakPoints.lg;
+  const fontSize = typo[variant]["lg"].fontSize;
   return {
     color: `${typo[variant].color}`,
     fontSize: `${typo[variant].fontSize}`,
     fontWeight: `${typo[variant].fontWeight}`,
-    [`@media screen and (max-width: ${xs}px)`]: {
+    margin: "0",
+    [`@media screen and (min-width:${lg})`]: {
       fontSize,
-      textAlign: "center",
-      marginBottom: "10px",
+      color: "red",
+      display: "none",
     },
   };
 });
