@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -27,9 +26,6 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     paddingBottom: "30px",
     paddingTop: "30px",
     alignItems: "center",
-    "& p:nth-child(2)": {
-      cursor: "pointer"
-    },
     [`@media screen and (max-width: ${xs}px)`]: {
       paddingTop: "46px",
       paddingBottom: "24px",
