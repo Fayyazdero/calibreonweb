@@ -51,6 +51,7 @@ function Header() {
 
   const handleClick = (index) => {
     setActive(index);
+    setIsOpen(false);
   };
 
   const handleMenuToggle = () => {
@@ -78,7 +79,6 @@ function Header() {
                 <StyledLink
                   onClick={() => {
                     handleClick(key);
-                    setIsOpen(false);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === item.link ? "active" : ""
