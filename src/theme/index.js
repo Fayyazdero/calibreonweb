@@ -179,7 +179,7 @@ export const getTheme = (value) => {
       },
       userHeading: {
         fontSize: theme.fontSizes.userTitle,
-        color: theme.colors.grey,
+        color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
         xs: {

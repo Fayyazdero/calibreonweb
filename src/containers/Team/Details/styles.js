@@ -32,20 +32,22 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     },
   };
 });
-export const TeamDetailsHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+export const TeamDetailsHeadingWrapper = styled.div(
+  ({ theme: { breakPoints } }) => {
+    const xs = breakPoints.xs;
 
-  return {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingBottom: "9px",
-    paddingTop: "30px",
-    alignItems: "center",
-    [`@media screen and (max-width: ${xs}px)`]: {
-      paddingTop: "46px",
-    },
-  };
-});
+    return {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingBottom: "9px",
+      paddingTop: "30px",
+      alignItems: "center",
+      [`@media screen and (max-width: ${xs}px)`]: {
+        paddingTop: "46px",
+      },
+    };
+  }
+);
 
 export const ProfileCardWrapper = styled.div`
   display: flex;
@@ -130,7 +132,7 @@ export const TeamProgressContainer = styled.div(
     return {
       width: "50%",
       "& h2": {
-        marginBottom: "21px"
+        marginBottom: "21px",
       },
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
@@ -161,13 +163,11 @@ export const LineContainer = styled.div`
 `;
 
 export const TimeLineContainer = styled.div(() => {
-
   return {
     width: "100%",
     "& p": {
-      marginBottom: "0"
+      marginBottom: "0",
     },
-
   };
 });
 export const LineWrapper = styled.div`
@@ -208,7 +208,7 @@ export const ProgressWrapper = styled.div(
         backgroundColor: colors.grey,
       },
       "& p": {
-        marginBottom: "8px"
+        marginBottom: "8px",
       },
 
       [`@media screen and (max-width: ${xs}px)`]: {
@@ -231,7 +231,7 @@ export const TeamTimelineContainer = styled.div(
       flexDirection: "column",
       justifyContent: "space-between",
       "& h2": {
-        marginBottom: "36px"
+        marginBottom: "36px",
       },
 
       [`@media screen and (max-width: ${xs}px)`]: {

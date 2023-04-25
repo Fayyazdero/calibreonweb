@@ -42,7 +42,7 @@ import Typo from "@/components/Typo";
 import { useRouter } from "next/router";
 
 const Details = () => {
-    const [verifiedLogo, setVerifiedLogo] = useState(true);
+  const [verifiedLogo, setVerifiedLogo] = useState(true);
   const router = useRouter();
   return (
     <>
@@ -71,7 +71,8 @@ const Details = () => {
                   <Image
                     className="mx-3"
                     src={upwork_logo_icon}
-                    alt="Upwork logo"></Image>
+                    alt="Upwork logo"
+                  ></Image>
                   <Typo variant="userDesc" color="#0A66C2">
                     Faheem S. - Accountant Bookkeeper Credit Controller -
                     Receivables/Payable Manager - Upwork Freelancer from Gilgit,

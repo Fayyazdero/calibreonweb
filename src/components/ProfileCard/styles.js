@@ -2,6 +2,7 @@ const { default: styled } = require("styled-components");
 
 export const Wrapper = styled.div((props) => {
   return {
+    cursor: "pointer",
     background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
     color: "#FFFFFF",
     borderRadius: "19px",

@@ -11,6 +11,7 @@ import Wrapper, {
   Certification,
 } from "./styles";
 import verifiedIcon from "/public/images/verified-icon.png";
+import { Heading } from "../Heading";
 
 const ProfileCard = ({
   profile,
@@ -21,15 +22,20 @@ const ProfileCard = ({
   colourPrimary,
   className,
   fontSize,
+  onClick,
 }) => {
   return (
-    <Wrapper className={className} colourPrimary={colourPrimary}>
+    <Wrapper
+      onClick={onClick}
+      className={className}
+      colourPrimary={colourPrimary}
+    >
       <ProfileHeader>
         <ProfileImage>
           <Image src={profile} alt="profile-A"></Image>
         </ProfileImage>
         <ProfileTitle>
-          <Title>{title}</Title>
+          <Heading variant="userHeading">{title}</Heading>
           <Certification>
             <SubTitle fontSize={fontSize}> {subTitle}</SubTitle>
             {verifiedLogo == true && (

@@ -1,6 +1,6 @@
 import ProfileCard from "@/components/ProfileCard";
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import {
   ProfileCardWrapper,
   ServicesHeadingWrapper,
@@ -15,26 +15,35 @@ import { useRouter } from "next/router";
 
 const Team = () => {
   const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/team/details");
+  };
   return (
-    <>
-      <Container>
-        <ServicesHeadingWrapper>
-          <Heading variant="subHeading">Our Team</Heading>
-        </ServicesHeadingWrapper>
-        <TopHeadingWrapper>
-          <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
-          <Typo
-            variant="headingTypo"
-            onClick={() => router.push("/team/details")}
-          >
-            View All{" "}
-            <ArrowRight className="mx-2" height="22px" color="#F05B25" />
-          </Typo>
-        </TopHeadingWrapper>
-        <ProfileCardWrapper onClick={() => router.push("/team/details")}>
-          {teamData?.slice(0, 3)?.map((data) => {
-            return (
+    <Container>
+      <ServicesHeadingWrapper>
+        <Heading
+          variant="subHeading"
+          color={"#F05B25"}
+          title={"Our Team"}
+        ></Heading>
+      </ServicesHeadingWrapper>
+      <TopHeadingWrapper>
+        <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
+        <Typo
+          variant="headingTypo"
+          onClick={() => router.push("/team/details")}
+        >
+          View All <ArrowRight className="mx-2" height="22px" color="#F05B25" />
+        </Typo>
+      </TopHeadingWrapper>
+      {/* <ProfileCardWrapper onClick={() => router.push("/team/details")}> */}
+      <Row>
+        {teamData?.slice(0, 3)?.map((data) => {
+          return (
+            <Col md={4}>
               <ProfileCard
+                onClick={handleClick}
                 key={data.id}
                 fontSize={15}
                 profile={data?.profile}
@@ -42,11 +51,13 @@ const Team = () => {
                 subTitle={data.subTitle}
                 description={data.description}
               />
-            );
-          })}
-        </ProfileCardWrapper>
-      </Container>
-    </>
+            </Col>
+          );
+        })}
+      </Row>
+
+      {/* </ProfileCardWrapper> */}
+    </Container>
   );
 };
 

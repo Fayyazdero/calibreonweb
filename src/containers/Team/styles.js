@@ -28,7 +28,7 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     paddingTop: "30px",
     alignItems: "center",
     "& p:nth-child(2)": {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     [`@media screen and (max-width: ${xs}px)`]: {
       paddingTop: "46px",
@@ -345,14 +345,6 @@ export const ProfileImage = styled("div")({
     height: "100%",
   },
 });
-export const Title = styled("h2")({
-  fontFamily: "Montserrat",
-  fontWeight: "700",
-  fontSize: "46px",
-  letterSpacing: "-2.3%",
-  margin: "0",
-});
-
 export const Certification = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
 
