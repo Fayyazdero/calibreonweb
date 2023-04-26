@@ -143,7 +143,7 @@ const Details = () => {
       <TeamUserListWrapper>
         <Container>
           <TopHeadingWrapper>
-            <Typo variant="mainDescHighlightedTypo">
+            <Typo className="mainDescHighlighted" variant="mainDescHighlightedTypo">
               Book Keeping & Accounts
             </Typo>
             <Typo variant="subDescHighlightedTypo">

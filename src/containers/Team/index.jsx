@@ -43,7 +43,6 @@ const Team = () => {
               <ProfileCard
                 onClick={handleClick}
                 key={data.id}
-                fontSize={15}
                 profile={data?.profile}
                 title={data.title}
                 subTitle={data.subTitle}

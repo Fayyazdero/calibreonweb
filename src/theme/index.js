@@ -48,6 +48,7 @@ export const theme = {
     light: 300,
   },
   lineHeights: {
+    user: "93%",
     title: "83px",
     secTitle: "78px",
     faqTitle: "27px",
@@ -183,8 +184,8 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
         xs: {
-          fontSize: theme.fontSizes.userTitle,
-          lineHeight: theme.lineHeights.base,
+          fontSize: theme.fontSizes["6xl"],
+          lineHeight: theme.lineHeights.user,
         },
       },
       newUserHeading: {
@@ -194,7 +195,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.userTitle,
         xs: {
           fontSize: theme.fontSizes.userTitle,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.user,
         },
       },
     },
@@ -225,7 +226,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       newDescTypo: {
@@ -255,7 +256,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights["1xl"],
         },
       },
       seviceTypo: {
@@ -312,7 +313,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.userTitle,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       subDescHighlightedTypo: {
@@ -322,7 +323,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.quotes,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       privacyTypo: {

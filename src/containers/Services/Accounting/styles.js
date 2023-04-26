@@ -96,8 +96,35 @@ export const CertificationWrapper = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 export const ListWrapper = styled.div`
-  line-height: 40px;
+  line-height: 21px;
 `;
+
+export const VideoWrapper = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    lineHeight: "21px",
+    "& .firstTypo": {
+      marginTop: "28px",
+      marginBottom: "6px"
+    }
+  };
+});
+
+export const VideoIconWrapper = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    backgroundColor: "#D9D9D9",
+    width: "372px",
+    height: "283px",
+    borderRadius: "27px",
+    marginTop: "20px",
+    [`@media screen and (max-width: ${xs}px)`]: {
+      width: "100%",
+    },
+  };
+});
 
 export const InfoWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
@@ -210,6 +237,9 @@ export const NewTeamDetailsDescWrapper = styled.div(() => {
     "& p:first-child": {
       marginBottom: "8px",
     },
+    "& .desHeading": {
+      marginTop: "40px"
+    }
   };
 });
 
@@ -232,7 +262,10 @@ export const TeamProgressContainer = styled.div(
     const xs = breakPoints.xs;
 
     return {
-      width: "50%",
+      width: "60%",
+      "& h2:first-child": {
+        marginBottom: "8px"
+      },
 
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
@@ -250,7 +283,7 @@ export const TeamTimelineContainer = styled.div(
     const xs = breakPoints.xs;
 
     return {
-      width: "50%",
+      width: "40%",
       display: "flex",
       flexDirection: "column",
       alignItems: "end",

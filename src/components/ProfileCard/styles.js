@@ -15,22 +15,37 @@ export const Wrapper = styled.div((props) => {
       color: "#FFFFFF",
       borderRadius: "19px",
       paddingBottom: "28px",
-      marginBottom: "28px",
+      marginBottom: "48px",
       width: "100%",
     },
   };
 });
-export const ProfileHeader = styled("div")({
-  display: "flex",
-  justifyContent: "space-around",
+
+export const ProfileHeader = styled.div((props) => {
+  return {
+    display: "flex",
+    justifyContent: "space-around",
+
+    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+      margin: "0 20px",
+      justifyContent: "space-between",
+    },
+  };
 });
-export const ProfileTitle = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  margin: "33px 0 21px 0",
-  "& h2": {
-    lineBreak: "anywhere"
-  }
+
+export const ProfileTitle = styled.div((props) => {
+  return {
+    display: "flex",
+    flexDirection: "column",
+    margin: "33px 0 21px 0",
+    "& h2": {
+      lineBreak: "anywhere",
+    },
+    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+      lineBreak: "anywhere",
+      fontSize: "38px",
+    },
+  };
 });
 
 export const ProfileImage = styled.div((props) => {
@@ -39,6 +54,11 @@ export const ProfileImage = styled.div((props) => {
     "& img": {
       width: "161px",
       height: "161px",
+      border: "8px solid #FFFFFF",
+      boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
+      filter:
+        "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
+      borderRadius: "4px",
     },
 
     [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
@@ -46,6 +66,11 @@ export const ProfileImage = styled.div((props) => {
       "& img": {
         width: "140px",
         height: "140px",
+        border: "8px solid #FFFFFF",
+        boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
+        filter:
+          "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
+        borderRadius: "4px",
       },
     },
   };
@@ -72,8 +97,12 @@ export const SubTitle = styled("h4")(({ fontSize }) => ({
   fontStyle: "italic",
   fontWeight: "500",
   fontSize: fontSize ? `${fontSize}px` : "12px",
+  lineHeight: "150%",
   letterSpacing: "-2.2%",
   margin: "0",
+  [`@media screen and (max-width: 768px)`]: {
+    lineHeight: "150%",
+  },
 }));
 export const VerifiedLogo = styled("div")({
   display: "flex",
@@ -90,10 +119,9 @@ export const Content = styled.div((props) => {
     paddingRight: "26px",
     textAlign: "justify",
     [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
-      paddingTop: "21px",
-      paddingLeft: "26px",
-      paddingRight: "26px",
-      textAlign: "justify",
+      fontWeight: "500",
+      fontSize: "13.8503px",
+      lineHeight: "19px",
     },
   };
 });

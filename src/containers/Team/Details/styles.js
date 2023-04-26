@@ -13,6 +13,9 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     [`@media screen and (max-width: ${xs}px)`]: {
       paddingTop: "46px",
       paddingBottom: "24px",
+      "& .mainDescHighlighted": {
+        fontWeight: "600"
+      }
     },
   };
 });
@@ -37,8 +40,11 @@ export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints } }) => {
 
   return {
     "& .newTypo": {
-      marginBottom: "29px"
-    }
+      marginBottom: "29px",
+      [`@media screen and (max-width: ${xs}px)`]: {
+        textAlign: "center"
+      },
+    },
   };
 });
 
@@ -65,6 +71,11 @@ export const TeamDetailsImageWrapper = styled.div(
       "& img": {
         width: "308px",
         height: "308px",
+        border: "8px solid #4D4D4D",
+        boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
+        filter:
+          "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
+        borderRadius: "4px",
       },
       [`@media screen and (max-width: ${xs}px)`]: {
         alignItems: "center",
@@ -73,6 +84,11 @@ export const TeamDetailsImageWrapper = styled.div(
         "& img": {
           width: "208px",
           height: "208px",
+          border: "8px solid #4D4D4D",
+          boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
+          filter:
+            "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
+          borderRadius: "4px",
         },
       },
     };
@@ -93,14 +109,14 @@ export const TeamDetailsInfoWrapper = styled.div(
   }
 );
 
-export const TeamDetailsDescWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+export const TeamDetailsDescWrapper = styled.div(
+  () => {
 
-  return {
-    textAlign: "justify",
-
-  };
-});
+    return {
+      textAlign: "justify",
+    };
+  }
+);
 
 export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
@@ -127,10 +143,10 @@ export const TeamProgressContainer = styled.div(
       },
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
-        marginBottom: "40px",
+        marginBottom: "21px",
         "& h2": {
           marginBottom: "21px",
-          textAlign: "center"
+          marginTop: "24px"
         },
       },
     };
@@ -208,8 +224,12 @@ export const ProgressWrapper = styled.div(
 
       [`@media screen and (max-width: ${xs}px)`]: {
         padding: 0,
+        marginBottom: "7.34px",
         "& .progress": {
           backgroundColor: colors.grey,
+        },
+        "& p": {
+          marginBottom: "5.8px",
         },
       },
     };
@@ -232,8 +252,7 @@ export const TeamTimelineContainer = styled.div(
       [`@media screen and (max-width: ${xs}px)`]: {
         width: "100%",
         "& h2": {
-          marginBottom: "36px",
-          textAlign: "center"
+          marginBottom: "26px",
         },
       },
     };
@@ -243,9 +262,18 @@ export const TeamUserListWrapper = styled.div`
   background-color: #f05b25;
   margin-bottom: 50px;
 `;
-export const SpacerContainer = styled.div`
-  height: 37px;
-`;
+
+export const SpacerContainer = styled.div(({ theme: { breakPoints } }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    height: "38px",
+
+    [`@media screen and (max-width: ${xs}px)`]: {
+      height: "28px",
+    },
+  };
+});
 
 export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
@@ -295,15 +323,22 @@ export const Certification = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 
-export const SubTitle = styled("h4")(({ fontSize }) => ({
-  fontFamily: "Inter",
-  color: "#4d4d4d",
-  fontStyle: "italic",
-  fontWeight: "500",
-  fontSize: fontSize ? `${fontSize}px` : "12px",
-  letterSpacing: "-2.2%",
-  margin: "0",
-}));
+export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
+  const xs = breakPoints.xs;
+
+  return {
+    fontFamily: "Inter",
+    color: "#4d4d4d",
+    fontStyle: "italic",
+    fontWeight: "500",
+    fontSize: fontSize ? `${fontSize}px` : "12px",
+    letterSpacing: "-2.2%",
+    margin: "0",
+    [`@media screen and (max-width: ${xs}px)`]: {
+      lineHeight: "150%"
+    },
+  };
+});
 
 export const VerifiedLogo = styled("div")({
   display: "flex",

@@ -21,6 +21,8 @@ import {
   VideoTestimonialWrapper,
   InnerInfoWrapper,
   SpacerInfoWrapper,
+  VideoWrapper,
+  VideoIconWrapper,
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
@@ -136,6 +138,37 @@ const Accounting = () => {
                   </li>
                 </ul>
               </ListWrapper>
+              <Typo className="desHeading" variant="newSubDesTypo">
+                Portfolios:
+              </Typo>
+              <Row>
+                <Col md={6}>
+                  <VideoWrapper>
+                    <VideoIconWrapper></VideoIconWrapper>
+                    <Typo className="firstTypo" variant="newSubDesTypo">
+                      Amazon Account Management
+                    </Typo>
+                    <Typo variant={"descTypo"}>
+                      Search Engine Marketing , Product Sourcing , Product
+                      Listings , Amazon PPC , PPC Campaign Setup & Management ,
+                      Amazon Seller Central , Amazon
+                    </Typo>
+                  </VideoWrapper>
+                </Col>
+                <Col>
+                  <VideoWrapper>
+                    <VideoIconWrapper></VideoIconWrapper>
+                    <Typo className="firstTypo" variant="newSubDesTypo">
+                      Amazon Account Management
+                    </Typo>
+                    <Typo variant={"descTypo"}>
+                      Search Engine Marketing , Product Sourcing , Product
+                      Listings , Amazon PPC , PPC Campaign Setup & Management ,
+                      Amazon Seller Central , Amazon
+                    </Typo>
+                  </VideoWrapper>
+                </Col>
+              </Row>
             </NewTeamDetailsDescWrapper>
           </TeamProgressContainer>
           <TeamTimelineContainer>

@@ -30,8 +30,11 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
       cursor: "pointer",
     },
     [`@media screen and (max-width: ${xs}px)`]: {
-      paddingTop: "46px",
-      paddingBottom: "24px",
+      paddingTop: "48px",
+      paddingBottom: "28px",
+      "& p": {
+        fontWeight: "600"
+      },
     },
   };
 });
