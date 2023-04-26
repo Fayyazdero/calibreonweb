@@ -29,7 +29,7 @@ export const TeamDetailsHeadingWrapper = styled.div(
       paddingBottom: "39px",
       alignItems: "center",
       [`@media screen and (max-width: ${xs}px)`]: {
-        paddingTop: "46px",
+        paddingBottom: "9px"
       },
     };
   }
