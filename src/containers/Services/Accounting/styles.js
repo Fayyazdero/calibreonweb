@@ -26,9 +26,12 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "30px",
-    paddingTop: "30px",
+    paddingBottom: "40px",
+    paddingTop: "40px",
     alignItems: "center",
+    "& p:first-child": {
+      margin: 0,
+    },
     [`@media screen and (max-width: ${xs}px)`]: {
       paddingTop: "46px",
       paddingBottom: "24px",

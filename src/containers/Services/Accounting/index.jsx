@@ -150,7 +150,7 @@ const Accounting = () => {
                       width="372px"
                       height="283px"
                       style={{ backgroundColor: "black", borderRadius: "24px" }}
-                      controls></StyledVideoDiv>
+                      controls />
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -168,7 +168,7 @@ const Accounting = () => {
                       width="372px"
                       height="283px"
                       style={{ backgroundColor: "black", borderRadius: "24px" }}
-                      controls></StyledVideoDiv>
+                      controls />
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -219,7 +219,7 @@ const Accounting = () => {
                 width="372px"
                 height="283px"
                 style={{ backgroundColor: "black", borderRadius: "24px" }}
-                controls></StyledTestimonialVideoDiv>
+                controls />
             </TestimonialWrapper>
           </TeamTimelineContainer>
         </TeamTimelineWrapper>
