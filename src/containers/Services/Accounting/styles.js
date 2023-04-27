@@ -1,4 +1,3 @@
-import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 
 export const ServicesHeadingWrapper = styled.div(
@@ -156,6 +155,7 @@ export const InfoWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     backgroundColor: "#f05b25",
     width: "413px",
+    height: "387px",
     boxShadow: "0px 0px 5.73407px rgba(0, 0, 0, 0.05)",
     borderRadius: "20px",
     padding: "33px",
