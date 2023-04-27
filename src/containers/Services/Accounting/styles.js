@@ -52,13 +52,17 @@ export const TestimonialWrapper = styled.div(({ theme: { breakPoints } }) => {
     width: "413px",
     height: "387px",
     boxShadow: "0px 0px 5.73407px rgba(0, 0, 0, 0.05)",
-    borderRadius: "20px",
+    borderRadius: "34px",
     padding: "34px 34px 44px 34px",
+    "& p": {
+      margin: 0,
+    },
 
     [`@media screen and (max-width: ${xs}px)`]: {
       width: "100%",
+      height: "100%",
       "& p:first-child": {
-        marginBottom: "34px",
+        margin: 0,
       },
     },
   };
@@ -106,12 +110,12 @@ export const VideoWrapper = styled.div(({ theme: { breakPoints } }) => {
     lineHeight: "21px",
     "& .firstTypo": {
       marginTop: "28px",
-      marginBottom: "6px"
-    }
+      marginBottom: "6px",
+    },
   };
 });
 
-export const VideoIconWrapper = styled.div(({ theme: { breakPoints } }) => {
+export const StyledVideoDiv = styled.video(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
 
   return {
@@ -125,6 +129,23 @@ export const VideoIconWrapper = styled.div(({ theme: { breakPoints } }) => {
     },
   };
 });
+export const StyledTestimonialVideoDiv = styled.video(
+  ({ theme: { breakPoints } }) => {
+    const xs = breakPoints.xs;
+
+    return {
+      backgroundColor: "#D9D9D9",
+      width: "345px",
+      height: "255px",
+      borderRadius: "27px",
+      marginTop: "34px",
+      [`@media screen and (max-width: ${xs}px)`]: {
+        width: "100%",
+        marginTop: "24px",
+      },
+    };
+  }
+);
 
 export const InfoWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
@@ -170,7 +191,7 @@ export const InnerInfoWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     padding: "16px",
     "& p": {
-      margin: 0
+      margin: 0,
     },
 
     [`@media screen and (max-width: ${xs}px)`]: {
@@ -190,7 +211,6 @@ export const SpacerInfoWrapper = styled.div(({ theme: { breakPoints } }) => {
     },
   };
 });
-
 
 export const TeamDetailsInfoWrapper = styled.div(
   ({ theme: { breakPoints } }) => {
@@ -238,8 +258,8 @@ export const NewTeamDetailsDescWrapper = styled.div(() => {
       marginBottom: "8px",
     },
     "& .desHeading": {
-      marginTop: "40px"
-    }
+      marginTop: "40px",
+    },
   };
 });
 
@@ -264,7 +284,7 @@ export const TeamProgressContainer = styled.div(
     return {
       width: "60%",
       "& h2:first-child": {
-        marginBottom: "8px"
+        marginBottom: "8px",
       },
 
       [`@media screen and (max-width: ${xs}px)`]: {

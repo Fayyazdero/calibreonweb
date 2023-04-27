@@ -18,11 +18,11 @@ import {
   TestimonialWrapper,
   TypoContainer,
   NewTeamDetailsDescWrapper,
-  VideoTestimonialWrapper,
+  StyledTestimonialVideoDiv,
   InnerInfoWrapper,
   SpacerInfoWrapper,
   VideoWrapper,
-  VideoIconWrapper,
+  StyledVideoDiv,
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
@@ -32,6 +32,7 @@ import linkedInLogo from "../../../../public/images/linkedinLogo.png";
 import profileimg from "../../../../public/images/xact-accounting.png";
 import quickbooksImage from "../../../../public/images/quickbooks.png";
 import xero from "../../../../public/images/xero.png";
+// import video from "../../../../public/videos/video.mp4";
 import xerotwo from "../../../../public/images/xero-two.png";
 import { teamData } from "../../Team/teamData";
 import ProfileCard from "@/components/ProfileCard";
@@ -144,7 +145,12 @@ const Accounting = () => {
               <Row>
                 <Col md={6}>
                   <VideoWrapper>
-                    <VideoIconWrapper></VideoIconWrapper>
+                    <StyledVideoDiv
+                      src="/videos/video.mp4"
+                      width="372px"
+                      height="283px"
+                      style={{ backgroundColor: "black", borderRadius: "24px" }}
+                      controls></StyledVideoDiv>
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -157,7 +163,12 @@ const Accounting = () => {
                 </Col>
                 <Col>
                   <VideoWrapper>
-                    <VideoIconWrapper></VideoIconWrapper>
+                    <StyledVideoDiv
+                      src="/videos/video.mp4"
+                      width="372px"
+                      height="283px"
+                      style={{ backgroundColor: "black", borderRadius: "24px" }}
+                      controls></StyledVideoDiv>
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -203,7 +214,12 @@ const Accounting = () => {
             </CertificationWrapper>
             <TestimonialWrapper>
               <Typo variant="accountingTypo">Video Testimonials</Typo>
-              <VideoTestimonialWrapper></VideoTestimonialWrapper>
+              <StyledTestimonialVideoDiv
+                src="/videos/video.mp4"
+                width="372px"
+                height="283px"
+                style={{ backgroundColor: "black", borderRadius: "24px" }}
+                controls></StyledTestimonialVideoDiv>
             </TestimonialWrapper>
           </TeamTimelineContainer>
         </TeamTimelineWrapper>
