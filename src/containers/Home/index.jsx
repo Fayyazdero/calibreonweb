@@ -29,6 +29,11 @@ import {
   Logos,
   ServiceCard,
   ImageCol,
+  StyledImgCol,
+  NewsLetterCol,
+  BannerRow,
+  BannerCol,
+  LearnMore,
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -65,13 +70,13 @@ const Home = () => {
     <>
       <Container>
         <Banner>
-          <Row>
-            <Col sm={12} md={6}>
+          <BannerRow>
+            <BannerCol sm={12} md={6}>
               <HomeImageWrapper>
                 <StyledImage src={home} alt="home" />
               </HomeImageWrapper>
-            </Col>
-            <Col sm={12} md={6}>
+            </BannerCol>
+            <BannerCol sm={12} md={6}>
               <HomeHeadingWrapper>
                 <Heading
                   className="main-heading"
@@ -92,8 +97,8 @@ const Home = () => {
                   variant="contained"
                 />
               </HomeHeadingWrapper>
-            </Col>
-          </Row>
+            </BannerCol>
+          </BannerRow>
         </Banner>
       </Container>
       <ServicesWrapper>
@@ -205,12 +210,23 @@ const Home = () => {
               <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
             </NextArrow>
           </TestimonialCol>
+
           <ImageCol md={6}>
             <ImageWrapper>
               <Image src={testimonialImge} alt="image" />
             </ImageWrapper>
           </ImageCol>
         </StyledRow>
+        <LearnMore>
+          <Typo variant="mainTypo">Learn More</Typo>
+          <ArrowsBg>
+            <ArrowRight
+              height={"20px"}
+              color={"#ffffff"}
+              onClick={onRightClick}
+            />
+          </ArrowsBg>
+        </LearnMore>
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
         <Logos>
@@ -224,11 +240,17 @@ const Home = () => {
       <Container>
         <NewsLetterWrapper>
           <Row>
-            <Col xs={12} sm={12} md={6}>
+            <NewsLetterCol xs={12} sm={12} md={6}>
               <ContentWrapper>
                 <Heading title=" Join US" variant="mainHeading">
                   News Letter
                 </Heading>
+                <StyledImage
+                  className="responsive-image"
+                  src={newsletter}
+                  alt="newsletter"
+                />
+
                 <Typo variant="mainTypo">
                   Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
                   aliquam eget. Purus id faucibus mollis viverra viverra odio
@@ -240,10 +262,10 @@ const Home = () => {
                   variant="contained"
                 />
               </ContentWrapper>
-            </Col>
-            <Col xs={12} sm={12} md={6}>
+            </NewsLetterCol>
+            <StyledImgCol xs={12} sm={12} md={6}>
               <StyledImage src={newsletter} alt="newsletter" />
-            </Col>
+            </StyledImgCol>
           </Row>
         </NewsLetterWrapper>
       </Container>

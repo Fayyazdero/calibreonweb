@@ -40,6 +40,16 @@ export const HomeHeadingWrapper = styled.div`
   }
 `;
 
+export const BannerRow = styled(Row)`
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+export const BannerCol = styled(Col)`
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
 export const TestimonialWrapper = styled.div`
   padding: 116px 0;
   z-index: 1;
@@ -82,6 +92,7 @@ export const NewsLetterWrapper = styled.div`
     @media (max-width: 992px) {
       text-align: center;
     }
+  }
 `;
 export const StyledContainer = styled.div`
   width: 85%;
@@ -92,6 +103,47 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  & .responsive-image {
+    display: none;
+    @media (max-width: 992px) {
+      display: block;
+      margin-top: 42px;
+      margin-bottom: 30px;
+    }
+  }
+
+  & form {
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  & input {
+    @media (max-width: 992px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  & button {
+    @media (max-width: 992px) {
+      width: max-content;
+      margin: auto;
+      margin-top: 20px;
+      padding: 4px 26px;
+    }
+  }
+`;
+
+export const StyledImgCol = styled(Col)`
+  @media (max-width: 992px) {
+    display: none;
+  }
+`;
+export const NewsLetterCol = styled(Col)`
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 `;
 export const StyledImage = styled(Image)`
   position: unset !important;
@@ -99,7 +151,7 @@ export const StyledImage = styled(Image)`
 
   &.logos {
     @media (max-width: 992px) {
-      height: 70px;
+      height: 72px;
       width: auto;
     }
   }
@@ -114,6 +166,13 @@ export const HomeImageWrapper = styled.div`
   @media (max-width: 992px) {
     display: flex;
     justify-content: center;
+  }
+
+  & img {
+    @media (max-width: 992px) {
+      height: 270px;
+      width: 270px;
+    }
   }
 `;
 export const ImageWrapper = styled.div`
@@ -133,8 +192,12 @@ export const TestimonialLogos = styled.div`
   justify-content: space-around;
   align-items: center;
   max-width: 100%;
-  height: 72px;
   width: auto;
+
+  & img {
+    height: 65px;
+    max-width: 100%;
+  }
 `;
 
 export const Logos = styled.div`
@@ -142,6 +205,12 @@ export const Logos = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
+  @media (max-width: 1360px) {
+    row-gap: 55px;
+    column-gap: 60px;
+    justify-content: center;
+  }
 `;
 
 export const ServicesHeadingWrapper = styled.div`
@@ -206,13 +275,21 @@ export const StyledRow = styled(Row)`
 `;
 export const TestimonialCol = styled(Col)`
   z-index: 1;
-  padding-left: 116px;
 
   @media (max-width: 992px) {
     width: 100%;
   }
 `;
 
+export const LearnMore = styled.div`
+  display: none !important;
+  @media (max-width: 992px) {
+    display: flex !important;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 96px;
+  }
+`;
 export const NextArrow = styled.div`
   width: 50px;
   display: flex;

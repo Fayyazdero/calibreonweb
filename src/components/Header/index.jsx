@@ -21,36 +21,39 @@ import Button from "../Button";
 import { useRouter } from "next/router";
 import { CrossIcon, Facebook, Instagram, LinkedIn, Twitter } from "../Svgs";
 
+let navLinks = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+  {
+    title: "Services",
+    link: "/services",
+  },
+  {
+    title: "Team",
+    link: "/team",
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+  },
+];
+
 function Header() {
   const router = useRouter();
-  let navLinks = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "About",
-      link: "/about",
-    },
-    {
-      title: "Services",
-      link: "/services",
-    },
-    {
-      title: "Team",
-      link: "/team",
-    },
-    {
-      title: "Blog",
-      link: "/blog",
-    },
-  ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (index) => {
-    setActive(index);
+  const handleClick = (event, link) => {
+    console.log(event, "event");
+    event.preventDefault();
+    setActive(link);
     setIsOpen(false);
   };
 
@@ -78,7 +81,7 @@ function Header() {
               <LinksWrapper key={key}>
                 <StyledLink
                   onClick={() => {
-                    handleClick(key);
+                    handleClick(event, item.link);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === item.link ? "active" : ""
