@@ -28,7 +28,7 @@ export const theme = {
     formTitle: "1.5625rem" /* 25px */,
     "5xl": "2.43rem" /* 39px */,
     "4xl": "2.06rem" /* 33px */,
-    "3xl": "1.18rem" /* 29px */,
+    "3xl": "1.8125" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
     xl: "1.25rem" /* 20px */,
     lg: "1.125rem" /* 18px */,
@@ -48,7 +48,7 @@ export const theme = {
   lineHeights: {
     title: "83px",
     secTitle: "78px",
-    quotes: "29px",
+    quotes: "46px",
     subTitle: "48px",
     tabTypo: "26px",
     "1xl": "20px",

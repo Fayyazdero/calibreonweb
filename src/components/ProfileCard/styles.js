@@ -1,10 +1,26 @@
 const { default: styled } = require("styled-components");
 
-const Wrapper = styled("div")((props) => ({
-  background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
+const Wrapper = styled("div")(({ theme: { colors }, variant, clicked }) => ({
   color: "#FFFFFF",
   borderRadius: "19px",
   paddingBottom: "28px",
+  background: colors[variant] || colors.primary,
+  cursor: "pointer",
+  transition: ".3s ease",
+  border: `2px solid ${colors[variant]}`,
+  "&:hover": {
+    color: `${colors[variant] || colors.primary}`,
+    background: "transparent",
+    h2: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    p: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    "svg path": {
+      fill: `${colors[variant] || colors.primary}`,
+    },
+  },
 }));
 export const ProfileHeader = styled("div")({
   display: "flex",

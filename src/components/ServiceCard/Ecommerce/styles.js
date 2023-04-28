@@ -7,6 +7,7 @@ const Wrapper = styled("div")(({ theme: { colors }, variant }) => ({
   borderRadius: "20px",
   boxSizing: "border-box",
   height: "auto",
+  cursor: "pointer",
   transition: ".3s ease",
   border: `2px solid ${colors[variant] || colors.primary}`,
   "&:hover": {
