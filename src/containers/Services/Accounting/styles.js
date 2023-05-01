@@ -38,14 +38,6 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 
-export const ProfileCardWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 30px;
-  column-gap: 30px;
-`;
-
 export const TestimonialWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;
 
@@ -69,24 +61,6 @@ export const TestimonialWrapper = styled.div(({ theme: { breakPoints } }) => {
     },
   };
 });
-
-export const VideoTestimonialWrapper = styled.div(
-  ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
-
-    return {
-      backgroundColor: "#D9D9D9",
-      width: "345px",
-      height: "255px",
-      borderRadius: "15px",
-      margin: "auto",
-
-      [`@media screen and (max-width: ${xs}px)`]: {
-        width: "100%",
-      },
-    };
-  }
-);
 
 export const CertificationWrapper = styled.div(({ theme: { breakPoints } }) => {
   const xs = breakPoints.xs;

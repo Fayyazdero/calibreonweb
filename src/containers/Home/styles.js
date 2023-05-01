@@ -199,14 +199,14 @@ export const CardWrapper = styled.div`
 `;
 
 export const StyledRow = styled(Row)`
-  position: relative;
+  // position: relative;
 
   & .center-card {
   }
 `;
 export const TestimonialCol = styled(Col)`
   z-index: 1;
-  padding-left: 116px;
+  // padding-left: 116px;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -221,9 +221,9 @@ export const NextArrow = styled.div`
   border-radius: 50%;
   height: 50px;
   background: ${({ theme: { colors } }) => colors.primary};
-  position: absolute;
-  left: 55%;
-  top: 50%;
+  position: relative;
+  top: 400px;
+  left: 80px;
   z-index: 3;
   cursor: pointer;
   @media (max-width: 992px) {
