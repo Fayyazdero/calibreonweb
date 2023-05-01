@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Wrapper, {
   Content,
   ProfileImage,
@@ -19,17 +19,13 @@ const ProfileCard = ({
   subTitle,
   description,
   verifiedLogo,
-  colourPrimary,
+  variant = "primary",
   className,
   fontSize,
   onClick,
 }) => {
   return (
-    <Wrapper
-      onClick={onClick}
-      className={className}
-      colourPrimary={colourPrimary}
-    >
+    <Wrapper className={className} variant={variant}>
       <ProfileHeader>
         <ProfileImage>
           <Image src={profile} alt="profile-A"></Image>

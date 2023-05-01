@@ -4,7 +4,6 @@ import { ColouredHeading, StyledHeading, SubHeadingWrapper } from "./style";
 export const Heading = ({
   title,
   variant = "subHeading",
-  className,
   children,
   color,
   ...rest

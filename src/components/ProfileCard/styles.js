@@ -1,25 +1,37 @@
 const { default: styled } = require("styled-components");
 
-export const Wrapper = styled.div((props) => {
-  return {
-    cursor: "pointer",
-    background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
+const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => ({
+  color: "#FFFFFF",
+  borderRadius: "19px",
+  paddingBottom: "28px",
+  background: colors[variant] || colors.primary,
+  cursor: "pointer",
+  transition: ".3s ease",
+  border: `2px solid ${colors[variant]}`,
+  width: "auto",
+    marginBottom: "28px",
+  [`@media screen and (max-width: ${ breakPoints.xs }px)`]: {
+    background: colors.primary ? "#F05B25" : "#4D4D4D",
     color: "#FFFFFF",
     borderRadius: "19px",
     paddingBottom: "28px",
-    width: "auto",
-    marginBottom: "28px",
-
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
-      background: props.colourPrimary ? "#F05B25" : "#4D4D4D",
-      color: "#FFFFFF",
-      borderRadius: "19px",
-      paddingBottom: "28px",
-      marginBottom: "48px",
-      width: "100%",
+    marginBottom: "48px",
+    width: "100%",
+  },
+  "&:hover": {
+    color: `${colors[variant] || colors.primary}`,
+    background: "transparent",
+    h2: {
+      color: `${colors[variant] || colors.primary}`,
     },
-  };
-});
+    p: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    "svg path": {
+      fill: `${colors[variant] || colors.primary}`,
+    },
+  },
+}));
 
 export const ProfileHeader = styled.div((props) => {
   return {

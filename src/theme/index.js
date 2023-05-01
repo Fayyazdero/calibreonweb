@@ -52,7 +52,7 @@ export const theme = {
     title: "83px",
     secTitle: "78px",
     faqTitle: "27px",
-    quotes: "29px",
+    quotes: "46px",
     subTitle: "48px",
     desc: "22px",
     userTitle: "150%",
