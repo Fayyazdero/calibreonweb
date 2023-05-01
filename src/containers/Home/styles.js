@@ -75,6 +75,12 @@ export const TestimonialWrapper = styled.div`
       text-align: center;
     }
   }
+
+  & h2 {
+    @media (max-width: 992px) {
+      text-align: center !important;
+    }
+  }
 `;
 export const NewsLetterWrapper = styled.div`
   padding: 130px 0;
@@ -217,11 +223,60 @@ export const ServicesHeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 48px;
+
+  @media (max-width: 992px) {
+    padding-bottom: 0;
+    margin-bottom: -40px;
+    & span {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
 `;
 
 export const ServiceCard = styled.div`
+  position: relative;
+  @media (min-width: 992px) {
+    margin-top: 150px;
+    margin-left: -40px;
+  }
+
+  @media (max-width: 992px) {
+    margin-left: 30px;
+  }
   & > div {
+    position: relative;
     width: 80%;
+
+    @media (max-width: 992px) {
+      height: fit-content;
+    }
+  }
+
+  & .text-content {
+    @media (max-width: 992px) {
+      position: absolute;
+      bottom: 0;
+      margin-top: 25px;
+    }
+  }
+
+  & img {
+    @media (min-width: 992px) {
+      width: 314px !important;
+    }
+  }
+  & h2 {
+    font-size: 44px !important;
+    font-weight: 800;
+    line-height: 56px;
+
+    @media (max-width: 992px) {
+      font-weight: 800;
+      font-size: 20px !important;
+      line-height: 25px;
+    }
   }
 `;
 export const ViewAll = styled.p`
@@ -280,7 +335,10 @@ export const TestimonialCol = styled(Col)`
     width: 100%;
   }
 `;
-
+export const TCardWrapper = styled.div`
+  display: flex !important;
+  justify-content: end;
+`;
 export const LearnMore = styled.div`
   display: none !important;
   @media (max-width: 992px) {

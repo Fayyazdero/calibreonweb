@@ -51,7 +51,6 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (event, link) => {
-    console.log(event, "event");
     event.preventDefault();
     setActive(link);
     setIsOpen(false);
@@ -93,11 +92,7 @@ function Header() {
               </LinksWrapper>
             ))}
           </Nav>
-          <NavButtonsWrapper>
-            <Button className="mx-2" variant="contained">
-              Contact Us
-            </Button>
-          </NavButtonsWrapper>
+
           <SocialWrapper>
             <SocialTitle>Join the community</SocialTitle>
             <SocialIcons>
@@ -111,6 +106,11 @@ function Header() {
             <CrossIcon height={13} width={13} />
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
+        <NavButtonsWrapper>
+          <Button className="mx-2" variant="contained">
+            Contact Us
+          </Button>
+        </NavButtonsWrapper>
       </Container>
     </Navbar>
   );

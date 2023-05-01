@@ -39,7 +39,6 @@ export const Services = () => {
               placeholder="Search for Services"
               btnText="Search"
               variant="contained"
-              btnPadding="8px 64px"
             />
           </Col>
         </StyledRow>

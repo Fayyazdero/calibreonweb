@@ -14,6 +14,10 @@ export const HeadingWrapper = styled.div`
 export const StyledRow = styled(Row)({
   display: "flex",
   alignItems: "flex-end",
+
+  button: {
+    padding: "8px 64px",
+  },
 });
 export const AnimationWrapper = styled("div")({
   marginTop: "140px",

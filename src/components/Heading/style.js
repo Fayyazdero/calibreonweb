@@ -41,13 +41,13 @@ export const SubHeadingWrapper = styled.div(
       width: "max-content",
       borderBottom: `3px solid ${colors.primary}`,
       [`@media screen and (max-width: ${sm}px)`]: {
-        width: "87px",
+        width: "max-content",
         textAlign: "center",
         margin: "auto",
         display: "flex",
         justifyContent: "center",
         marginBottom: "9px",
-        borderBottom: `1.25px solid ${colors.primary}`,
+        borderBottom: `3px solid ${colors.primary}`,
       },
     };
   }
