@@ -29,6 +29,12 @@ import {
   Logos,
   ServiceCard,
   ImageCol,
+  StyledImgCol,
+  NewsLetterCol,
+  BannerRow,
+  BannerCol,
+  LearnMore,
+  TCardWrapper,
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -65,13 +71,13 @@ const Home = () => {
     <>
       <Container>
         <Banner>
-          <Row>
-            <Col sm={12} md={6}>
+          <BannerRow>
+            <BannerCol sm={12} md={6}>
               <HomeImageWrapper>
                 <StyledImage src={home} alt="home" />
               </HomeImageWrapper>
-            </Col>
-            <Col sm={12} md={6}>
+            </BannerCol>
+            <BannerCol sm={12} md={6}>
               <HomeHeadingWrapper>
                 <Heading
                   className="main-heading"
@@ -91,8 +97,8 @@ const Home = () => {
                   variant="contained"
                 />
               </HomeHeadingWrapper>
-            </Col>
-          </Row>
+            </BannerCol>
+          </BannerRow>
         </Banner>
       </Container>
       <ServicesWrapper>
@@ -127,7 +133,7 @@ const Home = () => {
           ]}>
           {servicesCardData.map((item, index) => (
             <ServiceCard>
-              <Accounting src={item.imgSrc} cardTitle={item.title} />
+              <Accounting variant="" src={item.imgSrc} title={item.title} />
             </ServiceCard>
           ))}
         </Slider>
@@ -160,17 +166,17 @@ const Home = () => {
             our clients keep coming back for more
           </Typo>
         </Container>
-        <Container>
-          <StyledRow>
-            <TestimonialCol md={6}>
-              <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
-                <TestimonialCard
-                  className="my-3"
-                  imgSrc={rebornLogo}
-                  review={
-                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                  }
-                />
+        <StyledRow>
+          <TestimonialCol md={6}>
+            <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
+              <TestimonialCard
+                className="my-3"
+                imgSrc={rebornLogo}
+                review={
+                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                }
+              />
+              <TCardWrapper>
                 <TestimonialCard
                   className="my-3 center-card"
                   imgSrc={rebornLogo}
@@ -178,20 +184,22 @@ const Home = () => {
                     "Zahid is extremely hard working, very responsive, and provided quality work during his tenure. His efforts greatly assisted with the roll out of various initiatives. Additionally, he has a wide range of useful, applicable skills. I enjoyed working with Zahid."
                   }
                 />
-                <TestimonialCard
-                  className="my-3"
-                  imgSrc={rebornLogo}
-                  review={
-                    "He did a great job and work well with teams. He communicates well.Would highly recommended."
-                  }
-                />
-                <TestimonialCard
-                  className="my-3"
-                  imgSrc={rebornLogo}
-                  review={
-                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                  }
-                />
+              </TCardWrapper>
+              <TestimonialCard
+                className="my-3"
+                imgSrc={rebornLogo}
+                review={
+                  "He did a great job and work well with teams. He communicates well.Would highly recommended."
+                }
+              />
+              <TestimonialCard
+                className="my-3"
+                imgSrc={rebornLogo}
+                review={
+                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                }
+              />
+              <TCardWrapper>
                 <TestimonialCard
                   className="my-3 center-card"
                   imgSrc={rebornLogo}
@@ -199,18 +207,36 @@ const Home = () => {
                     "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
                   }
                 />
-              </Slider>
-            </TestimonialCol>
-            <NextArrow md={2}>
+              </TCardWrapper>
+              <TestimonialCard
+                className="my-3 center-card"
+                imgSrc={rebornLogo}
+                review={
+                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                }
+              />
+            </Slider>
+            <NextArrow>
               <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
             </NextArrow>
-            <ImageCol md={5}>
-              <ImageWrapper>
-                <Image src={testimonialImge} alt="image" />
-              </ImageWrapper>
-            </ImageCol>
-          </StyledRow>
-        </Container>
+          </TestimonialCol>
+
+          <ImageCol md={6}>
+            <ImageWrapper>
+              <Image src={testimonialImge} alt="image" />
+            </ImageWrapper>
+          </ImageCol>
+        </StyledRow>
+        <LearnMore>
+          <Typo variant="mainTypo">Learn More</Typo>
+          <ArrowsBg>
+            <ArrowRight
+              height={"20px"}
+              color={"#ffffff"}
+              onClick={onRightClick}
+            />
+          </ArrowsBg>
+        </LearnMore>
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
         <Logos>
@@ -224,11 +250,17 @@ const Home = () => {
       <Container>
         <NewsLetterWrapper>
           <Row>
-            <Col xs={12} sm={12} md={6}>
+            <NewsLetterCol xs={12} sm={12} md={6}>
               <ContentWrapper>
                 <Heading title=" Join US" variant="mainHeading">
                   News Letter
                 </Heading>
+                <StyledImage
+                  className="responsive-image"
+                  src={newsletter}
+                  alt="newsletter"
+                />
+
                 <Typo variant="mainTypo">
                   Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
                   aliquam eget. Purus id faucibus mollis viverra viverra odio
@@ -240,10 +272,10 @@ const Home = () => {
                   variant="contained"
                 />
               </ContentWrapper>
-            </Col>
-            <Col xs={12} sm={12} md={6}>
+            </NewsLetterCol>
+            <StyledImgCol xs={12} sm={12} md={6}>
               <StyledImage src={newsletter} alt="newsletter" />
-            </Col>
+            </StyledImgCol>
           </Row>
         </NewsLetterWrapper>
       </Container>

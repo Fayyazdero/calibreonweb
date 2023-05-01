@@ -21,36 +21,39 @@ import Button from "../Button";
 import { useRouter } from "next/router";
 import { CrossIcon, Facebook, Instagram, LinkedIn, Twitter } from "../Svgs";
 
+let navLinks = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+  {
+    title: "Services",
+    link: "/services",
+  },
+  {
+    title: "Team",
+    link: "/team",
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+  },
+];
+
 function Header() {
   const router = useRouter();
-  let navLinks = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "About",
-      link: "/about",
-    },
-    {
-      title: "Services",
-      link: "/services",
-    },
-    {
-      title: "Team",
-      link: "/team",
-    },
-    {
-      title: "Blog",
-      link: "/blog",
-    },
-  ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (index) => {
-    setActive(index);
+  const handleClick = (event, link) => {
+    event.preventDefault();
+    setActive(link);
+    setIsOpen(false);
   };
 
   const handleMenuToggle = () => {
@@ -77,8 +80,7 @@ function Header() {
               <LinksWrapper key={key}>
                 <StyledLink
                   onClick={() => {
-                    handleClick(key);
-                    setIsOpen(false);
+                    handleClick(event, item.link);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === item.link ? "active" : ""
@@ -90,11 +92,7 @@ function Header() {
               </LinksWrapper>
             ))}
           </Nav>
-          <NavButtonsWrapper>
-            <Button className="mx-2" variant="contained">
-              Contact Us
-            </Button>
-          </NavButtonsWrapper>
+
           <SocialWrapper>
             <SocialTitle>Join the community</SocialTitle>
             <SocialIcons>
@@ -108,6 +106,11 @@ function Header() {
             <CrossIcon height={13} width={13} />
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
+        <NavButtonsWrapper>
+          <Button className="mx-2" variant="contained">
+            Contact Us
+          </Button>
+        </NavButtonsWrapper>
       </Container>
     </Navbar>
   );

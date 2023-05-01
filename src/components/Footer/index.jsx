@@ -27,7 +27,7 @@ const Footer = () => {
               <LinkedIn height={32} color={"#FFFFFF"} />
             </SocialIcons>
           </Col>
-          <Col md={2}>
+          <Col xs={6} md={2}>
             <Title>Menu</Title>
             {menuData.map((item, key) => {
               return (
@@ -39,7 +39,7 @@ const Footer = () => {
               );
             })}
           </Col>
-          <Col md={2}>
+          <Col xs={6} md={2}>
             <NavLinks>
               <Title>Useful Links</Title>
               {linksData.map((item, key) => {
@@ -51,7 +51,7 @@ const Footer = () => {
               })}
             </NavLinks>
           </Col>
-          <Col md={3}>
+          <Col xs={12} md={3}>
             <NavLinks>
               <Title>Contact</Title>
               {contact.map((item, key) => {

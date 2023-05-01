@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
-    const sm = breakPoints.sm;
     const md = breakPoints.md;
     const fontSize = heading[variant]["xs"]
       ? heading[variant]["xs"].fontSize
@@ -20,7 +19,7 @@ export const StyledHeading = styled.h2(
       lineHeight: `${heading[variant].lineHeight}`,
       textAlign: `${variant === "quotes" && "center"}`,
 
-      [`@media screen and (max-width: ${sm}px)`]: {
+      [`@media screen and (max-width: ${md}px)`]: {
         fontSize,
         lineHeight,
       },
@@ -39,7 +38,7 @@ export const SubHeadingWrapper = styled.div(
       ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
 
-      const lineHeight = heading[variant]["xs"]
+    const lineHeight = heading[variant]["xs"]
       ? heading[variant]["xs"].lineHeight
       : heading[variant].lineHeight;
 
@@ -50,16 +49,16 @@ export const SubHeadingWrapper = styled.div(
       width: "max-content",
       borderBottom: `3px solid ${colors.primary}`,
       [`@media screen and (max-width: ${sm}px)`]: {
-        // width: "87px",
+        width: "max-content",
         textAlign: "center",
         margin: "auto",
         display: "flex",
         justifyContent: "center",
         marginBottom: "9px",
-        borderBottom: `1.25px solid ${colors.primary}`,
+        borderBottom: `3px solid ${colors.primary}`,
         fontWeight: "900",
         fontSize,
-        lineHeight
+        lineHeight,
       },
     };
   }
