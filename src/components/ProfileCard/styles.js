@@ -60,6 +60,13 @@ export const ProfileTitle = styled.div((props) => {
       lineBreak: "anywhere",
       fontSize: "38px",
     },
+    [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
+      lineBreak: "anywhere",
+      fontSize: "38px",
+      "& h2": {
+        lineHeight: "90%"
+      },
+    },
   };
 });
 
@@ -76,7 +83,7 @@ export const ProfileImage = styled.div((props) => {
       borderRadius: "4px",
     },
 
-    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
       paddingTop: "21px",
       "& img": {
         width: "140px",

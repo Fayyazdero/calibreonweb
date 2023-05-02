@@ -124,7 +124,7 @@ export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     display: "flex",
     justifyContent: "space-between",
-    margin: "30px 0 30px 0",
+    margin: "60px 0",
 
     [`@media screen and (max-width: ${sm}px)`]: {
       flexDirection: "column",

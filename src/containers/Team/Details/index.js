@@ -159,7 +159,6 @@ const Details = () => {
                   <ProfileCard
                     key={data.id}
                     variant="secondary"
-                    fontSize={15}
                     profile={data?.profile}
                     title={data.title}
                     subTitle={data.subTitle}

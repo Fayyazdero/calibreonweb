@@ -151,7 +151,7 @@ export const Services = () => {
               />
               <GreyBoxWrapper className="hidden-sm">
                 <ImageWrapper>
-                  <Image src="/images/grey-box.png" width={100} height={100} />
+                  <Image src="/images/grey-box.png" width={100} height={100} alt="grey-box" />
                 </ImageWrapper>
               </GreyBoxWrapper>
             </Col>

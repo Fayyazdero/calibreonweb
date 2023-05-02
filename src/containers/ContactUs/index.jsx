@@ -22,7 +22,7 @@ const ContactUs = () => {
           <TitleWrapper>
             <Heading variant="contactTitle" className="heading">
               We're here to help
-              <Image src="/images/send-message.png" width={48} height={36} />
+              <Image src="/images/send-message.png" width={48} height={36} alt="arrow-icon" />
             </Heading>
           </TitleWrapper>
           <Content>Leave us a message and we will get back to you. </Content>
