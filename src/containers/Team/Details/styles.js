@@ -2,7 +2,7 @@ import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 
 export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
@@ -10,52 +10,52 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     paddingBottom: "30px",
     paddingTop: "30px",
     alignItems: "center",
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       paddingTop: "46px",
       paddingBottom: "24px",
-      "& .mainDescHighlighted": {
-        fontWeight: "600"
-      }
     },
   };
 });
 export const TeamDetailsHeadingWrapper = styled.div(
   ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       display: "flex",
       justifyContent: "space-between",
       paddingBottom: "39px",
       alignItems: "center",
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         paddingBottom: "9px"
       },
     };
   }
 );
 
-export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
+  const sm = breakPoints.sm;
 
   return {
     "& .newTypo": {
       marginBottom: "29px",
-      [`@media screen and (max-width: ${xs}px)`]: {
-        textAlign: "center"
+      [`@media screen and (max-width: ${sm}px)`]: {
+        textAlign: "center",
+        fontWeight: fontWeights.semi_bold,
+        lineHeight: lineHeights.desc,
+        fontSize: fontSizes.md
       },
     },
   };
 });
 
 export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
     justifyContent: "space-between",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       flexDirection: "column",
       alignItems: "center",
     },
@@ -64,9 +64,9 @@ export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
 
 export const TeamDetailsImageWrapper = styled.div(
   ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
-    return {
+    return {  
       marginTop: "20px",
       "& img": {
         width: "308px",
@@ -77,7 +77,7 @@ export const TeamDetailsImageWrapper = styled.div(
           "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
         borderRadius: "4px",
       },
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         alignItems: "center",
         width: "208px",
         height: "208px",
@@ -97,12 +97,12 @@ export const TeamDetailsImageWrapper = styled.div(
 
 export const TeamDetailsInfoWrapper = styled.div(
   ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       marginLeft: "20px",
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         marginLeft: "0",
       },
     };
@@ -119,14 +119,14 @@ export const TeamDetailsDescWrapper = styled.div(
 );
 
 export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
     justifyContent: "space-between",
     margin: "30px 0 30px 0",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       flexDirection: "column",
     },
   };
@@ -134,14 +134,14 @@ export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
 
 export const TeamProgressContainer = styled.div(
   ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       width: "50%",
       "& h2": {
         marginBottom: "21px",
       },
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         width: "100%",
         marginBottom: "21px",
         "& h2": {
@@ -154,18 +154,17 @@ export const TeamProgressContainer = styled.div(
 );
 
 export const ContainerOuter = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       display: "flex",
       justifyContent: "flex-start",
       alignItems: "center",
-      marginTop: "30px",
     },
   };
 });
@@ -186,7 +185,7 @@ export const LineWrapper = styled.div`
 `;
 
 export const VerticalLine = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     borderLeft: "6px solid #f05b25",
@@ -194,7 +193,7 @@ export const VerticalLine = styled.div(({ theme: { breakPoints } }) => {
     width: "6px",
     marginLeft: "7px",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       borderLeft: "6px solid #f05b25",
       height: "85px",
       width: "6px",
@@ -211,7 +210,7 @@ export const DotContainer = styled.div`
 
 export const ProgressWrapper = styled.div(
   ({ theme: { breakPoints, colors } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       padding: "0 50px 10px 0",
@@ -222,7 +221,7 @@ export const ProgressWrapper = styled.div(
         marginBottom: "8px",
       },
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         padding: 0,
         marginBottom: "7.34px",
         "& .progress": {
@@ -238,7 +237,7 @@ export const ProgressWrapper = styled.div(
 
 export const TeamTimelineContainer = styled.div(
   ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
 
     return {
       width: "50%",
@@ -249,7 +248,7 @@ export const TeamTimelineContainer = styled.div(
         marginBottom: "36px",
       },
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         width: "100%",
         "& h2": {
           marginBottom: "26px",
@@ -264,38 +263,38 @@ export const TeamUserListWrapper = styled.div`
 `;
 
 export const SpacerContainer = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     height: "38px",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       height: "28px",
     },
   };
 });
 
 export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
     marginBottom: "22px",
 
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       display: "none",
     },
   };
 });
 
 export const ProfileTitle = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
     flexDirection: "column",
     margin: "0 0 0 0",
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       alignItems: "center",
       "& h2": {
         padding: "30px",
@@ -305,7 +304,7 @@ export const ProfileTitle = styled.div(({ theme: { breakPoints } }) => {
 });
 
 export const Certification = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     width: "267px",
@@ -317,14 +316,14 @@ export const Certification = styled.div(({ theme: { breakPoints } }) => {
       width: "100%",
       height: "100%",
     },
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       justifyContent: "center",
     },
   };
 });
 
 export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
-  const xs = breakPoints.xs;
+  const sm = breakPoints.sm;
 
   return {
     fontFamily: "Inter",
@@ -334,7 +333,7 @@ export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
     fontSize: fontSize ? `${fontSize}px` : "12px",
     letterSpacing: "-2.2%",
     margin: "0",
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       lineHeight: "150%"
     },
   };

@@ -3,6 +3,8 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
   ServicesHeadingWrapper,
+  StyledCol,
+  StyledRow,
   TopHeadingWrapper,
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
@@ -36,12 +38,13 @@ const Team = () => {
           View All <ArrowRight className="mx-2" height="22px" color="#F05B25" />
         </Typo>
       </TopHeadingWrapper>
-      <Row>
+      <StyledRow>
         {teamData?.slice(0, 3)?.map((data) => {
           return (
-            <Col md={4}>
+            <StyledCol md={4}>
               <ProfileCard
                 onClick={handleClick}
+                variant="secondary"
                 key={data.id}
                 profile={data?.profile}
                 title={data.title}
@@ -49,10 +52,10 @@ const Team = () => {
                 description={data.description}
                 verifiedLogo={true}
               />
-            </Col>
+            </StyledCol>
           );
         })}
-      </Row>
+      </StyledRow>
     </Container>
   );
 };

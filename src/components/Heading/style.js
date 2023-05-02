@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
-    const md = breakPoints.md;
+    const sm = breakPoints.sm;
     const fontSize = heading[variant]["xs"]
       ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
@@ -19,7 +19,7 @@ export const StyledHeading = styled.h2(
       lineHeight: `${heading[variant].lineHeight}`,
       textAlign: `${variant === "quotes" && "center"}`,
 
-      [`@media screen and (max-width: ${md}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         fontSize,
         lineHeight,
       },

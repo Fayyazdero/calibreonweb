@@ -22,6 +22,8 @@ import {
   SpacerInfoWrapper,
   VideoWrapper,
   StyledVideoDiv,
+  StyledRow,
+  StyledCol
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
@@ -229,10 +231,10 @@ const Accounting = () => {
             <ArrowRight className="mx-2" height="22px" color="#F05B25" />
           </Typo>
         </TopHeadingWrapper>
-        <Row>
+        <StyledRow>
           {teamData?.slice(0, 3)?.map((data) => {
             return (
-              <Col md={4}>
+              <StyledCol md={4}>
                 <ProfileCard
                   key={data.id}
                   fontSize={15}
@@ -241,10 +243,10 @@ const Accounting = () => {
                   subTitle={data.subTitle}
                   description={data.description}
                 />
-              </Col>
+              </StyledCol>
             );
           })}
-        </Row>
+        </StyledRow>
       </Container>
     </>
   );

@@ -1,9 +1,9 @@
-import { ProgressBar } from "react-bootstrap";
+import { Col, ProgressBar, Row } from "react-bootstrap";
 import styled from "styled-components";
 
 export const ServicesHeadingWrapper = styled.div(
-  ({ theme: { breakPoints } }) => {
-    const xs = breakPoints.xs;
+  ({ theme: { breakPoints, lineHeights } }) => {
+    const sm = breakPoints.sm;
 
     return {
       display: "flex",
@@ -11,14 +11,17 @@ export const ServicesHeadingWrapper = styled.div(
       paddingBottom: 0,
       paddingTop: 0,
       alignItems: "center",
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         paddingTop: 0,
+        "span": {
+          lineHeight: lineHeights["1xl"]
+        }
       },
     };
   }
 );
-export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const xs = breakPoints.xs;
+export const TopHeadingWrapper = styled.div(({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
+  const sm = breakPoints.sm;
 
   return {
     display: "flex",
@@ -29,13 +32,26 @@ export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
     "& p:nth-child(2)": {
       cursor: "pointer",
     },
-    [`@media screen and (max-width: ${xs}px)`]: {
+    [`@media screen and (max-width: ${sm}px)`]: {
       paddingTop: "48px",
       paddingBottom: "28px",
       "& p": {
-        fontWeight: "600"
+        fontWeight: fontWeights.semi_bold,
+        lineHeight: lineHeights.tabTypo,
+        fontSize: fontSizes.md
       },
     },
   };
 });
 export const TeamDetailsWrapper = styled.div``;
+export const StyledRow = styled(Row)`
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+export const StyledCol = styled(Col)`
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+`;

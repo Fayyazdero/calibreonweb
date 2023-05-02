@@ -19,7 +19,7 @@ const ProfileCard = ({
   subTitle,
   description,
   verifiedLogo,
-  variant = "primary",
+  variant,
   className,
   fontSize,
   onClick,

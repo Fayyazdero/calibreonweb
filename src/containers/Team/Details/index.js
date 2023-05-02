@@ -38,6 +38,7 @@ import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
 import { teamData } from "../../Team/teamData";
 import Typo from "@/components/Typo";
+import { StyledCol, StyledRow } from "../styles";
 
 const Details = () => {
   const [verifiedLogo, setVerifiedLogo] = useState(true);
@@ -96,7 +97,7 @@ const Details = () => {
           </TeamDetailsContainer>
           <TeamTimelineWrapper>
             <TeamProgressContainer>
-              <Heading variant="newUserHeading">Skills</Heading>
+              <Heading variant="newUserHeadings">Skills</Heading>
               <ProgressWrapper>
                 <Typo variant="subHeadingTypo">Book Keeping</Typo>
                 <StyledProgressBar
@@ -115,7 +116,7 @@ const Details = () => {
               </ProgressWrapper>
             </TeamProgressContainer>
             <TeamTimelineContainer>
-              <Heading variant="newUserHeading">Experience</Heading>
+            <Heading variant="newUserHeadings">Experience</Heading>
               <ContainerOuter>
                 <LineContainer>
                   <DotContainer></DotContainer>
@@ -151,12 +152,13 @@ const Details = () => {
               <ArrowRight className="mx-2" height="22px" color="white" />
             </Typo>
           </TopHeadingWrapper>
-          <Row>
+          <StyledRow>
             {teamData?.slice(0, 3)?.map((data) => {
               return (
-                <Col md={4}>
+                <StyledCol md={4}>
                   <ProfileCard
                     key={data.id}
+                    variant="secondary"
                     fontSize={15}
                     profile={data?.profile}
                     title={data.title}
@@ -164,10 +166,10 @@ const Details = () => {
                     description={data.description}
                     verifiedLogo={verifiedLogo}
                   />
-                </Col>
+                </StyledCol>
               );
             })}
-          </Row>
+          </StyledRow>
         </Container>
       </TeamUserListWrapper>
     </>

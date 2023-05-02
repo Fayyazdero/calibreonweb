@@ -8,7 +8,7 @@ export const FaqWrapper = styled.div`
 export const Wrapper = styled.div((props) => {
   return {
 
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       "& p": {
         textAlign: "justify"
       }

@@ -166,6 +166,7 @@ const Home = () => {
             our clients keep coming back for more
           </Typo>
         </Container>
+        <Container>
         <StyledRow>
           <TestimonialCol md={6}>
             <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
@@ -227,6 +228,7 @@ const Home = () => {
             </ImageWrapper>
           </ImageCol>
         </StyledRow>
+        </Container>
         <LearnMore>
           <Typo variant="mainTypo">Learn More</Typo>
           <ArrowsBg>

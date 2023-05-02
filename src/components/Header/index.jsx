@@ -107,7 +107,7 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" variant="contained">
+          <Button className="mx-2" variant="contained" onClick={() => router.push('/contact-us')}>
             Contact Us
           </Button>
         </NavButtonsWrapper>

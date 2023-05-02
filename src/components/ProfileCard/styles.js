@@ -1,35 +1,38 @@
-const { default: styled } = require("styled-components");
+import styled from "styled-components";
 
 const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => ({
   color: "#FFFFFF",
   borderRadius: "19px",
   paddingBottom: "28px",
-  background: colors[variant] || colors.primary,
+  background: variant == "primary" ? "#F05B25" : "#4D4D4D",
   cursor: "pointer",
   transition: ".3s ease",
-  border: `2px solid ${colors[variant]}`,
   width: "auto",
     marginBottom: "28px",
-  [`@media screen and (max-width: ${ breakPoints.xs }px)`]: {
-    background: colors.primary ? "#F05B25" : "#4D4D4D",
+  "&:hover": {
+    color: `${variant == "primary" ? colors.primary : colors.grey}`,
+    background: `${variant == "primary" || variant == 'secondary' ? colors.white : colors.primary}`,
+    border: `3px solid ${variant == "primary" ? colors.primary : variant === 'secondary' ? colors.grey : colors.primary}`,
+    h2: {
+      color: `${variant == "primary" ? colors.primary : colors.grey}`,
+    },
+    p: {
+      color: `${variant == "primary" ? colors.primary : colors.grey}`,
+    },
+    "svg path": {
+      fill: `${variant == "primary" ? colors.primary : colors.grey}`,
+    },
+    h4: {
+      color: `${variant == "primary" ? colors.primary : colors.grey}`
+    }
+  },
+  [`@media screen and (max-width: ${ breakPoints.sm }px)`]: {
+    background: variant == "primary" ? "#F05B25" : "#4D4D4D",
     color: "#FFFFFF",
     borderRadius: "19px",
     paddingBottom: "28px",
     marginBottom: "48px",
     width: "100%",
-  },
-  "&:hover": {
-    color: `${colors[variant] || colors.primary}`,
-    background: "transparent",
-    h2: {
-      color: `${colors[variant] || colors.primary}`,
-    },
-    p: {
-      color: `${colors[variant] || colors.primary}`,
-    },
-    "svg path": {
-      fill: `${colors[variant] || colors.primary}`,
-    },
   },
 }));
 
@@ -38,7 +41,7 @@ export const ProfileHeader = styled.div((props) => {
     display: "flex",
     justifyContent: "space-around",
 
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       margin: "0 20px",
       justifyContent: "space-between",
     },
@@ -53,7 +56,7 @@ export const ProfileTitle = styled.div((props) => {
     "& h2": {
       lineBreak: "anywhere",
     },
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       lineBreak: "anywhere",
       fontSize: "38px",
     },
@@ -73,7 +76,7 @@ export const ProfileImage = styled.div((props) => {
       borderRadius: "4px",
     },
 
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       paddingTop: "21px",
       "& img": {
         width: "140px",
@@ -112,7 +115,7 @@ export const SubTitle = styled("h4")(({ fontSize }) => ({
   lineHeight: "150%",
   letterSpacing: "-2.2%",
   margin: "0",
-  [`@media screen and (max-width: 768px)`]: {
+  [`@media screen and (max-width: 992px)`]: {
     lineHeight: "150%",
   },
 }));
@@ -130,7 +133,7 @@ export const Content = styled.div((props) => {
     paddingLeft: "26px",
     paddingRight: "26px",
     textAlign: "justify",
-    [`@media screen and (max-width: ${props.theme.breakPoints.xs}px)`]: {
+    [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       fontWeight: "500",
       fontSize: "13.8503px",
       lineHeight: "19px",
