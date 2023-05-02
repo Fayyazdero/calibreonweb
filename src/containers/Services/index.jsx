@@ -22,8 +22,10 @@ import Architecture from "@/components/ServiceCard/Architecture";
 import { Heading } from "@/components/Heading";
 import Search from "@/components/Search";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const Services = () => {
+  const router = useRouter()
   return (
     <Container>
       <Wrapper>
@@ -42,7 +44,7 @@ export const Services = () => {
             />
           </Col>
         </StyledRow>
-        <AccountingWrapper>
+        <AccountingWrapper onClick={() => router.push("/services/accounting")}>
           <Accounting
             variant="deepPurple"
             title="Accounting"
