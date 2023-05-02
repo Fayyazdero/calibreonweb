@@ -7,28 +7,27 @@ const Wrapper = styled("div")(({ theme: { colors }, variant }) => ({
   height: "304px",
   borderRadius: "20px",
   alignItems: "center",
-
+  transition: ".3s ease",
+  cursor: "pointer",
+  "&:hover": {
+    color: `${colors[variant] || colors.primary}`,
+    background: "transparent",
+    h2: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    p: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    "svg path": {
+      fill: `${colors[variant] || colors.primary}`,
+    },
+  },
   "@media screen and (max-width: 992px)": {
     flexDirection: "column",
-    cursor: "pointer",
-    transition: ".3s ease",
     "@media(max-width: 991px)": {
       flexDirection: "column",
       marginTop: "192px",
       background: colors[variant] || colors.primary,
-    },
-    "&:hover": {
-      color: `${colors[variant] || colors.primary}`,
-      background: "transparent",
-      h2: {
-        color: `${colors[variant] || colors.primary}`,
-      },
-      p: {
-        color: `${colors[variant] || colors.primary}`,
-      },
-      "svg path": {
-        fill: `${colors[variant] || colors.primary}`,
-      },
     },
   },
 }));
@@ -47,7 +46,6 @@ export const ImageWrapper = styled("div")({
     left: " 0",
     bottom: "unset",
     marginTop: "-144px",
-    marginBottom: "24px",
   },
 });
 export const HeadingWrapper = styled("div")({

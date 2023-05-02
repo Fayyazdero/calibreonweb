@@ -51,7 +51,7 @@ export const BannerCol = styled(Col)`
   }
 `;
 export const TestimonialWrapper = styled.div`
-  padding: 116px 0;
+  padding-top: 116px;
   z-index: 1;
   @media (max-width: 992px) {
     padding: 30px 0;
@@ -244,6 +244,10 @@ export const ServiceCard = styled.div`
 
   @media (max-width: 992px) {
     margin-left: 30px;
+
+    & .exUQgV {
+      margin-bottom: 0;
+    }
   }
   & > div {
     position: relative;
@@ -273,9 +277,11 @@ export const ServiceCard = styled.div`
     line-height: 56px;
 
     @media (max-width: 992px) {
-      font-weight: 800;
-      font-size: 20px !important;
-      line-height: 25px;
+      // font-weight: 800;
+      // font-size: 20px !important;
+      // line-height: 25px;
+
+      display: none;
     }
   }
 `;
@@ -318,17 +324,30 @@ export const Banner = styled.div`
 export const Testinomials = styled.div`
   display: flex;
 `;
+export const StyledTitleWrapper = styled.div`
+  display: none;
+  @media (max-width: 992px) {
+    width: 80%;
+    margin: auto;
+    display: block;
+    h2 {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 20px !important;
+      line-height: 25px;
+    }
+  }
+`;
+export const StyledTitle = styled.h2``;
 export const CardWrapper = styled.div`
   text-align: right;
 `;
 
 export const StyledRow = styled(Row)`
-  // position: relative;
-
-  & .center-card {
-  }
+ margin-top: 24px;
 `;
 export const TestimonialCol = styled(Col)`
+  position: relative;
   z-index: 1;
 
   @media (max-width: 992px) {
@@ -356,9 +375,9 @@ export const NextArrow = styled.div`
   border-radius: 50%;
   height: 50px;
   background: ${({ theme: { colors } }) => colors.primary};
-  position: relative;
-  top: 400px;
-  left: 80px;
+  position: absolute;
+  left: 115%;
+  top: 40%;
   z-index: 3;
   cursor: pointer;
   @media (max-width: 992px) {
@@ -379,6 +398,7 @@ export const ArrowsBg = styled.div`
 export const Arrows = styled.div`
   display: flex;
   justify-content: flex-end;
+  padding-top: 76px;
   @media (max-width: 992px) {
     padding-top: 36px;
   }

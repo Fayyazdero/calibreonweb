@@ -35,6 +35,8 @@ import {
   BannerCol,
   LearnMore,
   TCardWrapper,
+  StyledTitleWrapper,
+  StyledTitle,
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -82,7 +84,8 @@ const Home = () => {
                 <Heading
                   className="main-heading"
                   title="Calibreon International"
-                  variant="mainHeading">
+                  variant="mainHeading"
+                >
                   Grow with{" "}
                 </Heading>
                 <Typo variant="mainTypo" className="main-typo my-4">
@@ -130,11 +133,17 @@ const Home = () => {
                 slidesToScroll: 1,
               },
             },
-          ]}>
+          ]}
+        >
           {servicesCardData.map((item, index) => (
-            <ServiceCard>
-              <Accounting variant="" src={item.imgSrc} title={item.title} />
-            </ServiceCard>
+            <>
+              <ServiceCard>
+                <Accounting src={item.imgSrc} title={item.title} />
+              </ServiceCard>
+              <StyledTitleWrapper>
+                <StyledTitle>{item.title}</StyledTitle>
+              </StyledTitleWrapper>
+            </>
           ))}
         </Slider>
         <Container>
@@ -167,40 +176,48 @@ const Home = () => {
           </Typo>
         </Container>
         <Container>
-        <StyledRow>
-          <TestimonialCol md={6}>
-            <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-              <TCardWrapper>
+          <StyledRow>
+            <TestimonialCol md={6}>
+              <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
                 <TestimonialCard
-                  className="my-3 center-card"
+                  className="my-3"
                   imgSrc={rebornLogo}
                   review={
-                    "Zahid is extremely hard working, very responsive, and provided quality work during his tenure. His efforts greatly assisted with the roll out of various initiatives. Additionally, he has a wide range of useful, applicable skills. I enjoyed working with Zahid."
+                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
                   }
                 />
-              </TCardWrapper>
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "He did a great job and work well with teams. He communicates well.Would highly recommended."
-                }
-              />
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-              <TCardWrapper>
+                <TCardWrapper>
+                  <TestimonialCard
+                    className="my-3 center-card"
+                    imgSrc={rebornLogo}
+                    review={
+                      "Zahid is extremely hard working, very responsive, and provided quality work during his tenure. His efforts greatly assisted with the roll out of various initiatives. Additionally, he has a wide range of useful, applicable skills. I enjoyed working with Zahid."
+                    }
+                  />
+                </TCardWrapper>
+                <TestimonialCard
+                  className="my-3"
+                  imgSrc={rebornLogo}
+                  review={
+                    "He did a great job and work well with teams. He communicates well.Would highly recommended."
+                  }
+                />
+                <TestimonialCard
+                  className="my-3"
+                  imgSrc={rebornLogo}
+                  review={
+                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                  }
+                />
+                <TCardWrapper>
+                  <TestimonialCard
+                    className="my-3 center-card"
+                    imgSrc={rebornLogo}
+                    review={
+                      "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                    }
+                  />
+                </TCardWrapper>
                 <TestimonialCard
                   className="my-3 center-card"
                   imgSrc={rebornLogo}
@@ -208,26 +225,22 @@ const Home = () => {
                     "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
                   }
                 />
-              </TCardWrapper>
-              <TestimonialCard
-                className="my-3 center-card"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-            </Slider>
-            <NextArrow>
-              <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
-            </NextArrow>
-          </TestimonialCol>
+              </Slider>
+              <NextArrow>
+                <ArrowRight
+                  height={"20px"}
+                  color={"#ffffff"}
+                  onClick={onClick}
+                />
+              </NextArrow>
+            </TestimonialCol>
 
-          <ImageCol md={6}>
-            <ImageWrapper>
-              <Image src={testimonialImge} alt="image" />
-            </ImageWrapper>
-          </ImageCol>
-        </StyledRow>
+            <ImageCol md={6}>
+              <ImageWrapper>
+                <Image src={testimonialImge} alt="image" />
+              </ImageWrapper>
+            </ImageCol>
+          </StyledRow>
         </Container>
         <LearnMore>
           <Typo variant="mainTypo">Learn More</Typo>

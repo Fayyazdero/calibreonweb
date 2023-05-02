@@ -78,7 +78,7 @@ const About = () => {
                 title="and exceed your expectations.”"
               >
                 “Our end-to-end freelancing services are designed to help you
-                achieve your goals
+                achieve your goals {` `}
               </StyledHeading>
             </ContentWrapper>
           </Col>

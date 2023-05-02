@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => ({
   color: "#FFFFFF",
+  border: `3px solid ${variant == "primary" ? colors.primary : variant === 'secondary' ? colors.grey : colors.primary}`,
   borderRadius: "19px",
   paddingBottom: "28px",
   background: variant == "primary" ? "#F05B25" : "#4D4D4D",
@@ -12,7 +13,6 @@ const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => (
   "&:hover": {
     color: `${variant == "primary" ? colors.primary : colors.grey}`,
     background: `${variant == "primary" || variant == 'secondary' ? colors.white : colors.primary}`,
-    border: `3px solid ${variant == "primary" ? colors.primary : variant === 'secondary' ? colors.grey : colors.primary}`,
     h2: {
       color: `${variant == "primary" ? colors.primary : colors.grey}`,
     },
