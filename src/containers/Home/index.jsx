@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Router, { useRouter } from "next/router";
 import { Col, Container, Row } from "react-bootstrap";
@@ -46,10 +46,32 @@ import { Heading } from "@/components/Heading";
 import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
+import { createClient } from "next-sanity";
+
+const client = createClient({
+  projectId: "hi7eel47",
+  dataset: "production",
+  apiVersion: "2022-03-25",
+  useCdn: false,
+});
 
 const Home = () => {
+  const [slides, setSlides] = useState([]);
   const router = useRouter();
   const ref = useRef(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "home"]`)
+      .then((item) => {
+        console.log("item", item);
+        setSlides(item);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  }, []);
+
   const onClick = () => {
     if (ref && ref.current) {
       ref.current.slickNext();
@@ -84,8 +106,7 @@ const Home = () => {
                 <Heading
                   className="main-heading"
                   title="Calibreon International"
-                  variant="mainHeading"
-                >
+                  variant="mainHeading">
                   Grow with{" "}
                 </Heading>
                 <Typo variant="mainTypo" className="main-typo my-4">
@@ -133,15 +154,23 @@ const Home = () => {
                 slidesToScroll: 1,
               },
             },
-          ]}
-        >
-          {servicesCardData.map((item, index) => (
+          ]}>
+          {slides?.map((item, index) => (
             <>
-              <ServiceCard>
-                <Accounting src={item.imgSrc} title={item.title} />
+              <ServiceCard key={index}>
+                <Accounting
+                  image={item?.image}
+                  variant={item.variant || "primary"}
+                  subCategoryOne={item.subCategoryOne}
+                  subCategoryTwo={item.subCategoryTwo}
+                  subCategoryThree={item.subCategoryThree}
+                  alt={item.alt}
+                  category={item.category}
+                  children={item.children}
+                />
               </ServiceCard>
               <StyledTitleWrapper>
-                <StyledTitle>{item.title}</StyledTitle>
+                <StyledTitle>{item.category}</StyledTitle>
               </StyledTitleWrapper>
             </>
           ))}

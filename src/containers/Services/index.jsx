@@ -23,6 +23,7 @@ import { Heading } from "@/components/Heading";
 import Search from "@/components/Search";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import AccountingComponent from "@/components/ServiceCard/AccountingComponent";
 
 export const Services = () => {
   const router = useRouter()
@@ -45,7 +46,7 @@ export const Services = () => {
           </Col>
         </StyledRow>
         <AccountingWrapper onClick={() => router.push("/services/accounting")}>
-          <Accounting
+          <AccountingComponent
             variant="deepPurple"
             title="Accounting"
             src="/images/accounting-banner.png"
@@ -54,7 +55,7 @@ export const Services = () => {
         <AnimationWrapper className="margin-y-0">
           <Row>
             <Col xs={12} md={12} lg={6}>
-              <Accounting
+              <AccountingComponent
                 variant="primary"
                 className="hidden-sm"
                 title="Animation"
@@ -68,7 +69,7 @@ export const Services = () => {
               />
             </Col>
             <Col xs={12} md={12} lg={6}>
-              <Accounting
+              <AccountingComponent
                 variant="cyan"
                 className="hidden-sm"
                 title="E-Commerce"
@@ -87,7 +88,7 @@ export const Services = () => {
         <FlimTvWrapper className="margin-y-0">
           <Row>
             <Col md={12}>
-              <Accounting
+              <AccountingComponent
                 variant="grey"
                 className="hidden-sm"
                 title="Film & TV"
@@ -105,7 +106,7 @@ export const Services = () => {
         <WebDevWrapper className="margin-y-0">
           <Row>
             <Col sm={12} md={12} lg={6}>
-              <Accounting
+              <AccountingComponent
                 variant="blue"
                 className="hidden-sm"
                 title="Human Resources"
@@ -120,7 +121,7 @@ export const Services = () => {
               />
             </Col>
             <Col sm={12} md={12} lg={6} className="sm-mt-4">
-              <Accounting
+              <AccountingComponent
                 variant="maroon"
                 className="hidden-sm"
                 title="Architecture"
@@ -138,7 +139,7 @@ export const Services = () => {
         <ArchitectureWrapper className="margin-y-0">
           <Row>
             <Col md={12}>
-              <Accounting
+              <AccountingComponent
                 variant="yellow"
                 title="Web 
                Development"

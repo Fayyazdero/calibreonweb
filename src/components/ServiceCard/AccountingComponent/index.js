@@ -9,50 +9,43 @@ import Image from "next/image";
 import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
-import { client } from "../../../pages/index";
-import imageUrlBuilder from '@sanity/image-url';
 
-const Accounting = ({
-  image,
+const AccountingComponent = ({
+  src,
   variant = "primary",
-  subCategoryOne,
-  subCategoryTwo,
-  subCategoryThree,
   alt,
-  category,
+  title,
   children,
   ...rest
 }) => {
-
-  const builder = imageUrlBuilder(client);
-
-  const urlFor = (source) => {
-    return builder.image(source)
-  }
   return (
     <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
-        <Image src={`${urlFor(image).url()}`} alt={"Image"} fill />
+        <Image src={src} alt={alt} fill />
       </ImageWrapper>
       <ContentWrapper className="text-content">
         <HeadingWrapper>
-          <Heading variant="serviceTitle">{category}</Heading>
+          <Heading variant="serviceTitle">{title}</Heading>
         </HeadingWrapper>
         <CategoryTitle>
           <ArrowRight height={12} color={"#FFFF"} />
-          <Typo variant="seviceTypo">{subCategoryOne || "Bookeeping"}</Typo>
+          <Typo variant="seviceTypo">Bookeeping</Typo>
         </CategoryTitle>
         <CategoryTitle>
           <ArrowRight height={12} color={"#FFFF"} />
-          <Typo variant="seviceTypo">{subCategoryTwo || "Accounting"}</Typo>
+          <Typo variant="seviceTypo">Accounting</Typo>
         </CategoryTitle>
         <CategoryTitle>
           <ArrowRight height={12} color={"#FFFF"} />
-          <Typo variant="seviceTypo">{subCategoryThree || "Bookeeping"}</Typo>
+          <Typo variant="seviceTypo">Bookeeping</Typo>
+        </CategoryTitle>
+        <CategoryTitle>
+          <ArrowRight height={12} color={"#FFFF"} />
+          <Typo variant="seviceTypo">Accounting</Typo>
         </CategoryTitle>
       </ContentWrapper>
     </Wrapper>
   );
 };
 
-export default Accounting;
+export default AccountingComponent;
