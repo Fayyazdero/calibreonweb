@@ -46,14 +46,8 @@ import { Heading } from "@/components/Heading";
 import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
-import { createClient } from "next-sanity";
+import { client } from "@/pages/index.js";
 
-const client = createClient({
-  projectId: "hi7eel47",
-  dataset: "production",
-  apiVersion: "2022-03-25",
-  useCdn: false,
-});
 
 const Home = () => {
   const [slides, setSlides] = useState([]);

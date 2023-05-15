@@ -11,7 +11,7 @@ import Wrapper, {
 } from "./styles";
 import { ArrowRight } from "../Svgs";
 
-const BlogCard = ({description}) => {
+const BlogCard = ({description, title, author}) => {
   const [showMore, setShowMore] = useState(false);
 
   const toggleShowMore = () => {
@@ -25,8 +25,8 @@ const BlogCard = ({description}) => {
           <Image src="/images/blog-1.png" alt="profile-A" fill ></Image>
         </LogoWrapper>
         <BlogTitle>
-          <Title>Wordpress</Title>
-          <SubTitle>By Admin</SubTitle>
+          <Title>{title}</Title>
+          <SubTitle>{author}</SubTitle>
         </BlogTitle>
       </BlogeHeader>
       <Content>
