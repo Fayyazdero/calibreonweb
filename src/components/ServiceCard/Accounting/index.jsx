@@ -21,6 +21,7 @@ const Accounting = ({
   alt,
   category,
   children,
+  onClick,
   ...rest
 }) => {
 
@@ -30,7 +31,7 @@ const Accounting = ({
     return builder.image(source)
   }
   return (
-    <Wrapper {...rest} variant={variant}>
+    <Wrapper {...rest} onClick={onClick} variant={variant}>
       <ImageWrapper>
         <Image src={`${urlFor(image).url()}`} alt={"Image"} fill />
       </ImageWrapper>

@@ -64,3 +64,10 @@ export const Wrapper = styled.div`
     }
   }
 `;
+
+export const LoadingWrapper = styled("div")`
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+`;

@@ -9,6 +9,7 @@ const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => (
   cursor: "pointer",
   transition: ".3s ease",
   width: "auto",
+  height: "496px",
     marginBottom: "28px",
   "&:hover": {
     color: `${variant == "primary" ? colors.primary : colors.grey}`,
@@ -33,6 +34,7 @@ const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => (
     paddingBottom: "28px",
     marginBottom: "48px",
     width: "100%",
+    height: "496px"
   },
 }));
 

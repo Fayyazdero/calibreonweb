@@ -11,25 +11,41 @@ import {
   StyledHeading,
   MissionHeading,
   StyledRow,
+  LoadingWrapper
 } from "./styles";
 import MissionBanner from "/public/images/our-mission-banner.png";
 import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import { founderData } from "./aboutData";
 import Typo from "@/components/Typo";
+import { ThreeDots } from 'react-loader-spinner';
+
 const About = () => {
   const [column1, setColumn1] = useState([]);
   const [column2, setColumn2] = useState([]);
   const [column3, setColumn3] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true)
     const column1Data = [founderData[0]];
     const column2Data = [founderData[1], founderData[2]];
     const column3Data = [founderData[3]];
     setColumn1(column1Data);
     setColumn2(column2Data);
     setColumn3(column3Data);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    },2000)
   }, []);
+
+  if(isLoading) {
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }   
+
   return (
     <>
       <Container>
@@ -102,6 +118,7 @@ const About = () => {
                     profile={item.profile}
                     title={item.title}
                     subTitle={item.subTitle}
+                    founders={true}
                     description={item.description}
                   />
                 ))}
@@ -117,6 +134,7 @@ const About = () => {
                     title={item.title}
                     subTitle={item.subTitle}
                     description={item.description}
+                    founders={true}
                     className="my-custom-class w-sm-100"
                   />
                 ))}
@@ -131,6 +149,7 @@ const About = () => {
                     title={item.title}
                     subTitle={item.subTitle}
                     description={item.description}
+                    founders={true}
                   />
                 ))}
               </Col>

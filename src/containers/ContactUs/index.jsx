@@ -1,17 +1,35 @@
 import { Heading } from "@/components/Heading";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Content,
   HeadingWrapper,
   StyledContainer,
   TitleWrapper,
+  LoadingWrapper
 } from "./styles";
 import { Col, Row } from "react-bootstrap";
 import ContactForm from "@/components/ContactForm";
 import { SendIcon } from "@/components/Svgs";
 import Image from "next/image";
+import { ThreeDots } from 'react-loader-spinner';
 
 const ContactUs = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true)
+
+    setTimeout(() => {
+      setIsLoading(false);
+    },2000)
+  }, []);
+
+  if(isLoading) {
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }   
+
   return (
     <StyledContainer>
       <HeadingWrapper>

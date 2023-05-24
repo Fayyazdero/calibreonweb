@@ -352,3 +352,10 @@ export const StyledProgressBar = styled(ProgressBar)`
     background-color: #f05b25 !important;
   }
 `;
+
+export const LoadingWrapper = styled("div")`
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+`;

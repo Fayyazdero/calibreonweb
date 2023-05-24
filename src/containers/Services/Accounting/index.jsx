@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   ServicesHeadingWrapper,
@@ -23,7 +23,8 @@ import {
   VideoWrapper,
   StyledVideoDiv,
   StyledRow,
-  StyledCol
+  StyledCol,
+  LoadingWrapper
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
@@ -38,11 +39,62 @@ import xerotwo from "../../../../public/images/xero-two.png";
 import { teamData } from "../../Team/teamData";
 import ProfileCard from "@/components/ProfileCard";
 import Typo from "@/components/Typo";
+import { useRouter } from "next/router";
+import { client } from "@/pages/index.js";
+import { ThreeDots } from 'react-loader-spinner';
 
 const Accounting = () => {
+  const [accounting, setAccounting] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoading(true)
+    client
+      .fetch(
+        `*[_type == "accounting"]{
+        _id,
+        title,
+        image,
+        linkedInLink,
+        upworkLink,
+        overView,
+        services,
+        companyInformation,
+        certificates,
+      }`
+      )
+      .then((item) => {
+         setAccounting(item); 
+         setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log("error.....<>", err);
+      });
+  }, []);
+
+  if(isLoading) {
+    
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }             
+
   return (
     <>
-      <Container>
+      {accounting?.map((acc) => {
+          const {
+            certificates,
+            companyInformation,
+            image,
+            linkedInLink,
+            overView,
+            services,
+            title,
+            upworkLink,
+            _id,
+          } = acc;
+        return <Container>
         <ServicesHeadingWrapper>
           <Heading variant="subHeading" title={"Accounting"}></Heading>
         </ServicesHeadingWrapper>
@@ -51,95 +103,52 @@ const Accounting = () => {
             <Image src={profileimg} alt="profile-A"></Image>
           </TeamDetailsImageWrapper>
           <ProfileTitle>
-            <Heading variant="contactTitle">Xact Accounting</Heading>
+            <Heading variant="contactTitle">{title}</Heading>
             <TypoContainer>
-              <Typo variant="newDescTypo">Company Profile Links</Typo>
-            </TypoContainer>
-            <DescWrapper>
-              <Image
-                className="mx-3"
-                src={upwork_logo_icon}
-                alt="Upwork logo"></Image>
-              <Typo variant="userDesc" color="#0A66C2">
-                Xact Accounting | Upwork
-              </Typo>
-            </DescWrapper>
-            <DescWrapper>
-              <Image
-                className="mx-3"
-                src={linkedInLogo}
-                alt="Upwork logo"></Image>
-              <Typo variant="userDesc" color="#0A66C2">
-                Xact Accounting | Upwork
-              </Typo>
-            </DescWrapper>
+                  <Typo variant="newDescTypo">Company Profile Links</Typo>
+                </TypoContainer>
+                <DescWrapper>
+                <Image
+                  className="mx-3"
+                  src={upwork_logo_icon}
+                  alt="Upwork logo"></Image>
+                <Typo variant="userDesc" color="#0A66C2">
+                  {upworkLink}
+                </Typo>
+              </DescWrapper>
+              <DescWrapper>
+                <Image
+                  className="mx-3"
+                  src={linkedInLogo}
+                  alt="Upwork logo"></Image>
+                <Typo variant="userDesc" color="#0A66C2">
+                  {linkedInLink}
+                </Typo>
+              </DescWrapper>
           </ProfileTitle>
         </TeamDetailsInfoWrapper>
         <TeamDetailsDescWrapper>
           <Heading variant="faqHeading">Overview</Heading>
           <Typo variant={"descTypo"}>
-            Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque aliquam
-            eget. Purus id faucibus mollis viverra viverra odio tempus tempor
-            ut. Amet lectus in bibendum sed.Lorem ipsum dolor sit amet
-            consectetur. Sem ut pellentesque aliquam eget. Purus id faucibus
-            mollis viverra viverra odio tempus tempor ut. Amet lectus in
-            bibendum sed.Lorem ipsum dolor sit amet consectetur. Sem ut
-            pellentesque aliquam eget. Purus id faucibus mollis viverra viverra
-            odio tempus tempor ut. Amet lectus in bibendum sed. Lorem ipsum
-            dolor sit amet consectetur. Sem ut pellentesque aliquam eget. Purus
-            id faucibus mollis viverra viverra odio tempus tempor ut. Amet
-            lectus in bibendum sed.Lorem ipsum dolor
+            {overView}
           </Typo>
         </TeamDetailsDescWrapper>
         <TeamTimelineWrapper>
           <TeamProgressContainer>
             <Heading variant="faqHeading">Services</Heading>
             <NewTeamDetailsDescWrapper>
-              <ListWrapper>
-                <Typo variant="newSubDesTypo">Finance And Accounting:</Typo>
+              {services?.slice(0, 2)?.map((service) => {
+                return <ListWrapper>
+                <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                 <ul>
-                  <li>
-                    Bookkeeping - Cloud Accounting (SAP, Netsuite, Xero,
-                    Quickbooks Online & Desktop...) With us, you can hire:
+                  {service?.services?.map((service) => {
+                    return <li>
+                    {service}
                   </li>
-                  <li>Your bookkeeper for Invoicing and Billing</li>
-                  <li>Your bookkeeper for reconciliations</li>
-                  <li>
-                    Your bookkeeper for Importing/transferring historical and
-                    current data
-                  </li>
-                  <li>Your bookkeeper for creating Chart of Accounts</li>
-                  <li>Your bookkeeper for sales Tax Returns (GST and VAT)</li>
-                  <li>Your bookkeeper for Journal Entries/ Adjustments</li>
-                  <li>
-                    Your bookkeeper for auditing and Rectification of Historical
-                    discrepancies
-                  </li>
-                  <li>Bookkeeper for Financial and Management Reporting</li>
-                  <li>
-                    Your bookkeeper for Accounts Receivable and Payable
-                    Management
-                  </li>
-                  <li>Expert bookkeepers for Administration and Procurement</li>
-                  <li>Your bookkeeper for Payroll Administration</li>
-                  <li>Your bookkeeper for Financial Analysis</li>
+                  })}
                 </ul>
               </ListWrapper>
-              <ListWrapper>
-                <Typo variant="newSubDesTypo">
-                  Financial Planning & Reporting:
-                </Typo>
-                <ul>
-                  <li>Your accountant for discrete Budgeting Exercises</li>
-                  <li>Your accountant for rolling Forecasts and Analysis</li>
-                  <li>Your accountant for daily Cash Flow Management</li>
-                  <li>Your accountant for collections and aging Reporting</li>
-                  <li>
-                    Your accountant for the preparation of monthly Accounting
-                    Reports and Financial Statements
-                  </li>
-                </ul>
-              </ListWrapper>
+              })}
               <Typo className="desHeading" variant="newSubDesTypo">
                 Portfolios:
               </Typo>
@@ -151,7 +160,8 @@ const Accounting = () => {
                       width="372px"
                       height="283px"
                       style={{ backgroundColor: "black", borderRadius: "24px" }}
-                      controls />
+                      controls
+                    />
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -169,7 +179,8 @@ const Accounting = () => {
                       width="372px"
                       height="283px"
                       style={{ backgroundColor: "black", borderRadius: "24px" }}
-                      controls />
+                      controls
+                    />
                     <Typo className="firstTypo" variant="newSubDesTypo">
                       Amazon Account Management
                     </Typo>
@@ -189,21 +200,19 @@ const Accounting = () => {
               <InnerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Agency size</Typo>
-                  <Typo variant="newSubAccountingTypo">51-200 workers</Typo>
+                  <Typo variant="newSubAccountingTypo">{companyInformation?.size}</Typo>
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Year found</Typo>
-                  <Typo variant="newSubAccountingTypo">2013</Typo>
+                  <Typo variant="newSubAccountingTypo">{companyInformation?.yearFounded}</Typo>
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
-                  <Typo variant="newSubAccountingTypo">
-                    Netsuite Procurement Expert
+                  {companyInformation?.awards?.map((award) => {
+                    return <Typo variant="newSubAccountingTypo">
+                    {award}
                   </Typo>
-                  <Typo variant="newSubAccountingTypo">QBO Pro Advisor</Typo>
-                  <Typo variant="newSubAccountingTypo">
-                    Xero Advisor Certified
-                  </Typo>
+                  })}
                 </SpacerInfoWrapper>
               </InnerInfoWrapper>
             </InfoWrapper>
@@ -220,7 +229,8 @@ const Accounting = () => {
                 width="372px"
                 height="283px"
                 style={{ backgroundColor: "black", borderRadius: "24px" }}
-                controls />
+                controls
+              />
             </TestimonialWrapper>
           </TeamTimelineContainer>
         </TeamTimelineWrapper>
@@ -242,12 +252,14 @@ const Accounting = () => {
                   title={data.title}
                   subTitle={data.subTitle}
                   description={data.description}
+                  founders={true}
                 />
               </StyledCol>
             );
           })}
         </StyledRow>
       </Container>
+      })}
     </>
   );
 };

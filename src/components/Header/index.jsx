@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "/public/logo.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   LinksWrapper,
   NavButtonsWrapper,
@@ -50,8 +50,14 @@ function Header() {
   const [active, setActive] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (event, link) => {
-    event.preventDefault();
+  useEffect(() => {
+ const regex = /\/([^/]+)/
+    const result = active.match(regex);
+    const path = result ? result[0] : active;
+    setActive(path);
+  }, [router.pathname])
+
+  const handleClick = (link) => {
     setActive(link);
     setIsOpen(false);
   };
@@ -76,11 +82,11 @@ function Header() {
         >
           <Nav>
             <Overlay />
-            {navLinks.map((item, key) => (
+            {navLinks?.map((item, key) => (
               <LinksWrapper key={key}>
                 <StyledLink
                   onClick={() => {
-                    handleClick(event, item.link);
+                    handleClick(item.link);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === item.link ? "active" : ""

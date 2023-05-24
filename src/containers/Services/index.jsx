@@ -1,6 +1,6 @@
 import Accounting from "@/components/ServiceCard/Accounting";
 import Animation from "@/components/ServiceCard/Animation";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
   StyledRow,
@@ -13,6 +13,7 @@ import {
   Wrapper,
   ImageWrapper,
   GreyBoxWrapper,
+  LoadingWrapper
 } from "./styles";
 import Ecommerce from "@/components/ServiceCard/Ecommerce";
 import FlimTv from "@/components/ServiceCard/FlimTv";
@@ -24,9 +25,26 @@ import Search from "@/components/Search";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import AccountingComponent from "@/components/ServiceCard/AccountingComponent";
+import { ThreeDots } from 'react-loader-spinner';
 
 export const Services = () => {
-  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoading(true)
+
+    setTimeout(() => {
+      setIsLoading(false);
+    },2000)
+  }, []);
+
+  if(isLoading) {
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }
+
   return (
     <Container>
       <Wrapper>

@@ -37,6 +37,7 @@ import {
   TCardWrapper,
   StyledTitleWrapper,
   StyledTitle,
+  LoadingWrapper
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -47,19 +48,23 @@ import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
 import { client } from "@/pages/index.js";
+import { ThreeDots } from 'react-loader-spinner';
 
 
 const Home = () => {
   const [slides, setSlides] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const ref = useRef(null);
 
   useEffect(() => {
+    setIsLoading(true)
     client
       .fetch(`*[_type == "home"]`)
       .then((item) => {
         console.log("item", item);
         setSlides(item);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log("error", err);
@@ -84,6 +89,12 @@ const Home = () => {
       next.current.slickNext();
     }
   };
+
+  if(isLoading) {
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }   
 
   return (
     <>
@@ -161,6 +172,7 @@ const Home = () => {
                   alt={item.alt}
                   category={item.category}
                   children={item.children}
+                  onClick={() => router.push(`/services/${item.category}`)}
                 />
               </ServiceCard>
               <StyledTitleWrapper>
