@@ -75,14 +75,14 @@ const Team = () => {
           color={"#F05B25"}
           title={"Our Team"}></Heading>
       </ServicesHeadingWrapper>
-      {departments.map((department) => {
+      {departments?.map((department) => {
         return (
           <Container key={department._id}>
             <TopHeadingWrapper>
               <Typo variant="mainDesc">{department.title}</Typo>
               <Typo
                 variant="headingTypo"
-                onClick={() => router.push("/team/details")}>
+                onClick={() => router.push("/team/viewAll")}>
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="#F05B25" />
               </Typo>

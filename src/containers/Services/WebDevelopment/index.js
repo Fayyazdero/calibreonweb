@@ -7,7 +7,7 @@ import { client } from "@/pages/index.js";
 import { ThreeDots } from 'react-loader-spinner';
 import CompanyCard from "@/components/CompanyCard";
 
-const Accounting = () => {
+const WebDevelopment = () => {
   const [accounting, setAccounting] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -18,7 +18,7 @@ const Accounting = () => {
     setIsLoading(true)
     client
       .fetch(
-        `*[_type == "accounting"]{
+        `*[_type == "webDevelopment"]{
         _id,
         title,
         department,
@@ -55,4 +55,4 @@ const Accounting = () => {
   );
 };
 
-export default Accounting;
+export default WebDevelopment;

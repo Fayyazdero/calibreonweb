@@ -1,9 +1,10 @@
-import Accounting from "@/containers/Services/Accounting";
+import ECommerce from "@/containers/Services/ECommerce";
 import React from "react";
 
 const Index = () => {
-  return <Accounting />;
+  return <ECommerce />;
 };
 
 Index.layout = true;
 export default Index;
+

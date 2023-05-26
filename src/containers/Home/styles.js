@@ -107,7 +107,7 @@ export const StyledContainer = styled.div`
 export const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column
   justify-content: center;
 
   & .responsive-image {
@@ -120,6 +120,7 @@ export const ContentWrapper = styled.div`
   }
 
   & form {
+    margin: 16px 0;
     @media (max-width: 992px) {
       flex-direction: column;
     }

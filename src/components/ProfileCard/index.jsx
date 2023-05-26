@@ -28,7 +28,20 @@ const ProfileCard = ({
   founders
 }) => {
   const builder = imageUrlBuilder(client);
+  const fullName = title;
+  const names = fullName.split(" ");
 
+  let abbreviatedName = "";
+
+  if (names.length >= 2) {
+    const firstName = names[0];
+    const lastName = names[1];
+    const lastInitial = lastName.charAt(0);
+
+    abbreviatedName = `${firstName} ${lastInitial}.`;
+  } else {
+    abbreviatedName = fullName;
+  }
   const urlFor = (source) => {
     return builder.image(source);
   };
@@ -44,7 +57,7 @@ const ProfileCard = ({
           />
         </ProfileImage>
         <ProfileTitle>
-          <Heading variant="userHeading">{title.substring(0, 6)}</Heading>
+          <Heading variant="userHeading">{abbreviatedName}</Heading>
           <Certification>
             <SubTitle fontSize={fontSize}> {subTitle}</SubTitle>
             {verifiedLogo == true && (

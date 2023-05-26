@@ -71,7 +71,9 @@ const Details = () => {
         const person = item.filter(
           (p) => p._id == String(router.query.details)
         );
-        return setPersons(item), setUser(person[0]), setIsLoading(false);
+        const people = item?.filter((p) => p?.department[0].title == person[0]?.department[0]?.title && p?._id !== person[0]?._id)
+        ?.slice(0, 3);
+        return setPersons(people), setUser(person[0]), setIsLoading(false);
       })
       .catch((err) => {
         console.log("error.....<>", err);
@@ -172,7 +174,7 @@ const Details = () => {
           </TeamTimelineWrapper>
         </TeamDetailsWrapper>
       </Container>
-      <TeamUserListWrapper>
+      {persons?.length > 0 && <TeamUserListWrapper>
         <Container>
           <TopHeadingWrapper>
             <Typo
@@ -180,16 +182,14 @@ const Details = () => {
               variant="mainDescHighlightedTypo">
               {user?.department?.[0]?.title}
             </Typo>
-            <Typo variant="subDescHighlightedTypo">
+            <Typo variant="subDescHighlightedTypo" onClick={() => router.push("/team/viewAll")}>
               View All{" "}
               <ArrowRight className="mx-2" height="22px" color="white" />
             </Typo>
           </TopHeadingWrapper>
           <StyledRow>
-            {persons
-              ?.filter((person) => person.department[0].title == "Accounting")
-              ?.slice(0, 3)
-              ?.map((data) => {
+            {persons?.map((data) => {
+                console.log('amjaaad', data)
                 return (
                   <StyledCol md={4}>
                     <ProfileCard
@@ -206,7 +206,7 @@ const Details = () => {
               })}
           </StyledRow>
         </Container>
-      </TeamUserListWrapper>
+      </TeamUserListWrapper>}
     </>
   );
 };
