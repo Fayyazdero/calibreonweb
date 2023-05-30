@@ -11,42 +11,6 @@ export const client = createClient({
 });
 
 const Index = () => {
-  // const posts = {
-  //   user: [],
-  //   blogs: [],
-  // };
-
-  // const [data, setData] = useState(posts);
-  // useEffect(() => {
-  //   client
-  //     .fetch(`*[_type == "person"]`)
-  //     .then((item) => {
-  //       setData((prevstate) => {
-  //         return {
-  //           ...prevstate,
-  //           user: item,
-  //         };
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log("error", err);
-  //     });
-
-  //   client
-  //     .fetch(`*[_type == "posts"]`)
-  //     .then((item) => {
-  //       setData((prevstate) => {
-  //         return {
-  //           ...prevstate,
-  //           blogs: item,
-  //         };
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log("error", err);
-  //     });
-  // }, []);
-  // console.log("data", data);
   return (
     <>
       <Head>

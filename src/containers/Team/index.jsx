@@ -16,49 +16,53 @@ import { useRouter } from "next/router";
 import { client } from "@/pages/index.js";
 import { ThreeDots } from 'react-loader-spinner';
 
-const Team = () => {
-  const [departments, setDepartments] = useState([]);
-  const [persons, setPersons] = useState([]);
+const Team = ({ departments, persons }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    setIsLoading(true)
-    client
-      .fetch(`*[_type == "department"]`)
-      .then((item) => {
-        setDepartments(item);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
+    // setIsLoading(true)
+    // client
+    //   .fetch(`*[_type == "department"]`)
+    //   .then((item) => {
+    //     setDepartments(item);
+    //     setIsLoading(false);
+    //   })
+    //   .catch((err) => {
+    //     console.log("error", err);
+    //   });
+    console.log('departments', departments)
+    console.log('persons', persons)
   }, []);
 
-  useEffect(() => {
-    setIsLoading(true)
-    client
-      .fetch(`*[_type == "person"]{
-        _id,
-        name,
-        image,
-        designation,
-        description,
-        department[]->{title},
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   client
+  //     .fetch(`*[_type == "person"]{
+  //       _id,
+  //       name,
+  //       image,
+  //       designation,
+  //       description,
+  //       department[]->{title},
         
-      }`)
-      .then((item) => {
-        setPersons(item);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
-  }, []);
+  //     }`)
+  //     .then((item) => {
+  //       setPersons(item);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log("error", err);
+  //     });
+  // }, []);
 
   const handleClick = (e, id) => {
     e.preventDefault();
     router.push(`/team/details/${id}`);
+  //   router.push({
+  //     pathname: '/team/details/',
+  //     params: id,
+  // })
   };
 
   if(isLoading) {

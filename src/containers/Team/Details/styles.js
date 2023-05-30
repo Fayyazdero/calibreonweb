@@ -53,7 +53,6 @@ export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
 
   return {
     display: "flex",
-    justifyContent: "space-between",
 
     [`@media screen and (max-width: ${sm}px)`]: {
       flexDirection: "column",

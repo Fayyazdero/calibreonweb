@@ -37,7 +37,9 @@ import {
   TCardWrapper,
   StyledTitleWrapper,
   StyledTitle,
-  LoadingWrapper
+  LoadingWrapper,
+  SliderWrapper,
+  SliderCards
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -143,6 +145,8 @@ const Home = () => {
             </ViewAll>
           </ServicesHeadingWrapper>
         </Container>
+        <SliderWrapper>
+        <SliderCards>
         <Slider
           ref={next}
           arrows={false}
@@ -181,16 +185,17 @@ const Home = () => {
             </>
           ))}
         </Slider>
+        </SliderCards>
+        </SliderWrapper>
         <Container>
           <Arrows>
-            <ArrowsBg>
-              <ArrowLeft height="20px" onClick={onLeftClick} />
+            <ArrowsBg onClick={onLeftClick}>
+              <ArrowLeft height="20px" />
             </ArrowsBg>
-            <ArrowsBg>
+            <ArrowsBg onClick={onRightClick}>
               <ArrowRight
                 height={"20px"}
                 color={"#ffffff"}
-                onClick={onRightClick}
               />
             </ArrowsBg>
           </Arrows>

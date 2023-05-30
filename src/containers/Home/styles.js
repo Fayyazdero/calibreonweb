@@ -325,6 +325,17 @@ export const Banner = styled.div`
 export const Testinomials = styled.div`
   display: flex;
 `;
+
+export const SliderWrapper = styled.div`
+width: 100%;
+display: flex;
+justify-content: end;
+`;
+
+export const SliderCards = styled.div`
+width: 91%;
+
+`;
 export const StyledTitleWrapper = styled.div`
   display: none;
   @media (max-width: 992px) {
