@@ -1,4 +1,4 @@
-export const Data = [
+const Data = [
     {
         id: 1,
         faq: "What is Caliberon?",
@@ -50,3 +50,5 @@ export const Data = [
         desc: "We offer multiple communication channels including email, phone, chat, and video conferencing to ensure that we are always accessible to our clients. You can choose the communication channel that works best for you."
     },
 ]
+
+export default Data;

@@ -5,7 +5,7 @@ import { Heading } from "@/components/Heading";
 import Layout from "@/components/Layout";
 import Typo from "@/components/Typo";
 
-import { Data } from "./data";
+import Data from "./data";
 import plusIcon from "../../../public/images/plus.png";
 import minimized from "../../../public/images/minimized.png";
 import Image from "next/image";

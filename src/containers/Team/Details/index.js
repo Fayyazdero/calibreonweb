@@ -49,50 +49,6 @@ const Details = ({ person, people }) => {
   const [user, setUser] = useState({});
   const router = useRouter();
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   client
-  //     .fetch(
-  //       `*[_type == "person"]{
-  //       _id,
-  //       name,
-  //       image,
-  //       designation,
-  //       description,
-  //       department[]->{title},
-  //       isCertified,
-  //       upworkLink,
-  //       skills[]->{title, skillLevel},
-  //       experience[]->{workedAt, duration},
-  //     }`
-  //     )
-  //     .then((item) => {
-  //       const person = item?.filter(
-  //         (p) => p._id == String(router.query.details)
-  //       );
-  //       const people = item
-  //         ?.filter(
-  //           (p) =>
-  //             p?.department[0].title == person[0]?.department[0]?.title &&
-  //             p?._id !== person[0]?._id
-  //         )
-  //         ?.slice(0, 3);
-  //       console.log("person", person);
-  //       console.log("people", people);
-  //       console.log("item", item);
-  //       console.log("router.query.details", router);
-  //       return setPersons(people), setUser(person[0]), setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log("error.....<>", err);
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    console.log('person', person)
-    console.log('people', people)
-  }, [])
-
   if (isLoading) {
     return (
       <LoadingWrapper>
@@ -196,7 +152,7 @@ const Details = ({ person, people }) => {
               <Typo
                 className="mainDescHighlighted"
                 variant="mainDescHighlightedTypo">
-                {user?.department?.[0]?.title}
+                {person?.department?.[0]?.title}
               </Typo>
               <Typo
                 variant="subDescHighlightedTypo"

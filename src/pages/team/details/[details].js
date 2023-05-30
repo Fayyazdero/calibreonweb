@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 import { client } from "@/pages/index.js";
 import React from "react";
 
-const personQuery = groq`*[_type == "person" && slug.current == $slug][0]{
+const personQuery = groq`*[_type == "person"]{
   _id,
   name,
   image,
@@ -14,22 +14,22 @@ const personQuery = groq`*[_type == "person" && slug.current == $slug][0]{
   upworkLink,
   skills[]->{title, skillLevel},
   experience[]->{workedAt, duration},
-  slug
 }`;
 
 export const getStaticPaths = async () => {
   const paths =
     await client.fetch(groq`*[_type == "person" && defined(slug.current)][]{
-    "params": { "slug": slug.current }
+    "params": { "slug": slug.current },
   }`);
   return { paths, fallback: true };
 };
 
 export const getStaticProps = async ({ params }) => {
-  const queryParams = { slug: params?.slug ?? "" };
+  const queryParams = { slug: params?.details ?? "" };
 
   const person = await client.fetch(personQuery, queryParams);
   const persons = await client.fetch(personQuery);
+  const user = person?.filter((user) => user._id == queryParams?.slug);
 
   const people = persons
     ?.filter(
@@ -38,13 +38,11 @@ export const getStaticProps = async ({ params }) => {
         p?._id !== person[0]?._id
     )
     ?.slice(0, 3);
-    console.log('params', params)
-    // console.log('people', people)
 
   return {
     props: {
       data: {
-        person,
+        person: user[0],
         people
       },
     },
