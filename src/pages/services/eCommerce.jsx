@@ -1,9 +1,10 @@
-import Details from "@/containers/Team/Details";
+import ECommerce from "@/containers/Services/ECommerce";
 import React from "react";
 
 const Index = () => {
-  return <Details />;
+  return <ECommerce />;
 };
 
 Index.layout = true;
 export default Index;
+

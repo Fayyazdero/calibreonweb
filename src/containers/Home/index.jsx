@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Router, { useRouter } from "next/router";
 import { Col, Container, Row } from "react-bootstrap";
@@ -25,6 +25,21 @@ import {
   HomeImageWrapper,
   StyledRow,
   NextArrow,
+  TestimonialCol,
+  Logos,
+  ServiceCard,
+  ImageCol,
+  StyledImgCol,
+  NewsLetterCol,
+  BannerRow,
+  BannerCol,
+  LearnMore,
+  TCardWrapper,
+  StyledTitleWrapper,
+  StyledTitle,
+  LoadingWrapper,
+  SliderWrapper,
+  SliderCards
 } from "./styles";
 import { servicesCardData, testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -34,10 +49,30 @@ import { Heading } from "@/components/Heading";
 import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
+import { client } from "@/pages/index.js";
+import { ThreeDots } from 'react-loader-spinner';
+
 
 const Home = () => {
+  const [slides, setSlides] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const ref = useRef(null);
+
+  useEffect(() => {
+    setIsLoading(true)
+    client
+      .fetch(`*[_type == "home"]`)
+      .then((item) => {
+        console.log("item", item);
+        setSlides(item);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  }, []);
+
   const onClick = () => {
     if (ref && ref.current) {
       ref.current.slickNext();
@@ -57,19 +92,28 @@ const Home = () => {
     }
   };
 
+  if(isLoading) {
+    return <LoadingWrapper>
+      <ThreeDots color="#F05B25" />
+    </LoadingWrapper>
+  }   
+
   return (
     <>
       <Container>
         <Banner>
-          <Row>
-            <Col sm={12} md={6}>
+          <BannerRow>
+            <BannerCol sm={12} md={6}>
               <HomeImageWrapper>
                 <StyledImage src={home} alt="home" />
               </HomeImageWrapper>
-            </Col>
-            <Col sm={12} md={6}>
+            </BannerCol>
+            <BannerCol sm={12} md={6}>
               <HomeHeadingWrapper>
-                <Heading title="Calibreon International" variant="mainHeading">
+                <Heading
+                  className="main-heading"
+                  title="Calibreon International"
+                  variant="mainHeading">
                   Grow with{" "}
                 </Heading>
                 <Typo variant="mainTypo" className="main-typo my-4">
@@ -84,19 +128,25 @@ const Home = () => {
                   variant="contained"
                 />
               </HomeHeadingWrapper>
-            </Col>
-          </Row>
+            </BannerCol>
+          </BannerRow>
         </Banner>
       </Container>
       <ServicesWrapper>
         <Container>
           <ServicesHeadingWrapper>
-            <Heading variant="subHeading" title={"Our Services"} />
+            <Heading
+              color="#ffffff"
+              variant="subHeading"
+              title={"Our Services"}
+            />
             <ViewAll onClick={() => router.push("/services")}>
               View All Services <ArrowRight height="16px" color={"#F05B25"} />
             </ViewAll>
           </ServicesHeadingWrapper>
         </Container>
+        <SliderWrapper>
+        <SliderCards>
         <Slider
           ref={next}
           arrows={false}
@@ -113,22 +163,39 @@ const Home = () => {
                 slidesToScroll: 1,
               },
             },
-          ]}
-        >
-          {servicesCardData.map((item, index) => (
-            <Accounting src={item.imgSrc} cardTitle={item.title} />
+          ]}>
+          {slides?.map((item, index) => (
+            <>
+              <ServiceCard key={index}>
+                <Accounting
+                  image={item?.image}
+                  variant={item.variant || "primary"}
+                  subCategoryOne={item.subCategoryOne}
+                  subCategoryTwo={item.subCategoryTwo}
+                  subCategoryThree={item.subCategoryThree}
+                  alt={item.alt}
+                  category={item.category}
+                  children={item.children}
+                  onClick={() => router.push(`/services/${item.category}`)}
+                />
+              </ServiceCard>
+              <StyledTitleWrapper>
+                <StyledTitle>{item.category}</StyledTitle>
+              </StyledTitleWrapper>
+            </>
           ))}
         </Slider>
+        </SliderCards>
+        </SliderWrapper>
         <Container>
           <Arrows>
-            <ArrowsBg>
-              <ArrowLeft height="20px" onClick={onLeftClick} />
+            <ArrowsBg onClick={onLeftClick}>
+              <ArrowLeft height="20px" />
             </ArrowsBg>
-            <ArrowsBg>
+            <ArrowsBg onClick={onRightClick}>
               <ArrowRight
                 height={"20px"}
                 color={"#ffffff"}
-                onClick={onRightClick}
               />
             </ArrowsBg>
           </Arrows>
@@ -143,80 +210,112 @@ const Home = () => {
           />
           <Typo variant="mainTypo" className="testinomial-text">
             Find out why we're the top choice - read what our customers have to
-            say! Our testimonials reflect the high level of customer <br />
+            say! Our testimonials reflect the high level of customer
             satisfaction we strive for, and we're confident that you'll see why
             our clients keep coming back for more
           </Typo>
         </Container>
-        <StyledRow>
-          <Col md={6}>
-            <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-              <TestimonialCard
-                className="my-3 center-card"
-                imgSrc={rebornLogo}
-                review={
-                  "Zahid is extremely hard working, very responsive, and provided quality work during his tenure. His efforts greatly assisted with the roll out of various initiatives. Additionally, he has a wide range of useful, applicable skills. I enjoyed working with Zahid."
-                }
-              />
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "He did a great job and work well with teams. He communicates well.Would highly recommended."
-                }
-              />
-              <TestimonialCard
-                className="my-3"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-              <TestimonialCard
-                className="my-3 center-card"
-                imgSrc={rebornLogo}
-                review={
-                  "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
-                }
-              />
-            </Slider>
-            <NextArrow>
-              <ArrowRight height={"20px"} color={"#ffffff"} onClick={onClick} />
-            </NextArrow>
-          </Col>
-          <Col md={6}>
-            <ImageWrapper>
-              <Image src={testimonialImge} alt="image" />
-            </ImageWrapper>
-          </Col>
-        </StyledRow>
+        <Container>
+          <StyledRow>
+            <TestimonialCol md={6}>
+              <Slider ref={ref} {...{ arrows: false, rows: 3 }}>
+                <TestimonialCard
+                  className="my-3"
+                  imgSrc={rebornLogo}
+                  review={
+                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                  }
+                />
+                <TCardWrapper>
+                  <TestimonialCard
+                    className="my-3 center-card"
+                    imgSrc={rebornLogo}
+                    review={
+                      "Zahid is extremely hard working, very responsive, and provided quality work during his tenure. His efforts greatly assisted with the roll out of various initiatives. Additionally, he has a wide range of useful, applicable skills. I enjoyed working with Zahid."
+                    }
+                  />
+                </TCardWrapper>
+                <TestimonialCard
+                  className="my-3"
+                  imgSrc={rebornLogo}
+                  review={
+                    "He did a great job and work well with teams. He communicates well.Would highly recommended."
+                  }
+                />
+                <TestimonialCard
+                  className="my-3"
+                  imgSrc={rebornLogo}
+                  review={
+                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                  }
+                />
+                <TCardWrapper>
+                  <TestimonialCard
+                    className="my-3 center-card"
+                    imgSrc={rebornLogo}
+                    review={
+                      "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                    }
+                  />
+                </TCardWrapper>
+                <TestimonialCard
+                  className="my-3 center-card"
+                  imgSrc={rebornLogo}
+                  review={
+                    "Razia has been a great resource, knowledgeable, communicative, open to suggestions and ready to bring her advice to improve the accounting processes and systems - its important to mention her experience with Hong Kong accounting standards, her expertise with Xero, and her insight on E-commerce Dropshipping businesses is really commendable - looking forward to having her for a long term"
+                  }
+                />
+              </Slider>
+              <NextArrow>
+                <ArrowRight
+                  height={"20px"}
+                  color={"#ffffff"}
+                  onClick={onClick}
+                />
+              </NextArrow>
+            </TestimonialCol>
+
+            <ImageCol md={6}>
+              <ImageWrapper>
+                <Image src={testimonialImge} alt="image" />
+              </ImageWrapper>
+            </ImageCol>
+          </StyledRow>
+        </Container>
+        <LearnMore>
+          <Typo variant="mainTypo">Learn More</Typo>
+          <ArrowsBg>
+            <ArrowRight
+              height={"20px"}
+              color={"#ffffff"}
+              onClick={onRightClick}
+            />
+          </ArrowsBg>
+        </LearnMore>
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
-        <Row>
+        <Logos>
           {testimonialsLogos.map((item, index) => (
-            <Col md={4}>
-              <TestimonialLogos>
-                <StyledImage src={item.src} alt={item.alt} />
-              </TestimonialLogos>
-            </Col>
+            <TestimonialLogos>
+              <StyledImage className="logos" src={item.src} alt={item.alt} />
+            </TestimonialLogos>
           ))}
-        </Row>
+        </Logos>
       </TestimonialLogosWrapper>
       <Container>
         <NewsLetterWrapper>
           <Row>
-            <Col xs={12} sm={12} md={6}>
+            <NewsLetterCol xs={12} sm={12} md={6}>
               <ContentWrapper>
                 <Heading title=" Join US" variant="mainHeading">
                   News Letter
                 </Heading>
+                <StyledImage
+                  className="responsive-image"
+                  src={newsletter}
+                  alt="newsletter"
+                />
+
                 <Typo variant="mainTypo">
                   Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
                   aliquam eget. Purus id faucibus mollis viverra viverra odio
@@ -228,10 +327,10 @@ const Home = () => {
                   variant="contained"
                 />
               </ContentWrapper>
-            </Col>
-            <Col xs={12} sm={12} md={6}>
+            </NewsLetterCol>
+            <StyledImgCol xs={12} sm={12} md={6}>
               <StyledImage src={newsletter} alt="newsletter" />
-            </Col>
+            </StyledImgCol>
           </Row>
         </NewsLetterWrapper>
       </Container>

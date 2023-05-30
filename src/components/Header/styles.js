@@ -51,6 +51,10 @@ export const NavButtonsWrapper = styled.div`
     bottom: 110px;
     margin-right: 20px;
   }
+
+  & button {
+    padding: 8px 38px;
+  }
 `;
 export const LinksWrapper = styled.div`
   @media (max-width: 991px) {

@@ -1,8 +1,7 @@
 import ProfileCard from "@/components/ProfileCard";
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import {
-  ProfileCardWrapper,
   TeamDetailsWrapper,
   TeamDetailsContainer,
   TeamDetailsInfoWrapper,
@@ -28,97 +27,143 @@ import {
   TopHeadingWrapper,
   StyledProgressBar,
   TeamDetailsHeadingWrapper,
+  LoadingWrapper,
 } from "./styles";
 import profileimg from "../../../../public/images/profile-1.png";
 import verifiedIcon from "../../../../public/images/verified-icon.png";
 import upwork_logo_icon from "../../../../public/images/upwork_logo_icon.png";
 import Image from "next/image";
 
+import { useRouter } from "next/router";
 import { ArrowRight } from "@/components/Svgs";
 import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
-import { teamData } from "../../Team/teamData";
 import Typo from "@/components/Typo";
-import { useRouter } from "next/router";
+import { StyledCol, StyledRow } from "../styles";
+import { client } from "@/pages/index.js";
+import { ThreeDots } from "react-loader-spinner";
 
-const Details = () => {
-    const [verifiedLogo, setVerifiedLogo] = useState(true);
+const Details = ({ person, people }) => {
+  const [verifiedLogo, setVerifiedLogo] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState({});
   const router = useRouter();
+
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   client
+  //     .fetch(
+  //       `*[_type == "person"]{
+  //       _id,
+  //       name,
+  //       image,
+  //       designation,
+  //       description,
+  //       department[]->{title},
+  //       isCertified,
+  //       upworkLink,
+  //       skills[]->{title, skillLevel},
+  //       experience[]->{workedAt, duration},
+  //     }`
+  //     )
+  //     .then((item) => {
+  //       const person = item?.filter(
+  //         (p) => p._id == String(router.query.details)
+  //       );
+  //       const people = item
+  //         ?.filter(
+  //           (p) =>
+  //             p?.department[0].title == person[0]?.department[0]?.title &&
+  //             p?._id !== person[0]?._id
+  //         )
+  //         ?.slice(0, 3);
+  //       console.log("person", person);
+  //       console.log("people", people);
+  //       console.log("item", item);
+  //       console.log("router.query.details", router);
+  //       return setPersons(people), setUser(person[0]), setIsLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log("error.....<>", err);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    console.log('person', person)
+    console.log('people', people)
+  }, [])
+
+  if (isLoading) {
+    return (
+      <LoadingWrapper>
+        <ThreeDots color="#F05B25" />
+      </LoadingWrapper>
+    );
+  }
+
   return (
     <>
       <Container>
         <TeamDetailsWrapper>
           <TeamDetailsHeadingWrapper>
-            <Heading variant="subHeading">Team</Heading>
+            <Heading variant="subHeading" title={"Team"}></Heading>
           </TeamDetailsHeadingWrapper>
-          <Typo variant="mainDesc">Book Keeping & Accounts</Typo>
+          <Typo className="newTypo" variant="mainDesc">
+            {person?.department?.[0]?.title}
+          </Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>
               <Image src={profileimg} alt="profile-A"></Image>
             </TeamDetailsImageWrapper>
             <TeamDetailsInfoWrapper>
               <ProfileTitle>
-                <Heading variant="userHeading">mandy</Heading>
-                <Certification>
-                  <SubTitle fontSize={20}>Quickbook Certified</SubTitle>
-                  {verifiedLogo == true && (
-                    <VerifiedLogo>
-                      <Image src={verifiedIcon} alt="verified-logo"></Image>
-                    </VerifiedLogo>
+                <Heading variant="newUserHeading">{person?.name}</Heading>
+                {person?.department?.[0]?.title == "Accounting" &&
+                  person?.isCertified && (
+                    <Certification>
+                      <SubTitle fontSize={20}>Quickbook Certified</SubTitle>
+                      {verifiedLogo == true && (
+                        <VerifiedLogo>
+                          <Image src={verifiedIcon} alt="verified-logo"></Image>
+                        </VerifiedLogo>
+                      )}
+                    </Certification>
                   )}
-                </Certification>
-                <DescWrapper>
-                  <Image
-                    className="mx-3"
-                    src={upwork_logo_icon}
-                    alt="Upwork logo"></Image>
-                  <Typo variant="userDesc" color="#0A66C2">
-                    Faheem S. - Accountant Bookkeeper Credit Controller -
-                    Receivables/Payable Manager - Upwork Freelancer from Gilgit,
-                    Pakistan
-                  </Typo>
-                </DescWrapper>
+                {person?.upworkLink && (
+                  <DescWrapper>
+                    <Image
+                      className="mx-3"
+                      src={upwork_logo_icon}
+                      alt="Upwork logo"></Image>
+                    <Typo variant="userDesc" color="#0A66C2">
+                      {person?.upworkLink}
+                    </Typo>
+                  </DescWrapper>
+                )}
               </ProfileTitle>
               <TeamDetailsDescWrapper>
-                <Typo variant={"descTypo"}>
-                  Lorem ipsum dolor sit amet consectetur. Sem ut pellentesque
-                  aliquam eget. Purus id faucibus mollis viverra viverra odio
-                  tempus tempor ut. Amet lectus in bibendum sed.Lorem ipsum
-                  dolor sit amet consectetur. Sem ut pellentesque aliquam eget.
-                  Purus id faucibus mollis viverra viverra odio tempus tempor
-                  ut. Amet lectus in bibendum sed.Lorem ipsum dolor sit amet
-                  consectetur. Sem ut pellentesque aliquam eget. Purus id
-                  faucibus mollis viverra viverra odio tempus tempor ut. Amet
-                  lectus in bibendum sed. Lorem ipsum dolor sit amet
-                  consectetur. Sem ut pellentesque aliquam eget. Purus id
-                  faucibus mollis viverra viverra odio tempus tempor ut. Amet
-                  lectus in bibendum sed.Lorem ipsum dolor
-                </Typo>
+                <Typo variant={"descTypo"}>{person?.description}</Typo>
               </TeamDetailsDescWrapper>
             </TeamDetailsInfoWrapper>
           </TeamDetailsContainer>
           <TeamTimelineWrapper>
             <TeamProgressContainer>
-              <Heading variant="userHeading">Skills</Heading>
-              <ProgressWrapper>
-                <Typo variant="subHeadingTypo">Book Keeping</Typo>
-                <StyledProgressBar
-                  variant="danger"
-                  now={60}
-                  className="progress-value"
-                />
-              </ProgressWrapper>
-              <ProgressWrapper>
-                <Typo variant="subHeadingTypo">QuickBooks</Typo>
-                <StyledProgressBar variant="danger" now={80} />
-              </ProgressWrapper>
-              <ProgressWrapper>
-                <Typo variant="subHeadingTypo">Book Keeping</Typo>
-                <StyledProgressBar variant="danger" now={90} />
-              </ProgressWrapper>
+              <Heading variant="newUserHeadings">Skills</Heading>
+              {person?.skills?.map((skill) => {
+                return (
+                  <ProgressWrapper>
+                    <Typo variant="subHeadingTypo">{skill?.title}</Typo>
+                    <StyledProgressBar
+                      variant="danger"
+                      now={skill?.skillLevel}
+                      className="progress-value"
+                    />
+                  </ProgressWrapper>
+                );
+              })}
             </TeamProgressContainer>
             <TeamTimelineContainer>
-              <Heading variant="userHeading">Experience</Heading>
+              <Heading variant="newUserHeadings">Experience</Heading>
               <ContainerOuter>
                 <LineContainer>
                   <DotContainer></DotContainer>
@@ -126,50 +171,61 @@ const Details = () => {
                   <DotContainer></DotContainer>
                 </LineContainer>
                 <TimeLineContainer>
-                  <Typo variant="subHeadingTypo" className="m-0">
-                    Worked as accountant at XYZ
-                  </Typo>
-                  <LineWrapper variant="mainDesc"></LineWrapper>
-                  <Typo variant="highlightedTypo">November2008 - 2010</Typo>
-                  <SpacerContainer></SpacerContainer>
-                  <Typo variant="subHeadingTypo" className="m-0">
-                    Worked as accountant at XYZ
-                  </Typo>
-                  <LineWrapper variant="mainDesc"></LineWrapper>
-                  <Typo variant="highlightedTypo">November2008 - 2010</Typo>
+                  {person?.experience?.map((exp, index) => {
+                    return (
+                      <>
+                        <Typo variant="subHeadingTypo" className="m-0">
+                          {exp?.workedAt}
+                        </Typo>
+                        <LineWrapper variant="mainDesc"></LineWrapper>
+                        <Typo variant="highlightedTypo">{exp?.duration}</Typo>
+                        {index == 0 && <SpacerContainer></SpacerContainer>}
+                      </>
+                    );
+                  })}
                 </TimeLineContainer>
               </ContainerOuter>
             </TeamTimelineContainer>
           </TeamTimelineWrapper>
         </TeamDetailsWrapper>
       </Container>
-      <TeamUserListWrapper>
-        <Container>
-          <TopHeadingWrapper>
-            <Typo variant="mainDescHighlightedTypo">
-              Book Keeping & Accounts
-            </Typo>
-            <Typo variant="subDescHighlightedTypo">
-              View All{" "}
-              <ArrowRight className="mx-2" height="22px" color="white" />
-            </Typo>
-          </TopHeadingWrapper>
-          <ProfileCardWrapper>
-            {teamData?.slice(0, 3)?.map((data) => {
-              return (
-                <ProfileCard
-                  key={data.id}
-                  fontSize={15}
-                  profile={data?.profile}
-                  title={data.title}
-                  subTitle={data.subTitle}
-                  description={data.description}
-                />
-              );
-            })}
-          </ProfileCardWrapper>
-        </Container>
-      </TeamUserListWrapper>
+      {people?.length > 0 && (
+        <TeamUserListWrapper>
+          <Container>
+            <TopHeadingWrapper>
+              <Typo
+                className="mainDescHighlighted"
+                variant="mainDescHighlightedTypo">
+                {user?.department?.[0]?.title}
+              </Typo>
+              <Typo
+                variant="subDescHighlightedTypo"
+                style={{ cursor: "pointer" }}
+                onClick={() => router.push("/team/viewAll")}>
+                View All{" "}
+                <ArrowRight className="mx-2" height="22px" color="white" />
+              </Typo>
+            </TopHeadingWrapper>
+            <StyledRow>
+              {people?.map((data) => {
+                return (
+                  <StyledCol md={4}>
+                    <ProfileCard
+                      key={data.id}
+                      variant="secondary"
+                      profile={data?.image}
+                      title={data?.name}
+                      subTitle={data.designation}
+                      description={data.description}
+                      verifiedLogo={verifiedLogo}
+                    />
+                  </StyledCol>
+                );
+              })}
+            </StyledRow>
+          </Container>
+        </TeamUserListWrapper>
+      )}
     </>
   );
 };

@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "/public/logo.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   LinksWrapper,
   NavButtonsWrapper,
@@ -21,36 +21,45 @@ import Button from "../Button";
 import { useRouter } from "next/router";
 import { CrossIcon, Facebook, Instagram, LinkedIn, Twitter } from "../Svgs";
 
+let navLinks = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+  {
+    title: "Services",
+    link: "/services",
+  },
+  {
+    title: "Team",
+    link: "/team",
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+  },
+];
+
 function Header() {
   const router = useRouter();
-  let navLinks = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "About",
-      link: "/about",
-    },
-    {
-      title: "Services",
-      link: "/services",
-    },
-    {
-      title: "Team",
-      link: "/team",
-    },
-    {
-      title: "Blog",
-      link: "/blog",
-    },
-  ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (index) => {
-    setActive(index);
+  useEffect(() => {
+ const regex = /\/([^/]+)/
+    const result = active.match(regex);
+    const path = result ? result[0] : active;
+    setActive(path);
+  }, [router.pathname])
+
+  const handleClick = (link) => {
+    setActive(link);
+    setIsOpen(false);
   };
 
   const handleMenuToggle = () => {
@@ -73,12 +82,11 @@ function Header() {
         >
           <Nav>
             <Overlay />
-            {navLinks.map((item, key) => (
+            {navLinks?.map((item, key) => (
               <LinksWrapper key={key}>
                 <StyledLink
                   onClick={() => {
-                    handleClick(key);
-                    setIsOpen(false);
+                    handleClick(item.link);
                   }}
                   className={`mx-3 text-decoration-none text-dark styled-link ${
                     active === item.link ? "active" : ""
@@ -90,11 +98,7 @@ function Header() {
               </LinksWrapper>
             ))}
           </Nav>
-          <NavButtonsWrapper>
-            <Button className="mx-2" variant="contained">
-              Contact Us
-            </Button>
-          </NavButtonsWrapper>
+
           <SocialWrapper>
             <SocialTitle>Join the community</SocialTitle>
             <SocialIcons>
@@ -108,6 +112,11 @@ function Header() {
             <CrossIcon height={13} width={13} />
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
+        <NavButtonsWrapper>
+          <Button className="mx-2" variant="contained" onClick={() => router.push('/contact-us')}>
+            Contact Us
+          </Button>
+        </NavButtonsWrapper>
       </Container>
     </Navbar>
   );

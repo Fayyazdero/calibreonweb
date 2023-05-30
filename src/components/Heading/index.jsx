@@ -5,12 +5,13 @@ export const Heading = ({
   title,
   variant = "subHeading",
   children,
+  color,
   ...rest
 }) => {
   if (variant === "subHeading") {
     return (
-      <SubHeadingWrapper {...rest}>
-        <ColouredHeading variant={variant}>{title}</ColouredHeading>
+      <SubHeadingWrapper variant={variant} {...rest}>
+        <ColouredHeading color={color}>{title}</ColouredHeading>
       </SubHeadingWrapper>
     );
   } else {

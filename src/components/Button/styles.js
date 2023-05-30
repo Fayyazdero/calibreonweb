@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 export const StyledButton = styled(Button)(
   ({ variant, theme: { button, breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
     return {
       fontSize: `${button[variant].fontSize}`,
       color: `${button[variant].color}`,
@@ -19,7 +19,7 @@ export const StyledButton = styled(Button)(
         border: `1px solid ${button[variant].hover.border}`,
       },
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         padding: "1px 26px",
       },
     };

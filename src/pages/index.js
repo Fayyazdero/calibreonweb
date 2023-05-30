@@ -1,5 +1,14 @@
 import Home from "@/containers/Home";
 import Head from "next/head";
+import { createClient } from "next-sanity";
+import { useEffect, useState } from "react";
+
+export const client = createClient({
+  projectId: "hi7eel47",
+  dataset: "production",
+  apiVersion: "2022-03-25",
+  useCdn: false,
+});
 
 const Index = () => {
   return (

@@ -48,10 +48,11 @@ export const theme = {
     light: 300,
   },
   lineHeights: {
+    user: "93%",
     title: "83px",
     secTitle: "78px",
     faqTitle: "27px",
-    quotes: "29px",
+    quotes: "46px",
     subTitle: "48px",
     desc: "22px",
     userTitle: "150%",
@@ -113,7 +114,7 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.subTitle,
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.subTitle,
+          lineHeight: theme.lineHeights["1xl"],
         },
       },
       sectionHeading: {
@@ -122,7 +123,7 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.secTitle,
         xs: {
-          fontSize: theme.fontSizes.md,
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights["6xl"],
         },
       },
@@ -179,12 +180,32 @@ export const getTheme = (value) => {
       },
       userHeading: {
         fontSize: theme.fontSizes.userTitle,
+        color: theme.colors.white,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.userTitle,
+        xs: {
+          fontSize: theme.fontSizes["6xl"],
+          lineHeight: theme.lineHeights.user,
+        },
+      },
+      newUserHeadings: {
+        fontSize: theme.fontSizes.userTitle,
+        color: theme.colors.grey,
+        fontWeight: theme.fontWeights.bold,
+        lineHeight: theme.lineHeights.userTitle,
+        xs: {
+          fontSize: theme.fontSizes["5xl"],
+          lineHeight: theme.lineHeights.userTitle,
+        },
+      },
+      newUserHeading: {
+        fontSize: theme.fontSizes.userTitle,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
         xs: {
           fontSize: theme.fontSizes.userTitle,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.userTitle,
         },
       },
     },
@@ -194,18 +215,26 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.normal,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       subTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       descTypo: {
@@ -215,6 +244,10 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
+        },
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -223,9 +256,13 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.regular,
         lineHeight: theme.lineHeights.desc,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       userDesc: {
@@ -233,9 +270,13 @@ export const getTheme = (value) => {
         color: theme.colors.blue,
         fontWeight: theme.fontWeights.regular,
         lineHeight: theme.lineHeights.desc,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       mainDesc: {
@@ -245,6 +286,10 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.desc,
         xs: {
           fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
+          },
+        lg: {
+          fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -252,9 +297,13 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.xl,
         color: theme.colors.white,
         fontWeight: theme.fontWeights.light,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       headingTypo: {
@@ -262,9 +311,13 @@ export const getTheme = (value) => {
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.semi_bold,
         lineHeight: theme.lineHeights.faqTitle,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       subHeadingTypo: {
@@ -274,6 +327,10 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.mainDesc,
         xs: {
           fontSize: theme.fontSizes["2xl"],
+          lineHeight: theme.lineHeights.desc,
+        },
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -282,17 +339,25 @@ export const getTheme = (value) => {
         color: theme.colors.primary,
         fontWeight: theme.fontWeights.normal,
         lineHeight: theme.lineHeights.mainDesc,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
+        },
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       tabTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.grey,
-        xs: {
-          fontSize: theme.fontSizes["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
+        },
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       mainDescHighlightedTypo: {
@@ -301,6 +366,10 @@ export const getTheme = (value) => {
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.userTitle,
         xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
+        },
+        lg: {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
         },
@@ -312,6 +381,10 @@ export const getTheme = (value) => {
         lineHeight: theme.lineHeights.quotes,
         xs: {
           fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
+        },
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
       },
@@ -319,27 +392,39 @@ export const getTheme = (value) => {
         fontSize: theme.fontSizes.lg,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.regular,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
-          fontSize: theme.fontSizes["2xl"],
-          lineHeight: theme.lineHeights.regular,
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       subDesTypo: {
         fontSize: theme.fontSizes["2xl"],
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       newSubDesTypo: {
         fontSize: theme.fontSizes.md,
         color: theme.colors.grey,
         fontWeight: theme.fontWeights.bold,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       accountingTypo: {
@@ -347,9 +432,13 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bolder,
         lineHeight: theme.lineHeights.xm,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       subAccountingTypo: {
@@ -357,9 +446,13 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.regular,
         lineHeight: theme.lineHeights["2xl"],
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
+          lineHeight: theme.lineHeights.base,
+        },
         xs: {
           fontSize: theme.fontSizes.md,
-          lineHeight: theme.lineHeights.base,
+          lineHeight: theme.lineHeights.desc,
         },
       },
       newSubAccountingTypo: {
@@ -367,11 +460,15 @@ export const getTheme = (value) => {
         color: theme.colors.white,
         fontWeight: theme.fontWeights.bold,
         lineHeight: theme.lineHeights.desc,
-        xs: {
-          fontSize: theme.fontSizes.md,
+        lg: {
+          fontSize: theme.fontSizes["4xl"],
           lineHeight: theme.lineHeights.base,
         },
-      }
+        xs: {
+          fontSize: theme.fontSizes.md,
+          lineHeight: theme.lineHeights.desc,
+        },
+      },
     },
   };
   return {
