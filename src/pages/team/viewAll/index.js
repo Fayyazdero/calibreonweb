@@ -1,8 +1,29 @@
 import ViewAll from "@/containers/Team/ViewAll";
+import { groq } from "next-sanity";
+import { client } from "@/pages/index.js";
 import React from "react";
 
-const Index = () => {
-  return <ViewAll />;
+const personQuery = groq`*[_type == "person"]{
+  _id,
+  name,
+  image,
+  designation,
+  description,
+  department[]->{title},
+  isCertified,
+  upworkLink,
+  skills[]->{title, skillLevel},
+  experience[]->{workedAt, duration},
+}`;
+
+export const getStaticPaths = async () => {
+  const persons = await client.fetch(personQuery)
+
+    return { props: { persons }}
+};
+
+const Index = ({ persons }) => {
+  return <ViewAll persons={persons} />;
 };
 
 Index.layout = true;

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import Router, { useRouter } from "next/router";
-import { Col, Container, Row } from "react-bootstrap";
+import { useRouter } from "next/router";
+import { Container, Row } from "react-bootstrap";
 import home from "/public/images/home.png";
 import newsletter from "/public/images/newsletter.png";
 import testimonialImge from "/public/images/testimonialImge.png";
@@ -39,9 +39,9 @@ import {
   StyledTitle,
   LoadingWrapper,
   SliderWrapper,
-  SliderCards
+  SliderCards,
 } from "./styles";
-import { servicesCardData, testimonialsLogos } from "./homeData";
+import { testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
 import TestimonialCard from "@/components/TestimonialCard";
 import Search from "@/components/Search";
@@ -50,8 +50,7 @@ import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
 import { client } from "@/pages/index.js";
-import { ThreeDots } from 'react-loader-spinner';
-
+import { ThreeDots } from "react-loader-spinner";
 
 const Home = () => {
   const [slides, setSlides] = useState([]);
@@ -60,11 +59,10 @@ const Home = () => {
   const ref = useRef(null);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     client
       .fetch(`*[_type == "home"]`)
       .then((item) => {
-        console.log("item", item);
         setSlides(item);
         setIsLoading(false);
       })
@@ -92,11 +90,13 @@ const Home = () => {
     }
   };
 
-  if(isLoading) {
-    return <LoadingWrapper>
-      <ThreeDots color="#F05B25" />
-    </LoadingWrapper>
-  }   
+  if (isLoading) {
+    return (
+      <LoadingWrapper>
+        <ThreeDots color="#F05B25" />
+      </LoadingWrapper>
+    );
+  }
 
   return (
     <>
@@ -146,46 +146,47 @@ const Home = () => {
           </ServicesHeadingWrapper>
         </Container>
         <SliderWrapper>
-        <SliderCards>
-        <Slider
-          ref={next}
-          arrows={false}
-          centerMode={true}
-          centerPadding="180px"
-          slidesToShow={1}
-          infinite={false}
-          responsive={[
-            {
-              breakpoint: 992,
-              settings: {
-                centerMode: false,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-              },
-            },
-          ]}>
-          {slides?.map((item, index) => (
-            <>
-              <ServiceCard key={index}>
-                <Accounting
-                  image={item?.image}
-                  variant={item.variant || "primary"}
-                  subCategoryOne={item.subCategoryOne}
-                  subCategoryTwo={item.subCategoryTwo}
-                  subCategoryThree={item.subCategoryThree}
-                  alt={item.alt}
-                  category={item.category}
-                  children={item.children}
-                  onClick={() => router.push(`/services/${item.category}`)}
-                />
-              </ServiceCard>
-              <StyledTitleWrapper>
-                <StyledTitle>{item.category}</StyledTitle>
-              </StyledTitleWrapper>
-            </>
-          ))}
-        </Slider>
-        </SliderCards>
+          <SliderCards>
+            <Slider
+              ref={next}
+              arrows={false}
+              centerMode={true}
+              centerPadding="180px"
+              slidesToShow={1}
+              infinite={false}
+              responsive={[
+                {
+                  breakpoint: 992,
+                  settings: {
+                    centerMode: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  },
+                },
+              ]}>
+              {slides?.map((item, index) => {
+                return (
+                  <>
+                    <ServiceCard key={index} onClick={() => router.push(`/services/${String(item.category).replace(/\s/g, "").toLocaleLowerCase()}`)}>
+                      <Accounting
+                        image={item?.image}
+                        variant={item.variant || "primary"}
+                        subCategoryOne={item.subCategoryOne}
+                        subCategoryTwo={item.subCategoryTwo}
+                        subCategoryThree={item.subCategoryThree}
+                        alt={item.alt}
+                        category={item.category}
+                        children={item.children}
+                      />
+                    </ServiceCard>
+                    <StyledTitleWrapper>
+                      <StyledTitle>{item.category}</StyledTitle>
+                    </StyledTitleWrapper>
+                  </>
+                );
+              })}
+            </Slider>
+          </SliderCards>
         </SliderWrapper>
         <Container>
           <Arrows>
@@ -193,10 +194,7 @@ const Home = () => {
               <ArrowLeft height="20px" />
             </ArrowsBg>
             <ArrowsBg onClick={onRightClick}>
-              <ArrowRight
-                height={"20px"}
-                color={"#ffffff"}
-              />
+              <ArrowRight height={"20px"} color={"#ffffff"} />
             </ArrowsBg>
           </Arrows>
         </Container>
