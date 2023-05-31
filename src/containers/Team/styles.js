@@ -13,36 +13,38 @@ export const ServicesHeadingWrapper = styled.div(
       alignItems: "center",
       [`@media screen and (max-width: ${sm}px)`]: {
         paddingTop: 0,
-        "span": {
-          lineHeight: lineHeights["1xl"]
-        }
+        span: {
+          lineHeight: lineHeights["1xl"],
+        },
       },
     };
   }
 );
-export const TopHeadingWrapper = styled.div(({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
-  const sm = breakPoints.sm;
+export const TopHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingBottom: "39px",
-    paddingTop: "39px",
-    alignItems: "center",
-    "& p:nth-child(2)": {
-      cursor: "pointer",
-    },
-    [`@media screen and (max-width: ${sm}px)`]: {
-      paddingTop: "48px",
-      paddingBottom: "28px",
-      "& p": {
-        fontWeight: fontWeights.semi_bold,
-        lineHeight: lineHeights.tabTypo,
-        fontSize: fontSizes.md
+    return {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingBottom: "39px",
+      paddingTop: "39px",
+      alignItems: "center",
+      "& p:nth-child(2)": {
+        cursor: "pointer",
       },
-    },
-  };
-});
+      [`@media screen and (max-width: ${sm}px)`]: {
+        paddingTop: "48px",
+        paddingBottom: "28px",
+        "& p": {
+          fontWeight: fontWeights.semi_bold,
+          lineHeight: lineHeights.tabTypo,
+          fontSize: fontSizes.md,
+        },
+      },
+    };
+  }
+);
 export const TeamDetailsWrapper = styled.div``;
 export const StyledRow = styled(Row)`
   @media (max-width: 1024px) {
