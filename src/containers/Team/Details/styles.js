@@ -66,7 +66,6 @@ export const TeamDetailsImageWrapper = styled.div(
     const sm = breakPoints.sm;
 
     return {  
-      marginTop: "20px",
       "& img": {
         width: "308px",
         height: "308px",
@@ -278,7 +277,11 @@ export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
 
   return {
     display: "flex",
-    marginBottom: "22px",
+    margin: "20px 0",
+    fontFamily: 'Hind Madurai',
+    "& img": {
+      marginRight: '10px',
+    },
 
     [`@media screen and (max-width: ${sm}px)`]: {
       display: "none",

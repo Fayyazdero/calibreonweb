@@ -106,10 +106,9 @@ export const StyledContainer = styled.div`
 `;
 export const ContentWrapper = styled.div`
   height: 100%;
-  display: flex;
-  flex-direction: column
-  justify-content: center;
-
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
   & .responsive-image {
     display: none;
     @media (max-width: 992px) {
@@ -185,6 +184,12 @@ export const HomeImageWrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: absolute;
   right: 0;
+
+  @media (min-width: 1360px) {
+    img {
+      width: 1334px;
+    }
+  }
 `;
 export const TestimonialLogosWrapper = styled.div`
   background: ${({ theme: { colors } }) => colors.grey};
@@ -295,7 +300,7 @@ export const ViewAll = styled.p`
   line-height: ${({ theme: { lineHeights } }) => lineHeights.quotes};
   color: ${({ theme: { colors } }) => colors.white};
   cursor: pointer;
-
+  align-items: center;
   @media screen and (max-width: 992px) {
     display: none;
   }
@@ -374,7 +379,8 @@ export const LearnMore = styled.div`
   display: none !important;
   @media (max-width: 992px) {
     display: flex !important;
-    align-items: center;
+    align-items: ceimport { contact } from './../../components/Footer/footerData';
+nter;
     justify-content: end;
     margin-bottom: 96px;
   }

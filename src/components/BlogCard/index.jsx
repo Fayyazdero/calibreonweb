@@ -11,7 +11,7 @@ import Wrapper, {
 } from "./styles";
 import { ArrowRight } from "../Svgs";
 
-const BlogCard = ({description, title, author}) => {
+const BlogCard = ({description, title, author, ...rest}) => {
   const [showMore, setShowMore] = useState(false);
 
   const toggleShowMore = () => {
@@ -19,7 +19,7 @@ const BlogCard = ({description, title, author}) => {
   };
   const renderedText = showMore ? description : description.slice(0, 400);
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <BlogeHeader>
         <LogoWrapper>
           <Image src="/images/blog-1.png" alt="profile-A" fill ></Image>

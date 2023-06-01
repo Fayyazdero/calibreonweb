@@ -13,7 +13,6 @@ import {
   Wrapper,
   ImageWrapper,
   GreyBoxWrapper,
-  LoadingWrapper
 } from "./styles";
 import Ecommerce from "@/components/ServiceCard/Ecommerce";
 import FlimTv from "@/components/ServiceCard/FlimTv";
@@ -25,25 +24,10 @@ import Search from "@/components/Search";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import AccountingComponent from "@/components/ServiceCard/AccountingComponent";
-import { ThreeDots } from 'react-loader-spinner';
 
 export const Services = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    setIsLoading(true)
-
-    setTimeout(() => {
-      setIsLoading(false);
-    },2000)
-  }, []);
-
-  if(isLoading) {
-    return <LoadingWrapper>
-      <ThreeDots color="#F05B25" />
-    </LoadingWrapper>
-  }
 
   return (
     <Container>
@@ -63,7 +47,7 @@ export const Services = () => {
             />
           </Col>
         </StyledRow>
-        <AccountingWrapper onClick={() => router.push("/services/accounting")}>
+        <AccountingWrapper onClick={() => router.push("/services/departments/accounting")}>
           <AccountingComponent
             variant="deepPurple"
             title="Accounting"
@@ -72,7 +56,7 @@ export const Services = () => {
         </AccountingWrapper>
         <AnimationWrapper className="margin-y-0" >
           <Row>
-            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/animation")}>
+            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/departments/animation")}>
               <AccountingComponent
                 variant="primary"
                 className="hidden-sm"
@@ -86,7 +70,7 @@ export const Services = () => {
                 src="/images/animation-banner.png"
               />
             </Col>
-            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/eCommerce")}>
+            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/departments/ecommerce")}>
               <AccountingComponent
                 variant="cyan"
                 className="hidden-sm"
@@ -103,7 +87,7 @@ export const Services = () => {
           </Row>
         </AnimationWrapper>
 
-        <FlimTvWrapper className="margin-y-0" onClick={() => router.push("/services/filmAndTv")}>
+        <FlimTvWrapper className="margin-y-0" onClick={() => router.push("/services/departments/filmandtv")}>
           <Row>
             <Col md={12}>
               <AccountingComponent
@@ -123,7 +107,7 @@ export const Services = () => {
         </FlimTvWrapper>
         <WebDevWrapper className="margin-y-0" >
           <Row>
-            <Col sm={12} md={12} lg={6} onClick={() => router.push("/services/webDevelopment")}>
+            <Col sm={12} md={12} lg={6} onClick={() => router.push("/services/departments/webdevelopment")}>
               <AccountingComponent
                 variant="blue"
                 className="hidden-sm"
@@ -138,7 +122,7 @@ export const Services = () => {
                 className="sm-hidden"
               />
             </Col>
-            <Col sm={12} md={12} lg={6} className="sm-mt-4" onClick={() => router.push("/services/humanResource")}>
+            <Col sm={12} md={12} lg={6} className="sm-mt-4" onClick={() => router.push("/services/departments/humanresource")}>
               <AccountingComponent
                 variant="maroon"
                 className="hidden-sm"
@@ -154,7 +138,7 @@ export const Services = () => {
             </Col>
           </Row>
         </WebDevWrapper>
-        <ArchitectureWrapper className="margin-y-0" onClick={() => router.push("/services/architecture")}>
+        <ArchitectureWrapper className="margin-y-0" onClick={() => router.push("/services/departments/architecture")}>
           <Row>
             <Col md={12}>
               <AccountingComponent

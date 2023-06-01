@@ -116,7 +116,8 @@ const About = () => {
                     fontSize={15}
                     key={key}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
                     founders={true}
                     description={item.description}
@@ -131,7 +132,8 @@ const About = () => {
                     fontSize={15}
                     key={key}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
                     description={item.description}
                     founders={true}
@@ -146,7 +148,8 @@ const About = () => {
                     fontSize={15}
                     key={key}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
                     description={item.description}
                     founders={true}

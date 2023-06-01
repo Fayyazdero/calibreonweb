@@ -18,7 +18,10 @@ export const Heading = ({
     return (
       <StyledHeading variant={variant} {...rest}>
         {children}
-        <ColouredHeading>{title}</ColouredHeading>
+        {
+          title && <ColouredHeading>{title}</ColouredHeading>
+        }
+        
       </StyledHeading>
     );
   }

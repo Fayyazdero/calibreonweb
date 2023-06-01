@@ -12,9 +12,9 @@ const ViewAll = ({ persons }) => {
     <>
       <Container>
         <StyledRow>
-          {persons?.map((data) => {
+          {persons?.map((data, index) => {
             return (
-              <StyledCol md={4}>
+              <StyledCol md={4} key={index}>
                 <ProfileCard
                   key={data._id}
                   fontSize={15}

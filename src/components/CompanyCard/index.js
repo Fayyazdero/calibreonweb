@@ -43,7 +43,6 @@ import { client } from "../../pages/index";
 
 const CompanyCard = ({ acc }) => {
   const {
-    certificates,
     companyInformation,
     image,
     linkedInLink,

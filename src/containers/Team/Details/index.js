@@ -88,8 +88,7 @@ const Details = ({ person, people }) => {
                 {person?.upworkLink && (
                   <DescWrapper>
                     <Image
-                      className="mx-3"
-                      src={upwork_logo_icon}
+                 src={upwork_logo_icon}
                       alt="Upwork logo"></Image>
                     <Typo variant="userDesc" color="#0A66C2">
                       {person?.upworkLink}

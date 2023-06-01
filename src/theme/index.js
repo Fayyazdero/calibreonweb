@@ -55,7 +55,7 @@ export const theme = {
     quotes: "46px",
     subTitle: "48px",
     desc: "22px",
-    userTitle: "150%",
+    userTitle: "46px",
     mainDesc: "43px",
     tabTypo: "26px",
     "1xl": "20px",

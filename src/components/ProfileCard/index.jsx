@@ -17,7 +17,8 @@ import { client } from "../../pages/index";
 
 const ProfileCard = ({
   profile,
-  title,
+  name,
+  lastName,
   subTitle,
   description,
   verifiedLogo,
@@ -28,20 +29,7 @@ const ProfileCard = ({
   founders
 }) => {
   const builder = imageUrlBuilder(client);
-  const fullName = title;
-  const names = fullName.split(" ");
-
-  let abbreviatedName = "";
-
-  if (names.length >= 2) {
-    const firstName = names[0];
-    const lastName = names[1];
-    const lastInitial = lastName.charAt(0);
-
-    abbreviatedName = `${firstName} ${lastInitial}.`;
-  } else {
-    abbreviatedName = fullName;
-  }
+  
   const urlFor = (source) => {
     return builder.image(source);
   };
@@ -57,7 +45,11 @@ const ProfileCard = ({
           />
         </ProfileImage>
         <ProfileTitle>
-          <Heading variant="userHeading">{abbreviatedName}</Heading>
+          <Heading variant="userHeading">{name}</Heading>
+          {
+            lastName && <Heading variant="userHeading">{lastName}</Heading>
+          }
+          
           <Certification>
             <SubTitle fontSize={fontSize}> {subTitle}</SubTitle>
             {verifiedLogo == true && (
@@ -69,7 +61,7 @@ const ProfileCard = ({
         </ProfileTitle>
       </ProfileHeader>
       <Content>
-        <p>{description.length > 430 ? `${description.substring(0, 350)}...` : description}</p>
+        <p>{description?.length > 430 ? `${description.substring(0, 350)}...` : description}</p>
       </Content>
     </Wrapper>
   );

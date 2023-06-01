@@ -1,7 +1,7 @@
 import Home from "@/containers/Home";
 import Head from "next/head";
 import { createClient } from "next-sanity";
-import { useEffect, useState } from "react";
+import { groq } from "next-sanity";
 
 export const client = createClient({
   projectId: "hi7eel47",
@@ -10,7 +10,14 @@ export const client = createClient({
   useCdn: false,
 });
 
-const Index = () => {
+const homeQuery = groq`*[_type == "home"]`;
+
+export const getStaticProps = async () => {
+  const home = await client.fetch(homeQuery)
+  return { props: { home }}
+}
+
+const Index = ({ home }) => {
   return (
     <>
       <Head>
@@ -25,7 +32,7 @@ const Index = () => {
           />
         </Head>
       </Head>
-      <Home />
+      <Home home={home} />
     </>
   );
 };

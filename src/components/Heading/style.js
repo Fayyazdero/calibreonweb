@@ -28,6 +28,7 @@ export const StyledHeading = styled.h2(
 );
 
 export const ColouredHeading = styled.span(({ color, theme: { colors } }) => ({
+  fontFamily: 'Montserrat',
   color: `${color ? color : colors.primary}`,
 }));
 

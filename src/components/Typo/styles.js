@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Text = styled.p(({ variant, theme: { typo, breakPoints } }) => {
   const sm = breakPoints.sm;
   return {
+    fontFamily: 'Hind Madurai',
     color: `${typo[variant].color}`,
     fontSize: `${typo[variant].fontSize}`,
     fontWeight: `${typo[variant].fontWeight}`,

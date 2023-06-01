@@ -51,7 +51,7 @@ const Team = ({ departments, persons }) => {
                       variant="secondary"
                       key={data._id}
                       profile={data?.image}
-                      title={data.name}
+                      name={data.name}
                       subTitle={data.designation}
                       description={data.description}
                       verifiedLogo={true}

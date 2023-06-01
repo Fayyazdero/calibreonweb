@@ -69,7 +69,7 @@ function Header() {
   return (
     <Navbar bg="white" expand="lg" expanded={isOpen}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Image src={logo} alt="logo" height="100%" />
         </Navbar.Brand>
         <ToggleButton

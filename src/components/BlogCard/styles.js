@@ -1,4 +1,4 @@
-const { default: styled } = require("styled-components");
+import styled from "styled-components";
 
 const Wrapper = styled("div")(({theme: {colors}})=>({
   width: "100%",

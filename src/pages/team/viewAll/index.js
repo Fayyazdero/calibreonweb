@@ -16,7 +16,7 @@ const personQuery = groq`*[_type == "person"]{
   experience[]->{workedAt, duration},
 }`;
 
-export const getStaticPaths = async () => {
+export const getStaticProps = async () => {
   const persons = await client.fetch(personQuery)
 
     return { props: { persons }}

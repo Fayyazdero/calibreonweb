@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Container, Row } from "react-bootstrap";
-import home from "/public/images/home.png";
+import homeImage from "/public/images/home.png";
 import newsletter from "/public/images/newsletter.png";
 import testimonialImge from "/public/images/testimonialImge.png";
 import Typo from "@/components/Typo";
@@ -37,7 +37,6 @@ import {
   TCardWrapper,
   StyledTitleWrapper,
   StyledTitle,
-  LoadingWrapper,
   SliderWrapper,
   SliderCards,
 } from "./styles";
@@ -49,27 +48,10 @@ import { Heading } from "@/components/Heading";
 import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
-import { client } from "@/pages/index.js";
-import { ThreeDots } from "react-loader-spinner";
 
-const Home = () => {
-  const [slides, setSlides] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+const Home = ({ home }) => {
   const router = useRouter();
   const ref = useRef(null);
-
-  useEffect(() => {
-    setIsLoading(true);
-    client
-      .fetch(`*[_type == "home"]`)
-      .then((item) => {
-        setSlides(item);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
-  }, []);
 
   const onClick = () => {
     if (ref && ref.current) {
@@ -90,14 +72,6 @@ const Home = () => {
     }
   };
 
-  if (isLoading) {
-    return (
-      <LoadingWrapper>
-        <ThreeDots color="#F05B25" />
-      </LoadingWrapper>
-    );
-  }
-
   return (
     <>
       <Container>
@@ -105,7 +79,7 @@ const Home = () => {
           <BannerRow>
             <BannerCol sm={12} md={6}>
               <HomeImageWrapper>
-                <StyledImage src={home} alt="home" />
+                <StyledImage src={homeImage} alt="home" />
               </HomeImageWrapper>
             </BannerCol>
             <BannerCol sm={12} md={6}>
@@ -124,7 +98,7 @@ const Home = () => {
                 <Search
                   className="search-btn"
                   placeholder="Search for Services"
-                  btnText="submit"
+                  btnText="search"
                   variant="contained"
                 />
               </HomeHeadingWrapper>
@@ -164,10 +138,18 @@ const Home = () => {
                   },
                 },
               ]}>
-              {slides?.map((item, index) => {
+              {home?.map((item, index) => {
                 return (
                   <>
-                    <ServiceCard key={index} onClick={() => router.push(`/services/${String(item.category).replace(/\s/g, "").toLocaleLowerCase()}`)}>
+                    <ServiceCard
+                      key={index}
+                      onClick={() =>
+                        router.push(
+                          `/services/departments/${String(item.category)
+                            .replace(/\s/g, "")
+                            .toLocaleLowerCase()}`
+                        )
+                      }>
                       <Accounting
                         image={item?.image}
                         variant={item.variant || "primary"}
@@ -292,6 +274,7 @@ const Home = () => {
         </LearnMore>
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
+        <Container>
         <Logos>
           {testimonialsLogos.map((item, index) => (
             <TestimonialLogos>
@@ -299,6 +282,8 @@ const Home = () => {
             </TestimonialLogos>
           ))}
         </Logos>
+        </Container>
+
       </TestimonialLogosWrapper>
       <Container>
         <NewsLetterWrapper>
