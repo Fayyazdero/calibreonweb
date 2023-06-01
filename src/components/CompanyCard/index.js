@@ -41,7 +41,9 @@ import { client } from "../../pages/index";
 
 const CompanyCard = ({ acc }) => {
   const {
+    certificates,
     companyInformation,
+    department,
     image,
     linkedInLink,
     overView,
@@ -61,7 +63,7 @@ const CompanyCard = ({ acc }) => {
     <>
       <Container>
         <ServicesHeadingWrapper>
-          <Heading variant="subHeading" title={"Accounting"}></Heading>
+          <Heading variant="subHeading" title={department}></Heading>
         </ServicesHeadingWrapper>
         <TeamDetailsInfoWrapper>
           <TeamDetailsImageWrapper>
@@ -105,9 +107,9 @@ const CompanyCard = ({ acc }) => {
           <TeamProgressContainer>
             <Heading variant="faqHeading">Services</Heading>
             <NewTeamDetailsDescWrapper>
-              {services?.slice(0, 2)?.map((service) => {
+              {services?.slice(0, 2)?.map((service, index) => {
                 return (
-                  <ListWrapper>
+                  <ListWrapper key={index}>
                     <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                     <ul>
                       {service?.services?.map((service) => {
@@ -186,8 +188,8 @@ const CompanyCard = ({ acc }) => {
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
-                  {companyInformation?.awards?.map((award) => {
-                    return <Typo variant="newSubAccountingTypo">{award}</Typo>;
+                  {companyInformation?.awards?.map((award, index) => {
+                    return <Typo variant="newSubAccountingTypo" key={index}>{award}</Typo>;
                   })}
                 </SpacerInfoWrapper>
               </InnerInfoWrapper>
@@ -218,9 +220,9 @@ const CompanyCard = ({ acc }) => {
           </Typo>
         </TopHeadingWrapper>
         <StyledRow>
-          {teamData?.slice(0, 3)?.map((data) => {
+          {teamData?.slice(0, 3)?.map((data, index) => {
             return (
-              <StyledCol md={4}>
+              <StyledCol md={4} key={index}>
                 <ProfileCard
                   key={data.id}
                   fontSize={15}
