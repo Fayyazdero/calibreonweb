@@ -2,15 +2,19 @@ import React from "react";
 import {
   StyledRow,
   StyledCol,
+  TopHeadingWrapper,
 } from "./styles";
 import { Container } from "react-bootstrap";
 import ProfileCard from "@/components/ProfileCard";
+import Typo from "@/components/Typo";
 
-const ViewAll = ({ persons }) => {
-
+const ViewAll = ({ persons, slug }) => {
   return (
     <>
       <Container>
+      {/* <TopHeadingWrapper>
+              <Typo variant="mainDesc">{slug}</Typo>
+            </TopHeadingWrapper> */}
         <StyledRow>
           {persons?.map((data, index) => {
             return (

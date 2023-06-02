@@ -166,10 +166,10 @@ const Details = ({ person, people }) => {
                 return (
                   <StyledCol md={4}>
                     <ProfileCard
-                      key={data.id}
+                      key={data._id}
                       variant="secondary"
                       profile={data?.image}
-                      title={data?.name}
+                      name={data?.name}
                       subTitle={data.designation}
                       description={data.description}
                       verifiedLogo={verifiedLogo}

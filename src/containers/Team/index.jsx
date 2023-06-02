@@ -6,10 +6,8 @@ import {
   StyledCol,
   StyledRow,
   TopHeadingWrapper,
-  LoadingWrapper
 } from "./styles";
 import { ArrowRight } from "@/components/Svgs";
-import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
 import Typo from "@/components/Typo";
 import { useRouter } from "next/router";
@@ -24,12 +22,6 @@ const Team = ({ departments, persons }) => {
 
   return (
     <Container>
-      <ServicesHeadingWrapper>
-        <Heading
-          variant="subHeading"
-          color={"#F05B25"}
-          title={"Our Team"}></Heading>
-      </ServicesHeadingWrapper>
       {departments?.map((department) => {
         return (
           <Container key={department._id}>
@@ -37,7 +29,7 @@ const Team = ({ departments, persons }) => {
               <Typo variant="mainDesc">{department.title}</Typo>
               <Typo
                 variant="headingTypo"
-                onClick={() => router.push("/team/viewAll")}>
+                onClick={() => router.push(`/team/department/${String(department.title).replace(/\s/g, "").toLowerCase()}`)}>
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="#F05B25" />
               </Typo>

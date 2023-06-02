@@ -30,20 +30,20 @@ export const getStaticProps = async ({ params }) => {
   const person = await client.fetch(personQuery, queryParams);
   const persons = await client.fetch(personQuery);
   const user = person?.filter((user) => user._id == queryParams?.slug);
-
   const people = persons
-    ?.filter(
-      (p) =>
-        p?.department[0].title == person[0]?.department[0]?.title &&
-        p?._id !== person[0]?._id
-    )
+    ?.filter((p) => {
+      return (
+        p?.department[0].title == user[0]?.department[0]?.title &&
+        p?._id !== user[0]?._id
+      );
+    })
     ?.slice(0, 3);
 
   return {
     props: {
       data: {
         person: user[0],
-        people
+        people,
       },
     },
   };

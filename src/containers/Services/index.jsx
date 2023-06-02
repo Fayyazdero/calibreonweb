@@ -47,7 +47,7 @@ export const Services = () => {
             />
           </Col>
         </StyledRow>
-        <AccountingWrapper onClick={() => router.push("/services/departments/accounting")}>
+        <AccountingWrapper onClick={() => router.push("/services/accounting")}>
           <AccountingComponent
             variant="deepPurple"
             title="Accounting"
@@ -56,7 +56,7 @@ export const Services = () => {
         </AccountingWrapper>
         <AnimationWrapper className="margin-y-0" >
           <Row>
-            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/departments/animation")}>
+            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/animation")}>
               <AccountingComponent
                 variant="primary"
                 className="hidden-sm"
@@ -70,7 +70,7 @@ export const Services = () => {
                 src="/images/animation-banner.png"
               />
             </Col>
-            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/departments/ecommerce")}>
+            <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/ecommerce")}>
               <AccountingComponent
                 variant="cyan"
                 className="hidden-sm"
@@ -87,7 +87,7 @@ export const Services = () => {
           </Row>
         </AnimationWrapper>
 
-        <FlimTvWrapper className="margin-y-0" onClick={() => router.push("/services/departments/filmandtv")}>
+        <FlimTvWrapper className="margin-y-0" onClick={() => router.push("/services/filmandtv")}>
           <Row>
             <Col md={12}>
               <AccountingComponent
@@ -107,7 +107,7 @@ export const Services = () => {
         </FlimTvWrapper>
         <WebDevWrapper className="margin-y-0" >
           <Row>
-            <Col sm={12} md={12} lg={6} onClick={() => router.push("/services/departments/webdevelopment")}>
+            <Col sm={12} md={12} lg={6} onClick={() => router.push("/services/webdevelopment")}>
               <AccountingComponent
                 variant="blue"
                 className="hidden-sm"
@@ -122,7 +122,7 @@ export const Services = () => {
                 className="sm-hidden"
               />
             </Col>
-            <Col sm={12} md={12} lg={6} className="sm-mt-4" onClick={() => router.push("/services/departments/humanresource")}>
+            <Col sm={12} md={12} lg={6} className="sm-mt-4" onClick={() => router.push("/services/humanresource")}>
               <AccountingComponent
                 variant="maroon"
                 className="hidden-sm"
@@ -138,7 +138,7 @@ export const Services = () => {
             </Col>
           </Row>
         </WebDevWrapper>
-        <ArchitectureWrapper className="margin-y-0" onClick={() => router.push("/services/departments/architecture")}>
+        <ArchitectureWrapper className="margin-y-0" onClick={() => router.push("/services/architecture")}>
           <Row>
             <Col md={12}>
               <AccountingComponent
