@@ -277,7 +277,7 @@ const Home = ({ home }) => {
         <Container>
         <Logos>
           {testimonialsLogos.map((item, index) => (
-            <TestimonialLogos>
+            <TestimonialLogos key={index}>
               <StyledImage className="logos" src={item.src} alt={item.alt} />
             </TestimonialLogos>
           ))}

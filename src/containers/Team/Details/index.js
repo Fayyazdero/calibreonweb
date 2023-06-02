@@ -104,9 +104,9 @@ const Details = ({ person, people }) => {
           <TeamTimelineWrapper>
             <TeamProgressContainer>
               <Heading variant="newUserHeadings">Skills</Heading>
-              {person?.skills?.map((skill) => {
+              {person?.skills?.map((skill, index) => {
                 return (
-                  <ProgressWrapper>
+                  <ProgressWrapper key={index}>
                     <Typo variant="subHeadingTypo">{skill?.title}</Typo>
                     <StyledProgressBar
                       variant="danger"
@@ -162,9 +162,9 @@ const Details = ({ person, people }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.map((data) => {
+              {people?.map((data, index) => {
                 return (
-                  <StyledCol md={4}>
+                  <StyledCol md={4} key={index}>
                     <ProfileCard
                       key={data._id}
                       variant="secondary"

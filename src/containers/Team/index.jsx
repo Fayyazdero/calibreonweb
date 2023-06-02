@@ -29,28 +29,39 @@ const Team = ({ departments, persons }) => {
               <Typo variant="mainDesc">{department.title}</Typo>
               <Typo
                 variant="headingTypo"
-                onClick={() => router.push(`/team/department/${String(department.title).replace(/\s/g, "").toLowerCase()}`)}>
+                onClick={() =>
+                  router.push(
+                    `/team/department/${String(department.title)
+                      .replace(/\s/g, "")
+                      .toLowerCase()}`
+                  )
+                }>
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="#F05B25" />
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {persons?.filter((person) => person.department[0].title == department.title)?.slice(0, 3)?.map((data) => {
-                return (
-                  <StyledCol md={4}>
-                    <ProfileCard
-                      onClick={(event) => handleClick(event, data?._id)}
-                      variant="secondary"
-                      key={data._id}
-                      profile={data?.image}
-                      name={data.name}
-                      subTitle={data.designation}
-                      description={data.description}
-                      verifiedLogo={true}
-                    />
-                  </StyledCol>
-                );
-              })}
+              {persons
+                ?.filter(
+                  (person) => person.department[0].title == department.title
+                )
+                ?.slice(0, 3)
+                ?.map((data, index) => {
+                  return (
+                    <StyledCol md={4} key={index}>
+                      <ProfileCard
+                        onClick={(event) => handleClick(event, data?._id)}
+                        variant="secondary"
+                        key={data._id}
+                        profile={data?.image}
+                        name={data.name}
+                        subTitle={data.designation}
+                        description={data.description}
+                        verifiedLogo={true}
+                      />
+                    </StyledCol>
+                  );
+                })}
             </StyledRow>
           </Container>
         );

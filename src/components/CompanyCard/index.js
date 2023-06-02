@@ -112,8 +112,8 @@ const CompanyCard = ({ acc }) => {
                   <ListWrapper key={index}>
                     <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                     <ul>
-                      {service?.services?.map((service) => {
-                        return <li>{service}</li>;
+                      {service?.services?.map((service, index) => {
+                        return <li key={index}>{service}</li>;
                       })}
                     </ul>
                   </ListWrapper>
