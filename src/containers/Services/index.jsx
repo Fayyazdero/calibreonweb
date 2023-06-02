@@ -38,20 +38,20 @@ export const Services = () => {
               <Heading variant="subHeading" title="Our Services" />
             </HeadingWrapper>
           </Col>
-          <Col xs={12} md={6}>
+          {/* <Col xs={12} md={6}>
             <Search
               className="my-5"
               placeholder="Search for Services"
               btnText="Search"
               variant="contained"
             />
-          </Col>
+          </Col> */}
         </StyledRow>
         <AccountingWrapper onClick={() => router.push("/services/accounting")}>
           <AccountingComponent
             variant="deepPurple"
             title="Accounting"
-            src="/images/accounting-banner.png"
+            src="/images/Accounting-banner.png"
           />
         </AccountingWrapper>
         <AnimationWrapper className="margin-y-0" >

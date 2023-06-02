@@ -227,7 +227,7 @@ const CompanyCard = ({ acc }) => {
                   key={data.id}
                   fontSize={15}
                   profile={data?.profile}
-                  title={data.title}
+                  name={data.title}
                   subTitle={data.subTitle}
                   description={data.description}
                   founders={true}

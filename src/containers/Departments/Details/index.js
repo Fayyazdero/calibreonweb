@@ -1,6 +1,6 @@
 import ProfileCard from "@/components/ProfileCard";
-import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import {
   TeamDetailsWrapper,
   TeamDetailsContainer,
@@ -27,7 +27,6 @@ import {
   TopHeadingWrapper,
   StyledProgressBar,
   TeamDetailsHeadingWrapper,
-  LoadingWrapper,
 } from "./styles";
 import profileimg from "../../../../public/images/profile-1.png";
 import verifiedIcon from "../../../../public/images/verified-icon.png";
@@ -40,22 +39,16 @@ import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
 import Typo from "@/components/Typo";
 import { StyledCol, StyledRow } from "../styles";
-import { client } from "@/pages/index.js";
-import { ThreeDots } from "react-loader-spinner";
 
 const Details = ({ person, people }) => {
   const [verifiedLogo, setVerifiedLogo] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState({});
   const router = useRouter();
 
-  if (isLoading) {
-    return (
-      <LoadingWrapper>
-        <ThreeDots color="#F05B25" />
-      </LoadingWrapper>
-    );
-  }
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    router.push(`/departments/${id}`);
+  };
 
   return (
     <>
@@ -156,7 +149,7 @@ const Details = ({ person, people }) => {
                 style={{ cursor: "pointer" }}
                 onClick={() =>
                   router.push(
-                    `/team/department/${person?.department[0].title
+                    `/departments/department/${person?.department[0].title
                       .replace(/\s/g, "")
                       .toLowerCase()}`
                   )
@@ -177,6 +170,7 @@ const Details = ({ person, people }) => {
                       subTitle={data.designation}
                       description={data.description}
                       verifiedLogo={verifiedLogo}
+                      onClick={(e) => handleClick(e, data?._id)}
                     />
                   </StyledCol>
                 );

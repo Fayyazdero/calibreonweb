@@ -1,4 +1,4 @@
-import Team from "@/containers/Team";
+import Departments from "@/containers/Departments";
 import { groq } from "next-sanity";
 import { client } from "@/pages/index.js";
 import React from 'react';
@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
 }
 
 const Index = ({ departments, persons }) => {
-    return ( <Team departments={departments} persons={persons} /> );
+    return ( <Departments departments={departments} persons={persons} /> );
 }
  
 Index.layout = true;

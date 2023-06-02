@@ -17,7 +17,7 @@ const Team = ({ departments, persons }) => {
 
   const handleClick = (e, id) => {
     e.preventDefault();
-    router.push(`/team/details/${id}`);
+    router.push(`/departments/${id}`);
   };
 
   return (
@@ -31,7 +31,7 @@ const Team = ({ departments, persons }) => {
                 variant="headingTypo"
                 onClick={() =>
                   router.push(
-                    `/team/department/${String(department.title)
+                    `/departments/department/${String(department.title)
                       .replace(/\s/g, "")
                       .toLowerCase()}`
                   )

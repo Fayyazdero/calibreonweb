@@ -36,7 +36,7 @@ let navLinks = [
   },
   {
     title: "Team",
-    link: "/team",
+    link: "/departments",
   },
   {
     title: "Blog",

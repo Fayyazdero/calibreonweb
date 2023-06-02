@@ -8,7 +8,6 @@ const departmentsQuery = groq`*[_type == "departments"]`;
 export const getStaticPaths = async () => {
   const res =
     await client.fetch(groq`*[_type == "departments"]`);
-
   
   const paths = res?.map((department) => {
     let category = department?.department;

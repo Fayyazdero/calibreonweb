@@ -11,14 +11,12 @@ import {
   StyledHeading,
   MissionHeading,
   StyledRow,
-  LoadingWrapper
 } from "./styles";
 import MissionBanner from "/public/images/our-mission-banner.png";
 import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import { founderData } from "./aboutData";
 import Typo from "@/components/Typo";
-import { ThreeDots } from 'react-loader-spinner';
 
 const About = () => {
   const [column1, setColumn1] = useState([]);
@@ -39,12 +37,6 @@ const About = () => {
       setIsLoading(false);
     },2000)
   }, []);
-
-  if(isLoading) {
-    return <LoadingWrapper>
-      <ThreeDots color="#F05B25" />
-    </LoadingWrapper>
-  }   
 
   return (
     <>

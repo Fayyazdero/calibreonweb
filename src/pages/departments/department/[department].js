@@ -1,4 +1,4 @@
-import ViewAll from "@/containers/Team/Department";
+import ViewAll from "@/containers/Departments/Department";
 import { groq } from "next-sanity";
 import { client } from "@/pages/index.js";
 import React from "react";

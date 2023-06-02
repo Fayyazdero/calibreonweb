@@ -1,4 +1,4 @@
-import Details from "@/containers/Team/Details";
+import Details from "@/containers/Departments/Details";
 import { groq } from "next-sanity";
 import { client } from "@/pages/index.js";
 import React from "react";

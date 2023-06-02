@@ -5,10 +5,17 @@ import {
   TopHeadingWrapper,
 } from "./styles";
 import { Container } from "react-bootstrap";
+import { useRouter } from "next/router";
 import ProfileCard from "@/components/ProfileCard";
 import Typo from "@/components/Typo";
 
 const ViewAll = ({ persons, slug }) => {
+  const router = useRouter();
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    router.push(`/departments/${id}`);
+  };
   return (
     <>
       <Container>
@@ -23,9 +30,10 @@ const ViewAll = ({ persons, slug }) => {
                   key={data._id}
                   fontSize={15}
                   profile={data?.image}
-                  title={data.name}
+                  name={data.name}
                   subTitle={data.designation}
                   description={data.description}
+                  onClick={(e) => handleClick(e, data._id)}
                 />
               </StyledCol>
             );
