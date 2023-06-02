@@ -87,9 +87,7 @@ const Details = ({ person, people }) => {
                   )}
                 {person?.upworkLink && (
                   <DescWrapper>
-                    <Image
-                 src={upwork_logo_icon}
-                      alt="Upwork logo"></Image>
+                    <Image src={upwork_logo_icon} alt="Upwork logo"></Image>
                     <Typo variant="userDesc" color="#0A66C2">
                       {person?.upworkLink}
                     </Typo>
@@ -156,7 +154,13 @@ const Details = ({ person, people }) => {
               <Typo
                 variant="subDescHighlightedTypo"
                 style={{ cursor: "pointer" }}
-                onClick={() => router.push("/team/viewAll")}>
+                onClick={() =>
+                  router.push(
+                    `/team/department/${person?.department[0].title
+                      .replace(/\s/g, "")
+                      .toLowerCase()}`
+                  )
+                }>
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="white" />
               </Typo>
