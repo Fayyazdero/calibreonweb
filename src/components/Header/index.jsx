@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "/public/logo.svg";
 import { useEffect, useState } from "react";
 import {
@@ -33,6 +34,21 @@ let navLinks = [
   {
     title: "Services",
     link: "/services",
+    dropdown: true,
+    dropdownItems: [
+      {
+        title: "Service 1",
+        link: "/services/service1",
+      },
+      {
+        title: "Service 2",
+        link: "/services/service2",
+      },
+      {
+        title: "Service 3",
+        link: "/services/service3",
+      },
+    ],
   },
   {
     title: "Team",
@@ -49,13 +65,14 @@ function Header() {
 
   const [active, setActive] = useState(router.pathname);
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
- const regex = /\/([^/]+)/
+    const regex = /\/([^/]+)/;
     const result = active.match(regex);
-    const path = result ? result[0] : active;
+    const path = result ? result[0] : router.pathname;
     setActive(path);
-  }, [router.pathname])
+  }, [router.pathname]);
 
   const handleClick = (link) => {
     setActive(link);
@@ -64,6 +81,23 @@ function Header() {
 
   const handleMenuToggle = () => {
     setIsOpen((prevState) => !prevState);
+  };
+
+  const handleDropdownToggle = (isOpen) => {
+    setDropdownOpen(isOpen);
+  };
+
+  const handleDropdownMouseEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleDropdownItemSelect = (link) => {
+    handleClick(link);
+    setDropdownOpen(false);
   };
 
   return (
@@ -82,21 +116,49 @@ function Header() {
         >
           <Nav>
             <Overlay />
-            {navLinks?.map((item, key) => (
-              <LinksWrapper key={key}>
-                <StyledLink
-                  onClick={() => {
-                    handleClick(item.link);
-                  }}
-                  className={`mx-3 text-decoration-none text-dark styled-link ${
-                    active === item.link ? "active" : ""
-                  }`}
-                  href={item.link}
-                >
-                  {item.title}
-                </StyledLink>
-              </LinksWrapper>
-            ))}
+            {navLinks?.map((item, key) => {
+              if (item.dropdown) {
+                return (
+                  <NavDropdown
+                    key={key}
+                    title={item.title}
+                    id="nav-dropdown"
+                    className={active === item.link ? "active" : ""}
+                    show={dropdownOpen}
+                    onMouseEnter={handleDropdownMouseEnter}
+                    onMouseLeave={handleDropdownMouseLeave}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    {item.dropdownItems?.map((dropdownItem, index) => (
+                      <NavDropdown.Item
+                        key={index}
+                        onSelect={() => handleDropdownItemSelect(dropdownItem.link)}
+                        href={dropdownItem.link}
+                        className={active === dropdownItem.link ? "active" : ""}
+                      >
+                        {dropdownItem.title}
+                      </NavDropdown.Item>
+                    ))}
+                  </NavDropdown>
+                );
+              } else {
+                return (
+                  <LinksWrapper key={key}>
+                    <StyledLink
+                      onClick={() => {
+                        handleClick(item.link);
+                      }}
+                      className={`mx-3 text-decoration-none text-dark styled-link ${
+                        active === item.link ? "active" : ""
+                      }`}
+                      href={item.link}
+                    >
+                      {item.title}
+                    </StyledLink>
+                  </LinksWrapper>
+                );
+              }
+            })}
           </Nav>
 
           <SocialWrapper>
@@ -113,7 +175,11 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
-          <Button className="mx-2" variant="contained" onClick={() => router.push('/contact-us')}>
+          <Button
+            className="mx-2"
+            variant="contained"
+            onClick={() => router.push("/contact-us")}
+          >
             Contact Us
           </Button>
         </NavButtonsWrapper>

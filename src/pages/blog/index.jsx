@@ -6,7 +6,6 @@ import { Blog } from "@/containers/Blog";
 const postsQuery = groq`*[_type == "posts"]`
 
 export const getStaticProps = async () => {
-console.log({a:"asd"})
   const posts = await client.fetch(postsQuery)
 
   return { props: { posts }}

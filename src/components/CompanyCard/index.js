@@ -38,8 +38,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import ProfileCard from "@/components/ProfileCard";
 import Typo from "@/components/Typo";
 import { client } from "../../pages/index";
+import { useRouter } from "next/router";
 
-const CompanyCard = ({ acc }) => {
+const CompanyCard = ({ acc, people }) => {
   const {
     certificates,
     companyInformation,
@@ -53,10 +54,16 @@ const CompanyCard = ({ acc }) => {
     _id,
   } = acc;
 
+const router = useRouter();
   const builder = imageUrlBuilder(client);
 
   const urlFor = (source) => {
     return builder.image(source);
+  };
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    router.push(`/departments/${id}`);
   };
 
   return (
@@ -189,7 +196,11 @@ const CompanyCard = ({ acc }) => {
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
                   {companyInformation?.awards?.map((award, index) => {
-                    return <Typo variant="newSubAccountingTypo" key={index}>{award}</Typo>;
+                    return (
+                      <Typo variant="newSubAccountingTypo" key={index}>
+                        {award}
+                      </Typo>
+                    );
                   })}
                 </SpacerInfoWrapper>
               </InnerInfoWrapper>
@@ -212,30 +223,40 @@ const CompanyCard = ({ acc }) => {
             </TestimonialWrapper>
           </TeamTimelineContainer>
         </TeamTimelineWrapper>
-        <TopHeadingWrapper>
-          <Typo variant="mainDesc">Our Team</Typo>
-          <Typo variant="headingTypo">
-            View All{" "}
-            <ArrowRight className="mx-2" height="22px" color="#F05B25" />
-          </Typo>
-        </TopHeadingWrapper>
-        <StyledRow>
-          {teamData?.slice(0, 3)?.map((data, index) => {
-            return (
-              <StyledCol md={4} key={index}>
-                <ProfileCard
-                  key={data.id}
-                  fontSize={15}
-                  profile={data?.profile}
-                  name={data.title}
-                  subTitle={data.subTitle}
-                  description={data.description}
-                  founders={true}
-                />
-              </StyledCol>
-            );
-          })}
-        </StyledRow>
+        {people.length > 0 && (
+          <>
+            <TopHeadingWrapper>
+              <Typo variant="mainDesc">Our Team</Typo>
+              <Typo variant="headingTypo" onClick={() =>
+                  router.push(
+                    `/departments/department/${department
+                      .replace(/\s/g, "")
+                      .toLowerCase()}`
+                  )
+                } style={{ cursor: "pointer"}}>
+                View All{" "}
+                <ArrowRight className="mx-2" height="22px" color="#F05B25" />
+              </Typo>
+            </TopHeadingWrapper>
+            <StyledRow>
+              {people?.slice(0, 3)?.map((data, index) => {
+                return (
+                  <StyledCol md={4} key={index}>
+                    <ProfileCard
+                      key={data?._id}
+                      fontSize={15}
+                      profile={data?.image}
+                      name={data?.name}
+                      subTitle={data?.designation}
+                      description={data?.description}
+                      onClick={(event) => handleClick(event, data?._id)}
+                    />
+                  </StyledCol>
+                );
+              })}
+            </StyledRow>
+          </>
+        )}
       </Container>
     </>
   );

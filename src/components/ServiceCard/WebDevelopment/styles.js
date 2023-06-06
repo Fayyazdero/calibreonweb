@@ -44,6 +44,7 @@ export const ContentWrapper = styled("div")({
 });
 export const CategoryTitle = styled("div")({
   display: "flex",
+  alignItems: "center",
   "& svg": {
     marginRight: "9px",
     marginLeft: "26px",
