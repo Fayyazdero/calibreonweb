@@ -9,6 +9,7 @@ export const BlogeHeader = styled("div")({
   display: "flex",
   alignItems: "center",
   marginBottom: "18px",
+  cursor: "pointer",
   '@media(max-width: 992px)': {
     marginBottom: "8px",
   }
@@ -68,6 +69,9 @@ export const Content = styled("div")({
   fontWeight: "500",
   fontSize: "15px",
   transition: '0.3s all ease',
+  "& p": {
+    textAlign: "justify"
+  }
 });
 export const ViewAll = styled("div")({
   display: "flex",
@@ -75,6 +79,7 @@ export const ViewAll = styled("div")({
   alignItems: "center",
   padding: "0 21px",
   marginTop: "24px",
+  cursor: "pointer",
   "& h4": {
     margin: "0",
     fontWeight: "600",

@@ -1,3 +1,4 @@
+import Typo from "@/components/Typo";
 import Image from "next/image";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
@@ -8,7 +9,6 @@ export const HomeHeadingWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 46px;
-
   & .main-typo {
     @media (max-width: 992px) {
       text-align: center;
@@ -428,3 +428,21 @@ export const LoadingWrapper = styled("div")`
   height: 80vh;
   align-items: center;
 `;
+
+export const NotificationBanner = styled("div")`
+display: flex;
+height: 50px;
+width: 100%;
+align-items: center;
+justify-content: center;
+background-color: #F05B25;
+p {
+color: white
+}
+`
+
+export const TypoWrapper = styled(Typo)`
+margin-left: 10px;
+text-decoration: underline;
+cursor: pointer;
+`

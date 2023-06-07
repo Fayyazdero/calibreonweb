@@ -175,6 +175,13 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
+        <Button
+            className="mx-2"
+            variant="outlined"
+            onClick={() => router.push("/enroll-now")}
+          >
+            Enroll Now
+          </Button>
           <Button
             className="mx-2"
             variant="contained"

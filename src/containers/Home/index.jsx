@@ -39,6 +39,8 @@ import {
   StyledTitle,
   SliderWrapper,
   SliderCards,
+  NotificationBanner,
+  TypoWrapper
 } from "./styles";
 import { testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -74,6 +76,15 @@ const Home = ({ home }) => {
 
   return (
     <>
+      <NotificationBanner>
+        <Typo variant="mainTypo">
+          Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+          consectetur. Lorem ipsum dolor sit amet consectetur.
+        </Typo>
+        <TypoWrapper variant="mainTypo" onClick={() => router.push("/enroll-now")}>
+          Enroll Now
+        </TypoWrapper>
+      </NotificationBanner>
       <Container>
         <Banner>
           <BannerRow>
@@ -275,15 +286,14 @@ const Home = ({ home }) => {
       </TestimonialWrapper>
       <TestimonialLogosWrapper>
         <Container>
-        <Logos>
-          {testimonialsLogos.map((item, index) => (
-            <TestimonialLogos key={index}>
-              <StyledImage className="logos" src={item.src} alt={item.alt} />
-            </TestimonialLogos>
-          ))}
-        </Logos>
+          <Logos>
+            {testimonialsLogos.map((item, index) => (
+              <TestimonialLogos key={index}>
+                <StyledImage className="logos" src={item.src} alt={item.alt} />
+              </TestimonialLogos>
+            ))}
+          </Logos>
         </Container>
-
       </TestimonialLogosWrapper>
       <Container>
         <NewsLetterWrapper>

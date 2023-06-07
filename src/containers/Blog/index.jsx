@@ -2,14 +2,8 @@ import BlogCard from "@/components/BlogCard";
 import { Item, Title, Wrapper } from "./styles";
 import { Container } from "react-bootstrap";
 import { Heading } from "@/components/Heading";
-import { useRouter } from "next/router";
 
 export const Blog = ({ posts }) => {
-  const router = useRouter();
-  const handleClick = (key) => {
-    alert(key);
-    router.push(`/blog/${key}`);
-  };
   return (
     <Container>
       <Title>
@@ -19,7 +13,7 @@ export const Blog = ({ posts }) => {
         {posts?.map((item, key) => (
           <Item key={key}>
             <BlogCard
-              onClick={() => handleClick(key)}
+              id={item._id}
               author={item.author}
               title={item.title}
               description={item.description}
