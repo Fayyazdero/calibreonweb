@@ -14,7 +14,7 @@ const HumanResources = ({
   return (
     <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
-        <Image src={src} alt={alt} layout="fill" />
+        <Image src={src} alt={alt} fill />
       </ImageWrapper>
       <ContentWrapper>
         <Heading variant="serviceTitle">{title}</Heading>
