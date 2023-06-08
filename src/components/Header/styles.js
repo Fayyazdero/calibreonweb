@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { Navbar } from "react-bootstrap";
+import { NavDropdown, Navbar } from "react-bootstrap";
 
 export const StyledLink = styled(Link)`
   font-family: "Hind Madurai";
@@ -8,7 +8,7 @@ export const StyledLink = styled(Link)`
   font-weight: ${({ theme: { fontWeights } }) => fontWeights.normal};
   font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
   line-height: ${({ theme: { lineHeights } }) => lineHeights.quotes};
-  color: ${({ theme: { colors } }) => colors.grey};
+  color: ${({ theme: { colors } }) => colors.grey} !important;
   padding-bottom: 10px;
   margin-top:16px;
   &.active {
@@ -22,6 +22,37 @@ export const StyledLink = styled(Link)`
     color: ${({ theme: { colors } }) => colors.grey};
   }
 }`;
+
+export const StyledNavDropdown = styled(NavDropdown)`
+  display: flex;
+  align-items: center;
+  a {
+    font-family: "Hind Madurai";
+    font-style: normal;
+    font-weight: ${({ theme: { fontWeights } }) => fontWeights.normal};
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
+    line-height: ${({ theme: { lineHeights } }) => lineHeights.quotes};
+    color: ${({ theme: { colors } }) => colors.grey} !important;
+    margin-top: 0;
+    padding: 0;
+    &.active {
+      font-weight: ${({ theme: { fontWeights } }) => fontWeights.semi_bold};
+      margin-top: 0;
+      border-bottom: 4px solid #f05b25;
+      transition: 0.1s ease;
+    }
+
+    &:hover {
+      color: ${({ theme: { colors } }) => colors.grey};
+    }
+
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+`;
+
 export const ToggleButton = styled(Navbar.Toggle)`
 z-index: 3;
 &:focus{

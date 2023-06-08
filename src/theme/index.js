@@ -32,7 +32,7 @@ export const theme = {
     "4xl": "2rem" /* 32px */,
     "3xl": "1.18rem" /* 29px */,
     "2xl": "1.37rem" /* 22px */,
-    xl: "1.25rem" /* 20px */,
+    xl: "1.3em" /* 20px */,
     lg: "1.125rem" /* 18px */,
     md: "1rem" /* 16px */,
     xs: "0.95rem" /* 15px */,
@@ -287,7 +287,7 @@ export const getTheme = (value) => {
         xs: {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.desc,
-          },
+        },
         lg: {
           fontSize: theme.fontSizes.md,
           lineHeight: theme.lineHeights.base,
