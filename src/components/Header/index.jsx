@@ -86,12 +86,12 @@ function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    console.log('active', active);
-    console.log('router.pathname', router.pathname);
     if (router.pathname.includes("services")) {
       setActive("/services");
     } else if (router.pathname.includes("department")) {
       setActive("/departments");
+    } else if (router.pathname.includes("blog")) {
+      setActive("/blog");
     } else {
       setActive(router.pathname);
     }

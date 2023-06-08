@@ -68,13 +68,18 @@ const Details = ({ person, people, founders }) => {
           </Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>
-              <Image
-                src={
-                  founders ? person?.image : `${urlFor(person?.image)?.url()}`
-                }
-                alt="profile-A"
-                width={161}
-                height={161}></Image>
+              {person?.image ? (
+                <Image
+                  src={
+                    founders ? person?.image : `${urlFor(person?.image)?.url()}`
+                  }
+                  alt={"Image"}
+                  width={161}
+                  height={161}
+                />
+              ) : (
+                <Image src={profileimg} alt="profile-A"></Image>
+              )}
             </TeamDetailsImageWrapper>
             <TeamDetailsInfoWrapper>
               <ProfileTitle>
@@ -132,7 +137,10 @@ const Details = ({ person, people, founders }) => {
                   {person?.experience?.map((exp, index) => {
                     return (
                       <>
-                        <Typo variant="subHeadingTypo" className="m-0">
+                        <Typo
+                          variant="subHeadingTypo"
+                          className="m-0"
+                          key={index}>
                           {exp?.workedAt}
                         </Typo>
                         <LineWrapper variant="mainDesc"></LineWrapper>

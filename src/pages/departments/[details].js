@@ -17,21 +17,18 @@ const personQuery = groq`*[_type == "person"]{
 }`;
 
 export const getStaticPaths = async () => {
-  // const paths =
-  //   await client.fetch(groq`*[_type == "person" && defined(slug.current)][]{
-  //   "params": { "slug": slug.current },
-  // }`);
   const persons = await client.fetch(personQuery);
   const paths = persons?.map((person) => {
-    return { params: { details: person?._id }}
-  })
-  
+    let id = person?._id;
+    return { params: { details: id } };
+  });
+
   return { paths, fallback: true };
 };
 
 export const getStaticProps = async ({ params }) => {
   const queryParams = { slug: params?.details ?? "" };
-
+  
   const persons = await client.fetch(personQuery);
   const user = persons?.filter((user) => user._id == queryParams?.slug);
   const people = persons
@@ -43,11 +40,10 @@ export const getStaticProps = async ({ params }) => {
     })
     ?.slice(0, 3);
 
-
   return {
     props: {
       data: {
-        person: user[0],
+        person: user,
         people,
       },
     },
@@ -55,7 +51,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Index = ({ data }) => {
-  return <Details person={data?.person} people={data?.people} />;
+  return <Details person={data?.person?.[0]} people={data?.people} />;
 };
 
 Index.layout = true;
