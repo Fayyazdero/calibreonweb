@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  StyledRow,
-  StyledCol,
-  TopHeadingWrapper,
-} from "./styles";
+import { StyledRow, StyledCol, TopHeadingWrapper } from "./styles";
 import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import ProfileCard from "@/components/ProfileCard";
@@ -20,9 +16,12 @@ const ViewAll = ({ persons, slug }) => {
   return (
     <>
       <Container>
-      <TopHeadingWrapper>
-              <Heading variant="subHeading" title={persons[0]?.department[0]?.title} />
-            </TopHeadingWrapper>
+        <TopHeadingWrapper>
+          <Heading
+            variant="subHeading"
+            title={persons[0]?.department[0]?.title}
+          />
+        </TopHeadingWrapper>
         <StyledRow>
           {persons?.map((data, index) => {
             return (

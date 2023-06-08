@@ -32,9 +32,7 @@ const Team = ({ categorizedUsers, departments }) => {
                 variant="headingTypo"
                 onClick={() =>
                   router.push(
-                    `/departments/department/${String(category)
-                      .replace(/\s/g, "")
-                      .toLowerCase()}`
+                    `/departments/department/${category}`
                   )
                 }>
                 View All{" "}

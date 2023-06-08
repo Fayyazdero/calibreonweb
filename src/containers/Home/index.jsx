@@ -51,7 +51,7 @@ import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
 
-const Home = ({ home, banner }) => {
+const Home = ({ home, banner, services }) => {
   const router = useRouter();
   const ref = useRef(null);
 
@@ -148,7 +148,7 @@ const Home = ({ home, banner }) => {
                   },
                 },
               ]}>
-              {home?.map((item, index) => {
+              {services?.map((item, index) => {
                 return (
                   <>
                     <ServiceCard
@@ -166,9 +166,8 @@ const Home = ({ home, banner }) => {
                         subCategoryOne={item.subCategoryOne}
                         subCategoryTwo={item.subCategoryTwo}
                         subCategoryThree={item.subCategoryThree}
-                        alt={item.alt}
+                        alt={"image"}
                         category={item.category}
-                        children={item.children}
                       />
                     </ServiceCard>
                     <StyledTitleWrapper>
