@@ -155,7 +155,7 @@ const Home = ({ home, banner }) => {
                       key={index}
                       onClick={() =>
                         router.push(
-                          `/services/departments/${String(item.category)
+                          `/services/${String(item.category)
                             .replace(/\s/g, "")
                             .toLocaleLowerCase()}`
                         )
