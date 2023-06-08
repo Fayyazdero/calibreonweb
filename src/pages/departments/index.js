@@ -38,11 +38,11 @@ export const getStaticProps = async () => {
     const persons = await client.fetch(personQuery)
     const categorizedUsers = getUsersByCategory(persons);
 
-    return { props: { departments, persons, categorizedUsers }}
+    return { props: { departments, categorizedUsers }}
 }
 
-const Index = ({ departments, persons, categorizedUsers }) => {
-    return ( <Departments departments={departments} persons={persons} categorizedUsers={categorizedUsers} /> );
+const Index = ({ departments, categorizedUsers }) => {
+    return ( <Departments departments={departments} categorizedUsers={categorizedUsers} /> );
 }
  
 Index.layout = true;

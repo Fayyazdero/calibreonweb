@@ -19,16 +19,11 @@ const Team = ({ categorizedUsers, departments }) => {
     router.push(`/departments/${id}`);
   };
 
-  console.log('departments users', departments);
-
-
   return (
     <Container>
       {categorizedUsers?.map(({category, people}) => {
-        // console.log('people', people);
         let department = departments?.filter((department) => department?.title.replace(/\s/g, "")
         .toLowerCase() == category)
-        console.log('department', department);
         return (
           <Container key={category}>
             <TopHeadingWrapper>
