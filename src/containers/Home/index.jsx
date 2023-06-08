@@ -51,7 +51,7 @@ import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
 
-const Home = ({ home }) => {
+const Home = ({ home, banner }) => {
   const router = useRouter();
   const ref = useRef(null);
 
@@ -76,15 +76,14 @@ const Home = ({ home }) => {
 
   return (
     <>
-      <NotificationBanner>
+      {banner && <NotificationBanner>
         <Typo variant="mainTypo">
-          Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-          consectetur. Lorem ipsum dolor sit amet consectetur.
+          {banner.description}
         </Typo>
         <TypoWrapper variant="mainTypo" onClick={() => router.push("/enroll-now")}>
           Enroll Now
         </TypoWrapper>
-      </NotificationBanner>
+      </NotificationBanner>}
       <Container>
         <Banner>
           <BannerRow>

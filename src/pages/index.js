@@ -11,13 +11,15 @@ export const client = createClient({
 });
 
 const homeQuery = groq`*[_type == "home"]`;
+const bannerQuery = groq`*[_type == "banner"]`;
 
 export const getStaticProps = async () => {
   const home = await client.fetch(homeQuery)
-  return { props: { home }}
+  const banner = await client.fetch(bannerQuery)
+  return { props: { home, banner }}
 }
 
-const Index = ({ home }) => {
+const Index = ({ home, banner }) => {
   return (
     <>
       <Head>
@@ -32,7 +34,7 @@ const Index = ({ home }) => {
           />
         </Head>
       </Head>
-      <Home home={home} />
+      <Home home={home} banner={banner[0]} />
     </>
   );
 };

@@ -430,6 +430,7 @@ export const LoadingWrapper = styled("div")`
 `;
 
 export const NotificationBanner = styled("div")`
+margin-top: -100px;
 display: flex;
 height: 50px;
 width: 100%;
