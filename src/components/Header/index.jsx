@@ -17,6 +17,8 @@ import {
   Overlay,
   ToggleButton,
   NavbarWrapper,
+  StyledDropdownMenu,
+  StyledNavDropdown,
 } from "./styles";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -119,7 +121,7 @@ function Header() {
             {navLinks?.map((item, key) => {
               if (item.dropdown) {
                 return (
-                  <NavDropdown
+                  <StyledNavDropdown
                     key={key}
                     title={item.title}
                     id="nav-dropdown"
@@ -132,14 +134,21 @@ function Header() {
                     {item.dropdownItems?.map((dropdownItem, index) => (
                       <NavDropdown.Item
                         key={index}
-                        onSelect={() => handleDropdownItemSelect(dropdownItem.link)}
+                        onSelect={() =>
+                          handleDropdownItemSelect(dropdownItem.link)
+                        }
                         href={dropdownItem.link}
-                        className={active === dropdownItem.link ? "active" : ""}
+                        onClick={() => {
+                          handleClick(item.link);
+                        }}
+                        className={`mx-3 text-decoration-none text-dark styled-link ${
+                          active === item.link ? "active" : ""
+                        }`}
                       >
                         {dropdownItem.title}
                       </NavDropdown.Item>
                     ))}
-                  </NavDropdown>
+                  </StyledNavDropdown>
                 );
               } else {
                 return (
@@ -175,7 +184,7 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
-        <Button
+          <Button
             className="mx-2"
             variant="outlined"
             onClick={() => router.push("/enroll-now")}
