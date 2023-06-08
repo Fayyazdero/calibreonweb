@@ -7,7 +7,7 @@ import {
 import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import ProfileCard from "@/components/ProfileCard";
-import Typo from "@/components/Typo";
+import { Heading } from "@/components/Heading";
 
 const ViewAll = ({ persons, slug }) => {
   const router = useRouter();
@@ -16,11 +16,12 @@ const ViewAll = ({ persons, slug }) => {
     e.preventDefault();
     router.push(`/departments/${id}`);
   };
+
   return (
     <>
       <Container>
       <TopHeadingWrapper>
-              <Typo variant="mainDesc" style={{ textDecoration: "underline"}}>{slug}</Typo>
+              <Heading variant="subHeading" title={persons[0]?.department[0]?.title} />
             </TopHeadingWrapper>
         <StyledRow>
           {persons?.map((data, index) => {
