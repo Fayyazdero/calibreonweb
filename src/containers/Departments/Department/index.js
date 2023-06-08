@@ -19,9 +19,9 @@ const ViewAll = ({ persons, slug }) => {
   return (
     <>
       <Container>
-      {/* <TopHeadingWrapper>
-              <Typo variant="mainDesc">{slug}</Typo>
-            </TopHeadingWrapper> */}
+      <TopHeadingWrapper>
+              <Typo variant="mainDesc" style={{ textDecoration: "underline"}}>{slug}</Typo>
+            </TopHeadingWrapper>
         <StyledRow>
           {persons?.map((data, index) => {
             return (
@@ -34,6 +34,7 @@ const ViewAll = ({ persons, slug }) => {
                   subTitle={data.designation}
                   description={data.description}
                   onClick={(e) => handleClick(e, data._id)}
+                  founders={false}
                 />
               </StyledCol>
             );

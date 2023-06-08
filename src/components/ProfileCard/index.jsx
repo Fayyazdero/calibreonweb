@@ -26,10 +26,10 @@ const ProfileCard = ({
   className,
   fontSize,
   onClick,
-  founders
+  founders,
 }) => {
   const builder = imageUrlBuilder(client);
-  
+
   const urlFor = (source) => {
     return builder.image(source);
   };
@@ -38,7 +38,7 @@ const ProfileCard = ({
       <ProfileHeader>
         <ProfileImage>
           <Image
-            src={founders ? profile :`${urlFor(profile)?.url()}`}
+            src={founders ? profile : `${urlFor(profile)?.url()}`}
             alt={"Image"}
             width={161}
             height={161}
@@ -46,10 +46,8 @@ const ProfileCard = ({
         </ProfileImage>
         <ProfileTitle>
           <Heading variant="userHeading">{name}</Heading>
-          {
-            lastName && <Heading variant="userHeading">{lastName}</Heading>
-          }
-          
+          {lastName && <Heading variant="userHeading">{lastName}</Heading>}
+
           <Certification>
             <SubTitle fontSize={fontSize}> {subTitle}</SubTitle>
             {verifiedLogo == true && (
@@ -61,7 +59,11 @@ const ProfileCard = ({
         </ProfileTitle>
       </ProfileHeader>
       <Content>
-        <p>{description?.length > 430 ? `${description.substring(0, 350)}...` : description}</p>
+        <p>
+          {description?.length > 430
+            ? `${description.substring(0, 350)}...`
+            : description}
+        </p>
       </Content>
     </Wrapper>
   );

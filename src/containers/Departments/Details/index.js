@@ -39,11 +39,17 @@ import { Heading } from "@/components/Heading";
 import { _settings } from "@/constants/slider-settings";
 import Typo from "@/components/Typo";
 import { StyledCol, StyledRow } from "../styles";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "../../../pages/index";
 
-const Details = ({ person, people }) => {
+const Details = ({ person, people, founders }) => {
   const [verifiedLogo, setVerifiedLogo] = useState(true);
-  const [user, setUser] = useState({});
   const router = useRouter();
+
+  const builder = imageUrlBuilder(client);
+  const urlFor = (source) => {
+    return builder.image(source);
+  };
 
   const handleClick = (e, id) => {
     e.preventDefault();
@@ -62,7 +68,13 @@ const Details = ({ person, people }) => {
           </Typo>
           <TeamDetailsContainer>
             <TeamDetailsImageWrapper>
-              <Image src={profileimg} alt="profile-A"></Image>
+              <Image
+                src={
+                  founders ? person?.image : `${urlFor(person?.image)?.url()}`
+                }
+                alt="profile-A"
+                width={161}
+                height={161}></Image>
             </TeamDetailsImageWrapper>
             <TeamDetailsInfoWrapper>
               <ProfileTitle>

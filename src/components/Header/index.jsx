@@ -86,11 +86,16 @@ function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    if(router.pathname.includes("services")) {
+    console.log('active', active);
+    console.log('router.pathname', router.pathname);
+    if (router.pathname.includes("services")) {
       setActive("/services");
+    } else if (router.pathname.includes("department")) {
+      setActive("/departments");
     } else {
       setActive(router.pathname);
     }
+
   }, [router.pathname]);
 
   const handleClick = (link) => {
@@ -116,6 +121,7 @@ function Header() {
 
   const handleDropdownClick = (e) => {
     e.preventDefault()
+    router.push("/services");
   }
   const handleClickOnItem = (e, link) => {
     e.preventDefault();
