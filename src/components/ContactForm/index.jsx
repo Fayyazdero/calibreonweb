@@ -15,10 +15,10 @@ import Link from "next/link";
 import { Heading } from "../Heading";
 import emailjs from "@emailjs/browser";
 import { ThreeDots } from "react-loader-spinner";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const ContactForm = () => {
+const ContactForm = ({ message }) => {
   const [isLoading, setIsLoading] = useState(false);
   const notify = () => toast("Email Sent Successfully!");
   const warning = () => toast.warn("Please fill the form Below!");
@@ -43,47 +43,52 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form submission from refreshing the page
-    if(formData.firstName.length && formData.email.length && formData.bio.length && formData.checked) {
-      setIsLoading(true)
-    // Send the email using EmailJS
-    const templateParams = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      notes: formData.bio,
-      email: formData.email,
-      companyEmail: formData.companyEmail,
-      businessEmail: formData.businessEmail,
-    };
+    if (
+      formData.firstName.length &&
+      formData.email.length &&
+      formData.bio.length &&
+      formData.checked
+    ) {
+      setIsLoading(true);
+      // Send the email using EmailJS
+      const templateParams = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        notes: formData.bio,
+        email: formData.email,
+        companyEmail: formData.companyEmail,
+        businessEmail: formData.businessEmail,
+      };
 
-    emailjs
-      .send(
-        "service_k24e8yv",
-        "template_to0if9c",
-        templateParams,
-        "t54bmqlFcSMmptpKl"
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          setIsLoading(false)
-          notify()
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            companyEmail: "",
-            businessEmail: "",
-            bio: "",
-            checked: false,
-          })
-        },
-        (err) => {
-          console.log("FAILED...", err);
-          setIsLoading(false)
-        }
-      );
+      emailjs
+        .send(
+          "service_k24e8yv",
+          "template_to0if9c",
+          templateParams,
+          "t54bmqlFcSMmptpKl"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            setIsLoading(false);
+            notify();
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              companyEmail: "",
+              businessEmail: "",
+              bio: "",
+              checked: false,
+            });
+          },
+          (err) => {
+            console.log("FAILED...", err);
+            setIsLoading(false);
+          }
+        );
     }
-    warning()
+    warning();
   };
 
   if (isLoading) {
@@ -97,7 +102,7 @@ const ContactForm = () => {
   return (
     <Wrapper>
       <HeadingWrapper>
-        <Heading variant="formTitle"> Leave Us Message</Heading>
+        <Heading variant="formTitle">{message}</Heading>
       </HeadingWrapper>
       <NameInputs>
         <Input
@@ -170,7 +175,7 @@ const ContactForm = () => {
           <Link href="#"> privacy policy.</Link>
         </Content>
       </WrapperPolicy>
-      <ToastContainer position="top-center" />
+      <ToastContainer position="top-right" />
       <SubmitWrapper>
         <Button
           variant="outlined"

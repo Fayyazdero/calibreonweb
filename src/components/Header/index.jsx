@@ -16,9 +16,9 @@ import {
   StyledNavbarCollapse,
   Overlay,
   ToggleButton,
-  NavbarWrapper,
-  StyledDropdownMenu,
   StyledNavDropdown,
+  StyledDropdownLink,
+  LinksWrapperMobile
 } from "./styles";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -39,16 +39,32 @@ let navLinks = [
     dropdown: true,
     dropdownItems: [
       {
-        title: "Service 1",
-        link: "/services/service1",
+        title: "Accounting",
+        link: "/services/accounting",
       },
       {
-        title: "Service 2",
-        link: "/services/service2",
+        title: "Animation",
+        link: "/services/animation",
       },
       {
-        title: "Service 3",
-        link: "/services/service3",
+        title: "Architecture",
+        link: "/services/architecture",
+      },
+      {
+        title: "E Commerce",
+        link: "/services/ecommerce",
+      },
+      {
+        title: "Film & Tv",
+        link: "/services/filmandtv",
+      },
+      {
+        title: "Web Development",
+        link: "/services/webdevelopment",
+      },
+      {
+        title: "Human Resources",
+        link: "/services/humanresource",
       },
     ],
   },
@@ -70,10 +86,11 @@ function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const regex = /\/([^/]+)/;
-    const result = active.match(regex);
-    const path = result ? result[0] : router.pathname;
-    setActive(path);
+    if(router.pathname.includes("services")) {
+      setActive("/services");
+    } else {
+      setActive(router.pathname);
+    }
   }, [router.pathname]);
 
   const handleClick = (link) => {
@@ -97,10 +114,14 @@ function Header() {
     setDropdownOpen(false);
   };
 
-  const handleDropdownItemSelect = (link) => {
-    handleClick(link);
+  const handleDropdownClick = (e) => {
+    e.preventDefault()
+  }
+  const handleClickOnItem = (e, link) => {
+    e.preventDefault();
+    router.push(link);
     setDropdownOpen(false);
-  };
+  }
 
   return (
     <Navbar bg="white" expand="lg" expanded={isOpen}>
@@ -121,34 +142,41 @@ function Header() {
             {navLinks?.map((item, key) => {
               if (item.dropdown) {
                 return (
+                  <>
                   <StyledNavDropdown
                     key={key}
                     title={item.title}
                     id="nav-dropdown"
-                    className={active === item.link ? "active" : ""}
+                    className={active == item.link ? "active" : ""}
                     show={dropdownOpen}
                     onMouseEnter={handleDropdownMouseEnter}
                     onMouseLeave={handleDropdownMouseLeave}
-                    onClick={(e) => e.preventDefault()}
+                    onClick={(e) => handleDropdownClick(e)}
                   >
                     {item.dropdownItems?.map((dropdownItem, index) => (
-                      <NavDropdown.Item
+                      <StyledDropdownLink
                         key={index}
-                        onSelect={() =>
-                          handleDropdownItemSelect(dropdownItem.link)
-                        }
                         href={dropdownItem.link}
-                        onClick={() => {
-                          handleClick(item.link);
-                        }}
-                        className={`mx-3 text-decoration-none text-dark styled-link ${
-                          active === item.link ? "active" : ""
-                        }`}
+                        onClick={(e) => handleClickOnItem(e, dropdownItem.link)}
                       >
                         {dropdownItem.title}
-                      </NavDropdown.Item>
+                      </StyledDropdownLink>
                     ))}
                   </StyledNavDropdown>
+                  <LinksWrapperMobile key={key}>
+                    <StyledLink
+                      onClick={() => {
+                        handleClick(item.link);
+                      }}
+                      className={`mx-3 text-decoration-none text-dark styled-link ${
+                        active === item.link ? "active" : ""
+                      }`}
+                      href={item.link}
+                    >
+                      {item.title}
+                    </StyledLink>
+                  </LinksWrapperMobile>
+                  </>
                 );
               } else {
                 return (
@@ -184,7 +212,7 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
-          <Button
+        <Button
             className="mx-2"
             variant="outlined"
             onClick={() => router.push("/enroll-now")}

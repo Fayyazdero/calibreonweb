@@ -23,6 +23,11 @@ export const StyledLink = styled(Link)`
   }
 }`;
 
+export const StyledDropdownLink = styled(NavDropdown.Item)`
+  // @media (max-width: 991px) {
+  //   display: none !important;
+  // }
+`;
 export const StyledNavDropdown = styled(NavDropdown)`
   display: flex;
   align-items: center;
@@ -51,6 +56,23 @@ export const StyledNavDropdown = styled(NavDropdown)`
       display: none;
     }
   }
+
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+`;
+
+export const LinksWrapperMobile = styled.div`
+  @media (min-width: 991px) {
+    display: none;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 16px;
+    margin-top: 14px;
+    & a {
+      padding-bottom: 0;
+    }
+  }
 `;
 
 export const ToggleButton = styled(Navbar.Toggle)`
@@ -72,7 +94,8 @@ export const Overlay = styled.div`
   transition: opacity 0.3s ease-in-out;
   @media (min-width: 991px) {
     display: none !important;
-  }
+  }import { StyledLink } from './styles';
+
 `;
 
 export const NavButtonsWrapper = styled.div`
@@ -99,6 +122,41 @@ export const LinksWrapper = styled.div`
 
 export const StyledNavbarCollapse = styled(Navbar.Collapse)`
   z-index: 2;
+
+  .dropdown {
+    &.active {
+      > a:first-child {
+        font-weight: ${({ theme: { fontWeights } }) => fontWeights.semi_bold};
+        margin-top: 0;
+        border-bottom: 4px solid #f05b25;
+        transition: 0.1s ease;
+      }
+    }
+  }
+  & .dropdown-menu {
+    padding: 26px !important;
+    width: 233px;
+    border-radius: 22px;
+    a {
+      font-family: "Hind Madurai";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 23px;
+      display: flex;
+      align-items: center;
+      padding-bottom: 8px;
+      color: #000000;
+      margin: 0 !important;
+      &.active {
+        background: transparent !important;
+      }
+    }
+    a:hover {
+      background: transparent;
+      font-weight: 700;
+    }
+  }
   @media (max-width: 991px) {
     position: fixed;
     top: 0;

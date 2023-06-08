@@ -54,7 +54,7 @@ const CompanyCard = ({ acc, people }) => {
     _id,
   } = acc;
 
-const router = useRouter();
+  const router = useRouter();
   const builder = imageUrlBuilder(client);
 
   const urlFor = (source) => {
@@ -227,13 +227,16 @@ const router = useRouter();
           <>
             <TopHeadingWrapper>
               <Typo variant="mainDesc">Our Team</Typo>
-              <Typo variant="headingTypo" onClick={() =>
+              <Typo
+                variant="headingTypo"
+                onClick={() =>
                   router.push(
                     `/departments/department/${department
                       .replace(/\s/g, "")
                       .toLowerCase()}`
                   )
-                } style={{ cursor: "pointer"}}>
+                }
+                style={{ cursor: "pointer" }}>
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="#F05B25" />
               </Typo>

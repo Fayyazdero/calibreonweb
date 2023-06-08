@@ -27,7 +27,7 @@ const ContactUs = () => {
           <Content>Leave us a message and we will get back to you. </Content>
         </Col>
         <Col sm={12} md={{ span: 7, offset: 1 }}>
-          <ContactForm />
+          <ContactForm message={"Leave Us a message!"} />
         </Col>
       </Row>
     </StyledContainer>
