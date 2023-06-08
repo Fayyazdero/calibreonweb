@@ -1,8 +1,7 @@
 import ProfileCard from "@/components/ProfileCard";
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import {
-  ServicesHeadingWrapper,
   StyledCol,
   StyledRow,
   TopHeadingWrapper,
@@ -12,7 +11,7 @@ import { _settings } from "@/constants/slider-settings";
 import Typo from "@/components/Typo";
 import { useRouter } from "next/router";
 
-const Team = ({ departments, persons }) => {
+const Team = ({ categorizedUsers, departments }) => {
   const router = useRouter();
 
   const handleClick = (e, id) => {
@@ -20,18 +19,25 @@ const Team = ({ departments, persons }) => {
     router.push(`/departments/${id}`);
   };
 
+  console.log('departments users', departments);
+
+
   return (
     <Container>
-      {departments?.map((department) => {
+      {categorizedUsers?.map(({category, people}) => {
+        // console.log('people', people);
+        let department = departments?.filter((department) => department?.title.replace(/\s/g, "")
+        .toLowerCase() == category)
+        console.log('department', department);
         return (
-          <Container key={department._id}>
+          <Container key={category}>
             <TopHeadingWrapper>
-              <Typo variant="mainDesc">{department.title}</Typo>
+              <Typo variant="mainDesc">{department[0]?.title}</Typo>
               <Typo
                 variant="headingTypo"
                 onClick={() =>
                   router.push(
-                    `/departments/department/${String(department.title)
+                    `/departments/department/${String(category)
                       .replace(/\s/g, "")
                       .toLowerCase()}`
                   )
@@ -41,12 +47,7 @@ const Team = ({ departments, persons }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {persons
-                ?.filter(
-                  (person) => person.department[0].title == department.title
-                )
-                ?.slice(0, 3)
-                ?.map((data, index) => {
+              {people?.map((data, index) => {
                   return (
                     <StyledCol md={4} key={index}>
                       <ProfileCard
