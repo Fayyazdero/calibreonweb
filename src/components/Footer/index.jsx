@@ -7,6 +7,8 @@ import StyledSection, {
   NavLinks,
   SocialIcons,
   Title,
+  RowSelected,
+  ColSelected
 } from "./styles";
 import Link from "next/link";
 import Logo from "/public/images/light-logo.png";
@@ -17,8 +19,8 @@ const Footer = () => {
   return (
     <StyledSection>
       <Container>
-        <Row>
-          <Col md={5}>
+        <RowSelected>
+          <ColSelected md={5}>
             <Title>Join The Community</Title>
             <SocialIcons>
               <Instagram height={32} color={"#FFFFFF"} />
@@ -26,7 +28,7 @@ const Footer = () => {
               <Facebook height={32} color={"#FFFFFF"} />
               <LinkedIn height={32} color={"#FFFFFF"} />
             </SocialIcons>
-          </Col>
+          </ColSelected>
           <Col xs={6} md={2}>
             <Title>Menu</Title>
             {menuData.map((item, key) => {
@@ -63,14 +65,14 @@ const Footer = () => {
               })}
             </NavLinks>
           </Col>
-        </Row>
-        <Row>
+        </RowSelected>
+        <RowSelected>
           <Col md={4}>
             <LogoWrapper>
               <Image src={Logo} alt="logo-light" />
             </LogoWrapper>
           </Col>
-        </Row>
+        </RowSelected>
         <Row>
           <Col md={12}>
             <CopyRightContent>

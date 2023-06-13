@@ -1,8 +1,29 @@
 import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
 
 const StyledSection = styled("div")({
   background: "#4D4D4D",
 });
+
+export const RowSelected = styled(Row)({
+  "@media (max-width: 768px)": {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center"
+  },
+});
+
+export const ColSelected = styled(Col)({
+  "@media (max-width: 768px)": {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+});
+
+
+
 export const SocialIcons = styled("div")({
   display: "flex",
   alignItems: "center",
