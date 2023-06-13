@@ -11,6 +11,11 @@ const Wrapper = styled("div")(({ theme: { colors } }) => ({
 export const HeadingWrapper = styled("div")({
   paddingLeft: "37px",
   paddingTop: "39px",
+  [`@media screen and (max-width: 992px)`]: {
+    paddingLeft: 0,
+    display: "flex",
+    justifyContent: "center"
+  },
 });
 export const NameInputs = styled("div")({
   display: "flex",
@@ -108,6 +113,10 @@ export const SubmitWrapper = styled("div")({
   },
   "& .submit-button": {
     fontWeight: "600",
+  },
+  [`@media screen and (max-width: 992px)`]: {
+    marginRight: 0,
+    justifyContent: "center",
   },
 });
 

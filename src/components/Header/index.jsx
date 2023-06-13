@@ -18,7 +18,7 @@ import {
   ToggleButton,
   StyledNavDropdown,
   StyledDropdownLink,
-  LinksWrapperMobile
+  LinksWrapperMobile,
 } from "./styles";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -95,7 +95,6 @@ function Header() {
     } else {
       setActive(router.pathname);
     }
-
   }, [router.pathname]);
 
   const handleClick = (link) => {
@@ -107,10 +106,6 @@ function Header() {
     setIsOpen((prevState) => !prevState);
   };
 
-  const handleDropdownToggle = (isOpen) => {
-    setDropdownOpen(isOpen);
-  };
-
   const handleDropdownMouseEnter = () => {
     setDropdownOpen(true);
   };
@@ -120,14 +115,14 @@ function Header() {
   };
 
   const handleDropdownClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     router.push("/services");
-  }
+  };
   const handleClickOnItem = (e, link) => {
     e.preventDefault();
     router.push(link);
     setDropdownOpen(false);
-  }
+  };
 
   return (
     <Navbar bg="white" expand="lg" expanded={isOpen}>
@@ -141,47 +136,66 @@ function Header() {
         />
         <StyledNavbarCollapse
           className="justify-content-center"
-          id="basic-navbar-nav"
-        >
+          id="basic-navbar-nav">
           <Nav>
             <Overlay />
             {navLinks?.map((item, key) => {
               if (item.dropdown) {
                 return (
                   <>
-                  <StyledNavDropdown
-                    key={key}
-                    title={item.title}
-                    id="nav-dropdown"
-                    className={active == item.link ? "active" : ""}
-                    show={dropdownOpen}
-                    onMouseEnter={handleDropdownMouseEnter}
-                    onMouseLeave={handleDropdownMouseLeave}
-                    onClick={(e) => handleDropdownClick(e)}
-                  >
-                    {item.dropdownItems?.map((dropdownItem, index) => (
-                      <StyledDropdownLink
-                        key={index}
-                        href={dropdownItem.link}
-                        onClick={(e) => handleClickOnItem(e, dropdownItem.link)}
-                      >
-                        {dropdownItem.title}
-                      </StyledDropdownLink>
-                    ))}
-                  </StyledNavDropdown>
-                  <LinksWrapperMobile key={key}>
-                    <StyledLink
-                      onClick={() => {
-                        handleClick(item.link);
-                      }}
-                      className={`mx-3 text-decoration-none text-dark styled-link ${
-                        active === item.link ? "active" : ""
-                      }`}
-                      href={item.link}
-                    >
-                      {item.title}
-                    </StyledLink>
-                  </LinksWrapperMobile>
+                    <StyledNavDropdown
+                      key={key}
+                      title={item.title}
+                      id="nav-dropdown"
+                      className={active == item.link ? "active" : ""}
+                      show={dropdownOpen}
+                      onMouseEnter={handleDropdownMouseEnter}
+                      onMouseLeave={handleDropdownMouseLeave}
+                      onClick={(e) => handleDropdownClick(e)}>
+                      {item.dropdownItems?.map((dropdownItem, index) => (
+                        <StyledDropdownLink
+                          key={index}
+                          href={dropdownItem.link}
+                          onClick={(e) =>
+                            handleClickOnItem(e, dropdownItem.link)
+                          }>
+                          {dropdownItem.title}
+                        </StyledDropdownLink>
+                      ))}
+                    </StyledNavDropdown>
+                    <LinksWrapperMobile key={key}>
+                      <StyledLink
+                        onClick={() => {
+                          handleClick(item.link);
+                          setIsOpen((prevState) => !prevState);
+                        }}
+                        className={`mx-3 text-decoration-none text-dark styled-link ${
+                          active === item.link ? "active" : ""
+                        }`}
+                        href={item.link}>
+                        {item.title}
+                      </StyledLink>
+                    </LinksWrapperMobile>
+                    <NavButtonsWrapper>
+                      <Button
+                        className="mx-2"
+                        variant="outlined"
+                        onClick={() => {
+                          router.push("/enroll-now");
+                          setIsOpen((prevState) => !prevState);
+                        }}>
+                        Enroll Now
+                      </Button>
+                      <Button
+                        className="mx-2"
+                        variant="contained"
+                        onClick={() => {
+                          router.push("/contact-us");
+                          setIsOpen((prevState) => !prevState);
+                        }}>
+                        Contact Us
+                      </Button>
+                    </NavButtonsWrapper>
                   </>
                 );
               } else {
@@ -194,8 +208,7 @@ function Header() {
                       className={`mx-3 text-decoration-none text-dark styled-link ${
                         active === item.link ? "active" : ""
                       }`}
-                      href={item.link}
-                    >
+                      href={item.link}>
                       {item.title}
                     </StyledLink>
                   </LinksWrapper>
@@ -218,18 +231,16 @@ function Header() {
           </NavbarIconWrapper>
         </StyledNavbarCollapse>
         <NavButtonsWrapper>
-        <Button
+          <Button
             className="mx-2"
             variant="outlined"
-            onClick={() => router.push("/enroll-now")}
-          >
+            onClick={() => router.push("/enroll-now")}>
             Enroll Now
           </Button>
           <Button
             className="mx-2"
             variant="contained"
-            onClick={() => router.push("/contact-us")}
-          >
+            onClick={() => router.push("/contact-us")}>
             Contact Us
           </Button>
         </NavButtonsWrapper>

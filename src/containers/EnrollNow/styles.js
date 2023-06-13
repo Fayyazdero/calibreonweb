@@ -1,5 +1,11 @@
-import { Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import styled from "styled-components";
+
+export const ColSelected = styled(Col)({
+  [`@media screen and (max-width: 992px)`]: {
+    textAlign: "center",
+  },
+})
 
 export const StyledContainer = styled(Container)({
   marginBottom: "121px",
@@ -22,6 +28,10 @@ export const TitleWrapper = styled("div")({
     "& img": {
       marginLeft: "18px",
     },
+  },
+  [`@media screen and (max-width: 992px)`]: {
+    marginBottom: 0,
+    marginTop: "50px",
   },
 });
 

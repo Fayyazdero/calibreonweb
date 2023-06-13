@@ -99,15 +99,15 @@ export const Overlay = styled.div`
 `;
 
 export const NavButtonsWrapper = styled.div`
+display: flex;
   @media (max-width: 991px) {
     position: absolute;
-    left: 21px;
     bottom: 110px;
-    margin-right: 20px;
   }
 
   & button {
-    padding: 8px 38px;
+    padding: 8px 20px;
+    font-size: 10px
   }
 `;
 export const LinksWrapper = styled.div`

@@ -5,6 +5,7 @@ import {
   HeadingWrapper,
   StyledContainer,
   TitleWrapper,
+  ColSelected
 } from "./styles";
 import { Col, Row } from "react-bootstrap";
 import ContactForm from "@/components/ContactForm";
@@ -17,7 +18,7 @@ const EnrollNow = () => {
         <Heading variant="subHeading" title="Enroll Now" />
       </HeadingWrapper>
       <Row>
-        <Col sm={12} md={4}>
+        <ColSelected sm={12} md={12} lg={6}>
           <TitleWrapper>
             <Heading variant="contactTitle" className="heading">
               We're here to help
@@ -25,8 +26,8 @@ const EnrollNow = () => {
             </Heading>
           </TitleWrapper>
           <Content>Apply for the Open position! </Content>
-        </Col>
-        <Col sm={12} md={{ span: 7, offset: 1 }}>
+        </ColSelected>
+        <Col sm={12} md={12} lg={6}>
           <ContactForm message={"Apply NOW!"} />
         </Col>
       </Row>
