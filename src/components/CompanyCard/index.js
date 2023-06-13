@@ -33,7 +33,6 @@ import linkedInLogo from "../../../public/images/linkedinLogo.png";
 import quickbooksImage from "../../../public/images/quickbooks.png";
 import xero from "../../../public/images/xero.png";
 import xerotwo from "../../../public/images/xero-two.png";
-import { teamData } from "../../containers/Team/teamData";
 import imageUrlBuilder from "@sanity/image-url";
 import ProfileCard from "@/components/ProfileCard";
 import Typo from "@/components/Typo";

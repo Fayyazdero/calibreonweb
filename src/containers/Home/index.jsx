@@ -51,7 +51,7 @@ import Slider from "react-slick";
 import { _settings } from "@/constants/slider-settings";
 import Accounting from "@/components/ServiceCard/Accounting";
 
-const Home = ({ home, banner, services }) => {
+const Home = ({ banner, services }) => {
   const router = useRouter();
   const ref = useRef(null);
 
@@ -148,14 +148,14 @@ const Home = ({ home, banner, services }) => {
                   },
                 },
               ]}>
-              {services?.map((item, index) => {
+              {services?.map((item) => {
                 return (
                   <>
                     <ServiceCard
-                      key={index}
+                      key={item._id}
                       onClick={() =>
                         router.push(
-                          `/services/${String(item.category)
+                          `/services/${String(item.title)
                             .replace(/\s/g, "")
                             .toLocaleLowerCase()}`
                         )
@@ -167,11 +167,11 @@ const Home = ({ home, banner, services }) => {
                         subCategoryTwo={item.subCategoryTwo}
                         subCategoryThree={item.subCategoryThree}
                         alt={"image"}
-                        category={item.category}
+                        category={item.title}
                       />
                     </ServiceCard>
                     <StyledTitleWrapper>
-                      <StyledTitle>{item.category}</StyledTitle>
+                      <StyledTitle>{item.title}</StyledTitle>
                     </StyledTitleWrapper>
                   </>
                 );

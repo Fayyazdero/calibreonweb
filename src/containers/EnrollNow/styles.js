@@ -7,11 +7,13 @@ export const StyledContainer = styled(Container)({
 export const HeadingWrapper = styled("div")({
   marginBottom: "10px",
 });
-export const Content = styled("p")(({ theme: { colors } }) => ({
-  color: colors?.grey,
-  fontSize: "22px",
-  fontWeight: "400",
-}));
+export const Content = styled("p")(({ theme: { colors, fontSizes, fontWeights } }) => {
+  return {
+    color: colors?.grey,
+    fontSize: fontSizes["2xl"],
+    fontWeight: fontWeights.regular,
+  }
+});
 export const TitleWrapper = styled("div")({
   marginTop: "121px",
   "& .heading": {

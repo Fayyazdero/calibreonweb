@@ -26,9 +26,9 @@ export const HomeHeadingWrapper = styled.div`
      font-family: 'Montserrat';
      font-style: normal;
      font-weight: 400;
-      @media (max-width: 992px) {
-        font-size: 14px;
-        line-height: 17px;
+     @media (max-width: 992px) {
+       font-size: 14px;
+       line-height: 17px;
       }
     }
 
@@ -51,7 +51,7 @@ export const BannerCol = styled(Col)`
   }
 `;
 export const TestimonialWrapper = styled.div`
-  padding-top: 116px;
+padding-top: 116px;
   z-index: 1;
   @media (max-width: 992px) {
     padding: 30px 0;
@@ -83,7 +83,7 @@ export const TestimonialWrapper = styled.div`
   }
 `;
 export const NewsLetterWrapper = styled.div`
-  padding: 130px 0;
+padding: 130px 0;
   @media (max-width: 992px) {
     padding: 42px 0;
   }
@@ -234,9 +234,9 @@ export const ServicesHeadingWrapper = styled.div`
     padding-bottom: 0;
     margin-bottom: -40px;
     & span {
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 24px;
+      font-weight: ${({ theme: { fontWeights } }) => fontWeights.bold};
+      font-size:  ${({ theme: { fontSizes } }) => fontSizes.xl};
+      line-height: ${({ theme: { lineHeights } }) => lineHeights["2xl"]};
     }
   }
 `;
@@ -278,15 +278,11 @@ export const ServiceCard = styled.div`
     }
   }
   & h2 {
-    font-size: 44px !important;
-    font-weight: 800;
-    line-height: 56px;
+    font-size:  ${({ theme: { fontSizes } }) => fontSizes.h2Title} !important;
+    font-weight: ${({ theme: { fontWeights } }) => fontWeights.bolder};
+    line-height: ${({ theme: { lineHeights } }) => lineHeights.newLineHeight};
 
     @media (max-width: 992px) {
-      // font-weight: 800;
-      // font-size: 20px !important;
-      // line-height: 25px;
-
       display: none;
     }
   }
@@ -321,7 +317,7 @@ export const ServicesWrapper = styled.div`
   }
 `;
 export const Banner = styled.div`
-  padding-bottom: 110px;
+padding-bottom: 110px;
 
   @media (max-width: 992px) {
     padding-bottom: 54px;
@@ -361,7 +357,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const StyledRow = styled(Row)`
- margin-top: 24px;
+margin-top: 24px;
 `;
 export const TestimonialCol = styled(Col)`
   position: relative;

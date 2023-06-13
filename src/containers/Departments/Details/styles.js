@@ -1,52 +1,58 @@
 import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 
-export const TopHeadingWrapper = styled.div(({ theme: { breakPoints } }) => {
-  const sm = breakPoints.sm;
-
-  return {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingBottom: "30px",
-    paddingTop: "30px",
-    alignItems: "center",
-    [`@media screen and (max-width: ${sm}px)`]: {
-      paddingTop: "46px",
-      paddingBottom: "24px",
-    },
-  };
-});
-export const TeamDetailsHeadingWrapper = styled.div(
-  ({ theme: { breakPoints } }) => {
+export const TopHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
     return {
       display: "flex",
       justifyContent: "space-between",
-      paddingBottom: "39px",
+      paddingBottom: `${spacing * 15}px`,
+      paddingTop: `${spacing * 15}px`,
       alignItems: "center",
       [`@media screen and (max-width: ${sm}px)`]: {
-        paddingBottom: "9px"
+        paddingTop: `${spacing * 23}px`,
+        paddingBottom: `${spacing * 12}px`,
+      },
+    };
+  }
+);
+export const TeamDetailsHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
+
+    return {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingBottom: `${spacing * 20}px`,
+      alignItems: "center",
+      [`@media screen and (max-width: ${sm}px)`]: {
+        paddingBottom: `${spacing * 4}px`,
       },
     };
   }
 );
 
-export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
-  const sm = breakPoints.sm;
+export const TeamDetailsWrapper = styled.div(
+  ({
+    theme: { breakPoints, fontWeights, lineHeights, fontSizes, spacing },
+  }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    "& .newTypo": {
-      marginBottom: "29px",
-      [`@media screen and (max-width: ${sm}px)`]: {
-        textAlign: "center",
-        fontWeight: fontWeights.semi_bold,
-        lineHeight: lineHeights.desc,
-        fontSize: fontSizes.md
+    return {
+      "& .newTypo": {
+        marginBottom: `${spacing * 15}px`,
+        [`@media screen and (max-width: ${sm}px)`]: {
+          textAlign: "center",
+          fontWeight: fontWeights.semi_bold,
+          lineHeight: lineHeights.desc,
+          fontSize: fontSizes.md,
+        },
       },
-    },
-  };
-});
+    };
+  }
+);
 
 export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
   const sm = breakPoints.sm;
@@ -62,26 +68,26 @@ export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
 });
 
 export const TeamDetailsImageWrapper = styled.div(
-  ({ theme: { breakPoints } }) => {
+  ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
-    return {  
+    return {
       "& img": {
-        width: "308px",
-        height: "308px",
+        width: `${spacing * 154}px`,
+        height: `${spacing * 154}px`,
         border: "8px solid #4D4D4D",
         boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
         filter:
           "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
-        borderRadius: "4px",
+        borderRadius: `${spacing * 2}px`,
       },
       [`@media screen and (max-width: ${sm}px)`]: {
         alignItems: "center",
-        width: "208px",
-        height: "208px",
+        width: `${spacing * 104}px`,
+        height: `${spacing * 104}px`,
         "& img": {
-          width: "208px",
-          height: "208px",
+          width: `${spacing * 104}px`,
+          height: `${spacing * 104}px`,
           border: "8px solid #4D4D4D",
           boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
           filter:
@@ -94,11 +100,11 @@ export const TeamDetailsImageWrapper = styled.div(
 );
 
 export const TeamDetailsInfoWrapper = styled.div(
-  ({ theme: { breakPoints } }) => {
+  ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
     return {
-      marginLeft: "20px",
+      marginLeft: `${spacing * 10}px`,
 
       [`@media screen and (max-width: ${sm}px)`]: {
         marginLeft: "0",
@@ -107,14 +113,11 @@ export const TeamDetailsInfoWrapper = styled.div(
   }
 );
 
-export const TeamDetailsDescWrapper = styled.div(
-  () => {
-
-    return {
-      textAlign: "justify",
-    };
-  }
-);
+export const TeamDetailsDescWrapper = styled.div(() => {
+  return {
+    textAlign: "justify",
+  };
+});
 
 export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
   const sm = breakPoints.sm;
@@ -131,20 +134,20 @@ export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
 });
 
 export const TeamProgressContainer = styled.div(
-  ({ theme: { breakPoints } }) => {
+  ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
     return {
       width: "50%",
       "& h2": {
-        marginBottom: "21px",
+        marginBottom: `${spacing * 10}px`,
       },
       [`@media screen and (max-width: ${sm}px)`]: {
         width: "100%",
-        marginBottom: "21px",
+        marginBottom: `${spacing * 10}px`,
         "& h2": {
-          marginBottom: "21px",
-          marginTop: "24px"
+          marginBottom: `${spacing * 10}px`,
+          marginTop: `${spacing * 12}px`,
         },
       },
     };
@@ -167,7 +170,7 @@ export const ContainerOuter = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 export const LineContainer = styled.div`
-  margin-right: 40px;
+  margin-right: ${({ theme: { spacing } }) => `${spacing * 20}px`}
 `;
 
 export const TimeLineContainer = styled.div(() => {
@@ -200,9 +203,9 @@ export const VerticalLine = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 export const DotContainer = styled.div`
-  height: 20px;
-  width: 20px;
-  border-radius: 20px;
+  height: ${({ theme: { spacing } }) => `${spacing * 10}px`}
+  width: ${({ theme: { spacing } }) => `${spacing * 10}px`}
+  border-radius: ${({ theme: { spacing } }) => `${spacing * 10}px`}
   background: #f05b25;
 `;
 
@@ -234,7 +237,7 @@ export const ProgressWrapper = styled.div(
 );
 
 export const TeamTimelineContainer = styled.div(
-  ({ theme: { breakPoints } }) => {
+  ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
     return {
@@ -243,13 +246,13 @@ export const TeamTimelineContainer = styled.div(
       flexDirection: "column",
       justifyContent: "space-between",
       "& h2": {
-        marginBottom: "36px",
+        marginBottom: `${spacing * 18}px`,
       },
 
       [`@media screen and (max-width: ${sm}px)`]: {
         width: "100%",
         "& h2": {
-          marginBottom: "26px",
+          marginBottom: `${spacing * 13}px`,
         },
       },
     };
@@ -257,30 +260,32 @@ export const TeamTimelineContainer = styled.div(
 );
 export const TeamUserListWrapper = styled.div`
   background-color: #f05b25;
-  margin-bottom: 50px;
+  margin-bottom: ${({ theme: { spacing } }) => spacing * 25};
 `;
 
-export const SpacerContainer = styled.div(({ theme: { breakPoints } }) => {
-  const sm = breakPoints.sm;
+export const SpacerContainer = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    height: "38px",
+    return {
+      height: `${spacing * 19}px`,
 
-    [`@media screen and (max-width: ${sm}px)`]: {
-      height: "28px",
-    },
-  };
-});
+      [`@media screen and (max-width: ${sm}px)`]: {
+        height: `${spacing * 14}px`,
+      },
+    };
+  }
+);
 
-export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
+export const DescWrapper = styled.div(({ theme: { breakPoints, spacing } }) => {
   const sm = breakPoints.sm;
 
   return {
     display: "flex",
     margin: "20px 0",
-    fontFamily: 'Hind Madurai',
+    fontFamily: "Hind Madurai",
     "& img": {
-      marginRight: '10px',
+      marginRight: `${spacing * 5}px`,
     },
 
     [`@media screen and (max-width: ${sm}px)`]: {
@@ -289,40 +294,44 @@ export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 
-export const ProfileTitle = styled.div(({ theme: { breakPoints } }) => {
-  const sm = breakPoints.sm;
+export const ProfileTitle = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    display: "flex",
-    flexDirection: "column",
-    margin: "0 0 0 0",
-    [`@media screen and (max-width: ${sm}px)`]: {
-      alignItems: "center",
-      "& h2": {
-        padding: "30px",
+    return {
+      display: "flex",
+      flexDirection: "column",
+      margin: "0 0 0 0",
+      [`@media screen and (max-width: ${sm}px)`]: {
+        alignItems: "center",
+        "& h2": {
+          padding: `${spacing * 15}px`,
+        },
       },
-    },
-  };
-});
+    };
+  }
+);
 
-export const Certification = styled.div(({ theme: { breakPoints } }) => {
-  const sm = breakPoints.sm;
+export const Certification = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    width: "267px",
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "25px",
-    "& img": {
-      objectFit: "cover",
-      width: "100%",
-      height: "100%",
-    },
-    [`@media screen and (max-width: ${sm}px)`]: {
-      justifyContent: "center",
-    },
-  };
-});
+    return {
+      width: "267px",
+      display: "flex",
+      alignItems: "center",
+      marginBottom: `${spacing * 13}px`,
+      "& img": {
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+      },
+      [`@media screen and (max-width: ${sm}px)`]: {
+        justifyContent: "center",
+      },
+    };
+  }
+);
 
 export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
   const sm = breakPoints.sm;
@@ -336,7 +345,7 @@ export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
     letterSpacing: "-2.2%",
     margin: "0",
     [`@media screen and (max-width: ${sm}px)`]: {
-      lineHeight: "150%"
+      lineHeight: "150%",
     },
   };
 });

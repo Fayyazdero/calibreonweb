@@ -25,6 +25,7 @@ export const theme = {
     serviceTitle: "4.25rem" /* 68px */,
     heading: "4rem" /* 64px */,
     userTitle: "2.87rem" /* 46px */,
+    h2Title: "2.75rem" /* 44px */,
     contactTitle: "3.58rem" /* 57.28px */,
     formTitle: "1.5625rem" /* 25px */,
     "6xl": "2.43rem" /* 39px */,
@@ -51,6 +52,7 @@ export const theme = {
     user: "93%",
     title: "83px",
     secTitle: "78px",
+    newLineHeight: "56px",
     faqTitle: "27px",
     quotes: "46px",
     subTitle: "48px",
@@ -63,7 +65,9 @@ export const theme = {
     "5xl": "40px",
     base: "33px",
     xm: "18px",
+    xs: "17px"
   },
+  spacing: 2
 };
 
 export const getTheme = (value) => {
