@@ -98,6 +98,20 @@ export const Overlay = styled.div`
 
 `;
 
+export const NavButtonsWrapperForMobile = styled.div`
+  @media (min-width: 991px) {
+    display: none;
+  }
+  @media (max-width: 991px) {
+    position: absolute;
+    bottom: 110px;
+  }
+
+  & button {
+    padding: 8px 20px;
+    font-size: 10px
+  }
+`;
 export const NavButtonsWrapper = styled.div`
 display: flex;
   @media (max-width: 991px) {
@@ -107,7 +121,7 @@ display: flex;
 
   & button {
     padding: 8px 20px;
-    font-size: 10px
+    font-size: 14px
   }
 `;
 export const LinksWrapper = styled.div`

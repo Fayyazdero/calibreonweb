@@ -257,9 +257,10 @@ export const ServiceCard = styled.div`
   }
   & > div {
     position: relative;
-    width: 80%;
+    width: 100%;
 
     @media (max-width: 992px) {
+      width: 100%;
       height: fit-content;
     }
   }

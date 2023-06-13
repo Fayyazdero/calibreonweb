@@ -19,6 +19,7 @@ import {
   StyledNavDropdown,
   StyledDropdownLink,
   LinksWrapperMobile,
+  NavButtonsWrapperForMobile
 } from "./styles";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -177,7 +178,7 @@ function Header() {
                         {item.title}
                       </StyledLink>
                     </LinksWrapperMobile>
-                    <NavButtonsWrapper>
+                    <NavButtonsWrapperForMobile>
                       <Button
                         className="mx-2"
                         variant="outlined"
@@ -196,7 +197,7 @@ function Header() {
                         }}>
                         Contact Us
                       </Button>
-                    </NavButtonsWrapper>
+                    </NavButtonsWrapperForMobile>
                   </>
                 );
               } else {

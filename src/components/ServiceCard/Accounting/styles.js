@@ -24,7 +24,7 @@ const Wrapper = styled("div")(({ theme: { colors }, variant }) => ({
   },
   "@media screen and (max-width: 992px)": {
     flexDirection: "column",
-    "@media(max-width: 991px)": {
+    "@media(max-width: 992px)": {
       flexDirection: "column",
       marginTop: "192px",
       background: colors[variant] || colors.primary,
@@ -38,18 +38,18 @@ export const ImageWrapper = styled("div")({
   position: "relative",
   left: "41px",
   bottom: "26.7%",
-  "@media(max-width: 991px)": {
+  "@media(max-width: 992px)": {
     width: "526px",
     position: "relative",
     maxWidth: " calc(100% - 58px)",
-    height: "294px",
+    height: "230px",
     left: " 0",
     bottom: "unset",
     marginTop: "-144px",
   },
 });
 export const HeadingWrapper = styled("div")({
-  "@media(max-width: 991px)": {
+  "@media(max-width: 992px)": {
     h2: {
       fontSize: "33px",
     },
@@ -64,7 +64,7 @@ export const ContentWrapper = styled("div")({
   justifyContent: "center",
   marginLeft: "120px",
   marginRight: "14px",
-  "@media(max-width: 991px)": {
+  "@media(max-width: 992px)": {
     marginLeft: "0",
     marginRight: "0",
   },
@@ -76,7 +76,7 @@ export const CategoryTitle = styled("div")({
     marginRight: "9px",
     marginLeft: "26px",
   },
-  "@media(max-width: 991px)": {
+  "@media(max-width: 992px)": {
     display: "none",
   },
 });
