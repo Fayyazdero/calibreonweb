@@ -117,6 +117,7 @@ function Header() {
   const handleDropdownClick = (e) => {
     e.preventDefault();
     router.push("/services");
+    setIsOpen((prevState) => !prevState);
   };
   const handleClickOnItem = (e, link) => {
     e.preventDefault();
