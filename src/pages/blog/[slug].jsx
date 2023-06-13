@@ -16,15 +16,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const queryParams = { slug: params?.slug ?? "" };
-
-  const posts = await client.fetch(postsQuery);
-  let data = posts?.filter(
-    (post) =>
-      post._id ==
-      queryParams.slug
-  );
+  const query = `*[_type == "posts" && _id == "${queryParams.slug}"][0]`;
+  const post = await client.fetch(query);
   
-  return { props: { post: data[0] } };
+  return { props: { post } };
 };
 
 const Index = ({ post }) => {
