@@ -44,6 +44,7 @@ export const Services = ({services}) => {
             variant="deepPurple"
             title="Accounting"
             src="/images/Accounting-banner.png"
+            alt="altImage"
           />
         </AccountingWrapper>
         <AnimationWrapper className="margin-y-0" >
@@ -54,12 +55,14 @@ export const Services = ({services}) => {
                 className="hidden-sm"
                 title="Animation"
                 src="/images/animation-banner.png"
+                alt="altImage"
               />
               <Animation
                 variant="primary"
                 className="sm-hidden"
                 title="Animation"
                 src="/images/animation-banner.png"
+                alt="altImage"
               />
             </Col>
             <Col xs={12} md={12} lg={6} onClick={() => router.push("/services/ecommerce")}>
@@ -68,12 +71,14 @@ export const Services = ({services}) => {
                 className="hidden-sm"
                 title="eCommerce"
                 src="/images/e-commerce.png"
+                alt="altImage"
               />
               <Ecommerce
                 variant="cyan"
                 className="sm-hidden"
                 title="eCommerce"
                 src="/images/e-commerce.png"
+                alt="altImage"
               />
             </Col>
           </Row>
@@ -87,12 +92,14 @@ export const Services = ({services}) => {
                 className="hidden-sm"
                 title="Film & TV"
                 src="/images/flim-tv.png"
+                alt="altImage"
               />
               <FlimTv
                 variant="grey"
                 title="Film & TV"
                 src="/images/flim-tv.png"
                 className="sm-hidden"
+                alt="altImage"
               />
             </Col>
           </Row>
@@ -105,6 +112,7 @@ export const Services = ({services}) => {
                 className="hidden-sm"
                 title="Human Resources"
                 src="/images/human-resources.png"
+                alt="altImage"
               />
               <WebDevelopment
                 variant="yellow"
@@ -112,6 +120,7 @@ export const Services = ({services}) => {
                 Development"
                 src="/images/web-development.png"
                 className="sm-hidden"
+                alt="altImage"
               />
             </Col>
             <Col sm={12} md={12} lg={6} className="sm-mt-4" onClick={() => router.push("/services/humanresource")}>
@@ -120,12 +129,14 @@ export const Services = ({services}) => {
                 className="hidden-sm"
                 title="Architecture"
                 src="/images/architecture.png"
+                alt="altImage"
               />
               <HumanResources
                 variant="blue"
                 className="sm-hidden"
                 title="Human Resources "
                 src="/images/human-resources.png"
+                alt="altImage"
               />
             </Col>
           </Row>
@@ -139,12 +150,14 @@ export const Services = ({services}) => {
                Development"
                 src="/images/web-development.png"
                 className="hidden-sm"
+                alt="altImage"
               />
               <Architecture
                 variant="maroon"
                 title="Architecture"
                 src="/images/architecture.png"
                 className="sm-hidden"
+                alt="altImage"
               />
               <GreyBoxWrapper className="hidden-sm">
                 <ImageWrapper>

@@ -40,7 +40,7 @@ const Team = ({ categorizedUsers, departments }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.map((data, index) => {
+              {people?.slice(0, 3)?.map((data, index) => {
                   return (
                     <StyledCol md={4} key={index}>
                       <ProfileCard

@@ -117,7 +117,7 @@ const ContactForm = ({ message }) => {
           placeholder={"Last Name"}
           name="lastName"
           width={184}
-          mLeft={29}
+          mleft={29}
           variant="contact"
           value={formData.lastName}
           onChange={handleChange}

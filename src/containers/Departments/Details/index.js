@@ -109,10 +109,10 @@ const Details = ({ person, people, founders }) => {
               </TeamDetailsDescWrapper>
             </TeamDetailsInfoWrapper>
           </TeamDetailsContainer>
-          <TeamTimelineWrapper>
+          {person?.skills?.length > 0 && person?.experience?.length > 0 && <TeamTimelineWrapper>
             <TeamProgressContainer>
               <Heading variant="newUserHeadings">Skills</Heading>
-              {person?.skills?.map((skill, index) => {
+              {person?.skills?.slice(0, 3)?.map((skill, index) => {
                 return (
                   <ProgressWrapper key={index}>
                     <Typo variant="subHeadingTypo">{skill?.title}</Typo>
@@ -134,7 +134,7 @@ const Details = ({ person, people, founders }) => {
                   <DotContainer></DotContainer>
                 </LineContainer>
                 <TimeLineContainer>
-                  {person?.experience?.map((exp, index) => {
+                  {person?.experience?.slice(0, 2)?.map((exp, index) => {
                     return (
                       <>
                         <Typo
@@ -152,7 +152,7 @@ const Details = ({ person, people, founders }) => {
                 </TimeLineContainer>
               </ContainerOuter>
             </TeamTimelineContainer>
-          </TeamTimelineWrapper>
+          </TeamTimelineWrapper>}
         </TeamDetailsWrapper>
       </Container>
       {people?.length > 0 && (
@@ -179,7 +179,7 @@ const Details = ({ person, people, founders }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.map((data, index) => {
+              {people?.slice(0, 3)?.map((data, index) => {
                 return (
                   <StyledCol md={4} key={index}>
                     <ProfileCard

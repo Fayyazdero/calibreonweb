@@ -4,7 +4,7 @@ import React from "react";
 import CompanyCard from "@/components/CompanyCard";
 
 const departmentsQuery = groq`*[_type == "departments"]`;
-const personQuery = groq`*[_type == "person"]{
+const personQuery = groq`*[_type == "employee"]{
   _id,
   name,
   image,

@@ -5,7 +5,7 @@ import React from 'react';
 
 const departmentQuery = groq`*[_type == "department"]`;
 
-const personQuery = groq`*[_type == "person"]{
+const personQuery = groq`*[_type == "employee"]{
     _id,
     name,
     image,
