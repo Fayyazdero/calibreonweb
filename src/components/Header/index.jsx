@@ -117,7 +117,6 @@ function Header() {
 
   const handleDropdownClick = (e) => {
     e.preventDefault();
-    setIsOpen((prevState) => !prevState);
     router.push("/services");
   };
   const handleClickOnItem = (e, link) => {
@@ -141,12 +140,12 @@ function Header() {
           id="basic-navbar-nav">
           <Nav>
             <Overlay />
-            {navLinks?.map((item) => {
+            {navLinks?.map((item, index) => {
               if (item.dropdown) {
                 return (
                   <>
                     <StyledNavDropdown
-                      key={item._id}
+                      key={index}
                       title={item.title}
                       id="nav-dropdown"
                       className={active == item.link ? "active" : ""}
@@ -201,7 +200,7 @@ function Header() {
                 );
               } else {
                 return (
-                  <LinksWrapper key={item._id}>
+                  <LinksWrapper key={index}>
                     <StyledLink
                       onClick={() => {
                         handleClick(item.link);

@@ -109,7 +109,7 @@ export const NavButtonsWrapperForMobile = styled.div`
 
   & button {
     padding: 8px 20px;
-    font-size: 10px
+    font-size: 6px
   }
 `;
 export const NavButtonsWrapper = styled.div`
