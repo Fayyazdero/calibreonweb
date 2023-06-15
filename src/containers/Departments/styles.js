@@ -21,21 +21,21 @@ export const ServicesHeadingWrapper = styled.div(
   }
 );
 export const TopHeadingWrapper = styled.div(
-  ({ theme: { breakPoints, fontWeights, lineHeights, fontSizes } }) => {
+  ({ theme: { breakPoints, fontWeights, lineHeights, fontSizes, spacing } }) => {
     const sm = breakPoints.sm;
 
     return {
       display: "flex",
       justifyContent: "space-between",
-      paddingBottom: "39px",
-      paddingTop: "39px",
+      paddingBottom: `${spacing * 20}px`,
+      paddingTop: `${spacing * 20}px`,
       alignItems: "center",
       "& p:nth-child(2)": {
         cursor: "pointer",
       },
       [`@media screen and (max-width: ${sm}px)`]: {
-        paddingTop: "48px",
-        paddingBottom: "28px",
+        paddingTop: `${spacing * 24}px`,
+        paddingBottom: `${spacing * 14}px`,
         "& p": {
           fontWeight: fontWeights.semi_bold,
           lineHeight: lineHeights.tabTypo,

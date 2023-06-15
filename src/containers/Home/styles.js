@@ -51,7 +51,7 @@ export const BannerCol = styled(Col)`
   }
 `;
 export const TestimonialWrapper = styled.div`
-padding-top: 116px;
+  padding-top: ${({ theme: { spacing } }) => spacing * 58}px;
   z-index: 1;
   @media (max-width: 992px) {
     padding: 30px 0;
@@ -62,8 +62,8 @@ padding-top: 116px;
 
   & .testinomial {
     @media (max-width: 992px) {
-      padding-top: 5px;
-      padding-bottom: 22px;
+      padding-top: ${({ theme: { spacing } }) => spacing * 3}px;
+      padding-bottom: ${({ theme: { spacing } }) => spacing * 11}px;
       text-align: center !important;
     }
   }
@@ -83,7 +83,7 @@ padding-top: 116px;
   }
 `;
 export const NewsLetterWrapper = styled.div`
-padding: 130px 0;
+  padding: 130px 0;
   @media (max-width: 992px) {
     padding: 42px 0;
   }
@@ -106,15 +106,15 @@ export const StyledContainer = styled.div`
 `;
 export const ContentWrapper = styled.div`
   height: 100%;
- display: flex;
- flex-direction: column;
- justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   & .responsive-image {
     display: none;
     @media (max-width: 992px) {
       display: block;
-      margin-top: 42px;
-      margin-bottom: 30px;
+      margin-top: ${({ theme: { spacing } }) => spacing * 21}px;
+      margin-bottom: ${({ theme: { spacing } }) => spacing * 15}px;
     }
   }
 
@@ -219,8 +219,8 @@ export const Logos = styled.div`
   flex-wrap: wrap;
 
   @media (max-width: 1360px) {
-    row-gap: 55px;
-    column-gap: 60px;
+    row-gap: ${({ theme: { spacing } }) => spacing * 28}px;
+    column-gap: ${({ theme: { spacing } }) => spacing * 30}px;
     justify-content: center;
   }
 `;
@@ -235,7 +235,7 @@ export const ServicesHeadingWrapper = styled.div`
     margin-bottom: -40px;
     & span {
       font-weight: ${({ theme: { fontWeights } }) => fontWeights.bold};
-      font-size:  ${({ theme: { fontSizes } }) => fontSizes.xl};
+      font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
       line-height: ${({ theme: { lineHeights } }) => lineHeights["2xl"]};
     }
   }
@@ -244,12 +244,12 @@ export const ServicesHeadingWrapper = styled.div`
 export const ServiceCard = styled.div`
   position: relative;
   @media (min-width: 992px) {
-    margin-top: 150px;
+    margin-top: ${({ theme: { spacing } }) => spacing * 75}px;
     margin-left: -40px;
   }
 
   @media (max-width: 992px) {
-    margin-left: 30px;
+    margin-left: ${({ theme: { spacing } }) => spacing * 15}px;
 
     & .exUQgV {
       margin-bottom: 0;
@@ -269,7 +269,7 @@ export const ServiceCard = styled.div`
     @media (max-width: 992px) {
       position: absolute;
       bottom: 0;
-      margin-top: 25px;
+      margin-top: ${({ theme: { spacing } }) => spacing * 13}px;
     }
   }
 
@@ -279,7 +279,7 @@ export const ServiceCard = styled.div`
     }
   }
   & h2 {
-    font-size:  ${({ theme: { fontSizes } }) => fontSizes.h2Title} !important;
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.h2Title} !important;
     font-weight: ${({ theme: { fontWeights } }) => fontWeights.bolder};
     line-height: ${({ theme: { lineHeights } }) => lineHeights.newLineHeight};
 
@@ -309,19 +309,19 @@ export const ViewAll = styled.p`
 `;
 export const ServicesWrapper = styled.div`
   background: ${({ theme: { colors } }) => colors.grey};
-  padding-top: 56px;
-  padding-bottom: 36px;
+  padding-top: ${({ theme: { spacing } }) => spacing * 28}px;
+  padding-bottom: ${({ theme: { spacing } }) => spacing * 18}px;
 
   @media (max-width: 992px) {
-    padding-top: 40px;
-    padding-bottom: 16px;
+    padding-top: ${({ theme: { spacing } }) => spacing * 20}px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing * 8}px;
   }
 `;
 export const Banner = styled.div`
-padding-bottom: 110px;
+  padding-bottom: ${({ theme: { spacing } }) => spacing * 55}px;
 
   @media (max-width: 992px) {
-    padding-bottom: 54px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing * 27}px;
   }
 `;
 export const Testinomials = styled.div`
@@ -329,14 +329,13 @@ export const Testinomials = styled.div`
 `;
 
 export const SliderWrapper = styled.div`
-width: 100%;
-display: flex;
-justify-content: end;
+  width: 100%;
+  display: flex;
+  justify-content: end;
 `;
 
 export const SliderCards = styled.div`
-width: 91%;
-
+  width: 91%;
 `;
 export const StyledTitleWrapper = styled.div`
   display: none;
@@ -345,10 +344,10 @@ export const StyledTitleWrapper = styled.div`
     margin: auto;
     display: block;
     h2 {
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 20px !important;
-      line-height: 25px;
+      color: ${({ theme: { colors } }) => colors.white};
+      font-weight: ${({ theme: { fontWeights } }) => fontWeights.bolder};
+      font-size: ${({ theme: { fontSizes } }) => fontSizes.xl}; !important;
+      line-height: ${({ theme: { lineHeights } }) => lineHeights["2xl"]};
     }
   }
 `;
@@ -358,7 +357,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const StyledRow = styled(Row)`
-margin-top: 24px;
+  margin-top: ${({ theme: { spacing } }) => spacing * 12}px;
 `;
 export const TestimonialCol = styled(Col)`
   position: relative;
@@ -379,7 +378,7 @@ export const LearnMore = styled.div`
     align-items: ceimport { contact } from './../../components/Footer/footerData';
 nter;
     justify-content: end;
-    margin-bottom: 96px;
+    margin-bottom: ${({ theme: { spacing } }) => spacing * 48}px;
   }
 `;
 export const NextArrow = styled.div`
@@ -407,15 +406,15 @@ export const ArrowsBg = styled.div`
   border-radius: 50%;
   height: 50px;
   background: ${({ theme: { colors } }) => colors.primary};
-  margin-left: 15px;
+  margin-left: ${({ theme: { spacing } }) => spacing * 8}px;
   cursor: pointer;
 `;
 export const Arrows = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 76px;
+  padding-top: ${({ theme: { spacing } }) => spacing * 38}px;
   @media (max-width: 992px) {
-    padding-top: 36px;
+    padding-top: ${({ theme: { spacing } }) => spacing * 18}px;
   }
 `;
 
@@ -427,20 +426,20 @@ export const LoadingWrapper = styled("div")`
 `;
 
 export const NotificationBanner = styled("div")`
-margin-top: -100px;
-display: flex;
-height: 50px;
-width: 100%;
-align-items: center;
-justify-content: center;
-background-color: #F05B25;
-p {
-color: white
-}
-`
+  margin-top: -100px;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f05b25;
+  p {
+    color: white;
+  }
+`;
 
 export const TypoWrapper = styled(Typo)`
-margin-left: 10px;
-text-decoration: underline;
-cursor: pointer;
-`
+  margin-left: ${({ theme: { spacing } }) => spacing * 5}px;
+  text-decoration: underline;
+  cursor: pointer;
+`;

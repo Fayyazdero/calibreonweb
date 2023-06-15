@@ -38,6 +38,7 @@ export const theme = {
     md: "1rem" /* 16px */,
     xs: "0.95rem" /* 15px */,
     sm: ".875rem" /* 14px */,
+    small: "0.75rem" /*12px */
   },
   fontWeights: {
     black: 900,

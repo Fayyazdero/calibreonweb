@@ -3,12 +3,14 @@ import { Col, Row } from "react-bootstrap";
 
 const { default: styled } = require("styled-components");
 
-export const MainHeading = styled("div")({
-  "@media (max-width: 991px)": {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "9px",
-  },
+export const MainHeading = styled("div")(({ theme: { spacing }}) => {
+  return {
+    "@media (max-width: 991px)": {
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: `${spacing * 5}px`,
+    },
+  }
 });
 export const StyledRow = styled(Row)({
   "@media (max-width: 991px)": {
@@ -29,17 +31,21 @@ export const StyledRow = styled(Row)({
     },
   },
 });
-export const MissionHeading = styled(Heading)({
-  marginTop: "41px",
-  "@media (max-width: 991px)": {
-    textAlign: "center",
-  },
+export const MissionHeading = styled(Heading)(({ theme: { spacing }}) => {
+  return {
+    marginTop: `${spacing * 20}px`,
+    "@media (max-width: 991px)": {
+      textAlign: "center",
+    },
+  }
 });
-export const Content = styled("p")({
-  fontWeight: "500",
-  fontSize: "16px",
-  fontFamily: "Hind Madurai",
-  color: "#4D4D4D",
+export const Content = styled("p")(({ theme: { spacing, colors, fontWeights }}) => {
+  return {
+    fontWeight: fontWeights.normal,
+    fontSize: `${spacing * 8}px`,
+    fontFamily: "Hind Madurai",
+    color: colors.grey,
+  }
 });
 export const MissionImage = styled("div")({
   width: "100%",
@@ -49,12 +55,14 @@ export const MissionImage = styled("div")({
     height: "100%",
   },
 });
-export const ContentWrapper = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  marginTop: "125px",
-  padding: "0 10px",
+export const ContentWrapper = styled("div")(({ theme: { spacing }}) => {
+  return {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: `${spacing * 63}px`,
+    padding: "0 10px",
+  }
 });
 export const StyledHeading = styled(Heading)({
   width: "70%",
@@ -74,16 +82,18 @@ export const FounderHeading = styled("div")({
     display: "grid",
   },
 });
-export const ProfileWrapper = styled("div")({
-  marginTop: "117px",
-  "& .my-custom-class:last-child": {
-    marginTop: "233px",
-  },
-  "@media (max-width: 991px)": {
-    ".my-custom-class:last-child": {
-      marginTop: "1.5rem !important",
+export const ProfileWrapper = styled("div")(({ theme: { spacing }}) => {
+  return {
+    marginTop: `${spacing * 59}px`,
+    "& .my-custom-class:last-child": {
+      marginTop: `${spacing * 117}px`,
     },
-  },
+    "@media (max-width: 991px)": {
+      ".my-custom-class:last-child": {
+        marginTop: "1.5rem !important",
+      },
+    },
+  }
 });
 
 export const LoadingWrapper = styled("div")`
