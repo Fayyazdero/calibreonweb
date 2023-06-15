@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import ProfileCard from "@/components/ProfileCard";
 import { Heading } from "@/components/Heading";
 
-const ViewAll = ({ persons, slug }) => {
+const ViewAll = ({ persons }) => {
   const router = useRouter();
 
   const handleClick = (e, id) => {

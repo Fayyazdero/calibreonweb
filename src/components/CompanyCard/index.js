@@ -113,13 +113,13 @@ const CompanyCard = ({ acc, people }) => {
           <TeamProgressContainer>
             <Heading variant="faqHeading">Services</Heading>
             <NewTeamDetailsDescWrapper>
-              {services?.slice(0, 2)?.map((service, index) => {
+              {services?.slice(0, 2)?.map((service) => {
                 return (
-                  <ListWrapper key={index}>
+                  <ListWrapper key={service._id}>
                     <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                     <ul>
-                      {service?.services?.map((service, index) => {
-                        return <li key={index}>{service}</li>;
+                      {service?.services?.map((service) => {
+                        return <li key={service._id}>{service}</li>;
                       })}
                     </ul>
                   </ListWrapper>
@@ -194,9 +194,9 @@ const CompanyCard = ({ acc, people }) => {
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
-                  {companyInformation?.awards?.map((award, index) => {
+                  {companyInformation?.awards?.map((award) => {
                     return (
-                      <Typo variant="newSubAccountingTypo" key={index}>
+                      <Typo variant="newSubAccountingTypo" key={award._id}>
                         {award}
                       </Typo>
                     );
@@ -241,9 +241,9 @@ const CompanyCard = ({ acc, people }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.slice(0, 3)?.map((data, index) => {
+              {people?.slice(0, 3)?.map((data) => {
                 return (
-                  <StyledCol md={4} key={index}>
+                  <StyledCol md={4} key={data._id}>
                     <ProfileCard
                       key={data?._id}
                       fontSize={15}

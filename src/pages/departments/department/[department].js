@@ -55,11 +55,11 @@ export const getStaticProps = async ({ params }) => {
       p.department[0].title.replace(/\s/g, "").toLowerCase() ==
       queryParams.slug.toLowerCase()
   );
-  return { props: { persons: data, slug: queryParams.slug } };
+  return { props: { persons: data} };
 };
 
-const Index = ({ persons, slug }) => {
-  return <ViewAll persons={persons} slug={slug} />;
+const Index = ({ persons }) => {
+  return <ViewAll persons={persons} />;
 };
 
 Index.layout = true;

@@ -27,53 +27,65 @@ import { CrossIcon, Facebook, Instagram, LinkedIn, Twitter } from "../Svgs";
 
 let navLinks = [
   {
+    id: 1,
     title: "Home",
     link: "/",
   },
   {
+    id: 2,
     title: "About",
     link: "/about",
   },
   {
+    id: 3,
     title: "Services",
     link: "/services",
     dropdown: true,
     dropdownItems: [
       {
+        _id: 1,
         title: "Accounting",
         link: "/services/accounting",
       },
       {
+        _id: 2,
         title: "Animation",
         link: "/services/animation",
       },
       {
+        _id: 3,
         title: "Architecture",
         link: "/services/architecture",
       },
       {
+        _id: 4,
         title: "E Commerce",
         link: "/services/ecommerce",
       },
       {
+        _id: 5,
         title: "Film & Tv",
         link: "/services/filmandtv",
       },
       {
+        _id: 6,
         title: "Web Development",
         link: "/services/webdevelopment",
       },
       {
+        _id: 7,
         title: "Human Resources",
         link: "/services/humanresource",
       },
     ],
   },
   {
+    id: 4,
     title: "Team",
     link: "/departments",
   },
   {
+    id: 5,
     title: "Blog",
     link: "/blog",
   },
@@ -140,12 +152,12 @@ function Header() {
           id="basic-navbar-nav">
           <Nav>
             <Overlay />
-            {navLinks?.map((item, index) => {
+            {navLinks?.map((item) => {
               if (item.dropdown) {
                 return (
                   <>
                     <StyledNavDropdown
-                      key={index}
+                      key={item.id}
                       title={item.title}
                       id="nav-dropdown"
                       className={active == item.link ? "active" : ""}
@@ -153,9 +165,9 @@ function Header() {
                       onMouseEnter={handleDropdownMouseEnter}
                       onMouseLeave={handleDropdownMouseLeave}
                       onClick={(e) => handleDropdownClick(e)}>
-                      {item.dropdownItems?.map((dropdownItem, index) => (
+                      {item.dropdownItems?.map((dropdownItem) => (
                         <StyledDropdownLink
-                          key={index}
+                          key={dropdownItem._id}
                           href={dropdownItem.link}
                           onClick={(e) =>
                             handleClickOnItem(e, dropdownItem.link)
@@ -200,7 +212,7 @@ function Header() {
                 );
               } else {
                 return (
-                  <LinksWrapper key={index}>
+                  <LinksWrapper key={item.id}>
                     <StyledLink
                       onClick={() => {
                         handleClick(item.link);

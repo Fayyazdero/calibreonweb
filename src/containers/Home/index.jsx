@@ -285,8 +285,8 @@ const Home = ({ banner, services }) => {
       <TestimonialLogosWrapper>
         <Container>
           <Logos>
-            {testimonialsLogos.map((item, index) => (
-              <TestimonialLogos key={index}>
+            {testimonialsLogos.map((item) => (
+              <TestimonialLogos key={item.id}>
                 <StyledImage className="logos" src={item.src} alt={item.alt} />
               </TestimonialLogos>
             ))}

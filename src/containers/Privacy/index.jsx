@@ -25,7 +25,7 @@ const Privacy = () => {
             <NavWrapper>
               <Nav variant="pills" className="flex-column">
                 {tabData.map((tab) => (
-                  <Nav.Item key={tab.eventKey}>
+                  <Nav.Item key={tab.id}>
                     <Nav.Link
                       eventKey={tab.eventKey}
                       onClick={() => handleTabClick(tab.eventKey)}
@@ -47,7 +47,7 @@ const Privacy = () => {
             <ContentWrapper className="content-wrapper">
               <Tab.Content>
                 {tabData.map((tab) => (
-                  <Tab.Pane key={tab.eventKey} eventKey={tab.eventKey}>
+                  <Tab.Pane key={tab.id} eventKey={tab.eventKey}>
                     <p>{tab.content}</p>
                   </Tab.Pane>
                 ))}

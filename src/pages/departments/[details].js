@@ -28,22 +28,61 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const queryParams = { slug: params?.details ?? "" };
+
+  const newPersonQuery = groq`*[_type == "employee" && _id == $slug]{
+    _id,
+    name,
+    image,
+    designation,
+    description,
+    department,
+    isCertified,
+    upworkLink,
+    skills[]->{title, skillLevel},
+    experience[]->{workedAt, duration},
+  }`;
   
-  const persons = await client.fetch(personQuery);
-  const user = persons?.filter((user) => user._id == queryParams?.slug);
-  const people = persons
-    ?.filter((p) => {
-      return (
-        p?.department[0].title == user[0]?.department[0]?.title &&
-        p?._id !== user[0]?._id
-      );
-    })
-    ?.slice(0, 3);
+  const employee = await client.fetch(newPersonQuery, { slug: queryParams.slug });
+  const user = employee[0];
+
+  const peopleQuery = groq`*[_type == "employee" && department[0]._ref == $departmentRef && _id != $userId]{
+    _id,
+    name,
+    image,
+    designation,
+    description,
+    department,
+    isCertified,
+    upworkLink,
+    skills[]->{title, skillLevel},
+    experience[]->{workedAt, duration},
+  }[0...3]`;
+  
+  const people = await client.fetch(peopleQuery, {
+    departmentRef: user?.department?.[0]?._ref,
+    userId: user?._id,
+  });
+
+  const personQueryWithTitle = groq`*[_type == "employee" && _id == $slug]{
+    _id,
+    name,
+    image,
+    designation,
+    description,
+    department[]->{title},
+    isCertified,
+    upworkLink,
+    skills[]->{title, skillLevel},
+    experience[]->{workedAt, duration},
+  }`;
+  
+  const personWithTitle = await client.fetch(personQueryWithTitle, { slug: queryParams.slug });
+  const person = personWithTitle[0];
 
   return {
     props: {
       data: {
-        person: user,
+        person,
         people,
       },
     },
@@ -51,7 +90,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Index = ({ data }) => {
-  return <Details person={data?.person?.[0]} people={data?.people} />;
+  return <Details person={data?.person} people={data?.people} />;
 };
 
 Index.layout = true;

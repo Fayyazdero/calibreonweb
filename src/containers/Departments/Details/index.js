@@ -169,9 +169,9 @@ const Details = ({ person, people, founders }) => {
                 style={{ cursor: "pointer" }}
                 onClick={() =>
                   router.push(
-                    `/departments/department/${person?.department[0].title
-                      .replace(/\s/g, "")
-                      .toLowerCase()}`
+                    `/departments/department/${person?.department?.[0]?.title
+                      ?.replace(/\s/g, "")
+                      ?.toLowerCase()}`
                   )
                 }>
                 View All{" "}
