@@ -109,6 +109,7 @@ function Header() {
       setActive(router.pathname);
     }
   }, [router.pathname]);
+  console.log('pathname', router.pathname)
 
   const handleClick = (link) => {
     setActive(link);
@@ -127,10 +128,6 @@ function Header() {
     setDropdownOpen(false);
   };
 
-  const handleDropdownClick = (e) => {
-    e.preventDefault();
-    router.push("/services");
-  };
   const handleClickOnItem = (e, link) => {
     e.preventDefault();
     router.push(link);
@@ -164,7 +161,7 @@ function Header() {
                       show={dropdownOpen}
                       onMouseEnter={handleDropdownMouseEnter}
                       onMouseLeave={handleDropdownMouseLeave}
-                      onClick={(e) => handleDropdownClick(e)}>
+                      >
                       {item.dropdownItems?.map((dropdownItem) => (
                         <StyledDropdownLink
                           key={dropdownItem._id}
