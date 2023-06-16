@@ -115,11 +115,11 @@ const CompanyCard = ({ acc, people }) => {
             <NewTeamDetailsDescWrapper>
               {services?.slice(0, 2)?.map((service) => {
                 return (
-                  <ListWrapper key={service._id}>
+                  <ListWrapper key={service._key}>
                     <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                     <ul>
-                      {service?.services?.map((service) => {
-                        return <li key={service._id}>{service}</li>;
+                      {service?.services?.map((service, index) => {
+                        return <li key={index}>{service}</li>;
                       })}
                     </ul>
                   </ListWrapper>
@@ -194,9 +194,9 @@ const CompanyCard = ({ acc, people }) => {
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
-                  {companyInformation?.awards?.map((award) => {
+                  {companyInformation?.awards?.map((award, index) => {
                     return (
-                      <Typo variant="newSubAccountingTypo" key={award._id}>
+                      <Typo variant="newSubAccountingTypo" key={index }>
                         {award}
                       </Typo>
                     );

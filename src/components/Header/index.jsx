@@ -109,7 +109,6 @@ function Header() {
       setActive(router.pathname);
     }
   }, [router.pathname]);
-  console.log('pathname', router.pathname)
 
   const handleClick = (link) => {
     setActive(link);
