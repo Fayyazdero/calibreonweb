@@ -10,8 +10,8 @@ export const Blog = ({ posts }) => {
         <Heading variant="subHeading" title="Blogs" />
       </Title>
       <Wrapper>
-        {posts?.map((item, key) => (
-          <Item key={key}>
+        {posts?.map((item) => (
+          <Item key={item._id}>
             <BlogCard
               id={item._id}
               author={item.author}

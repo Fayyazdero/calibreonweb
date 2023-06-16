@@ -102,11 +102,11 @@ const About = () => {
           <ProfileWrapper>
             <Row>
               <Col xs={12} sm={12} md={12} lg={4} className="m-auto ">
-                {column1.map((item, key) => (
+                {column1.map((item) => (
                   <ProfileCard
                     variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
                     name={item.name}
                     lastName={item.lastName}
@@ -118,11 +118,11 @@ const About = () => {
               </Col>
 
               <Col xs={12} sm={12} md={12} lg={4} className="m-auto pt-4">
-                {column2.map((item, key) => (
+                {column2.map((item) => (
                   <ProfileCard
                     variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
                     name={item.name}
                     lastName={item.lastName}
@@ -134,11 +134,11 @@ const About = () => {
                 ))}
               </Col>
               <Col xs={12} sm={12} md={12} lg={4} className="m-auto pt-4">
-                {column3.map((item, key) => (
+                {column3.map((item) => (
                   <ProfileCard
                     variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
                     name={item.name}
                     lastName={item.lastName}

@@ -23,10 +23,10 @@ const Faq = () => {
     <Layout>
       <Container>
           <Heading variant="subHeading">FAQs</Heading>
-        {data?.map((item, index) => {
+        {data?.map((item) => {
             const { id, faq, desc } = item;
           return (
-            <FaqWrapper key={index}>
+            <FaqWrapper key={id}>
               <Wrapper>
                 <Heading variant="faqHeading">{faq}</Heading>
                 <Typo variant="mainTypo">{expendedItemId == id ? desc : `${!desc.length > 200 ? desc : desc.substring(0, 180)}...`}</Typo>

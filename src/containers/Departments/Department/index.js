@@ -23,9 +23,9 @@ const ViewAll = ({ persons }) => {
           />
         </TopHeadingWrapper>
         <StyledRow>
-          {persons?.map((data, index) => {
+          {persons?.map((data) => {
             return (
-              <StyledCol md={4} key={index}>
+              <StyledCol md={4} key={data._id}>
                 <ProfileCard
                   key={data._id}
                   fontSize={15}

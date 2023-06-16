@@ -25,7 +25,7 @@ const Team = ({ categorizedUsers, departments }) => {
         let department = departments?.filter((department) => department?.title.replace(/\s/g, "")
         .toLowerCase() == category)
         return (
-          <Container key={category}>
+          <Container key={category.toString()}>
             <TopHeadingWrapper>
               <Typo variant="mainDesc">{department[0]?.title}</Typo>
               <Typo
@@ -40,9 +40,9 @@ const Team = ({ categorizedUsers, departments }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.slice(0, 3)?.map((data, index) => {
+              {people?.slice(0, 3)?.map((data) => {
                   return (
-                    <StyledCol md={4} key={index}>
+                    <StyledCol md={4} key={data?._id}>
                       <ProfileCard
                         onClick={(event) => handleClick(event, data?._id)}
                         variant="secondary"

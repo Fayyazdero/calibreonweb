@@ -31,9 +31,9 @@ const Footer = () => {
           </ColSelected>
           <Col xs={6} md={2}>
             <Title>Menu</Title>
-            {menuData.map((item, key) => {
+            {menuData.map((item) => {
               return (
-                <div key={key}>
+                <div key={item.id}>
                   <NavLinks>
                     <Link href={item.link}>{item.title}</Link>
                   </NavLinks>
@@ -44,9 +44,9 @@ const Footer = () => {
           <Col xs={6} md={2}>
             <NavLinks>
               <Title>Useful Links</Title>
-              {linksData.map((item, key) => {
+              {linksData.map((item) => {
                 return (
-                  <Link key={key} href={item.link}>
+                  <Link key={item.id} href={item.link}>
                     {item.title}
                   </Link>
                 );
@@ -56,9 +56,9 @@ const Footer = () => {
           <Col xs={12} md={3}>
             <NavLinks>
               <Title>Contact</Title>
-              {contact.map((item, key) => {
+              {contact.map((item) => {
                 return (
-                  <Link key={key} href={item.link}>
+                  <Link key={item.id} href={item.link}>
                     {item.title}
                   </Link>
                 );

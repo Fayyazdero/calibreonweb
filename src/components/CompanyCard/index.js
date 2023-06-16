@@ -118,8 +118,8 @@ const CompanyCard = ({ acc, people }) => {
                   <ListWrapper key={service._key}>
                     <Typo variant="newSubDesTypo">{service?.heading}</Typo>
                     <ul>
-                      {service?.services?.map((service, index) => {
-                        return <li key={index}>{service}</li>;
+                      {service?.services?.map((service) => {
+                        return <li key={service.toString()}>{service}</li>;
                       })}
                     </ul>
                   </ListWrapper>
@@ -194,9 +194,9 @@ const CompanyCard = ({ acc, people }) => {
                 </SpacerInfoWrapper>
                 <SpacerInfoWrapper>
                   <Typo variant="subAccountingTypo">Awards</Typo>
-                  {companyInformation?.awards?.map((award, index) => {
+                  {companyInformation?.awards?.map((award) => {
                     return (
-                      <Typo variant="newSubAccountingTypo" key={index }>
+                      <Typo variant="newSubAccountingTypo" key={award.toString()}>
                         {award}
                       </Typo>
                     );

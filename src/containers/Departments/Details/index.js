@@ -112,9 +112,9 @@ const Details = ({ person, people, founders }) => {
           {person?.skills?.length > 0 && person?.experience?.length > 0 && <TeamTimelineWrapper>
             <TeamProgressContainer>
               <Heading variant="newUserHeadings">Skills</Heading>
-              {person?.skills?.slice(0, 3)?.map((skill, index) => {
+              {person?.skills?.slice(0, 3)?.map((skill) => {
                 return (
-                  <ProgressWrapper key={index}>
+                  <ProgressWrapper key={skill?.title.toString()}>
                     <Typo variant="subHeadingTypo">{skill?.title}</Typo>
                     <StyledProgressBar
                       variant="danger"
@@ -140,7 +140,7 @@ const Details = ({ person, people, founders }) => {
                         <Typo
                           variant="subHeadingTypo"
                           className="m-0"
-                          key={index}>
+                          key={exp?.workedAt}>
                           {exp?.workedAt}
                         </Typo>
                         <LineWrapper variant="mainDesc"></LineWrapper>
@@ -179,9 +179,9 @@ const Details = ({ person, people, founders }) => {
               </Typo>
             </TopHeadingWrapper>
             <StyledRow>
-              {people?.slice(0, 3)?.map((data, index) => {
+              {people?.slice(0, 3)?.map((data) => {
                 return (
-                  <StyledCol md={4} key={index}>
+                  <StyledCol md={4} key={data._id}>
                     <ProfileCard
                       key={data._id}
                       variant="secondary"
