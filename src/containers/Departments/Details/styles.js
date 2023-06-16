@@ -67,8 +67,8 @@ export const TeamDetailsImageWrapper = styled.div(
 
     return {  
       "& img": {
-        width: `${spacing * 154}px`,
-        height: `${spacing * 154}px`,
+        width: "308px",
+        height: "308px",
         border: "8px solid #4D4D4D",
         boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
         filter:
@@ -77,11 +77,11 @@ export const TeamDetailsImageWrapper = styled.div(
       },
       [`@media screen and (max-width: ${sm}px)`]: {
         alignItems: "center",
-        width: `${spacing * 104}px`,
-        height: `${spacing * 104}px`,
+        width: "208px",
+        height: "208px",
         "& img": {
-          width: `${spacing * 104}px`,
-          height: `${spacing * 104}px`,
+          width: "208px",
+          height: "208px",
           border: "8px solid #4D4D4D",
           boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
           filter:
