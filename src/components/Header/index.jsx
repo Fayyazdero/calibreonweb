@@ -184,6 +184,7 @@ function Header() {
                         {item.title}
                       </StyledLink>
                     </LinksWrapperMobile>
+                    
                     <NavButtonsWrapperForMobile>
                       <Button
                         className="mx-2"
