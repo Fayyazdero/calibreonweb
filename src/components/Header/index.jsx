@@ -19,7 +19,7 @@ import {
   StyledNavDropdown,
   StyledDropdownLink,
   LinksWrapperMobile,
-  NavButtonsWrapperForMobile
+  NavButtonsWrapperForMobile,
 } from "./styles";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -145,7 +145,8 @@ function Header() {
         />
         <StyledNavbarCollapse
           className="justify-content-center"
-          id="basic-navbar-nav">
+          id="basic-navbar-nav"
+        >
           <Nav>
             <Overlay />
             {navLinks?.map((item) => {
@@ -160,14 +161,15 @@ function Header() {
                       show={dropdownOpen}
                       onMouseEnter={handleDropdownMouseEnter}
                       onMouseLeave={handleDropdownMouseLeave}
-                      >
+                    >
                       {item.dropdownItems?.map((dropdownItem) => (
                         <StyledDropdownLink
                           key={dropdownItem._id}
                           href={dropdownItem.link}
                           onClick={(e) =>
                             handleClickOnItem(e, dropdownItem.link)
-                          }>
+                          }
+                        >
                           {dropdownItem.title}
                         </StyledDropdownLink>
                       ))}
@@ -180,11 +182,11 @@ function Header() {
                         className={`mx-3 text-decoration-none text-dark styled-link ${
                           active === item.link ? "active" : ""
                         }`}
-                        href={item.link}>
+                        href={item.link}
+                      >
                         {item.title}
                       </StyledLink>
                     </LinksWrapperMobile>
-                    
                     <NavButtonsWrapperForMobile>
                       <Button
                         className="mx-2"
@@ -192,7 +194,8 @@ function Header() {
                         onClick={() => {
                           router.push("/enroll-now");
                           setIsOpen((prevState) => !prevState);
-                        }}>
+                        }}
+                      >
                         Enroll Now
                       </Button>
                       <Button
@@ -201,7 +204,8 @@ function Header() {
                         onClick={() => {
                           router.push("/contact-us");
                           setIsOpen((prevState) => !prevState);
-                        }}>
+                        }}
+                      >
                         Contact Us
                       </Button>
                     </NavButtonsWrapperForMobile>
@@ -217,7 +221,8 @@ function Header() {
                       className={`mx-3 text-decoration-none text-dark styled-link ${
                         active === item.link ? "active" : ""
                       }`}
-                      href={item.link}>
+                      href={item.link}
+                    >
                       {item.title}
                     </StyledLink>
                   </LinksWrapper>
@@ -243,13 +248,15 @@ function Header() {
           <Button
             className="mx-2"
             variant="outlined"
-            onClick={() => router.push("/enroll-now")}>
+            onClick={() => router.push("/enroll-now")}
+          >
             Enroll Now
           </Button>
           <Button
             className="mx-2"
             variant="contained"
-            onClick={() => router.push("/contact-us")}>
+            onClick={() => router.push("/contact-us")}
+          >
             Contact Us
           </Button>
         </NavButtonsWrapper>
