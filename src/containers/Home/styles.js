@@ -257,7 +257,7 @@ export const ServiceCard = styled.div`
   }
   & > div {
     position: relative;
-    width: 100%;
+    width: 80%;
 
     @media (max-width: 992px) {
       width: 100%;
@@ -375,8 +375,7 @@ export const LearnMore = styled.div`
   display: none !important;
   @media (max-width: 992px) {
     display: flex !important;
-    align-items: ceimport { contact } from './../../components/Footer/footerData';
-nter;
+    align-items: center;
     justify-content: end;
     margin-bottom: ${({ theme: { spacing } }) => spacing * 48}px;
   }
