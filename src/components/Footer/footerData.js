@@ -11,8 +11,17 @@ export const linksData = [
   { id: 3, title: "FAQ", link: "/faq" },
 ];
 export const contact = [
-  { id: 1, title: "calibreoninternational@gmail.com", link: "/" },
-  { id: 2, title: "Xyz,Block / Street", link: "/" },
-  { id: 3, title: "Area Xyz", link: "/" },
-  { id: 4, title: "City Xyz", link: "/about" },
+  { id: 1, title: "contact@calibreon.com.pk", link: "/" },
+  {
+    id: 2,
+    title: "Building # 03, Talib Shah Residences,",
+    link: "/",
+  },
+  {
+    id: 3,
+    title: "Down Heli Chowk, River View Road, Zulfiqarabad, Jutial Gilgit",
+    link: "/",
+  },
+  { id: 4, title: "+92-5811-555558", link: "/" },
+  { id: 4, title: "+92-5811-555703", link: "/" },
 ];

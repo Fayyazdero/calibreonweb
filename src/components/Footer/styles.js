@@ -10,7 +10,7 @@ export const RowSelected = styled(Row)({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    textAlign: "center"
+    textAlign: "center",
   },
 });
 
@@ -18,11 +18,9 @@ export const ColSelected = styled(Col)({
   "@media (max-width: 768px)": {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
 });
-
-
 
 export const SocialIcons = styled("div")({
   display: "flex",
@@ -51,9 +49,6 @@ export const NavLinks = styled("div")({
     fontWeight: "500",
     margin: "0",
     marginTop: "13px",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
     wordWrap: "break-word",
   },
 });
