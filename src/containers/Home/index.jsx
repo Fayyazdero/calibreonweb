@@ -40,7 +40,7 @@ import {
   SliderWrapper,
   SliderCards,
   NotificationBanner,
-  TypoWrapper
+  TypoWrapper,
 } from "./styles";
 import { testimonialsLogos } from "./homeData";
 import { ArrowLeft, ArrowRight } from "@/components/Svgs";
@@ -76,14 +76,16 @@ const Home = ({ banner, services }) => {
 
   return (
     <>
-      {banner && <NotificationBanner>
-        <Typo variant="mainTypo">
-          {banner.description}
-        </Typo>
-        <TypoWrapper variant="mainTypo" onClick={() => router.push("/enroll-now")}>
-          Enroll Now
-        </TypoWrapper>
-      </NotificationBanner>}
+      {banner && (
+        <NotificationBanner>
+          <Typo variant="mainTypo">{banner.description}</Typo>
+          <TypoWrapper
+            variant="mainTypo"
+            onClick={() => router.push("/enroll-now")}>
+            Enroll Now
+          </TypoWrapper>
+        </NotificationBanner>
+      )}
       <Container>
         <Banner>
           <BannerRow>
@@ -255,12 +257,8 @@ const Home = ({ banner, services }) => {
                   }
                 />
               </Slider>
-              <NextArrow>
-                <ArrowRight
-                  height={"20px"}
-                  color={"#ffffff"}
-                  onClick={onClick}
-                />
+              <NextArrow onClick={onClick}>
+                <ArrowRight height={"20px"} color={"#ffffff"} />
               </NextArrow>
             </TestimonialCol>
 

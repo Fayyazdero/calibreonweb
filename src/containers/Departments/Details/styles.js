@@ -136,6 +136,9 @@ export const TeamProgressContainer = styled.div(
 
     return {
       width: "50%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "spaceBetween",
       "& h2": {
         marginBottom: `${spacing * 10}px`,
       },
