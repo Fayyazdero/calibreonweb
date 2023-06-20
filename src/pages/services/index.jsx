@@ -2,6 +2,7 @@ import Services from "@/containers/Services";
 import React from "react";
 import { groq } from "next-sanity";
 import { client } from "@/pages/index.js";
+import Head from "next/head";
 
 const servicesQuery = groq`*[_type == "services"]`;
 
