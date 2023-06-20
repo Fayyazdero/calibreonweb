@@ -23,5 +23,5 @@ export const contact = [
     link: "/",
   },
   { id: 4, title: "+92-5811-555558", link: "/" },
-  { id: 4, title: "+92-5811-555703", link: "/" },
+  { id: 5, title: "+92-5811-555703", link: "/" },
 ];
