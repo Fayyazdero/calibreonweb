@@ -97,7 +97,7 @@ const Details = ({ person, people, founders }) => {
                   )}
                 {person?.upworkLink && (
                   <DescWrapper>
-                    <Image src={upwork_logo_icon} alt="Upwork logo"></Image>
+                    <Image src={upwork_logo_icon} alt="Upwork logo" />
                     <Typo variant="userDesc" color="#0A66C2">
                       {person?.upworkLink}
                     </Typo>
@@ -109,50 +109,53 @@ const Details = ({ person, people, founders }) => {
               </TeamDetailsDescWrapper>
             </TeamDetailsInfoWrapper>
           </TeamDetailsContainer>
-          {person?.skills?.length > 0 && person?.experience?.length > 0 && <TeamTimelineWrapper>
-            <TeamProgressContainer>
-              <Heading variant="newUserHeadings">Skills</Heading>
-              {person?.skills?.slice(0, 3)?.map((skill) => {
-                return (
-                  <ProgressWrapper key={skill?.title.toString()}>
-                    <Typo variant="subHeadingTypo">{skill?.title}</Typo>
-                    <StyledProgressBar
-                      variant="danger"
-                      now={skill?.skillLevel}
-                      className="progress-value"
-                    />
-                  </ProgressWrapper>
-                );
-              })}
-            </TeamProgressContainer>
-            <TeamTimelineContainer>
-              <Heading variant="newUserHeadings">Experience</Heading>
-              <ContainerOuter>
-                <LineContainer>
-                  <DotContainer></DotContainer>
-                  <VerticalLine></VerticalLine>
-                  <DotContainer></DotContainer>
-                </LineContainer>
-                <TimeLineContainer>
-                  {person?.experience?.slice(0, 2)?.map((exp, index) => {
-                    return (
-                      <>
-                        <Typo
-                          variant="subHeadingTypo"
-                          className="m-0"
-                          key={exp?.workedAt}>
-                          {exp?.workedAt}
-                        </Typo>
-                        <LineWrapper variant="mainDesc"></LineWrapper>
-                        <Typo variant="highlightedTypo">{exp?.duration}</Typo>
-                        {index == 0 && <SpacerContainer></SpacerContainer>}
-                      </>
-                    );
-                  })}
-                </TimeLineContainer>
-              </ContainerOuter>
-            </TeamTimelineContainer>
-          </TeamTimelineWrapper>}
+          {person?.skills?.length > 0 && person?.experience?.length > 0 && (
+            <TeamTimelineWrapper>
+              <TeamProgressContainer>
+                <Heading variant="newUserHeadings">Skills</Heading>
+                {person?.skills?.slice(0, 3)?.map((skill) => {
+                  return (
+                    <ProgressWrapper key={skill?.title.toString()}>
+                      <Typo variant="subHeadingTypo">{skill?.title}</Typo>
+                      <StyledProgressBar
+                        variant="danger"
+                        now={skill?.skillLevel}
+                        className="progress-value"
+                      />
+                    </ProgressWrapper>
+                  );
+                })}
+              </TeamProgressContainer>
+              <TeamTimelineContainer>
+                <Heading variant="newUserHeadings">Experience</Heading>
+                <ContainerOuter>
+                  <LineContainer>
+                    <DotContainer></DotContainer>
+                    <VerticalLine></VerticalLine>
+                    <DotContainer></DotContainer>
+                  </LineContainer>
+                  <TimeLineContainer>
+                    {person?.experience?.slice(0, 2)?.map((exp, index) => {
+                      return (
+                        <>
+                          <Typo
+                            variant="subHeadingTypo"
+                            className="m-0"
+                            key={exp?.workedAt}
+                          >
+                            {exp?.workedAt}
+                          </Typo>
+                          <LineWrapper variant="mainDesc"></LineWrapper>
+                          <Typo variant="highlightedTypo">{exp?.duration}</Typo>
+                          {index == 0 && <SpacerContainer></SpacerContainer>}
+                        </>
+                      );
+                    })}
+                  </TimeLineContainer>
+                </ContainerOuter>
+              </TeamTimelineContainer>
+            </TeamTimelineWrapper>
+          )}
         </TeamDetailsWrapper>
       </Container>
       {people?.length > 0 && (
@@ -161,7 +164,8 @@ const Details = ({ person, people, founders }) => {
             <TopHeadingWrapper>
               <Typo
                 className="mainDescHighlighted"
-                variant="mainDescHighlightedTypo">
+                variant="mainDescHighlightedTypo"
+              >
                 {person?.department?.[0]?.title}
               </Typo>
               <Typo
@@ -173,7 +177,8 @@ const Details = ({ person, people, founders }) => {
                       ?.replace(/\s/g, "")
                       ?.toLowerCase()}`
                   )
-                }>
+                }
+              >
                 View All{" "}
                 <ArrowRight className="mx-2" height="22px" color="white" />
               </Typo>

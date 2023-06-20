@@ -1,21 +1,23 @@
 import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 
-export const TopHeadingWrapper = styled.div(({ theme: { breakPoints, spacing } }) => {
-  const sm = breakPoints.sm;
+export const TopHeadingWrapper = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingBottom: `${spacing * 15}px`,
-    paddingTop: `${spacing * 15}px`,
-    alignItems: "center",
-    [`@media screen and (max-width: ${sm}px)`]: {
-      paddingTop: `${spacing * 23}px`,
-      paddingBottom: `${spacing * 12}px`,
-    },
-  };
-});
+    return {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingBottom: `${spacing * 15}px`,
+      paddingTop: `${spacing * 15}px`,
+      alignItems: "center",
+      [`@media screen and (max-width: ${sm}px)`]: {
+        paddingTop: `${spacing * 23}px`,
+        paddingBottom: `${spacing * 12}px`,
+      },
+    };
+  }
+);
 export const TeamDetailsHeadingWrapper = styled.div(
   ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
@@ -32,21 +34,25 @@ export const TeamDetailsHeadingWrapper = styled.div(
   }
 );
 
-export const TeamDetailsWrapper = styled.div(({ theme: { breakPoints, fontWeights, lineHeights, fontSizes, spacing } }) => {
-  const sm = breakPoints.sm;
+export const TeamDetailsWrapper = styled.div(
+  ({
+    theme: { breakPoints, fontWeights, lineHeights, fontSizes, spacing },
+  }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    "& .newTypo": {
-      marginBottom: `${spacing * 30}px`,
-      [`@media screen and (max-width: ${sm}px)`]: {
-        textAlign: "center",
-        fontWeight: fontWeights.semi_bold,
-        lineHeight: lineHeights.desc,
-        fontSize: fontSizes.md
+    return {
+      "& .newTypo": {
+        marginBottom: `${spacing * 30}px`,
+        [`@media screen and (max-width: ${sm}px)`]: {
+          textAlign: "center",
+          fontWeight: fontWeights.semi_bold,
+          lineHeight: lineHeights.desc,
+          fontSize: fontSizes.md,
+        },
       },
-    },
-  };
-});
+    };
+  }
+);
 
 export const TeamDetailsContainer = styled.div(({ theme: { breakPoints } }) => {
   const sm = breakPoints.sm;
@@ -65,7 +71,7 @@ export const TeamDetailsImageWrapper = styled.div(
   ({ theme: { breakPoints, spacing } }) => {
     const sm = breakPoints.sm;
 
-    return {  
+    return {
       "& img": {
         width: "308px",
         height: "308px",
@@ -107,14 +113,9 @@ export const TeamDetailsInfoWrapper = styled.div(
   }
 );
 
-export const TeamDetailsDescWrapper = styled.div(
-  () => {
-
-    return {
-      textAlign: "justify",
-    };
-  }
-);
+export const TeamDetailsDescWrapper = styled.div`
+  text-align: justify;
+`;
 
 export const TeamTimelineWrapper = styled.div(({ theme: { breakPoints } }) => {
   const sm = breakPoints.sm;
@@ -281,9 +282,10 @@ export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
   return {
     display: "flex",
     margin: "20px 0",
-    fontFamily: 'Hind Madurai',
+    fontFamily: "Hind Madurai",
+    alignItems: "center",
     "& img": {
-      marginRight: '10px',
+      marginRight: "10px",
     },
 
     [`@media screen and (max-width: ${sm}px)`]: {
@@ -292,40 +294,44 @@ export const DescWrapper = styled.div(({ theme: { breakPoints } }) => {
   };
 });
 
-export const ProfileTitle = styled.div(({ theme: { breakPoints, spacing } }) => {
-  const sm = breakPoints.sm;
+export const ProfileTitle = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    display: "flex",
-    flexDirection: "column",
-    margin: "0 0 0 0",
-    [`@media screen and (max-width: ${sm}px)`]: {
-      alignItems: "center",
-      "& h2": {
-        padding: `${spacing * 15}px`,
+    return {
+      display: "flex",
+      flexDirection: "column",
+      margin: "0 0 0 0",
+      [`@media screen and (max-width: ${sm}px)`]: {
+        alignItems: "center",
+        "& h2": {
+          padding: `${spacing * 15}px`,
+        },
       },
-    },
-  };
-});
+    };
+  }
+);
 
-export const Certification = styled.div(({ theme: { breakPoints, spacing } }) => {
-  const sm = breakPoints.sm;
+export const Certification = styled.div(
+  ({ theme: { breakPoints, spacing } }) => {
+    const sm = breakPoints.sm;
 
-  return {
-    width: "267px",
-    display: "flex",
-    alignItems: "center",
-    marginBottom: `${spacing * 13}px`,
-    "& img": {
-      objectFit: "cover",
-      width: "100%",
-      height: "100%",
-    },
-    [`@media screen and (max-width: ${sm}px)`]: {
-      justifyContent: "center",
-    },
-  };
-});
+    return {
+      width: "267px",
+      display: "flex",
+      alignItems: "center",
+      marginBottom: `${spacing * 13}px`,
+      "& img": {
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+      },
+      [`@media screen and (max-width: ${sm}px)`]: {
+        justifyContent: "center",
+      },
+    };
+  }
+);
 
 export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
   const sm = breakPoints.sm;
@@ -339,7 +345,7 @@ export const SubTitle = styled.div(({ theme: { breakPoints }, fontSize }) => {
     letterSpacing: "-2.2%",
     margin: "0",
     [`@media screen and (max-width: ${sm}px)`]: {
-      lineHeight: "150%"
+      lineHeight: "150%",
     },
   };
 });
