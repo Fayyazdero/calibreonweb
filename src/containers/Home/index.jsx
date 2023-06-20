@@ -150,34 +150,47 @@ const Home = ({ banner, services }) => {
                   },
                 },
               ]}>
-              {services?.map((item) => {
-                return (
-                  <>
-                    <ServiceCard
-                      key={item._id}
-                      onClick={() =>
-                        router.push(
-                          `/services/${String(item.title)
-                            .replace(/\s/g, "")
-                            .toLocaleLowerCase()}`
-                        )
-                      }>
-                      <Accounting
-                        image={item?.image}
-                        variant={item.variant || "primary"}
-                        subCategoryOne={item.subCategoryOne}
-                        subCategoryTwo={item.subCategoryTwo}
-                        subCategoryThree={item.subCategoryThree}
-                        alt={"image"}
-                        category={item.title}
-                      />
-                    </ServiceCard>
-                    <StyledTitleWrapper>
-                      <StyledTitle>{item.title}</StyledTitle>
-                    </StyledTitleWrapper>
-                  </>
-                );
-              })}
+              {services
+                ?.sort((a, b) => {
+                  const titleA = a.title.toLowerCase();
+                  const titleB = b.title.toLowerCase();
+
+                  if (titleA < titleB) {
+                    return -1;
+                  }
+                  if (titleA > titleB) {
+                    return 1;
+                  }
+                  return 0;
+                })
+                ?.map((item) => {
+                  return (
+                    <>
+                      <ServiceCard
+                        key={item._id}
+                        onClick={() =>
+                          router.push(
+                            `/services/${String(item.title)
+                              .replace(/\s/g, "")
+                              .toLocaleLowerCase()}`
+                          )
+                        }>
+                        <Accounting
+                          image={item?.image}
+                          variant={item.variant || "primary"}
+                          subCategoryOne={item.subCategoryOne}
+                          subCategoryTwo={item.subCategoryTwo}
+                          subCategoryThree={item.subCategoryThree}
+                          alt={"image"}
+                          category={item.title}
+                        />
+                      </ServiceCard>
+                      <StyledTitleWrapper>
+                        <StyledTitle>{item.title}</StyledTitle>
+                      </StyledTitleWrapper>
+                    </>
+                  );
+                })}
             </Slider>
           </SliderCards>
         </SliderWrapper>

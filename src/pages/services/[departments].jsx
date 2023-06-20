@@ -22,7 +22,7 @@ export const getStaticPaths = async () => {
   const res = await client.fetch(groq`*[_type == "departments"]`);
 
   const paths = res?.map((department) => {
-    let category = department?.department;
+    let category = department[0]?.title;
     return {
       params: {
         departments: String(category).replace(/\s/g, "").toLowerCase(),
@@ -38,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
   const departments = await client.fetch(departmentsQuery);
   let department = departments?.filter((d) => {
     return (
-      d.department.replace(/\s/g, "").toLowerCase() ==
+      d.department[0]?.title.replace(/\s/g, "").toLowerCase() ==
       queryParams.slug.toLowerCase()
     );
   });
