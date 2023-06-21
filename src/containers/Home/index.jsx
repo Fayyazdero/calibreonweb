@@ -81,7 +81,8 @@ const Home = ({ banner, services }) => {
           <Typo variant="mainTypo">{banner.description}</Typo>
           <TypoWrapper
             variant="mainTypo"
-            onClick={() => router.push("/enroll-now")}>
+            onClick={() => router.push("/enroll-now")}
+          >
             Enroll Now
           </TypoWrapper>
         </NotificationBanner>
@@ -99,7 +100,8 @@ const Home = ({ banner, services }) => {
                 <Heading
                   className="main-heading"
                   title="Calibreon International"
-                  variant="mainHeading">
+                  variant="mainHeading"
+                >
                   Grow with{" "}
                 </Heading>
                 <Typo variant="mainTypo" className="main-typo my-4">
@@ -149,8 +151,12 @@ const Home = ({ banner, services }) => {
                     slidesToScroll: 1,
                   },
                 },
-              ]}>
-              {services?.map((item) => {
+              ]}
+            >
+              {services?.map((item, index) => {
+                const isIndex = index + 1;
+                const isEvenIndex = isIndex % 2 === 0;
+                const evenClass = isEvenIndex ? "even" : "";
                 return (
                   <>
                     <ServiceCard
@@ -161,8 +167,10 @@ const Home = ({ banner, services }) => {
                             .replace(/\s/g, "")
                             .toLocaleLowerCase()}`
                         )
-                      }>
+                      }
+                    >
                       <Accounting
+                        className={evenClass}
                         image={item?.image}
                         variant={item.variant || "primary"}
                         subCategoryOne={item.subCategoryOne}

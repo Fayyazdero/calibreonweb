@@ -265,6 +265,11 @@ export const ServiceCard = styled.div`
     }
   }
 
+  & .even {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
   & .text-content {
     @media (max-width: 992px) {
       position: absolute;

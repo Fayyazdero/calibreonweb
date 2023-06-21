@@ -1,73 +1,84 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")(({ theme: { colors, breakPoints }, variant }) => ({
-  color: "#FFFFFF",
-  border: `3px solid ${variant == "primary" ? colors.primary : variant === 'secondary' ? colors.grey : colors.primary}`,
-  borderRadius: "19px",
-  padding: "20px",
-  background: variant == "primary" ? "#F05B25" : "#4D4D4D",
-  cursor: "pointer",
-  transition: ".3s ease",
-  width: "auto",
-  height: "496px",
-  overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    marginBottom: "28px",
-  "&:hover": {
-    color: `${variant == "primary" ? colors.primary : colors.grey}`,
-    background: `${variant == "primary" || variant == 'secondary' ? colors.white : colors.primary}`,
-    h2: {
-      color: `${variant == "primary" ? colors.primary : colors.grey}`,
-    },
-    p: {
-      color: `${variant == "primary" ? colors.primary : colors.grey}`,
-    },
-    "svg path": {
-      fill: `${variant == "primary" ? colors.primary : colors.grey}`,
-    },
-    h4: {
-      color: `${variant == "primary" ? colors.primary : colors.grey}`
-    }
-  },
-  [`@media screen and (max-width: ${ breakPoints.sm }px)`]: {
-    background: variant == "primary" ? "#F05B25" : "#4D4D4D",
+const Wrapper = styled("div")(
+  ({ theme: { colors, breakPoints }, variant }) => ({
     color: "#FFFFFF",
+    border: `3px solid ${
+      variant == "primary"
+        ? colors.primary
+        : variant === "secondary"
+        ? colors.grey
+        : colors.primary
+    }`,
     borderRadius: "19px",
-    paddingBottom: "28px",
-    marginBottom: "48px",
-    width: "100%",
-    height: "496px"
-  },
-}));
+    padding: "20px",
+    background: variant == "primary" ? "#F05B25" : "#4D4D4D",
+    cursor: "pointer",
+    transition: ".3s ease",
+    width: "auto",
+    height: "496px",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    marginBottom: "28px",
+    "&:hover": {
+      color: `${variant == "primary" ? colors.primary : colors.grey}`,
+      background: `${
+        variant == "primary" || variant == "secondary"
+          ? colors.white
+          : colors.primary
+      }`,
+      h2: {
+        color: `${variant == "primary" ? colors.primary : colors.grey}`,
+      },
+      p: {
+        color: `${variant == "primary" ? colors.primary : colors.grey}`,
+      },
+      "svg path": {
+        fill: `${variant == "primary" ? colors.primary : colors.grey}`,
+      },
+      h4: {
+        color: `${variant == "primary" ? colors.primary : colors.grey}`,
+      },
+    },
+    [`@media screen and (max-width: ${breakPoints.sm}px)`]: {
+      background: variant == "primary" ? "#F05B25" : "#4D4D4D",
+      color: "#FFFFFF",
+      borderRadius: "19px",
+      paddingBottom: "28px",
+      marginBottom: "48px",
+      width: "100%",
+      height: "496px",
+    },
+  })
+);
 
 export const ProfileHeader = styled.div((props) => {
   return {
     display: "flex",
     [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
-      flexDirection: 'column'
-    }
+      flexDirection: "column",
+    },
   };
 });
 
 export const ProfileTitle = styled.div((props) => {
- 
   return {
     display: "flex",
     flexDirection: "column",
-    marginLeft: '20px',
-    display: 'flex',
-    justifyContent: 'center',
-   
+    marginLeft: "20px",
+    display: "flex",
+    justifyContent: "center",
+
     [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       lineBreak: "anywhere",
       fontSize: "38px",
     },
     [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
-      alignItems: 'center ',
+      alignItems: "center ",
       lineBreak: "anywhere",
       fontSize: "38px",
       "& h2": {
-        lineHeight: "90%"
+        lineHeight: "90%",
       },
     },
   };
@@ -86,9 +97,9 @@ export const ProfileImage = styled.div((props) => {
     },
 
     [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginBottom: '20px',
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: "20px",
       "& img": {
         width: "140px",
         height: "140px",
@@ -138,8 +149,8 @@ export const VerifiedLogo = styled("div")({
 
 export const Content = styled.div((props) => {
   return {
-   marginTop: '20px',
-   fontFamily: 'Hind Madurai',
+    marginTop: "20px",
+    fontFamily: "Hind Madurai",
     textAlign: "justify",
     [`@media screen and (max-width: ${props.theme.breakPoints.sm}px)`]: {
       fontWeight: "500",

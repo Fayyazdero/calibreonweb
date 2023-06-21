@@ -10,7 +10,7 @@ import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
 import { client } from "../../../pages/index";
-import imageUrlBuilder from '@sanity/image-url';
+import imageUrlBuilder from "@sanity/image-url";
 
 const Accounting = ({
   image,
@@ -22,16 +22,21 @@ const Accounting = ({
   category,
   children,
   onClick,
+  className,
   ...rest
 }) => {
-
   const builder = imageUrlBuilder(client);
 
   const urlFor = (source) => {
-    return builder.image(source)
-  }
+    return builder.image(source);
+  };
   return (
-    <Wrapper {...rest} onClick={onClick} variant={variant}>
+    <Wrapper
+      {...rest}
+      onClick={onClick}
+      variant={variant}
+      className={className}
+    >
       <ImageWrapper>
         <Image src={`${urlFor(image).url()}`} alt={"Image"} fill />
       </ImageWrapper>

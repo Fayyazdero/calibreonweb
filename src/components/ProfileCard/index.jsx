@@ -42,6 +42,7 @@ const ProfileCard = ({
             alt={"Image"}
             width={161}
             height={161}
+            layout="responsive"
           />
         </ProfileImage>
         <ProfileTitle>
