@@ -63,7 +63,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Index = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Head>
