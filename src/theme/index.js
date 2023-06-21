@@ -7,6 +7,7 @@ export const theme = {
     sm: 992,
     md: 1024,
     lg: 1360,
+    mg: 1400,
     xl: 1920,
   },
   colors: {

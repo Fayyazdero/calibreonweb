@@ -84,7 +84,20 @@ export const ProfileImage = styled.div((props) => {
         "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
       borderRadius: "4px",
     },
-
+[`@media screen and (max-width: ${props.theme.breakPoints.mg}px)`]: {
+      display: 'flex',
+      justifyContent: 'center',
+      marginBottom: '20px',
+      "& img": {
+        width: "110px",
+        height: "110px",
+        border: "8px solid #FFFFFF",
+        boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.2)",
+        filter:
+          "drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.08)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1))",
+        borderRadius: "4px",
+      },
+    },
     [`@media screen and (max-width: ${props.theme.breakPoints.lg}px)`]: {
       display: 'flex',
       justifyContent: 'center',
