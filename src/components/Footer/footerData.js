@@ -1,18 +1,27 @@
 export const menuData = [
-  { title: "Home", link: "/home" },
-  { title: "Blogs", link: "/blogs" },
-  { title: "Services", link: "/services" },
-  { title: "About Us", link: "/about-us" },
-  { title: "Certification", link: "/certification" },
+  { id: 1, title: "Home", link: "/home" },
+  { id: 2, title: "Blogs", link: "/blogs" },
+  { id: 3, title: "Services", link: "/services" },
+  { id: 4, title: "About Us", link: "/about" },
+  { id: 5, title: "Certification", link: "/privacy" },
 ];
 export const linksData = [
-  { title: "Term Of Service", link: "/" },
-  { title: "Privacy Policy", link: "/" },
-  { title: "FAQ", link: "/faq" },
+  { id: 1, title: "Term Of Services", link: "/privacy" },
+  { id: 2, title: "Privacy Policy", link: "/privacy" },
+  { id: 3, title: "FAQ", link: "/faq" },
 ];
 export const contact = [
-  { title: "calibreoninternational@gmail.com", link: "/" },
-  { title: "Xyz,Block / Street", link: "/" },
-  { title: "Area Xyz", link: "/" },
-  { title: "City Xyz", link: "/about-us" },
+  { id: 1, title: "contact@calibreon.com.pk", link: "/" },
+  {
+    id: 2,
+    title: "Building # 03, Talib Shah Residences,",
+    link: "/",
+  },
+  {
+    id: 3,
+    title: "Down Heli Chowk, River View Road, Zulfiqarabad, Jutial Gilgit",
+    link: "/",
+  },
+  { id: 4, title: "+92-5811-555558", link: "/" },
+  { id: 5, title: "+92-5811-555703", link: "/" },
 ];

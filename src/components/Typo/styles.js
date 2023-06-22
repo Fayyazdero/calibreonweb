@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Text = styled.p(({ variant, theme: { typo, breakPoints } }) => {
-  const xs = breakPoints.xs;
-  const fontSize = typo[variant].xs.fontSize;
-
+  const sm = breakPoints.sm;
   return {
+    fontFamily: 'Hind Madurai',
     color: `${typo[variant].color}`,
     fontSize: `${typo[variant].fontSize}`,
     fontWeight: `${typo[variant].fontWeight}`,
-    [`@media screen and (max-width: ${xs}px)`]: {
-      fontSize,
-      textAlign: "center",
-      marginBottom: "10px"
-    }
+    margin: "0",
+    [`@media screen and (max-width:${sm}px)`]: {
+      fontSize: typo[variant].xs.fontSize,
+      lineHeight: typo[variant].xs.lineHeight,
+      marginBottom: "10px",
+    },
   };
 });

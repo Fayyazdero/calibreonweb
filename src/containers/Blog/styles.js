@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     column-count: 2;
-    column-gap: 68px;
+    column-gap: ${({ theme: { spacing } }) => spacing * 34}px;
     column-fill: balance;
     @media(max-width:992px){
         column-count: 1;
@@ -20,7 +20,7 @@ export const Item = styled.div`
     }
 `
 export const Title = styled.div`
-    margin-bottom: 72px;
+    margin-bottom: ${({ theme: { spacing } }) => spacing * 36}px;
     width: 292px;
     div {
         width: 100%;
@@ -39,3 +39,10 @@ export const Title = styled.div`
         }
     }
 `
+
+export const LoadingWrapper = styled("div")`
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+`;

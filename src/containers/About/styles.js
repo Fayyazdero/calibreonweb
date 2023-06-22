@@ -1,71 +1,104 @@
-import { Col } from "react-bootstrap";
-import styled from "styled-components";
+import { Heading } from "@/components/Heading";
+import { Col, Row } from "react-bootstrap";
 
-// export const HeroSection = styled(Col)({
-//   marginTop: "90px",
+const { default: styled } = require("styled-components");
 
-//   .responsive-heading
-//   " @media screen and (max-width: 768px)": {
-//     width: "100%",
-//     margin: "148px 0",
-//   },
-
-// });
-
-export const HeroSection = styled(Col)`
-  margin-top: "90px";
-
-  & .responsive-heading {
-    display: none;
+export const MainHeading = styled("div")(({ theme: { spacing }}) => {
+  return {
+    "@media (max-width: 991px)": {
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: `${spacing * 5}px`,
+    },
   }
-  
-  @media screen and (max-width: 768px): {
-    .responsive-heading {
-      display: block !important;
-    }
-    
+});
+export const StyledRow = styled(Row)({
+  "@media (max-width: 991px)": {
+    flexDirection: "column-reverse",
   },
-`;
 
-export const Content = styled("p")({
-  fontWeight: "500",
-  fontSize: "16px",
-  fontFamily: "Hind Madurai",
-  color: "#4D4D4D",
+  ".main-heading": {
+    display: "block",
+    "@media (max-width: 991px)": {
+      display: "none",
+    },
+  },
+
+  ".responsive-heading": {
+    display: "none",
+    "@media (max-width: 991px)": {
+      display: "block",
+    },
+  },
+});
+export const MissionHeading = styled(Heading)(({ theme: { spacing }}) => {
+  return {
+    marginTop: `${spacing * 20}px`,
+    "@media (max-width: 991px)": {
+      textAlign: "center",
+    },
+  }
+});
+export const Content = styled("p")(({ theme: { spacing, colors, fontWeights }}) => {
+  return {
+    fontWeight: fontWeights.normal,
+    fontSize: `${spacing * 8}px`,
+    fontFamily: "Hind Madurai",
+    color: colors.grey,
+  }
 });
 export const MissionImage = styled("div")({
   width: "100%",
-  height: "100%",
+  height: "535px",
   "& img": {
     width: "100%",
     height: "100%",
   },
 });
-export const StyledContainer = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  marginTop: "125px",
-  padding: "0 10px",
-  width: "55%",
-  marginLeft: "auto",
-  marginRight: "auto",
-
-  " @media screen and (max-width: 768px)": {
+export const ContentWrapper = styled("div")(({ theme: { spacing }}) => {
+  return {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: `${spacing * 63}px`,
+    padding: "0 10px",
+  }
+});
+export const StyledHeading = styled(Heading)({
+  width: "70%",
+  "@media (max-width: 991px)": {
     width: "100%",
-    margin: "148px 0",
   },
 });
 export const FounderSection = styled("div")({
   margin: "120px 0",
 });
-export const ProfileWrapper = styled("div")({
-  marginTop: "117px",
-  "& .card-direction .sc-beqWaB:last-child": {
-    marginTop: "233px",
-  },
-  "@media (max-width: 767px)": {
-    ".my-custom-class:last-child": {
-      marginTop: "1.5rem !important",
-    },
+export const FounderHeading = styled("div")({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  textAlign: "center",
+  h2: {
+    display: "grid",
   },
 });
+export const ProfileWrapper = styled("div")(({ theme: { spacing }}) => {
+  return {
+    marginTop: `${spacing * 59}px`,
+    "& .my-custom-class:last-child": {
+      marginTop: `${spacing * 117}px`,
+    },
+    "@media (max-width: 991px)": {
+      ".my-custom-class:last-child": {
+        marginTop: "1.5rem !important",
+      },
+    },
+  }
+});
+
+export const LoadingWrapper = styled("div")`
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+`;

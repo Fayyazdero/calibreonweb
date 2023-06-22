@@ -5,9 +5,7 @@ import { Main } from "./styles";
 const Layout = ({ children }) => (
   <>
     <Header />
-    <Main>
-      {children}
-    </Main>
+    <Main>{children}</Main>
     <Footer />
   </>
 );

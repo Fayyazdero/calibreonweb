@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledButton } from "./styles";
 
-const Button = ({ children, padding, variant, ...args }) => {
+const Button = ({ children, btnClass, variant, ...args }) => {
   return (
-    <StyledButton variant={variant} {...args} padding={padding}>
+    <StyledButton variant={variant} {...args}>
       {children}
     </StyledButton>
   );

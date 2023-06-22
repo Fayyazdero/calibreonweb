@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")(({ theme }) => ({
-  background: theme.colors.grey,
+const Wrapper = styled("div")(({ theme: { colors }, variant }) => ({
+  background: colors.grey,
   display: "flex",
   height: "304px",
   borderRadius: "20px",
@@ -9,9 +9,21 @@ const Wrapper = styled("div")(({ theme }) => ({
   marginTop: "4rem",
   justifyContent: "space-between",
   alignItems: "center",
-
-  "@media screen and (max-width: 768px)": {
-    flexDirection: "column",
+  transition: ".3s ease",
+  cursor: "pointer",
+  border: `2px solid ${colors[variant] || colors.primary}`,
+  "&:hover": {
+    color: `${colors[variant] || colors.primary}`,
+    background: "transparent",
+    h2: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    p: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    "svg path": {
+      fill: `${colors[variant] || colors.primary}`,
+    },
   },
 }));
 
@@ -21,7 +33,7 @@ export const ImageWrapper = styled("div")({
   position: "relative",
   bottom: "26.7%",
 
-  "@media screen and (max-width: 768px)": {
+  "@media screen and (max-width: 992px)": {
     width: "100%",
     height: "100%",
     position: "relative",

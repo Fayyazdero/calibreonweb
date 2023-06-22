@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.h2(
   ({ variant, theme: { heading, breakPoints } }) => {
-    const xs = breakPoints.xs;
+    const sm = breakPoints.sm;
     const fontSize = heading[variant]["xs"]
       ? heading[variant]["xs"].fontSize
       : heading[variant].fontSize;
     const lineHeight = heading[variant]["xs"]
-      ? heading[variant]["xs"].fontSize
-      : heading[variant].fontSize;
+      ? heading[variant]["xs"].lineHeight
+      : heading[variant].lineHeight;
+
     return {
       fontSize: `${heading[variant].fontSize}`,
       color: `${heading[variant].color}`,
@@ -18,7 +19,7 @@ export const StyledHeading = styled.h2(
       lineHeight: `${heading[variant].lineHeight}`,
       textAlign: `${variant === "quotes" && "center"}`,
 
-      [`@media screen and (max-width: ${xs}px)`]: {
+      [`@media screen and (max-width: ${sm}px)`]: {
         fontSize,
         lineHeight,
       },
@@ -26,25 +27,39 @@ export const StyledHeading = styled.h2(
   }
 );
 
-export const ColouredHeading = styled.span(({ theme: { colors } }) => ({
-  color: colors.primary,
+export const ColouredHeading = styled.span(({ color, theme: { colors } }) => ({
+  fontFamily: 'Montserrat',
+  color: `${color ? color : colors.primary}`,
 }));
 
 export const SubHeadingWrapper = styled.div(
-  ({ theme: { breakPoints, colors } }) => {
-    const xs = breakPoints.xs;
+  ({ variant, theme: { breakPoints, colors, heading } }) => {
+    const sm = breakPoints.sm;
+    const fontSize = heading[variant]["xs"]
+      ? heading[variant]["xs"].fontSize
+      : heading[variant].fontSize;
+
+    const lineHeight = heading[variant]["xs"]
+      ? heading[variant]["xs"].lineHeight
+      : heading[variant].lineHeight;
 
     return {
+      fontSize: `${heading[variant].fontSize}`,
+      fontWeight: `${heading[variant].fontWeight}`,
+      lineHeight: `${heading[variant].lineHeight}`,
       width: "max-content",
       borderBottom: `3px solid ${colors.primary}`,
-      [`@media screen and (max-width: ${xs}px)`]: {
-        width: "87px",
+      [`@media screen and (max-width: ${sm}px)`]: {
+        width: "max-content",
         textAlign: "center",
         margin: "auto",
         display: "flex",
         justifyContent: "center",
         marginBottom: "9px",
-        borderBottom: `1.25px solid ${colors.primary}`,
+        borderBottom: `3px solid ${colors.primary}`,
+        fontWeight: "900",
+        fontSize,
+        lineHeight,
       },
     };
   }

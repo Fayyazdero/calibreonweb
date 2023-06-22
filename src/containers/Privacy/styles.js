@@ -19,23 +19,31 @@ export const StyledContainer = styled(Container)`
   }
 `;
 
-export const NavWrapper = styled("div")({
-  borderRight: "1px solid #F05B25",
-  paddingRight: "10px",
-  marginTop: "77px",
-  "& a": {
-    padding: "0",
-    marginBottom: "27px",
-  },
-  "& .nav-link.active": {
-    fontWeight: "500",
-    backgroundColor: "inherit",
-  },
+export const NavWrapper = styled("div")(
+  ({ theme: { spacing, fontWeights } }) => {
+    return {
+      borderRight: "1px solid #F05B25",
+      paddingRight: `${spacing * 5}px`,
+      marginTop: `${spacing * 39}px`,
+      "& a": {
+        padding: "0",
+        marginBottom: `${spacing * 14}px`,
+      },
+      "& .nav-link.active": {
+        fontWeight: fontWeights.normal,
+        backgroundColor: "inherit",
+      },
+    };
+  }
+);
+export const TitleWrapper = styled("div")(({ theme: { spacing } }) => {
+  return {
+    marginBottom: `${spacing * 17}px`,
+    marginLeft: `${spacing * 34}px`,
+  };
 });
-export const TitleWrapper = styled("div")({
-  marginBottom: "34px",
-  marginLeft: "67px",
-});
-export const ContentWrapper = styled("div")({
-  marginLeft: "67px",
+export const ContentWrapper = styled("div")(({ theme: { spacing } }) => {
+  return {
+    marginLeft: `${spacing * 34}px`,
+  };
 });

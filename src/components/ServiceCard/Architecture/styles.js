@@ -1,15 +1,27 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")(({ theme }) => ({
-  background: theme.colors.maroon,
+const Wrapper = styled("div")(({ theme: { colors }, variant }) => ({
+  background: colors.maroon,
   display: "flex",
   height: "304px",
   borderRadius: "20px",
   alignItems: "center",
   justifyContent: "space-between",
-
-  "@media screen and (max-width: 768px)": {
-    flexDirection: "column",
+  transition: ".3s ease",
+  cursor: "pointer",
+  border: `2px solid ${colors[variant] || colors.primary}`,
+  "&:hover": {
+    color: `${colors[variant] || colors.primary}`,
+    background: "transparent",
+    h2: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    p: {
+      color: `${colors[variant] || colors.primary}`,
+    },
+    "svg path": {
+      fill: `${colors[variant] || colors.primary}`,
+    },
   },
 }));
 
@@ -19,7 +31,7 @@ export const ImageWrapper = styled("div")({
   position: "relative",
   bottom: "19%",
 
-  "@media screen and (max-width: 768px)": {
+  "@media screen and (max-width: 992px)": {
     width: "100%",
     height: "100%",
     position: "relative",

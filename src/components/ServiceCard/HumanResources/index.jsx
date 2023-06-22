@@ -3,11 +3,18 @@ import Image from "next/image";
 import { ArrowRight } from "../../Svgs";
 import { Heading } from "@/components/Heading";
 import Typo from "@/components/Typo";
-const HumanResources = ({ src, alt, title, children, ...rest }) => {
+const HumanResources = ({
+  src,
+  alt,
+  variant = "primary",
+  title,
+  children,
+  ...rest
+}) => {
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} variant={variant}>
       <ImageWrapper>
-        <Image src={src} alt={alt} layout="fill" />
+        <Image src={src} alt={alt} fill />
       </ImageWrapper>
       <ContentWrapper>
         <Heading variant="serviceTitle">{title}</Heading>

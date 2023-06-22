@@ -2,133 +2,149 @@ import React, { useEffect, useState } from "react";
 import { Heading } from "@/components/Heading";
 import { Col, Container, Row } from "react-bootstrap";
 import {
+  ContentWrapper,
+  FounderHeading,
   FounderSection,
-  HeroSection,
+  MainHeading,
   MissionImage,
   ProfileWrapper,
-  StyledContainer,
+  StyledHeading,
+  MissionHeading,
+  StyledRow,
 } from "./styles";
 import MissionBanner from "/public/images/our-mission-banner.png";
 import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import { founderData } from "./aboutData";
 import Typo from "@/components/Typo";
+
 const About = () => {
   const [column1, setColumn1] = useState([]);
   const [column2, setColumn2] = useState([]);
   const [column3, setColumn3] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true)
     const column1Data = [founderData[0]];
     const column2Data = [founderData[1], founderData[2]];
     const column3Data = [founderData[3]];
-
     setColumn1(column1Data);
     setColumn2(column2Data);
     setColumn3(column3Data);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    },2000)
   }, []);
+
   return (
     <>
       <Container>
-        <HeroSection>
-          <Row>
-            <Col md={7}>
-              <Heading
-                className="responsive-heading"
-                variant="subHeading"
-                title={"About Us"}
-              ></Heading>
-              <Heading
-                className="center-text"
-                title="Clear"
-                variant="mainHeading"
-              >
-                Our Mission is{" "}
-              </Heading>
-              <Typo variant="mainTypo">
-                At CaliberOn, we're passionate about helping our clients
-                succeed. That's why we prioritize client satisfaction and
-                deliver exceptional work every time with our team of
-                professionals having access to a wide range of services, from
-                design and development to marketing and branding.
-              </Typo>
-            </Col>
-            <Col md={5}>
-              <MissionImage>
-                <Image src={MissionBanner} alt="Our Mission" />
-              </MissionImage>
-            </Col>
-          </Row>
-        </HeroSection>
+        <Row>
+          <MainHeading>
+            <Heading title="About Us" variant="subHeading"></Heading>
+          </MainHeading>
+        </Row>
+        <StyledRow>
+          <Col sm={12} md={12} lg={7}>
+            <MissionHeading
+              className="main-heading"
+              title="Clear"
+              variant="mainHeading"
+            >
+              Our Mission is{" "}
+            </MissionHeading>
+            <Typo variant="mainTypo">
+              At CaliberOn, we're passionate about helping our clients succeed.
+              That's why we prioritize client satisfaction and deliver
+              exceptional work every time with our team of professionals having
+              access to a wide range of services, from design and development to
+              marketing and branding.
+            </Typo>
+          </Col>
+          <Col sm={12} md={12} lg={5}>
+            <MissionHeading
+              className="responsive-heading"
+              title="Clear"
+              variant="mainHeading"
+            >
+              Our Mission is{"  "}
+            </MissionHeading>
+            <MissionImage>
+              <Image src={MissionBanner} alt="Our Mission" />
+            </MissionImage>
+          </Col>
+        </StyledRow>
       </Container>
       <Container>
         <Row>
           <Col md={12}>
-            <StyledContainer>
-              <Heading variant="quotes" title="and exceed your expectations.”">
+            <ContentWrapper>
+              <StyledHeading
+                variant="quotes"
+                title="and exceed your expectations.”"
+              >
                 “Our end-to-end freelancing services are designed to help you
-                achieve your goals{" "}
-              </Heading>
-            </StyledContainer>
+                achieve your goals {` `}
+              </StyledHeading>
+            </ContentWrapper>
           </Col>
         </Row>
       </Container>
       <FounderSection>
         <Container>
-          <Heading
-            variant="mainHeading"
-            className="text-center"
-            title="Co-Founders"
-          >
-            Meet Our <br />
-          </Heading>
+          <FounderHeading>
+            <Heading variant="mainHeading" title="Co-Founders">
+              Meet Our
+            </Heading>
+          </FounderHeading>
           <ProfileWrapper>
             <Row>
-              <Col xs={12} sm={12} md={4} className="m-auto ">
-                {column1.map((item, key) => (
+              <Col xs={12} sm={12} md={12} lg={4} className="m-auto ">
+                {column1.map((item) => (
                   <ProfileCard
+                    variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
+                    founders={true}
                     description={item.description}
-                    colourPrimary
-                    className="w-sm-100"
                   />
                 ))}
               </Col>
 
-              <Col
-                xs={12}
-                sm={12}
-                md={4}
-                className="card-direction m-auto pt-4"
-              >
-                {column2.map((item, key) => (
+              <Col xs={12} sm={12} md={12} lg={4} className="m-auto pt-4">
+                {column2.map((item) => (
                   <ProfileCard
+                    variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
                     description={item.description}
-                    colourPrimary
+                    founders={true}
                     className="my-custom-class w-sm-100"
                   />
                 ))}
               </Col>
-              <Col xs={12} sm={12} md={4} className="m-auto pt-4">
-                {column3.map((item, key) => (
+              <Col xs={12} sm={12} md={12} lg={4} className="m-auto pt-4">
+                {column3.map((item) => (
                   <ProfileCard
+                    variant="primary"
                     fontSize={15}
-                    key={key}
+                    key={item.name.toString()}
                     profile={item.profile}
-                    title={item.title}
+                    name={item.name}
+                    lastName={item.lastName}
                     subTitle={item.subTitle}
                     description={item.description}
-                    colourPrimary
-                    className="w-sm-100"
+                    founders={true}
                   />
                 ))}
               </Col>

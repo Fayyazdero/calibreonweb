@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import TestmonialWrapper, { Content, LogoImage, LogoWrapper } from "./styles";
+import TestmonialWrapper, {
+  Content,
+  LogoImage,
+  LogoWrapper,
+} from "./styles";
 
 const TestimonialCard = ({ imgSrc, review, ...rest }) => {
   return (
