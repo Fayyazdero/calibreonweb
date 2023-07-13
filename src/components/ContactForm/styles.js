@@ -14,7 +14,7 @@ export const HeadingWrapper = styled("div")({
   [`@media screen and (max-width: 992px)`]: {
     paddingLeft: 0,
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 });
 export const NameInputs = styled("div")({
@@ -49,7 +49,9 @@ export const StyledTextArea = styled(Form.Control)(({ theme: { colors } }) => ({
 }));
 export const WrapperPolicy = styled("div")({
   display: "flex",
-  marginLeft: "56px",
+  // marginLeft: "56px",
+  width: "80%",
+  margin: "auto",
   textAlign: "center",
   marginTop: "24px",
   alignItems: "center",
